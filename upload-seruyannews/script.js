@@ -6,14 +6,14 @@ const cropperModal = document.getElementById('cropperModal');
 const cropperContainer = document.getElementById('cropperContainer');
 const cropDoneBtn = document.getElementById('cropDoneBtn');
 const emptyMessage = document.getElementById('emptyMessage');
+const downloadImageBtn = document.getElementById('download-image');
+
 let cropper = null;
 let templateImage = new Image();
 let croppedImage = null; // Menyimpan gambar yang telah di-crop
 templateImage.src = 'template.png'; // Preload template image
 let templateLoaded = false;
 let imageUploaded = false; // Track if an image has been uploaded
-const downloadImageBtn = document.getElementById('download-image');
-
 
 // Preload template image
 templateImage.onload = function() {
@@ -154,20 +154,22 @@ function drawCroppedImage() {
         // Show the empty message
         emptyMessage.style.display = 'flex';
     }
+}
 
-// Event listener untuk tombol unduh
+// Event listener for download button
 downloadImageBtn.addEventListener('click', function() {
     if (croppedImage) {
-        // Buat URL data dari canvas
+        // Create a data URL from the canvas
         const dataURL = imagePreview.toDataURL('image/jpeg');
 
-        // Buat elemen <a> sementara untuk mengunduh gambar
+        // Create a temporary <a> element for downloading the image
         const link = document.createElement('a');
         link.href = dataURL;
         link.download = 'ig_post.jpg';
+
+        // Trigger a click on the link to start the download
         link.click();
     } else {
         alert('Silakan unggah dan crop gambar terlebih dahulu.');
     }
 });
-}
