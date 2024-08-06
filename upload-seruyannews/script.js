@@ -162,24 +162,54 @@ document.addEventListener('DOMContentLoaded', () => {
     const defaultDescriptionTextarea = document.getElementById('description-2');
     const checkboxDesk = document.getElementById('checkbox-desk');
 
-    copyDescriptionBtn.addEventListener('click', () => {
-        let descriptionText = descriptionTextarea.value;
+    if (copyDescriptionBtn && descriptionTextarea && defaultDescriptionTextarea && checkboxDesk) {
+        copyDescriptionBtn.addEventListener('click', () => {
+            let descriptionText = descriptionTextarea.value;
 
-        // Cek apakah checkbox dicentang
-        if (checkboxDesk.checked) {
-            descriptionText += '\n' + defaultDescriptionTextarea.value;
+            // Cek apakah checkbox dicentang
+            if (checkboxDesk.checked) {
+                descriptionText += '\n' + defaultDescriptionTextarea.value;
+            }
+
+            // Coba menggunakan Clipboard API jika tersedia
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(descriptionText)
+                    .then(() => {
+                        alert('Deskripsi telah disalin ke clipboard!');
+                    })
+                    .catch(err => {
+                        console.error('Gagal menyalin deskripsi menggunakan Clipboard API: ', err);
+                        fallbackCopyTextToClipboard(descriptionText); // Fallback
+                    });
+            } else {
+                // Jika Clipboard API tidak tersedia, gunakan fallback
+                fallbackCopyTextToClipboard(descriptionText);
+            }
+        });
+    } else {
+        console.error('Salah satu elemen tidak ditemukan.');
+    }
+
+    function fallbackCopyTextToClipboard(text) {
+        // Buat elemen textarea sementara
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        
+        try {
+            // Salin teks ke clipboard
+            document.execCommand('copy');
+            alert('Deskripsi telah disalin ke clipboard!');
+        } catch (err) {
+            console.error('Gagal menyalin deskripsi menggunakan fallback: ', err);
         }
 
-        // Salin ke clipboard
-        navigator.clipboard.writeText(descriptionText)
-            .then(() => {
-                alert('Deskripsi telah disalin ke clipboard!');
-            })
-            .catch(err => {
-                console.error('Gagal menyalin deskripsi: ', err);
-            });
-    });
+        // Hapus elemen textarea setelah menyalin
+        document.body.removeChild(textarea);
+    }
 });
+
 
 document.getElementById('submitBtn').addEventListener('click', function() {
     // URL Instagram yang ingin dibuka
