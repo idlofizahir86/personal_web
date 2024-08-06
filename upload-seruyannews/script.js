@@ -156,16 +156,57 @@ function drawCroppedImage() {
     }
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const copyDescriptionBtn = document.getElementById('copyDescriptionBtn');
+    const descriptionTextarea = document.getElementById('description');
+    const defaultDescriptionTextarea = document.getElementById('description-2');
+    const checkboxDesk = document.getElementById('checkbox-desk');
+
+    copyDescriptionBtn.addEventListener('click', () => {
+        let descriptionText = descriptionTextarea.value;
+
+        // Cek apakah checkbox dicentang
+        if (checkboxDesk.checked) {
+            descriptionText += '\n' + defaultDescriptionTextarea.value;
+        }
+
+        // Salin ke clipboard
+        navigator.clipboard.writeText(descriptionText)
+            .then(() => {
+                alert('Deskripsi telah disalin ke clipboard!');
+            })
+            .catch(err => {
+                console.error('Gagal menyalin deskripsi: ', err);
+            });
+    });
+});
+
+document.getElementById('submitBtn').addEventListener('click', function() {
+    // URL Instagram yang ingin dibuka
+    var instagramURL = 'https://www.instagram.com/'; // Ganti dengan URL Instagram yang diinginkan
+
+    // Buka URL Instagram di tab baru
+    window.open(instagramURL, '_blank');
+});
+
+
 // Event listener for download button
-downloadImageBtn.addEventListener('click', function() {
+document.getElementById('download-image').addEventListener('click', function() {
     if (croppedImage) {
         // Create a data URL from the canvas
-        const dataURL = imagePreview.toDataURL('image/jpeg');
+        const dataURL = document.getElementById('imagePreview').toDataURL('image/jpeg');
+
+        // Get the current date and format it as dd-mm-yyyy
+        const now = new Date();
+        const day = String(now.getDate()).padStart(2, '0');
+        const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are 0-based
+        const year = now.getFullYear();
+        const formattedDate = `${day}-${month}-${year}`;
 
         // Create a temporary <a> element for downloading the image
         const link = document.createElement('a');
         link.href = dataURL;
-        link.download = 'ig_post.jpg';
+        link.download = `ig_post_${formattedDate}.jpg`;
 
         // Trigger a click on the link to start the download
         link.click();
@@ -173,3 +214,4 @@ downloadImageBtn.addEventListener('click', function() {
         alert('Silakan unggah dan crop gambar terlebih dahulu.');
     }
 });
+
