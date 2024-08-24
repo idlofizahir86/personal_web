@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="https://akunkeun.lldikti4.id/assets/images/icon%20akunkeun.png" type="image/png">
+    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AKUNKEUN - API Documentation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .custom-header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .custom-header img {
+        max-width: 40%;
+        height: auto;
+    }
+    .author-info {
+        text-align: center;
+        font-size: 1rem;
+        font-style: italic;
+        color: #6c757d;
+    }
+    .endpoint-section {
+            text-align: start;
+            margin: 40px 0;
+        }
+        .endpoint-section h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .endpoint-section a {
+            font-size: 1.2rem;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .endpoint-section a:hover {
+            text-decoration: underline;
+        }
+</style>
+</head>
+<body>
+  <div class="container my-5">
+    <header class="custom-header">
+      <img src="https://akunkeun.lldikti4.id/assets/images/brand-logo.png" alt="Brand Logo">
+      <h1 class="text-center mb-4">API Documentation</h1>
+      <p class="author-info">by Idlofi Zahir Rajaba</p>
+    </header>
+
+    <section class="endpoint-section">
+      <h3>ENDPOINT</h3>
+      <a href="https://akunkeun.lldikti4.id/" target="_blank">https://akunkeun.lldikti4.id</a>
+    </section>
+
+
+    <ul class="nav nav-tabs" id="apiTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="get-tab" data-bs-toggle="tab" data-bs-target="#get" type="button" role="tab" aria-controls="get" aria-selected="true">GET</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="post-tab" data-bs-toggle="tab" data-bs-target="#post" type="button" role="tab" aria-controls="post" aria-selected="false">POST</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="put-tab" data-bs-toggle="tab" data-bs-target="#put" type="button" role="tab" aria-controls="put" aria-selected="false">PUT</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="delete-tab" data-bs-toggle="tab" data-bs-target="#delete" type="button" role="tab" aria-controls="delete" aria-selected="false">DELETE</button>
+      </li>
+    </ul>
+
+    <div class="tab-content mt-3" id="apiTabsContent">
+      <!-- GET Endpoints -->
+      <div class="tab-pane fade show active" id="get" role="tabpanel" aria-labelledby="get-tab">
+        <div class="accordion" id="getAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="getHeading1">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#getCollapse1" aria-expanded="true" aria-controls="getCollapse1">
+                Cetak RPD User - /perjadin/rpd/{id}
+              </button>
+            </h2>
+            <div id="getCollapse1" class="accordion-collapse collapse show" aria-labelledby="getHeading1" data-bs-parent="#getAccordion">
+              <div class="accordion-body">
+                <strong>Method:</strong> GET <br>
+                <strong>Description:</strong> Mengambil data RPD (Rencana Perjalanan Dinas) berdasarkan ID. <br>
+                <strong>Parameters:</strong> <code>id</code> (path): ID RPD yang ingin diambil. <br>
+                <strong>Authentication:</strong> Authenticated user with role pegawai. <br>
+                <strong>Response:</strong>
+                <pre><code>{
+  "id": 123,
+  "nama": "Perjalanan Dinas Jakarta",
+  "tanggal": "2024-08-23"
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="getHeading2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#getCollapse2" aria-expanded="false" aria-controls="getCollapse2">
+                Index Perjadin - /perjadin
+              </button>
+            </h2>
+            <div id="getCollapse2" class="accordion-collapse collapse" aria-labelledby="getHeading2" data-bs-parent="#getAccordion">
+              <div class="accordion-body">
+                <strong>Method:</strong> GET <br>
+                <strong>Description:</strong> Mengambil daftar semua data perjadin. <br>
+                <strong>Authentication:</strong> Authenticated user with role pegawai. <br>
+                <strong>Response:</strong>
+                <pre><code>[
+  {
+    "id": 123,
+    "nama": "Perjalanan Dinas Jakarta",
+    "tanggal": "2024-08-23"
+  },
+  {
+    "id": 124,
+    "nama": "Perjalanan Dinas Bandung",
+    "tanggal": "2024-08-24"
+  }
+]</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="getHeading3">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#getCollapse3" aria-expanded="false" aria-controls="getCollapse3">
+                Get Dokumen - /perjadin/getDokumen/{filename}
+              </button>
+            </h2>
+            <div id="getCollapse3" class="accordion-collapse collapse" aria-labelledby="getHeading3" data-bs-parent="#getAccordion">
+              <div class="accordion-body">
+                <strong>Method:</strong> GET <br>
+                <strong>Description:</strong> Mengambil dokumen berdasarkan nama file. <br>
+                <strong>Parameters:</strong> <code>filename</code> (path): Nama file dokumen yang ingin diambil. <br>
+                <strong>Authentication:</strong> Authenticated user with role pegawai. <br>
+                <strong>Response:</strong> Dokumen dalam format yang sesuai (misalnya PDF, gambar).
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="getHeading4">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#getCollapse4" aria-expanded="false" aria-controls="getCollapse4">
+                Detail Perjadin - /perjadin/{id}
+              </button>
+            </h2>
+            <div id="getCollapse4" class="accordion-collapse collapse" aria-labelledby="getHeading4" data-bs-parent="#getAccordion">
+              <div class="accordion-body">
+                <strong>Method:</strong> GET <br>
+                <strong>Description:</strong> Mengambil detail perjadin berdasarkan ID. <br>
+                <strong>Parameters:</strong> <code>id</code> (path): ID perjadin yang ingin diambil. <br>
+                <strong>Authentication:</strong> Authenticated user with role pegawai. <br>
+                <strong>Response:</strong> Detail perjadin dalam format JSON.
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="getHeading5">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#getCollapse5" aria-expanded="false" aria-controls="getCollapse5">
+                Perjadin Step 2 - /perjadin_step_2/{id}
+              </button>
+            </h2>
+            <div id="getCollapse5" class="accordion-collapse collapse" aria-labelledby="getHeading5" data-bs-parent="#getAccordion">
+              <div class="accordion-body">
+                <strong>Method:</strong> GET <br>
+                <strong>Description:</strong> Mengambil data untuk langkah kedua perjadin berdasarkan ID. <br>
+                <strong>Parameters:</strong> <code>id</code> (path): ID perjadin yang ingin diambil. <br>
+                <strong>Authentication:</strong> Authenticated user with role pegawai. <br>
+                <strong>Response:</strong> Data langkah kedua perjadin dalam format JSON.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="getHeading6">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#getCollapse6" aria-expanded="false" aria-controls="getCollapse6">
+                Riwayat Perjadin - /perjadin/riwayat/{status}
+              </button>
+            </h2>
+            <div id="getCollapse6" class="accordion-collapse collapse" aria-labelledby="getHeading6" data-bs-parent="#getAccordion">
+              <div class="accordion-body">
+                <strong>Method:</strong> GET <br>
+                <strong>Description:</strong> Mengambil riwayat perjadin berdasarkan status. <br>
+                <strong>Parameters:</strong> <code>status</code> (path): Status perjadin (misalnya "selesai", "proses"). <br>
+                <strong>Authentication:</strong> Authenticated user with role pegawai. <br>
+                <strong>Response:</strong> Daftar riwayat perjadin dalam format JSON.
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="getHeading7">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#getCollapse7" aria-expanded="false" aria-controls="getCollapse7">
+                Detail Perjadin - /detail-perjadin/{id}
+              </button>
+            </h2>
+            <div id="getCollapse7" class="accordion-collapse collapse" aria-labelledby="getHeading7" data-bs-parent="#getAccordion">
+              <div class="accordion-body">
+                <strong>Method:</strong> GET <br>
+                <strong>Description:</strong> Mengambil detail perjadin tertentu berdasarkan ID. <br>
+                <strong>Parameters:</strong> <code>id</code> (path): ID perjadin yang ingin diambil. <br>
+                <strong>Authentication:</strong> Authenticated user with role pegawai. <br>
+                <strong>Response:</strong> Detail perjadin dalam format JSON.
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="getHeading8">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#getCollapse8" aria-expanded="false" aria-controls="getCollapse8">
+                Note Perjadin - /note-perjadin/{id}
+              </button>
+            </h2>
+            <div id="getCollapse8" class="accordion-collapse collapse" aria-labelledby="getHeading8" data-bs-parent="#getAccordion">
+              <div class="accordion-body">
+                <strong>Method:</strong> GET <br>
+                <strong>Description:</strong> Mengambil catatan perjadin berdasarkan ID. <br>
+                <strong>Parameters:</strong> <code>id</code> (path): ID perjadin yang ingin diambil. <br>
+                <strong>Authentication:</strong> Authenticated user with role pegawai. <br>
+                <strong>Response:</strong> Catatan perjadin dalam format JSON.
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="getHeading9">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#getCollapse9" aria-expanded="false" aria-controls="getCollapse9">
+                Note Perjadin User - /note-perjadin-user/{id}
+              </button>
+            </h2>
+            <div id="getCollapse9" class="accordion-collapse collapse" aria-labelledby="getHeading9" data-bs-parent="#getAccordion">
+              <div class="accordion-body">
+                <strong>Method:</strong> GET <br>
+                <strong>Description:</strong> Mengambil catatan perjadin untuk pengguna berdasarkan ID. <br>
+                <strong>Parameters:</strong> <code>id</code> (path): ID perjadin yang ingin diambil. <br>
+                <strong>Authentication:</strong> Authenticated user with role pegawai. <br>
+                <strong>Response:</strong> Catatan perjadin untuk pengguna dalam format JSON.
+              </div>
+            </div>
+          </div>
+          
+
+          <!-- Add more GET endpoints here -->
+        </div>
+      </div>
+
+      <!-- POST Endpoints -->
+      <div class="tab-pane fade" id="post" role="tabpanel" aria-labelledby="post-tab">
+        <div class="accordion" id="postAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="postHeading1">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#postCollapse1" aria-expanded="true" aria-controls="postCollapse1">
+                Store Perjadin - /perjadin/store
+              </button>
+            </h2>
+            <div id="postCollapse1" class="accordion-collapse collapse show" aria-labelledby="postHeading1" data-bs-parent="#postAccordion">
+              <div class="accordion-body">
+                <strong>Method:</strong> POST <br>
+                <strong>Description:</strong> Menyimpan data perjadin baru. <br>
+                <strong>Authentication:</strong> Authenticated user with role pegawai. <br>
+                <strong>Request Body:</strong>
+                <pre><code>{
+  "nama": "Perjalanan Dinas Jakarta",
+  "tanggal": "2024-08-23"
+}</code></pre>
+                <strong>Response:</strong>
+                <pre><code>{
+  "success": true,
+  "message": "Perjadin berhasil disimpan.",
+  "id": 123
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="postHeading2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#postCollapse2" aria-expanded="false" aria-controls="postCollapse2">
+                Store Peserta - /c_peserta
+              </button>
+            </h2>
+            <div id="postCollapse2" class="accordion-collapse collapse" aria-labelledby="postHeading2" data-bs-parent="#postAccordion">
+              <div class="accordion-body">
+                <strong>Method:</strong> POST <br>
+                <strong>Description:</strong> Menyimpan data peserta baru. <br>
+                <strong>Authentication:</strong> Authenticated user with role pegawai. <br>
+                <strong>Request Body:</strong> Data peserta dalam format JSON. <br>
+                <strong>Response:</strong> Status penyimpanan peserta.
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="postHeading3">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#postCollapse3" aria-expanded="false" aria-controls="postCollapse3">
+                Store Non-Peserta - /c_non_peserta
+              </button>
+            </h2>
+            <div id="postCollapse3" class="accordion-collapse collapse" aria-labelledby="postHeading3" data-bs-parent="#postAccordion">
+              <div class="accordion-body">
+                <strong>Method:</strong> POST <br>
+                <strong>Description:</strong> Menyimpan data non-peserta baru. <br>
+                <strong>Authentication:</strong> Authenticated user with role pegawai. <br>
+                <strong>Request Body:</strong> Data non-peserta dalam format JSON. <br>
+                <strong>Response:</strong> Status penyimpanan non-peserta.
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="postHeading4">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#postCollapse4" aria-expanded="false" aria-controls="postCollapse4">
+                Store Fasilitas - /c_fasilitas
+              </button>
+            </h2>
+            <div id="postCollapse4" class="accordion-collapse collapse" aria-labelledby="postHeading4" data-bs-parent="#postAccordion">
+              <div class="accordion-body">
+                <strong>Method:</strong> POST <br>
+                <strong>Description:</strong> Menyimpan data fasilitas baru. <br>
+                <strong>Authentication:</strong> Authenticated user with role pegawai. <br>
+                <strong>Request Body:</strong> Data fasilitas dalam format JSON. <br>
+                <strong>Response:</strong> Status penyimpanan fasilitas.
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="postHeading5">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#postCollapse5" aria-expanded="false" aria-controls="postCollapse5">
+                Store Perjadin Detail - /c_perjadin
+              </button>
+            </h2>
+            <div id="postCollapse5" class="accordion-collapse collapse" aria-labelledby="postHeading5" data-bs-parent="#postAccordion">
+              <div class="accordion-body">
+                <strong>Method:</strong> POST <br>
+                <strong>Description:</strong> Menyimpan detail perjadin baru. <br>
+                <strong>Authentication:</strong> Authenticated user with role pegawai. <br>
+                <strong>Request Body:</strong> Data detail perjadin dalam format JSON. <br>
+                <strong>Response:</strong> Status penyimpanan detail perjadin.
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="postHeading6">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#postCollapse6" aria-expanded="false" aria-controls="postCollapse6">
+                Store Laporan Perjadin - /note_perjadin
+              </button>
+            </h2>
+            <div id="postCollapse6" class="accordion-collapse collapse" aria-labelledby="postHeading6" data-bs-parent="#postAccordion">
+              <div class="accordion-body">
+                <strong>Method:</strong> POST <br>
+                <strong>Description:</strong> Menyimpan laporan perjadin. <br>
+                <strong>Authentication:</strong> Authenticated user with role pegawai. <br>
+                <strong>Request Body:</strong> Data laporan perjadin dalam format JSON. <br>
+                <strong>Response:</strong> Status penyimpanan laporan.
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="postHeading7">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#postCollapse7" aria-expanded="false" aria-controls="postCollapse7">
+                Store Peserta Detail - /c_pesertaDetail
+              </button>
+            </h2>
+            <div id="postCollapse7" class="accordion-collapse collapse" aria-labelledby="postHeading7" data-bs-parent="#postAccordion">
+              <div class="accordion-body">
+                <strong>Method:</strong> POST <br>
+                <strong>Description:</strong> Menyimpan detail peserta. <br>
+                <strong>Authentication:</strong> Authenticated user with role pegawai. <br>
+                <strong>Request Body:</strong> Data detail peserta dalam format JSON. <br>
+                <strong>Response:</strong> Status penyimpanan detail peserta.
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="postHeading8">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#postCollapse8" aria-expanded="false" aria-controls="postCollapse8">
+                Store Non-Peserta Detail - /c_non_pesertaDetail
+              </button>
+            </h2>
+            <div id="postCollapse8" class="accordion-collapse collapse" aria-labelledby="postHeading8" data-bs-parent="#postAccordion">
+              <div class="accordion-body">
+                <strong>Method:</strong> POST <br>
+                <strong>Description:</strong> Menyimpan detail non-peserta. <br>
+                <strong>Authentication:</strong> Authenticated user with role pegawai. <br>
+                <strong>Request Body:</strong> Data detail non-peserta dalam format JSON. <br>
+                <strong>Response:</strong> Status penyimpanan detail non-peserta.
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="postHeading9">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#postCollapse9" aria-expanded="false" aria-controls="postCollapse9">
+                Store Fasilitas Detail - /c_fasilitasDetail
+              </button>
+            </h2>
+            <div id="postCollapse9" class="accordion-collapse collapse" aria-labelledby="postHeading9" data-bs-parent="#postAccordion">
+              <div class="accordion-body">
+                <strong>Method:</strong> POST <br>
+                <strong>Description:</strong> Menyimpan detail fasilitas. <br>
+                <strong>Authentication:</strong> Authenticated user with role pegawai. <br>
+                <strong>Request Body:</strong> Data detail fasilitas dalam format JSON. <br>
+                <strong>Response:</strong> Status penyimpanan detail fasilitas.
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="postHeading10">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#postCollapse10" aria-expanded="false" aria-controls="postCollapse10">
+                Lapor Perjadin - /la_perjadin
+              </button>
+            </h2>
+            <div id="postCollapse10" class="accordion-collapse collapse" aria-labelledby="postHeading10" data-bs-parent="#postAccordion">
+              <div class="accordion-body">
+                <strong>Method:</strong> POST <br>
+                <strong>Description:</strong> Melaporkan perjadin. <br>
+                <strong>Authentication:</strong> Authenticated user with role pegawai. <br>
+                <strong>Request Body:</strong> Data laporan perjadin dalam format JSON. <br>
+                <strong>Response:</strong> Status pelaporan.
+              </div>
+            </div>
+          </div>
+          
+
+          <!-- Add more POST endpoints here -->
+        </div>
+      </div>
+
+      <!-- PUT Endpoints -->
+      <div class="tab-pane fade" id="put" role="tabpanel" aria-labelledby="put-tab">
+        <div class="accordion" id="putAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="putHeading1">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#putCollapse1" aria-expanded="true" aria-controls="putCollapse1">
+                Update Peserta Status - /c_status_peserta/{id}
+              </button>
+            </h2>
+            <div id="putCollapse1" class="accordion-collapse collapse show" aria-labelledby="putHeading1" data-bs-parent="#putAccordion">
+              <div class="accordion-body">
+                <strong>Method:</strong> PUT <br>
+                <strong>Description:</strong> Memperbarui status peserta berdasarkan ID. <br>
+                <strong>Parameters:</strong> <code>id</code> (path): ID peserta yang ingin diperbarui. <br>
+                <strong>Authentication:</strong> Authenticated user with role pegawai. <br>
+                <strong>Request Body:</strong>
+                <pre><code>{
+  "status": "aktif"
+}</code></pre>
+                <strong>Response:</strong>
+                <pre><code>{
+  "success": true,
+  "message": "Status peserta berhasil diperbarui."
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+  <h2 class="accordion-header" id="putHeading2">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#putCollapse2" aria-expanded="false" aria-controls="putCollapse2">
+      Update Perjadin Detail - /u_perjadin
+    </button>
+  </h2>
+  <div id="putCollapse2" class="accordion-collapse collapse" aria-labelledby="putHeading2" data-bs-parent="#putAccordion">
+    <div class="accordion-body">
+      <strong>Method:</strong> PUT <br>
+      <strong>Description:</strong> Memperbarui detail perjadin. <br>
+      <strong>Authentication:</strong> Authenticated user with role pegawai. <br>
+      <strong>Request Body:</strong> Data detail perjadin baru dalam format JSON. <br>
+      <strong>Contoh Request Body:</strong> <pre><code>{
+  "id": 123,
+  "judul": "Perubahan Detail Perjadin",
+  "tanggal": "2024-08-23",
+  "lokasi": "Jakarta",
+  "deskripsi": "Deskripsi baru perjadin."
+}</code></pre> <br>
+      <strong>Response:</strong> Status pembaruan. <br>
+      <strong>Contoh Response:</strong> <pre><code>{
+  "success": true,
+  "message": "Detail perjadin berhasil diperbarui."
+}</code></pre>
+            </div>
+          </div>
+        </div>
+
+
+          <!-- Add more PUT endpoints here -->
+        </div>
+      </div>
+
+      <!-- DELETE Endpoints -->
+      <div class="tab-pane fade" id="delete" role="tabpanel" aria-labelledby="delete-tab">
+        <div class="accordion" id="deleteAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="deleteHeading1">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#deleteCollapse1" aria-expanded="true" aria-controls="deleteCollapse1">
+                Delete Peserta - /h_peserta/{HPeserta:id}
+              </button>
+            </h2>
+            <div id="deleteCollapse1" class="accordion-collapse collapse show" aria-labelledby="deleteHeading1" data-bs-parent="#deleteAccordion">
+              <div class="accordion-body">
+                <strong>Method:</strong> DELETE <br>
+                <strong>Description:</strong> Menghapus data peserta berdasarkan ID. <br>
+                <strong>Parameters:</strong> <code>HPeserta</code> (path): ID peserta yang ingin dihapus. <br>
+                <strong>Authentication:</strong> Authenticated user with role pegawai. <br>
+                <strong>Response:</strong>
+                <pre><code>{
+  "success": true,
+  "message": "Peserta berhasil dihapus."
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+<div class="accordion-item">
+  <h2 class="accordion-header" id="deleteHeading2">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#deleteCollapse2" aria-expanded="false" aria-controls="deleteCollapse2">
+      Delete Fasilitas Perjadin - /h_fasilitas_perjadin/{HFasilitasPerjadin:id}
+    </button>
+  </h2>
+  <div id="deleteCollapse2" class="accordion-collapse collapse" aria-labelledby="deleteHeading2" data-bs-parent="#deleteAccordion">
+    <div class="accordion-body">
+      <strong>Method:</strong> DELETE <br>
+      <strong>Description:</strong> Menghapus data fasilitas perjadin berdasarkan ID. <br>
+      <strong>Parameters:</strong> 
+      <ul>
+        <li><strong>HFasilitasPerjadin (path):</strong> ID fasilitas perjadin yang ingin dihapus.</li>
+      </ul>
+      <strong>Authentication:</strong> Authenticated user with role pegawai. <br>
+      <strong>Response:</strong> Status penghapusan. <br>
+      <strong>Contoh Response:</strong> <pre><code>{
+  "success": true,
+  "message": "Fasilitas perjadin berhasil dihapus."
+}</code></pre>
+    </div>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <h2 class="accordion-header" id="deleteHeading3">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#deleteCollapse3" aria-expanded="false" aria-controls="deleteCollapse3">
+      Delete Peserta Detail - /h_peserta_peserta_detail/{id}
+    </button>
+  </h2>
+  <div id="deleteCollapse3" class="accordion-collapse collapse" aria-labelledby="deleteHeading3" data-bs-parent="#deleteAccordion">
+    <div class="accordion-body">
+      <strong>Method:</strong> POST <br>
+      <strong>Description:</strong> Menghapus detail peserta berdasarkan ID. <br>
+      <strong>Parameters:</strong> 
+      <ul>
+        <li><strong>id (path):</strong> ID detail peserta yang ingin dihapus.</li>
+      </ul>
+      <strong>Authentication:</strong> Authenticated user with role pegawai. <br>
+      <strong>Response:</strong> Status penghapusan. <br>
+      <strong>Contoh Response:</strong> <pre><code>{
+  "success": true,
+  "message": "Detail peserta berhasil dihapus."
+}</code></pre>
+    </div>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <h2 class="accordion-header" id="deleteHeading4">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#deleteCollapse4" aria-expanded="false" aria-controls="deleteCollapse4">
+      Delete Non-Peserta Detail - /h_peserta_nonpeserta_detail/{id}
+    </button>
+  </h2>
+  <div id="deleteCollapse4" class="accordion-collapse collapse" aria-labelledby="deleteHeading4" data-bs-parent="#deleteAccordion">
+    <div class="accordion-body">
+      <strong>Method:</strong> POST <br>
+      <strong>Description:</strong> Menghapus detail non-peserta berdasarkan ID. <br>
+      <strong>Parameters:</strong> 
+      <ul>
+        <li><strong>id (path):</strong> ID detail non-peserta yang ingin dihapus.</li>
+      </ul>
+      <strong>Authentication:</strong> Authenticated user with role pegawai. <br>
+      <strong>Response:</strong> Status penghapusan. <br>
+      <strong>Contoh Response:</strong> <pre><code>{
+  "success": true,
+  "message": "Detail non-peserta berhasil dihapus."
+}</code></pre>
+    </div>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <h2 class="accordion-header" id="deleteHeading5">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#deleteCollapse5" aria-expanded="false" aria-controls="deleteCollapse5">
+      Delete Fasilitas Detail - /h_fasilitas_detail/{id}
+    </button>
+  </h2>
+  <div id="deleteCollapse5" class="accordion-collapse collapse" aria-labelledby="deleteHeading5" data-bs-parent="#deleteAccordion">
+    <div class="accordion-body">
+      <strong>Method:</strong> POST <br>
+      <strong>Description:</strong> Menghapus detail fasilitas berdasarkan ID. <br>
+      <strong>Parameters:</strong> 
+      <ul>
+        <li><strong>id (path):</strong> ID detail fasilitas yang ingin dihapus.</li>
+      </ul>
+      <strong>Authentication:</strong> Authenticated user with role pegawai. <br>
+      <strong>Response:</strong> Status penghapusan. <br>
+      <strong>Contoh Response:</strong> <pre><code>{
+  "success": true,
+  "message": "Detail fasilitas berhasil dihapus."
+}</code></pre>
+    </div>
+  </div>
+</div>
+
+
+          <!-- Add more DELETE endpoints here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
