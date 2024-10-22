@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7"> <!-- Setel skala ke 70% -->
+    <title>Dokumen Sertifikat</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Tambahkan gaya untuk kontainer PDF */
+        #pdf-viewer {
+            border: 1px solid #dee2e6; /* Border untuk iframe */
+            border-radius: 0.25rem; /* Radius sudut */
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Bayangan */
+            display: none; /* Awalnya tidak ditampilkan */
+        }
+        .tab-content {
+            padding: 5px; /* Padding untuk konten tab */
+        }
+        .pdf-container {
+            margin-bottom: 15px; /* Jarak bawah untuk kontainer PDF */
+            height: 440px; /* Tinggi kontainer PDF */
+        }
+        .img-fluid {
+            max-width: 100%; /* Pastikan gambar responsif */
+            height: auto;
+        }
+        .container {
+            max-width: 1000px; /* Maksimal lebar kontainer */
+            font-size: 0.75rem; /* Ukuran font lebih kecil */
+            padding: 15px; /* Padding kontainer */
+        }
+        .rounded-icons {
+            border-radius: 50%; /* Membuat ikon menjadi bulat */
+        }
+        footer {
+            padding: 5px 0; /* Padding untuk footer */
+            font-size: 0.7rem; /* Ukuran font footer lebih kecil */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-3">
+        <h1 class="text-center">Dokumentasi Kegiatan Bangkit 2024</h1>
+        <h5 class="text-center">130123407 - Idlofi Zahir Rajaba</h5>
+
+        <!-- Tab Navigation -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="personal-docs-tab" data-toggle="tab" href="#personal-docs" role="tab" aria-controls="personal-docs" aria-selected="true">Dokumen Personal</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="project-docs-tab" data-toggle="tab" href="#project-docs" role="tab" aria-controls="project-docs" aria-selected="false">Dokumentasi Project</a>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="personal-docs" role="tabpanel" aria-labelledby="personal-docs-tab">
+              	<h2 class="mt-3">Ini adalah Dokumen hasil kegiatan dari Bangkit 2024</h2>
+		<p>Dokumen ini berisi sertifikat dan dokumen penting lainnya.</p>
+                <p>Silakan pilih dokumen dari dropdown:</p>
+                <select id="personal-doc-select" class="form-control mb-2">
+                    <option value="">Pilih Dokumen</option>
+                    <option value="berkas/MSIB 6_130213407_IDLOFI ZAHIR RAJABA_Dokumentasi.pdf">Dokumentasi</option>
+                    <option value="berkas/MSIB 6_130213407_IDLOFI ZAHIR RAJABA_Graduation Letter.pdf">Graduation Letter</option>
+                    <option value="berkas/MSIB 6_130213407_IDLOFI ZAHIR RAJABA_Laporan Akhir.pdf">Laporan Akhir</option>
+                    <option value="berkas/MSIB 6_130213407_IDLOFI ZAHIR RAJABA_Nilai dan Sertifikat.pdf">Nilai dan Sertifikat</option>
+                    <option value="berkas/MSIB 6_130213407_IDLOFI ZAHIR RAJABA_Nilai.pdf">Nilai</option>
+                    <option value="berkas/MSIB 6_130213407_IDLOFI ZAHIR RAJABA_SertifikatBangkit.pdf">Sertifikat Bangkit</option>
+                    <option value="berkas/MSIB 6_130213407_IDLOFI ZAHIR RAJABA_SertifikatKM.pdf">Sertifikat Kampus Merdeka</option>
+		    <option value="berkas/Signed_Idlofi_Laporan Bulanan MBKM_Maret_Signed - Idlofi Zahir Rajaba A012D4KY3411.pdf">Laporan Bulanan Maret</option>
+    		    <option value="berkas/Signed_Idlofi_Laporan Bulanan_MBKM_April_Signed1 - Idlofi Zahir Rajaba A012D4KY3411.pdf">Laporan Bulanan April</option>
+    		    <option value="berkas/Signed_Idlofi_Laporan_Bulanan_MBKM_Juni_Signed - Idlofi Zahir Rajaba A012D4KY3411.pdf">Laporan Bulanan Juni</option>
+    		    <option value="berkas/Signed_Idlofi_Laporan_Bulanan_MBKM_Mei_Signed - Idlofi Zahir Rajaba A012D4KY3411.pdf">Laporan Bulanan Mei</option>
+                </select>
+                <div class="pdf-container">
+                    <iframe id="pdf-viewer" class="mt-2" style="width: 100%; height: 100%;"></iframe>
+                    <p id="no-file-message" class="mt-2">Belum ada file yang dipilih.</p> <!-- Pesan ini selalu ditampilkan -->
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="project-docs" role="tabpanel" aria-labelledby="project-docs-tab">
+                <h2 class="mt-3">Dokumentasi Project</h2>
+                <div class="mt-2">
+                    <h4>LuminaSense - Capstone Bangkit 2024</h4>
+                    <img src="https://github.com/C241-PS261-LuminaSense/.github/raw/5127d8dba6f2af03068eb879bd01c9de70d0942d/assets/LuminasSense_banner.png" alt="LuminaSense Cover" class="img-fluid">
+                    <p>LuminaSense is an advanced smart lighting and human presence monitoring system designed to enhance energy efficiency and security in modern homes and businesses. Integrating AI and IoT technologies, LuminaSense provides real-time live camera feeds, supports various camera models, and utilizes AI-based human detection to accurately monitor occupancy and optimize lighting...</p>
+                    <h5>Key Features:</h5>
+                    <ul>
+                        <li>Integrated Camera Devices</li>
+                        <li>Real-Time Live Camera Feed</li>
+                        <li>Human Detection Capability</li>
+                    </ul>
+                    <h5>Benefits:</h5>
+                    <ul>
+                        <li>Energy Efficiency</li>
+                        <li>Enhanced Security</li>
+                        <li>User-Friendly Interface</li>
+                    </ul>
+                    <h5>Why LuminaSense?</h5>
+                    <p>LuminaSense is not just about smart lighting; it's about creating a smarter, safer, and more energy-efficient environment for everyone.</p>
+                </div>
+                <h4 class="mt-3">Project Documents:</h4>
+                <ul>
+                    <li><a href="berkas/final-presentation.pdf" target="_blank">Final Presentation</a></li>
+                    <li><a href="berkas/go-to-market-presentation.pdf" target="_blank">Go-To Market Presentation</a></li>
+                </ul>
+                <h4 class="mt-3">The Team</h4>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Member</th>
+                            <th>Student ID</th>
+                            <th>Path</th>
+                            <th>Contacts</th>
+                            <th>University</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Naj'La Tsaqifah Adilah</td>
+                            <td>M308D4KX1777</td>
+                            <td>Machine Learning</td>
+                            <td><a href="https://www.linkedin.com/in/najlatsaqifahadilah/">LinkedIn</a> or <a href="https://github.com/najlatsaqifah">Github</a></td>
+                            <td>Universitas Riau</td>
+                        </tr>
+                        <tr>
+                            <td>Hiyarunnisa Kahes Waypi</td>
+                            <td>M203D4KX1935</td>
+                            <td>Machine Learning</td>
+                            <td><a href="https://www.linkedin.com/in/hiyarunnisa-kahes-waypi/">LinkedIn</a> or <a href="https://github.com/heeyarun04/">Github</a></td>
+                            <td>Universitas Duta Bangsa Surakarta</td>
+                        </tr>
+                        <tr>
+                            <td>Willy Ahmadi</td>
+                            <td>M308D4KY3170</td>
+                            <td>Machine Learning</td>
+                            <td><a href="https://www.linkedin.com/in/willy-ahmadi-012411221/">LinkedIn</a> or <a href="https://github.com/brownychan19">Github</a></td>
+                            <td>Universitas Riau</td>
+                        </tr>
+                        <tr>
+                            <td>Amelia Ismania Sita Widianingrum</td>
+                            <td>C265D4KX0145</td>
+                            <td>Cloud Computing</td>
+                            <td><a href="https://www.linkedin.com/in/amelia-ismania/">LinkedIn</a> or <a href="https://github.com/amrewly">Github</a></td>
+                            <td>Universitas Telkom</td>
+                        </tr>
+                        <tr>
+                            <td>Idlofi Zahir Rajaba</td>
+                            <td>A012D4KY3411</td>
+                            <td>Mobile Development</td>
+                            <td><a href="https://www.linkedin.com/in/idlofi-zahir-rajaba/">LinkedIn</a> or <a href="https://github.com/idlofizahir86">Github</a></td>
+                            <td>Universitas Telkom</td>
+                        </tr>
+                        <tr>
+                            <td>Clara Isra Syamdah</td>
+                            <td>A012D4KX4585</td>
+                            <td>Mobile Development</td>
+                            <td><a href="https://www.linkedin.com/in/clara-isra-syamdah/">LinkedIn</a> or <a href="https://github.com/claraisrasyamdah">Github</a></td>
+                            <td>Universitas Telkom</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>Project Mentors</h4>
+                <ul>
+                    <li>Rinna Rachmatika</li>
+                    <li>Dessy Novita</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start" style="background-color: #7AB2D3; padding: 5px 0;">
+        <div class="container">
+            <div class="d-flex justify-content-center py-2">
+    <button type="button" class="btn btn-primary btn-sm rounded-icons mx-2" style="background-color: #54456b;">
+        <a href="https://www.youtube.com/@zahir86_" target="_blank" class="text-white"><i class="fab fa-youtube"></i></a>
+    </button>
+    <button type="button" class="btn btn-primary btn-sm rounded-icons mx-2" style="background-color: #54456b;">
+        <a href="https://www.instagram.com/zahir86_" target="_blank" class="text-white"><i class="fab fa-instagram"></i></a>
+    </button>
+    <button type="button" class="btn btn-primary btn-sm rounded-icons mx-2" style="background-color: #54456b;">
+        <a href="mailto:idlofizahir86@gmail.com" class="text-white"><i class="fas fa-envelope"></i></a>
+    </button>
+    <button type="button" class="btn btn-primary btn-sm rounded-icons mx-2" style="background-color: #54456b;">
+        <a href="https://github.com/idlofizahir86" target="_blank" class="text-white"><i class="fab fa-github"></i></a>
+    </button>
+    <button type="button" class="btn btn-primary btn-sm rounded-icons mx-2" style="background-color: #54456b;">
+        <a href="https://www.linkedin.com/in/idlofi-zahir-rajaba/" target="_blank" class="text-white"><i class="fab fa-linkedin"></i></a>
+    </button>
+</div>
+
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const personalDocSelect = document.getElementById('personal-doc-select');
+        const pdfViewer = document.getElementById('pdf-viewer');
+        const noFileMessage = document.getElementById('no-file-message');
+
+        // Menampilkan pesan saat awal
+        noFileMessage.style.display = 'block'; // Tampilkan pesan saat dimuat
+
+        personalDocSelect.addEventListener('change', function() {
+            const selectedValue = this.value;
+            if (selectedValue) {
+                pdfViewer.src = selectedValue;
+                pdfViewer.style.display = 'block';
+                noFileMessage.style.display = 'none'; // Sembunyikan pesan
+            } else {
+                pdfViewer.style.display = 'none';
+                noFileMessage.style.display = 'block'; // Tampilkan pesan
+            }
+        });
+    </script>
+</body>
+</html>
