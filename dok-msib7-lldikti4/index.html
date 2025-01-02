@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7"> <!-- Setel skala ke 70% -->
+    <title>Dokumentasi Magang LLDIKTI IV - Idlofi ZR</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Tambahkan gaya untuk kontainer PDF */
+        #pdf-viewer {
+            border: 1px solid #dee2e6; /* Border untuk iframe */
+            border-radius: 0.25rem; /* Radius sudut */
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Bayangan */
+            display: none; /* Awalnya tidak ditampilkan */
+        }
+        .tab-content {
+            padding: 5px; /* Padding untuk konten tab */
+        }
+        .pdf-container {
+            margin-bottom: 15px; /* Jarak bawah untuk kontainer PDF */
+            height: 440px; /* Tinggi kontainer PDF */
+        }
+        .img-fluid {
+            max-width: 100%; /* Pastikan gambar responsif */
+            height: auto;
+        }
+        .container {
+            max-width: 1000px; /* Maksimal lebar kontainer */
+            font-size: 0.75rem; /* Ukuran font lebih kecil */
+            padding: 15px; /* Padding kontainer */
+        }
+        .rounded-icons {
+            border-radius: 50%; /* Membuat ikon menjadi bulat */
+        }
+        footer {
+            padding: 5px 0; /* Padding untuk footer */
+            font-size: 0.7rem; /* Ukuran font footer lebih kecil */
+        }
+.highlight {
+    background-color: #ffeb3b; /* Warna stabilo kuning */
+    transition: background-color 0.3s ease;
+}
+
+.highlight:hover {
+    background-color: #ffe082; /* Warna lebih terang saat hover */
+}
+
+    </style>
+</head>
+<body>
+    <div class="container mt-3">
+        <h1 class="text-center">Dokumentasi Kegiatan MISB 7 di LLDIKTI IV</h1>
+        <h5 class="text-center">1301213407 - Idlofi Zahir Rajaba</h5>
+
+        <!-- Tab Navigation -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="personal-docs-tab" data-toggle="tab" href="#personal-docs" role="tab" aria-controls="personal-docs" aria-selected="true">Dokumen Personal</a>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="personal-docs" role="tabpanel" aria-labelledby="personal-docs-tab">
+              	<!-- <h2 class="mt-3">Ini adalah Dokumen hasil kegiatan dari MSIB7 di LLDIKTI IV</h2> -->
+		<p>Dokumen ini berisi sertifikat dan dokumen penting lainnya.</p>
+                <p>Silakan pilih dokumen dari dropdown:</p>
+                <select id="personal-doc-select" class="form-control mb-2">
+                    <option value="">Pilih Dokumen</option>
+                    <option value="berkas/MSIB 7_130213407_IDLOFI ZAHIR RAJABA_Dokumentasi.pdf">Dokumentasi</option>
+                    <option value="berkas/MSIB 7_130213407_IDLOFI ZAHIR RAJABA_Laporan Akhir.pdf">Laporan Akhir</option>
+                    <option value="berkas/MSIB 7_130213407_IDLOFI ZAHIR RAJABA_Nilai dan Sertifikat.pdf">Nilai dan Sertifikat</option>
+                    <option value="berkas/MSIB 7_130213407_IDLOFI ZAHIR RAJABA_Nilai.pdf">Nilai</option>
+                    <option value="berkas/MSIB 7_130213407_IDLOFI ZAHIR RAJABA_SertifLLDIKTI.pdf">Sertifikat LLDIKTI IV</option>
+                    <option value="berkas/MSIB 7_130213407_IDLOFI ZAHIR RAJABA_SertifikatKM.pdf">Sertifikat Kampus Merdeka</option>
+		    <option value="berkas/Signed_Idlofi_Laporan Bulanan MBKM_September.pdf">Laporan Bulanan September</option>
+    		    <option value="berkas/Signed_Idlofi_Laporan Bulanan_MBKM_Oktober.pdf">Laporan Bulanan Oktober</option>
+    		    <option value="berkas/Signed_Idlofi_Laporan_Bulanan_MBKM_November.pdf">Laporan Bulanan November</option>
+    		    <option value="berkas/Signed_Idlofi_Laporan_Bulanan_MBKM_Desember.pdf">Laporan Bulanan Desember</option>
+                </select>
+                <div class="pdf-container">
+                    <iframe id="pdf-viewer" class="mt-2" style="width: 100%; height: 100%;"></iframe>
+                    <p id="no-file-message" class="mt-2">Belum ada file yang dipilih.</p> <!-- Pesan ini selalu ditampilkan -->
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start" style="background-color: #7AB2D3; padding: 5px 0;">
+        <div class="container">
+            <div class="d-flex justify-content-center py-2">
+    <button type="button" class="btn btn-primary btn-sm rounded-icons mx-2" style="background-color: #54456b;">
+        <a href="https://www.youtube.com/@zahir86_" target="_blank" class="text-white"><i class="fab fa-youtube"></i></a>
+    </button>
+    <button type="button" class="btn btn-primary btn-sm rounded-icons mx-2" style="background-color: #54456b;">
+        <a href="https://www.instagram.com/zahir86_" target="_blank" class="text-white"><i class="fab fa-instagram"></i></a>
+    </button>
+    <button type="button" class="btn btn-primary btn-sm rounded-icons mx-2" style="background-color: #54456b;">
+        <a href="mailto:idlofizahir86@gmail.com" class="text-white"><i class="fas fa-envelope"></i></a>
+    </button>
+    <button type="button" class="btn btn-primary btn-sm rounded-icons mx-2" style="background-color: #54456b;">
+        <a href="https://github.com/idlofizahir86" target="_blank" class="text-white"><i class="fab fa-github"></i></a>
+    </button>
+    <button type="button" class="btn btn-primary btn-sm rounded-icons mx-2" style="background-color: #54456b;">
+        <a href="https://www.linkedin.com/in/idlofi-zahir-rajaba/" target="_blank" class="text-white"><i class="fab fa-linkedin"></i></a>
+    </button>
+</div>
+
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const personalDocSelect = document.getElementById('personal-doc-select');
+        const pdfViewer = document.getElementById('pdf-viewer');
+        const noFileMessage = document.getElementById('no-file-message');
+
+        // Menampilkan pesan saat awal
+        noFileMessage.style.display = 'block'; // Tampilkan pesan saat dimuat
+
+        personalDocSelect.addEventListener('change', function() {
+            const selectedValue = this.value;
+            if (selectedValue) {
+                pdfViewer.src = selectedValue;
+                pdfViewer.style.display = 'block';
+                noFileMessage.style.display = 'none'; // Sembunyikan pesan
+            } else {
+                pdfViewer.style.display = 'none';
+                noFileMessage.style.display = 'block'; // Tampilkan pesan
+            }
+        });
+    </script>
+</body>
+</html>
