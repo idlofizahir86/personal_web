@@ -11,6 +11,12 @@
     <div class="container mt-4">
         <h1 class="text-center mb-4">Reksata JSON Dialog Data Handler</h1>
         <p class="text-center">Mengelola data dialog Reksata</p>
+
+        <!-- Info Login -->
+        <div class="text-end mb-3">
+            <span id="user-info"></span>
+            <button id="auth-btn" class="btn btn-primary"></button>
+        </div>
         
         <div class="card p-4">
             <h4>Input Data</h4>
@@ -55,6 +61,8 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
         import { getDatabase, ref, set, get, child, push, onValue } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
+        
 
         // Konfigurasi Firebase
         const firebaseConfig = {
@@ -69,6 +77,37 @@
 
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
+        const auth = getAuth(app);
+
+        const userInfo = document.getElementById("user-info");
+        const authBtn = document.getElementById("auth-btn");
+
+        // Periksa status login
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                userInfo.textContent = `Login sebagai: ${user.email}`;
+                authBtn.textContent = "Logout";
+                authBtn.classList.remove("btn-primary");
+                authBtn.classList.add("btn-danger");
+
+                // Logout jika tombol ditekan
+                authBtn.onclick = () => {
+                    signOut(auth).then(() => {
+                        userInfo.textContent = "";
+                        authBtn.textContent = "Login";
+                        authBtn.classList.remove("btn-danger");
+                        authBtn.classList.add("btn-primary");
+                        authBtn.onclick = () => location.href = "login.html";
+                    }).catch(error => console.error("Gagal logout:", error));
+                };
+            } else {
+                userInfo.textContent = "";
+                authBtn.textContent = "Login";
+                authBtn.classList.remove("btn-danger");
+                authBtn.classList.add("btn-primary");
+                authBtn.onclick = () => location.href = "login.html";
+            }
+        });
 
         window.db = db;
         window.ref = ref;
