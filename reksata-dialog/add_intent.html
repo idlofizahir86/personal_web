@@ -20,24 +20,27 @@
             <a href="index.html" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Kembali ke halaman awal</a>
         </div>
 
-        <!-- Form Tambah Intent -->
-        <di id="intent-form" class="mb-3">
-            <label for="newIntent" class="form-label">Nama Intent</label>
-            <input type="text" id="newIntent" class="form-control" placeholder="Masukkan intent baru">
+        <!-- Form Tambah Intent dan Daftar Intent -->
+        <div id="intent-form">
+
+            <div class="mb-3">
+                <label for="newIntent" class="form-label">Nama Intent</label>
+                <input type="text" id="newIntent" class="form-control" placeholder="Masukkan intent baru">
+                <button class="btn btn-primary mt-3" onclick="addIntent()">Simpan</button>
+            </div>
+            <hr>
+            <h2>Daftar Intent</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Intent</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="intentList"></tbody>
+            </table>
+            <a href="index.html" class="btn btn-secondary">Kembali</a>
         </div>
-        <button class="btn btn-primary" onclick="addIntent()">Simpan</button>
-        <hr>
-        <h2>Daftar Intent</h2>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Intent</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody id="intentList"></tbody>
-        </table>
-        <a href="index.html" class="btn btn-secondary">Kembali</a>
     </div>
 
     <script type="module">
