@@ -36,7 +36,7 @@
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
-        import { getDatabase, ref, set, get, child, push } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js";
+        import { getDatabase, ref, set, get, child, push, onValue } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js";
 
         // Konfigurasi Firebase
         const firebaseConfig = {
@@ -47,7 +47,8 @@
             storageBucket: "reksata-dialog.appspot.com",
             messagingSenderId: "1048714287798",
             appId: "1:1048714287798:web:b183831c52549a0404e417"
-        }; // Masukkan konfigurasi Firebase Anda
+        };
+
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
 
@@ -57,9 +58,8 @@
         window.get = get;
         window.child = child;
         window.push = push;
-    </script>
+        window.onValue = onValue;
 
-    <script>
         document.addEventListener("DOMContentLoaded", loadOptions);
         document.getElementById('message').addEventListener("keydown", function(event) {
             if (event.key === "Enter") {
@@ -79,6 +79,7 @@
                         opt.textContent = childSnapshot.val();
                         dropdown.appendChild(opt);
                     });
+                    loadStats();
                 }
             }).catch(error => console.error("Gagal memuat intent:", error));
         }
@@ -97,26 +98,40 @@
             set(dbRef, { intent, message }).then(() => {
                 alert("Data berhasil disimpan!");
                 messageInput.value = "";
-                loadStats();
             }).catch(error => console.error("Gagal menyimpan data:", error));
         }
 
         function loadStats() {
-            get(ref(db, 'messages')).then(snapshot => {
+            get(ref(db, 'intents')).then(intentSnapshot => {
+                if (!intentSnapshot.exists()) return;
+                
                 let stats = {};
-                if (snapshot.exists()) {
-                    snapshot.forEach(childSnapshot => {
-                        let data = childSnapshot.val();
-                        stats[data.intent] = (stats[data.intent] || 0) + 1;
-                    });
-                }
-                let tableBody = document.getElementById('dataStats');
-                tableBody.innerHTML = '';
-                for (let intent in stats) {
-                    let row = `<tr><td>${intent}</td><td>${stats[intent]}</td></tr>`;
-                    tableBody.innerHTML += row;
-                }
+                intentSnapshot.forEach(childSnapshot => {
+                    let intent = childSnapshot.val();
+                    stats[intent] = 0; 
+                });
+
+                get(ref(db, 'messages')).then(messageSnapshot => {
+                    if (messageSnapshot.exists()) {
+                        messageSnapshot.forEach(childSnapshot => {
+                            let data = childSnapshot.val();
+                            if (stats.hasOwnProperty(data.intent)) {
+                                stats[data.intent]++;
+                            }
+                        });
+                    }
+                    updateStatsTable(stats);
+                });
             }).catch(error => console.error("Gagal mengambil statistik:", error));
+        }
+
+        function updateStatsTable(stats) {
+            let tableBody = document.getElementById('dataStats');
+            tableBody.innerHTML = '';
+            for (let intent in stats) {
+                let row = `<tr><td>${intent}</td><td>${stats[intent]}</td></tr>`;
+                tableBody.innerHTML += row;
+            }
         }
 
         function downloadData() {
@@ -131,6 +146,10 @@
                 }
             }).catch(error => console.error("Gagal mengunduh data:", error));
         }
+
+        onValue(ref(db, 'messages'), () => {
+            loadStats();
+        });
     </script>
 </body>
 </html>
