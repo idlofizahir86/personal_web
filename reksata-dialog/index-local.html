@@ -68,8 +68,11 @@
             .then(data => {
                 alert(data.message);
                 loadStats();
-            });
+                document.getElementById('message').value = ''; // Kosongkan input setelah berhasil simpan
+            })
+            .catch(error => console.error("Gagal menyimpan data:", error));
         }
+
 
         function loadStats() {
             fetch('get_stats.php')

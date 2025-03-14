@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Intent</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <h2>Tambah Intent Baru</h2>
+        <div class="mb-3">
+            <label for="newIntent" class="form-label">Nama Intent</label>
+            <input type="text" id="newIntent" class="form-control" placeholder="Masukkan intent baru">
+        </div>
+        <button class="btn btn-primary" onclick="addIntent()">Simpan</button>
+        <hr>
+        <h2>Daftar Intent</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Intent</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="intentList"></tbody>
+        </table>
+        <a href="index.html" class="btn btn-secondary">Kembali</a>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+        import { getDatabase, ref, set, get, push, remove } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js";
+
+        // Konfigurasi Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyAGTrcgg0bUGS8nS11uUsfU_5ymkNY_dZ8",
+            authDomain: "reksata-dialog.firebaseapp.com",
+            databaseURL: "https://reksata-dialog-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "reksata-dialog",
+            storageBucket: "reksata-dialog.appspot.com",
+            messagingSenderId: "1048714287798",
+            appId: "1:1048714287798:web:b183831c52549a0404e417"
+        };
+
+        // Inisialisasi Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        const intentsRef = ref(db, 'intents');
+
+        // Fungsi untuk menambahkan intent baru
+        function addIntent() {
+            const newIntent = document.getElementById('newIntent').value.trim();
+            if (newIntent === '') {
+                alert("Nama intent tidak boleh kosong!");
+                return;
+            }
+
+            // Tambahkan intent ke Firebase
+            push(intentsRef, newIntent)
+                .then(() => {
+                    alert("Intent berhasil ditambahkan!");
+                    document.getElementById('newIntent').value = ''; // Kosongkan input
+                    loadIntents(); // Perbarui daftar intent
+                })
+                .catch(error => console.error("Gagal menambahkan intent:", error));
+        }
+
+        // Fungsi untuk menampilkan daftar intent dari Firebase
+        function loadIntents() {
+            get(intentsRef).then(snapshot => {
+                let tableBody = document.getElementById('intentList');
+                tableBody.innerHTML = '';
+
+                if (snapshot.exists()) {
+                    snapshot.forEach(childSnapshot => {
+                        let intentKey = childSnapshot.key;
+                        let intentValue = childSnapshot.val();
+
+                        let row = `<tr>
+                            <td>${intentValue}</td>
+                            <td><button class="btn btn-danger btn-sm" onclick="deleteIntent('${intentKey}')">Hapus</button></td>
+                        </tr>`;
+                        tableBody.innerHTML += row;
+                    });
+                }
+            }).catch(error => console.error("Gagal mengambil daftar intent:", error));
+        }
+
+        // Fungsi untuk menghapus intent dari Firebase
+        function deleteIntent(intentKey) {
+            if (confirm("Apakah Anda yakin ingin menghapus intent ini?")) {
+                remove(ref(db, `intents/${intentKey}`))
+                    .then(() => {
+                        alert("Intent berhasil dihapus!");
+                        loadIntents(); // Perbarui daftar intent
+                    })
+                    .catch(error => console.error("Gagal menghapus intent:", error));
+            }
+        }
+
+        // Load intents saat halaman dimuat
+        document.addEventListener("DOMContentLoaded", loadIntents);
+
+        // Simpan fungsi ke window agar bisa dipanggil di onclick
+        window.addIntent = addIntent;
+        window.deleteIntent = deleteIntent;
+    </script>
+</body>
+</html>

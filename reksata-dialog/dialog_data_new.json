@@ -1,3 +1,10 @@
 {"intent":"cari_saham_berisiko_rendah","message":"Saya mencari saham dengan return tinggi tetapi risiko rendah di IHSG."}
 {"intent":"cari_saham_berisiko_rendah","message":"Apa ada saham yang risikonya rendah tapi tetap menguntungkan?"}
 {"intent":"cari_saham_berpotensi_tinggi","message":"Apakah ada saham kesehatan yang sedang berkembang?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Apa ada saham yang risikonya rendah tapi tetap menguntungkan?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya ingin berinvestasi di saham dengan risiko minimal, ada rekomendasi?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya ingin saham yang aman untuk investasi jangka panjang."}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya pemula dalam investasi, saham apa yang risikonya paling rendah?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saham mana yang memiliki risiko rendah?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya mencari saham yang cocok untuk investasi jangka panjang dengan risiko rendah."}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya ingin investasi di saham yang stabil dan tidak terlalu berisiko."}

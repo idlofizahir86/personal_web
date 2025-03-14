@@ -18,6 +18,8 @@
             <select id="intent" class="form-select"></select>
         </div>
         <button class="btn btn-primary" onclick="saveData()">Simpan</button>
+        <button class="btn btn-success" onclick="downloadData()">Unduh JSON</button>
+        <a href="add_intent.html" class="btn btn-info">Tambah Intent</a>
         
         <hr>
         <h2>Data Statistik</h2>
@@ -34,51 +36,47 @@
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
-        import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js";
+        import { getDatabase, ref, set, get, child, push } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js";
 
-        // Konfigurasi Firebase
-        const firebaseConfig = {
-            apiKey: "AIzaSyAGTrcgg0bUGS8nS11uUsfU_5ymkNY_dZ8",
-            authDomain: "reksata-dialog.firebaseapp.com",
-            databaseURL: "https://reksata-dialog-default-rtdb.firebaseio.com/",
-            projectId: "reksata-dialog",
-            storageBucket: "reksata-dialog.appspot.com",
-            messagingSenderId: "1048714287798",
-            appId: "1:1048714287798:web:b183831c52549a0404e417"
-        };
-
-        // Inisialisasi Firebase
+        const firebaseConfig = { ... }; // Masukkan konfigurasi Firebase Anda
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
 
-        // Simpan ke window agar bisa diakses di luar script module
         window.db = db;
         window.ref = ref;
         window.set = set;
         window.get = get;
         window.child = child;
+        window.push = push;
     </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", loadOptions);
-        
+        document.getElementById('message').addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                saveData();
+            }
+        });
+
         function loadOptions() {
-            fetch('options.json')
-                .then(response => response.json())
-                .then(data => {
-                    let dropdown = document.getElementById('intent');
-                    data.options.forEach(option => {
+            const dropdown = document.getElementById('intent');
+            dropdown.innerHTML = '';
+            get(ref(db, 'intents')).then(snapshot => {
+                if (snapshot.exists()) {
+                    snapshot.forEach(childSnapshot => {
                         let opt = document.createElement('option');
-                        opt.value = option;
-                        opt.textContent = option;
+                        opt.value = childSnapshot.val();
+                        opt.textContent = childSnapshot.val();
                         dropdown.appendChild(opt);
                     });
-                    loadStats();
-                });
+                }
+            }).catch(error => console.error("Gagal memuat intent:", error));
         }
 
         function saveData() {
-            let message = document.getElementById('message').value;
+            let messageInput = document.getElementById('message');
+            let message = messageInput.value;
             let intent = document.getElementById('intent').value;
 
             if (!message.trim()) {
@@ -86,22 +84,16 @@
                 return;
             }
 
-            const dbRef = ref(db, 'messages/' + Date.now()); 
-
-            set(dbRef, {
-                intent: intent,
-                message: message
-            }).then(() => {
+            const dbRef = ref(db, 'messages/' + Date.now());
+            set(dbRef, { intent, message }).then(() => {
                 alert("Data berhasil disimpan!");
+                messageInput.value = "";
                 loadStats();
-            }).catch(error => {
-                console.error("Gagal menyimpan data:", error);
-            });
+            }).catch(error => console.error("Gagal menyimpan data:", error));
         }
 
         function loadStats() {
-            const dbRef = ref(db, 'messages');
-            get(dbRef).then(snapshot => {
+            get(ref(db, 'messages')).then(snapshot => {
                 let stats = {};
                 if (snapshot.exists()) {
                     snapshot.forEach(childSnapshot => {
@@ -109,23 +101,26 @@
                         stats[data.intent] = (stats[data.intent] || 0) + 1;
                     });
                 }
+                let tableBody = document.getElementById('dataStats');
+                tableBody.innerHTML = '';
+                for (let intent in stats) {
+                    let row = `<tr><td>${intent}</td><td>${stats[intent]}</td></tr>`;
+                    tableBody.innerHTML += row;
+                }
+            }).catch(error => console.error("Gagal mengambil statistik:", error));
+        }
 
-                fetch('options.json')
-                    .then(response => response.json())
-                    .then(optionsData => {
-                        let tableBody = document.getElementById('dataStats');
-                        tableBody.innerHTML = '';
-
-                        optionsData.options.forEach(option => {
-                            let count = stats[option] || 0;
-                            let row = `<tr><td>${option}</td><td>${count}</td></tr>`;
-                            tableBody.innerHTML += row;
-                        });
-                    });
-
-            }).catch(error => {
-                console.error("Gagal mengambil data statistik:", error);
-            });
+        function downloadData() {
+            get(ref(db, 'messages')).then(snapshot => {
+                if (snapshot.exists()) {
+                    let data = snapshot.val();
+                    let blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+                    let a = document.createElement("a");
+                    a.href = URL.createObjectURL(blob);
+                    a.download = "dialog_data_new.json";
+                    a.click();
+                }
+            }).catch(error => console.error("Gagal mengunduh data:", error));
         }
     </script>
 </body>
