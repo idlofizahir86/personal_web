@@ -101,6 +101,13 @@
             }).catch(error => console.error("Gagal menyimpan data:", error));
         }
 
+        // Buat fungsi dapat diakses secara global
+        window.saveData = saveData;
+        window.loadOptions = loadOptions;
+        window.loadStats = loadStats;
+        window.downloadData = downloadData;
+
+
         function loadStats() {
             get(ref(db, 'intents')).then(intentSnapshot => {
                 if (!intentSnapshot.exists()) return;
