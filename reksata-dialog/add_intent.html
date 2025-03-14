@@ -3,13 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Intent</title>
+    <title>Reksata - Tambah Intent</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <div class="container mt-4">
         <h2>Tambah Intent Baru</h2>
-        <div class="mb-3">
+        <p class="text-center">Silakan tambahkan intent baru untuk Reksata.</p>
+
+        <!-- Peringatan Jika Tidak Login -->
+        <div id="alert-container" class="alert alert-danger text-center d-none" role="alert">
+            <i class="fa fa-exclamation-triangle fa-3x mb-3"></i>
+            <h4 class="alert-heading">Anda Belum Login!</h4>
+            <p>Silakan login terlebih dahulu untuk menambahkan intent.</p>
+            <a href="index.html" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Kembali ke halaman awal</a>
+        </div>
+
+        <!-- Form Tambah Intent -->
+        <di id="intent-form" class="mb-3">
             <label for="newIntent" class="form-label">Nama Intent</label>
             <input type="text" id="newIntent" class="form-control" placeholder="Masukkan intent baru">
         </div>
@@ -31,6 +43,7 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
         import { getDatabase, ref, set, get, push, remove } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
 
         // Konfigurasi Firebase
         const firebaseConfig = {
@@ -47,6 +60,21 @@
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
         const intentsRef = ref(db, 'intents');
+        const auth = getAuth(app);
+
+        const alertContainer = document.getElementById("alert-container");
+        const intentForm = document.getElementById("intent-form");
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                alertContainer.classList.add("d-none");
+                intentForm.classList.remove("d-none");
+            } else {
+                alertContainer.classList.remove("d-none");
+                intentForm.classList.add("d-none");
+            }
+        });
+
 
         // Fungsi untuk menambahkan intent baru
         function addIntent() {

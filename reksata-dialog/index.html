@@ -12,9 +12,9 @@
         <h1 class="text-center mb-4">Reksata JSON Dialog Data Handler</h1>
         <p class="text-center">Mengelola data dialog Reksata</p>
 
-        <!-- Info Login -->
-        <div class="text-end mb-3">
-            <span id="user-info"></span>
+       <!-- Info Login -->
+        <div class="text-end mb-3 d-flex justify-content-end align-items-center gap-2">
+            <span id="user-info" class="d-flex align-items-center gap-1"></span>
             <button id="auth-btn" class="btn btn-primary"></button>
         </div>
         
@@ -85,7 +85,7 @@
         // Periksa status login
         onAuthStateChanged(auth, (user) => {
             if (user) {
-                userInfo.textContent = `Login sebagai: ${user.email}`;
+                userInfo.innerHTML = `<i class="fa fa-user"></i> ${user.email}`;
                 authBtn.textContent = "Logout";
                 authBtn.classList.remove("btn-primary");
                 authBtn.classList.add("btn-danger");
