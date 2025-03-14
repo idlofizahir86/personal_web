@@ -1,0 +1,11 @@
+{
+    "options": [
+      "cari_saham_berisiko_rendah",
+      "cari_saham_berisiko_sedang",
+      "cari_saham_berpotensi_tinggi",
+      "tanya_performa_saham",
+      "tanya_strategi_investasi",
+      "akhiri_percakapan"
+    ]
+  }
+  
