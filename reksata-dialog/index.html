@@ -145,7 +145,11 @@
             get(ref(db, 'messages')).then(snapshot => {
                 if (snapshot.exists()) {
                     let data = snapshot.val();
-                    let blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+                    let formattedData = Object.values(data) // Menghapus ID timestamp
+                        .map(entry => JSON.stringify(entry)) // Konversi setiap objek ke JSON string
+                        .join("\n"); // Gabungkan dengan newline
+
+                    let blob = new Blob([formattedData], { type: "application/json" });
                     let a = document.createElement("a");
                     a.href = URL.createObjectURL(blob);
                     a.download = "dialog_data_new.json";
