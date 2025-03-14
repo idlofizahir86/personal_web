@@ -47,6 +47,7 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
         import { getDatabase, ref, get, remove } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyAGTrcgg0bUGS8nS11uUsfU_5ymkNY_dZ8",
@@ -60,33 +61,53 @@
 
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
+        const auth = getAuth(app);
 
-        $(document).ready(function () {
-            loadTable();
+        
+        const trashButton = document.getElementById("trash-button");
+        const aksiCol = document.getElementById("aksi-kolom");
+
+
+        onAuthStateChanged(auth, (user) => {
+            loadTable(!!user); // Mengubah status login menjadi boolean (true/false)
         });
 
-        function loadTable() {
+
+
+        // $(document).ready(function () {
+        //     loadTable();
+        // });
+
+        function loadTable(isLoggedIn) {
             get(ref(db, 'messages')).then(snapshot => {
                 if (snapshot.exists()) {
                     let data = snapshot.val();
                     let tableBody = '';
                     let index = 1;
-                    
+
                     for (let key in data) {
                         let row = data[key];
                         tableBody += `<tr>
                             <td>${index++}</td>
                             <td>${row.intent}</td>
                             <td>${row.message}</td>
-                            <td>
+                            ${isLoggedIn ? `<td>
                                 <button class='btn btn-danger btn-sm' onclick='deleteData("${key}")'>
                                     <i class="fa fa-trash"></i> Hapus
                                 </button>
-                            </td>
+                            </td>` : ''}
                         </tr>`;
                     }
 
                     $('#dataTable tbody').html(tableBody);
+
+                    // Menghapus kolom "Aksi" di <thead> jika tidak login
+                    if (!isLoggedIn) {
+                        $('#dataTable thead tr th:last-child').hide(); // Sembunyikan header "Aksi"
+                    } else {
+                        $('#dataTable thead tr th:last-child').show(); // Tampilkan header "Aksi"
+                    }
+
                     $('#dataTable').DataTable();
                 }
             }).catch(error => console.error("Gagal mengambil data:", error));
