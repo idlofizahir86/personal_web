@@ -63,18 +63,15 @@
         const db = getDatabase(app);
         const auth = getAuth(app);
 
-        
-        const trashButton = document.getElementById("trash-button");
-        const aksiCol = document.getElementById("aksi-kolom");
-
-
         onAuthStateChanged(auth, (user) => {
+            const aksiHeader = document.getElementById("aksi-kolom");
+            
             if (user) {
-                document.getElementById("aksi-kolom").style.display = ""; // Tampilkan kolom
-                loadTable(true); // Tampilkan tombol hapus
+                aksiHeader.style.display = ""; // Tampilkan kolom
+                loadTable(true); // Muat tabel dengan tombol hapus
             } else {
-                document.getElementById("aksi-kolom").style.display = "none"; // Sembunyikan kolom
-                loadTable(false); // Hilangkan tombol hapus
+                aksiHeader.remove(); // Hapus elemen header secara langsung
+                loadTable(false); // Muat tabel tanpa tombol hapus
             }
         });
 
@@ -88,10 +85,11 @@
 
         function loadTable(isLoggedIn) {
             get(ref(db, 'messages')).then(snapshot => {
+                let tableBody = '';
+                let index = 1;
+
                 if (snapshot.exists()) {
                     let data = snapshot.val();
-                    let tableBody = '';
-                    let index = 1;
 
                     for (let key in data) {
                         let row = data[key];
@@ -101,7 +99,7 @@
                             <td>${row.intent}</td>
                             <td>${row.message}</td>`;
 
-                        // Tampilkan tombol hapus hanya jika login
+                        // Tambahkan tombol hapus hanya jika login
                         if (isLoggedIn) {
                             tableBody += `<td>
                                 <button class='btn btn-danger btn-sm' onclick='deleteData("${key}")'>
@@ -112,18 +110,32 @@
 
                         tableBody += `</tr>`;
                     }
-
-                    $('#dataTable tbody').html(tableBody);
-
-                    // Inisialisasi DataTables ulang
-                    if ($.fn.DataTable.isDataTable("#dataTable")) {
-                        $("#dataTable").DataTable().destroy();
-                    }
-                    $("#dataTable").DataTable();
                 }
+
+                $('#dataTable tbody').html(tableBody);
+
+                // Hancurkan DataTables sebelum menginisialisasi ulang
+                if ($.fn.DataTable.isDataTable("#dataTable")) {
+                    $("#dataTable").DataTable().destroy();
+                }
+
+                // Pastikan jumlah kolom di header sesuai dengan yang ada di body
+                let tableHeader = document.querySelector("#dataTable thead tr");
+                let columnCount = isLoggedIn ? 4 : 3; // Dengan atau tanpa kolom "Aksi"
+
+                while (tableHeader.children.length > columnCount) {
+                    tableHeader.removeChild(tableHeader.lastChild);
+                }
+
+                while (tableHeader.children.length < columnCount) {
+                    let th = document.createElement("th");
+                    th.textContent = "Aksi";
+                    tableHeader.appendChild(th);
+                }
+
+                $("#dataTable").DataTable();
             }).catch(error => console.error("Gagal mengambil data:", error));
         }
-
 
 
         window.deleteData = function (key) {
