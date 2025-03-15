@@ -10,8 +10,8 @@
 <body>
     <div class="container mt-4">
         <h2>Tambah Intent Baru</h2>
-        <div class="text-center">
-            <a href="index.html" class="btn btn-secondary">Kembali</a>
+        <div class="text-left">
+           
             <p>Silakan tambahkan intent baru untuk Reksata.</p>
         </div>
 
@@ -42,6 +42,7 @@
                 </thead>
                 <tbody id="intentList"></tbody>
             </table>
+            <a href="index.html" class="btn btn-secondary">Kembali</a>
         </div>
     </div>
 
@@ -98,6 +99,7 @@
                 })
                 .catch(error => console.error("Gagal menambahkan intent:", error));
         }
+        
 
         // Fungsi untuk menampilkan daftar intent dari Firebase
         function loadIntents() {

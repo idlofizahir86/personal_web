@@ -31,7 +31,7 @@
                     <th>No</th>
                     <th>Intent</th>
                     <th>Pesan</th>
-                    <th>Aksi</th>
+                    <th id="aksi-kolom">Aksi</th>
                 </tr>
             </thead>
             <tbody></tbody>
@@ -69,8 +69,17 @@
 
 
         onAuthStateChanged(auth, (user) => {
-            loadTable(!!user); // Mengubah status login menjadi boolean (true/false)
+            let isLoggedIn = !!user; // Ubah status login menjadi true/false
+            loadTable(isLoggedIn);
+
+            const aksiCol = document.getElementById("aksi-kolom");
+            if (isLoggedIn) {
+                aksiCol.classList.remove("d-none"); // Tampilkan kolom "Aksi"
+            } else {
+                aksiCol.classList.add("d-none"); // Sembunyikan kolom "Aksi"
+            }
         });
+
 
 
 
@@ -84,34 +93,32 @@
                     let data = snapshot.val();
                     let tableBody = '';
                     let index = 1;
-
+                    
                     for (let key in data) {
                         let row = data[key];
                         tableBody += `<tr>
                             <td>${index++}</td>
                             <td>${row.intent}</td>
-                            <td>${row.message}</td>
-                            ${isLoggedIn ? `<td>
+                            <td>${row.message}</td>`;
+                        
+                        // Tambahkan kolom "Aksi" hanya jika login
+                        if (isLoggedIn) {
+                            tableBody += `<td>
                                 <button class='btn btn-danger btn-sm' onclick='deleteData("${key}")'>
                                     <i class="fa fa-trash"></i> Hapus
                                 </button>
-                            </td>` : ''}
-                        </tr>`;
+                            </td>`;
+                        }
+
+                        tableBody += `</tr>`; // Tutup tag <tr>
                     }
 
                     $('#dataTable tbody').html(tableBody);
-
-                    // Menghapus kolom "Aksi" di <thead> jika tidak login
-                    if (!isLoggedIn) {
-                        $('#dataTable thead tr th:last-child').hide(); // Sembunyikan header "Aksi"
-                    } else {
-                        $('#dataTable thead tr th:last-child').show(); // Tampilkan header "Aksi"
-                    }
-
                     $('#dataTable').DataTable();
                 }
             }).catch(error => console.error("Gagal mengambil data:", error));
         }
+
 
         window.deleteData = function (key) {
             if (confirm("Apakah Anda yakin ingin menghapus data ini?")) {

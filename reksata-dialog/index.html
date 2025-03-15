@@ -92,13 +92,16 @@
 
                 // Logout jika tombol ditekan
                 authBtn.onclick = () => {
-                    signOut(auth).then(() => {
-                        userInfo.textContent = "";
-                        authBtn.textContent = "Login";
-                        authBtn.classList.remove("btn-danger");
-                        authBtn.classList.add("btn-primary");
-                        authBtn.onclick = () => location.href = "login.html";
-                    }).catch(error => console.error("Gagal logout:", error));
+                    let confirmLogout = confirm("Apakah Anda yakin ingin logout?");
+                    if (confirmLogout) {
+                        signOut(auth).then(() => {
+                            userInfo.textContent = "";
+                            authBtn.textContent = "Login";
+                            authBtn.classList.remove("btn-danger");
+                            authBtn.classList.add("btn-primary");
+                            authBtn.onclick = () => location.href = "login.html";
+                        }).catch(error => console.error("Gagal logout:", error));
+                    }
                 };
             } else {
                 userInfo.textContent = "";
@@ -108,6 +111,7 @@
                 authBtn.onclick = () => location.href = "login.html";
             }
         });
+
 
         window.db = db;
         window.ref = ref;
