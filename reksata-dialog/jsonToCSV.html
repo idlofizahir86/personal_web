@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi JSON ke CSV</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+        }
+        .drop-zone {
+            border: 2px dashed #007bff;
+            padding: 30px;
+            text-align: center;
+            color: #007bff;
+            cursor: pointer;
+            background-color: #e9f5ff;
+            border-radius: 10px;
+            transition: all 0.3s ease-in-out;
+        }
+        .drop-zone:hover {
+            background-color: #d0ebff;
+        }
+        .drop-zone.dragover {
+            background-color: #cfe2ff;
+        }
+        .hidden {
+            display: none;
+        }
+        #fileName {
+            font-weight: bold;
+            color: #28a745;
+        }
+        .progress {
+            height: 10px;
+            margin-top: 10px;
+            display: none;
+        }
+        .progress-bar {
+            width: 0%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2 class="text-center mb-4">Konversi JSON ke CSV</h2>
+    
+    <!-- Drag & Drop Area -->
+    <div id="dropZone" class="drop-zone">
+        <p><i class="fas fa-upload"></i> Seret dan lepas file JSON di sini atau klik untuk memilih</p>
+        <input type="file" id="jsonFile" accept=".json" class="hidden">
+        <p id="fileName" class="mt-2"></p>
+    </div>
+
+    <!-- Progress Loader -->
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary"></div>
+    </div>
+
+    <button id="convertBtn" class="btn btn-primary w-100 mt-3" disabled><i class="fas fa-sync-alt"></i> Konversi ke CSV</button>
+
+    <a id="downloadLink" class="btn btn-success w-100 mt-3 hidden"><i class="fas fa-download"></i> Unduh CSV</a>
+</div>
+
+<script>
+    const dropZone = document.getElementById('dropZone');
+    const fileInput = document.getElementById('jsonFile');
+    const convertBtn = document.getElementById('convertBtn');
+    const downloadLink = document.getElementById('downloadLink');
+    const fileNameDisplay = document.getElementById('fileName');
+    const progressBar = document.querySelector('.progress');
+    const progress = document.querySelector('.progress-bar');
+
+    dropZone.addEventListener('click', () => fileInput.click());
+
+    dropZone.addEventListener('dragover', (event) => {
+        event.preventDefault();
+        dropZone.classList.add('dragover');
+    });
+
+    dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('dragover');
+    });
+
+    dropZone.addEventListener('drop', (event) => {
+        event.preventDefault();
+        dropZone.classList.remove('dragover');
+        fileInput.files = event.dataTransfer.files;
+        handleFileUpload();
+    });
+
+    fileInput.addEventListener('change', handleFileUpload);
+
+    function handleFileUpload() {
+        if (fileInput.files.length) {
+            fileNameDisplay.textContent = `File: ${fileInput.files[0].name}`;
+            fileNameDisplay.style.color = "#28a745";
+            convertBtn.disabled = false;
+        } else {
+            fileNameDisplay.textContent = "";
+            convertBtn.disabled = true;
+        }
+    }
+
+    convertBtn.addEventListener('click', () => {
+        if (!fileInput.files.length) {
+            alert('Pilih atau unggah file JSON terlebih dahulu!');
+            return;
+        }
+
+        const file = fileInput.files[0];
+        const reader = new FileReader();
+
+        progressBar.style.display = "block";
+        progress.style.width = "0%";
+
+        reader.onload = function(event) {
+            try {
+                let jsonText = event.target.result.trim();
+
+                if (jsonText.charCodeAt(0) === 0xFEFF) {
+                    jsonText = jsonText.slice(1);
+                }
+
+                let jsonData = jsonText.split("\n").filter(line => line.trim() !== "").map(line => JSON.parse(line));
+
+                progress.style.width = "50%";
+
+                setTimeout(() => {
+                    const csv = convertJSONtoCSV(jsonData);
+                    downloadCSV(csv);
+                    progress.style.width = "100%";
+                }, 500);
+            } catch (error) {
+                alert('Format JSON tidak valid!');
+                console.error(error);
+                progressBar.style.display = "none";
+            }
+        };
+
+        reader.readAsText(file);
+    });
+
+    function convertJSONtoCSV(jsonData) {
+        if (!jsonData.length) return '';
+        const headers = Object.keys(jsonData[0]).join(',');
+        const rows = jsonData.map(obj => 
+            Object.values(obj).map(val => `"${val}"`).join(',')
+        );
+        return `${headers}\n${rows.join('\n')}`;
+    }
+
+    function downloadCSV(csvContent) {
+        const blob = new Blob([csvContent], { type: 'text/csv' });
+        const url = URL.createObjectURL(blob);
+
+        downloadLink.href = url;
+        downloadLink.download = 'output.csv';
+        downloadLink.classList.remove('hidden');
+        downloadLink.textContent = 'Unduh CSV';
+
+        progressBar.style.display = "none";
+    }
+</script>
+
+</body>
+</html>

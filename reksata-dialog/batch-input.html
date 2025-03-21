@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batch Input - Upload JSON/CSV</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .drop-zone {
+            border: 2px dashed #007bff;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .drop-zone.dragover {
+            background-color: #e0f2ff;
+        }
+        .progress-bar {
+            height: 20px;
+            background-color: #28a745;
+            width: 0%;
+            transition: width 0.4s;
+        }
+        #log {
+            margin-top: 10px;
+            padding: 10px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Batch Input - Upload JSON/CSV</h1>
+        <div class="card p-4">
+            <h4>Upload File</h4>
+            <div class="drop-zone" id="dropZone">Drop file di sini atau klik untuk unggah</div>
+            <input type="file" id="fileInput" class="form-control mt-3" accept=".json,.csv" hidden>
+            <button class="btn btn-primary mt-3" id="uploadBtn" disabled><i class="fa fa-upload"></i> Upload</button>
+            <div class="progress mt-3" style="display: none;">
+                <div class="progress-bar" id="uploadProgress"></div>
+            </div>
+            <div id="log"><strong>Log:</strong><br></div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+        import { getDatabase, ref, set, push } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAGTrcgg0bUGS8nS11uUsfU_5ymkNY_dZ8",
+            authDomain: "reksata-dialog.firebaseapp.com",
+            databaseURL: "https://reksata-dialog-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "reksata-dialog",
+            storageBucket: "reksata-dialog.appspot.com",
+            messagingSenderId: "1048714287798",
+            appId: "1:1048714287798:web:b183831c52549a0404e417"
+        };
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        const dropZone = document.getElementById("dropZone");
+        const fileInput = document.getElementById("fileInput");
+        const uploadBtn = document.getElementById("uploadBtn");
+        const progressBar = document.getElementById("uploadProgress");
+        const logDiv = document.getElementById("log");
+        let selectedFile;
+
+        function logMessage(message) {
+            logDiv.innerHTML += message + "<br>";
+            logDiv.scrollTop = logDiv.scrollHeight;
+        }
+
+        dropZone.addEventListener("click", () => fileInput.click());
+        dropZone.addEventListener("dragover", (e) => {
+            e.preventDefault();
+            dropZone.classList.add("dragover");
+        });
+        dropZone.addEventListener("dragleave", () => dropZone.classList.remove("dragover"));
+        dropZone.addEventListener("drop", (e) => {
+            e.preventDefault();
+            dropZone.classList.remove("dragover");
+            selectedFile = e.dataTransfer.files[0];
+            validateFile();
+        });
+        fileInput.addEventListener("change", (e) => {
+            selectedFile = e.target.files[0];
+            validateFile();
+        });
+        
+        function validateFile() {
+            if (selectedFile && (selectedFile.name.endsWith(".json") || selectedFile.name.endsWith(".csv"))) {
+                dropZone.textContent = `File terpilih: ${selectedFile.name}`;
+                uploadBtn.disabled = false;
+            } else {
+                alert("Harap unggah file dengan format JSON atau CSV.");
+                selectedFile = null;
+                uploadBtn.disabled = true;
+            }
+        }
+        
+        uploadBtn.addEventListener("click", () => {
+            if (!selectedFile) return;
+            
+            logMessage("Memulai upload file...");
+            progressBar.style.width = "0%";
+            progressBar.parentElement.style.display = "block";
+
+            const reader = new FileReader();
+            reader.onload = async (e) => {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    const dbRef = ref(db, 'uploads');
+                    logMessage("Mengunggah data ke Firebase...");
+                    
+                    push(dbRef, data).then(() => {
+                        progressBar.style.width = "100%";
+                        logMessage("Upload selesai!");
+                        alert("Data berhasil diunggah!");
+                    }).catch(error => {
+                        logMessage("Gagal mengunggah ke Firebase: " + error.message);
+                        alert("Gagal mengunggah ke Firebase.");
+                    });
+                } catch (error) {
+                    logMessage("Format JSON tidak valid.");
+                    alert("Format JSON tidak valid.");
+                }
+            };
+            reader.readAsText(selectedFile);
+        });
+    </script>
+</body>
+</html>
