@@ -42,6 +42,7 @@
             <div class="drop-zone" id="dropZone">Drop file di sini atau klik untuk unggah</div>
             <input type="file" id="fileInput" class="form-control mt-3" accept=".json,.csv" hidden>
             <button class="btn btn-primary mt-3" id="uploadBtn" disabled><i class="fa fa-upload"></i> Upload</button>
+            <button class="btn btn-secondary mt-3" onclick="window.location.href='index.html'"><i class="fa fa-arrow-left"></i> Kembali</button>
             <div class="progress mt-3" style="display: none;">
                 <div class="progress-bar" id="uploadProgress"></div>
             </div>
@@ -49,18 +50,19 @@
         </div>
     </div>
 
+    
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
         import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js";
 
         const firebaseConfig = {
-            apiKey: "YOUR_API_KEY",
-            authDomain: "YOUR_AUTH_DOMAIN",
-            databaseURL: "YOUR_DATABASE_URL",
-            projectId: "YOUR_PROJECT_ID",
-            storageBucket: "YOUR_STORAGE_BUCKET",
-            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-            appId: "YOUR_APP_ID"
+            apiKey: "AIzaSyAGTrcgg0bUGS8nS11uUsfU_5ymkNY_dZ8",
+            authDomain: "reksata-dialog.firebaseapp.com",
+            databaseURL: "https://reksata-dialog-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "reksata-dialog",
+            storageBucket: "reksata-dialog.appspot.com",
+            messagingSenderId: "1048714287798",
+            appId: "1:1048714287798:web:b183831c52549a0404e417"
         };
 
         const app = initializeApp(firebaseConfig);
@@ -166,5 +168,6 @@
             return result;
         }
     </script>
+
 </body>
 </html>
