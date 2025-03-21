@@ -50,7 +50,6 @@
         </div>
     </div>
 
-    
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
         import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js";
@@ -126,6 +125,7 @@
                     }
                     
                     if (!Array.isArray(data)) throw new Error("Format data tidak valid");
+                    
                     data.forEach(item => {
                         if (!item.intent || !item.message) throw new Error("Data tidak memiliki 'intent' atau 'message'");
                     });
@@ -168,6 +168,5 @@
             return result;
         }
     </script>
-
 </body>
 </html>
