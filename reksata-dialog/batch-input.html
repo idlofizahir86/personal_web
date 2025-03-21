@@ -123,20 +123,24 @@
             const reader = new FileReader();
             reader.onload = async (e) => {
                 try {
-                    let data = selectedFile.name.endsWith(".json") ? JSON.parse(e.target.result) : parseCSV(e.target.result);
-                    
-                    if (!Array.isArray(data)) {
-                        data = [data];
-                    }
-                    
-                    data = data.map(item => {
-                        let newItem = {};
-                        for (let key in item) {
-                            newItem[key] = item[key].replace(/^"|"$/g, "");
+                    let rawData = e.target.result.trim();
+                    let data;
+
+                    try {
+                        // Coba parsing JSON biasa
+                        data = JSON.parse(rawData);
+                        if (!Array.isArray(data)) {
+                            data = [data];
                         }
-                        return newItem;
-                    });
-                    
+                    } catch (jsonError) {
+                        try {
+                            // Jika gagal, coba parsing sebagai NDJSON
+                            data = rawData.split("\n").map(line => JSON.parse(line.trim()));
+                        } catch (ndjsonError) {
+                            throw new Error("Format JSON tidak valid: pastikan dalam bentuk array atau NDJSON.");
+                        }
+                    }
+
                     const dbRef = ref(db, 'messages');
                     data.forEach(item => push(dbRef, item));
 
