@@ -23,7 +23,9 @@
             <a href="index.html" class="btn btn-secondary">
                 <i class="fa fa-arrow-left"></i> Kembali
             </a>
-            <button class="btn btn-primary" onclick="fetchJSONFromFirebase()">Lihat Data Raw</button>
+            <a href="index.html" class="btn btn-secondary">
+                <i class="fa fa-arrow-left"></i> Lihat Data Raw
+            </a>
         </div>
 
         <table id="dataTable" class="table table-striped table-bordered">
@@ -64,25 +66,7 @@
         const db = getDatabase(app);
         const auth = getAuth(app);
 
-        // Fungsi untuk mengambil data JSON dari Firebase
-        async function fetchJSONFromFirebase() {
-            try {
-                const dbRef = ref(db, "messages"); // Path di database Firebase
-                const snapshot = await get(dbRef);
-
-                if (snapshot.exists()) {
-                    const data = snapshot.val();
-                    console.log("Data dari Firebase:", data);
-                } else {
-                    console.log("Data tidak ditemukan di Firebase.");
-                }
-            } catch (error) {
-                console.error("Gagal mengambil data dari Firebase:", error);
-            }
-        }
-
-        // Panggil fungsi saat halaman dimuat
-        fetchJSONFromFirebase();
+       
 
         onAuthStateChanged(auth, (user) => {
             const aksiHeader = document.getElementById("aksi-kolom");
