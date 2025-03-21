@@ -50,6 +50,12 @@
         </div>
     </div>
 
+    <footer class="text-center mt-4 p-3 bg-light">
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/idlofi-zahir-rajaba/" target="_blank">Idlofi Zahir Rajaba</a></p>
+        <p>GitHub: <a href="https://github.com/idlofizahir86/" target="_blank">idlofizahir86</a></p>
+        <p><small>Website ini dibuat untuk eksperimen dan pengembangan, bukan untuk kepentingan komersial.</small></p>
+    </footer>
+
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
         import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js";
@@ -117,23 +123,22 @@
             const reader = new FileReader();
             reader.onload = async (e) => {
                 try {
-                    let data;
-                    if (selectedFile.name.endsWith(".json")) {
-                        data = JSON.parse(e.target.result);
-                    } else {
-                        data = parseCSV(e.target.result);
+                    let data = selectedFile.name.endsWith(".json") ? JSON.parse(e.target.result) : parseCSV(e.target.result);
+                    
+                    if (!Array.isArray(data)) {
+                        data = [data];
                     }
                     
-                    if (!Array.isArray(data)) throw new Error("Format data tidak valid");
-                    
-                    data.forEach(item => {
-                        if (!item.intent || !item.message) throw new Error("Data tidak memiliki 'intent' atau 'message'");
+                    data = data.map(item => {
+                        let newItem = {};
+                        for (let key in item) {
+                            newItem[key] = item[key].replace(/^"|"$/g, "");
+                        }
+                        return newItem;
                     });
                     
                     const dbRef = ref(db, 'messages');
-                    data.forEach(item => {
-                        push(dbRef, item);
-                    });
+                    data.forEach(item => push(dbRef, item));
 
                     progressBar.style.width = "100%";
                     logMessage("Upload selesai!");
@@ -151,16 +156,12 @@
             const headers = lines[0].split(",");
             const result = [];
             
-            if (!headers.includes("intent") || !headers.includes("message")) {
-                throw new Error("CSV harus memiliki header 'intent' dan 'message'");
-            }
-            
             for (let i = 1; i < lines.length; i++) {
                 let values = lines[i].split(",");
                 if (values.length === headers.length) {
                     let obj = {};
                     headers.forEach((header, index) => {
-                        obj[header.trim()] = values[index].trim();
+                        obj[header.trim()] = values[index].trim().replace(/^"|"$/g, "");
                     });
                     result.push(obj);
                 }
