@@ -1,0 +1,560 @@
+{"intent":"cari_saham_berisiko_rendah","message":"Saya mencari saham dengan return tinggi tetapi risiko rendah di IHSG."}
+{"intent":"cari_saham_berisiko_rendah","message":"Apakah ada saham yang risikonya rendah tapi tetap menguntungkan?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saham apa yang memberikan dividen besar dengan risiko kecil?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya mencari saham stabil dengan risiko kecil untuk jangka panjang."}
+{"intent":"cari_saham_berisiko_rendah","message":"Saham apa yang cocok untuk investasi dengan volatilitas rendah tahun ini?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Apakah ada saham dengan risiko rendah tetapi memberikan peluang pertumbuhan stabil?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya ingin tahu saham yang aman untuk investor konservatif."}
+{"intent":"cari_saham_berisiko_rendah","message":"Saham apa yang memiliki risiko kecil untuk pemula?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya mencari saham yang cocok untuk strategi investasi jangka panjang dengan risiko rendah."}
+{"intent":"cari_saham_berisiko_rendah","message":"Apakah ada saham di sektor consumer goods dengan risiko kecil?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saham apa yang memberikan return stabil tetapi aman dari volatilitas pasar?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya butuh rekomendasi saham dengan volatilitas rendah."}
+{"intent":"cari_saham_berisiko_rendah","message":"Apakah ada saham dengan risiko kecil tetapi memberikan dividen reguler?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya mencari saham aman di IHSG untuk investasi konservatif."}
+{"intent":"cari_saham_berisiko_rendah","message":"Saham sektor properti mana yang memiliki risiko paling rendah tahun ini?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya mencari saham di sektor consumer goods yang volatilitasnya kecil."}
+{"intent":"cari_saham_berisiko_rendah","message":"Apakah ada saham yang aman untuk strategi dollar cost averaging?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya mencari saham yang memberikan return tinggi dengan risiko minimal."}
+{"intent":"cari_saham_berisiko_rendah","message":"Saham apa yang cocok untuk portofolio konservatif?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya butuh rekomendasi saham risiko kecil yang memberikan peluang stabil."}
+{"intent":"cari_saham_berisiko_rendah","message":"Apakah ada saham dengan performa stabil tetapi risiko minimal?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya mencari saham aman yang cocok untuk investor pemula di IHSG."}
+{"intent":"cari_saham_berisiko_rendah","message":"Apakah ada saham dengan risiko kecil untuk investasi jangka panjang di sektor teknologi?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya butuh rekomendasi saham risiko kecil untuk portofolio diversifikasi."}
+{"intent":"cari_saham_berisiko_rendah","message":"Saham apa yang aman untuk investasi konservatif di sektor keuangan?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya ingin tahu saham risiko kecil yang memberikan dividen besar tahun ini."}
+{"intent":"cari_saham_berisiko_rendah","message":"Apakah ada saham dengan risiko rendah tetapi return stabil di sektor energi?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saham apa yang aman untuk portofolio pemula di pasar saham Indonesia?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saya mencari saham dengan risiko sedang yang cocok untuk investor moderat."}
+{"intent":"cari_saham_berisiko_sedang","message":"Apakah ada saham sektor kesehatan dengan profil risiko sedang?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saham apa yang memberikan keseimbangan antara risiko dan return stabil?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saya ingin rekomendasi saham dengan risiko moderat di sektor energi."}
+{"intent":"cari_saham_berisiko_sedang","message":"Apakah ada saham yang cocok untuk strategi investasi dengan risiko sedang?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saham sektor teknologi mana yang memiliki profil risiko moderat?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saya mencari saham dengan risiko sedang untuk diversifikasi portofolio."}
+{"intent":"cari_saham_berisiko_sedang","message":"Apakah ada saham yang menawarkan return stabil dengan risiko moderat?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saham sektor properti apa yang memiliki risiko sedang?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saya ingin tahu saham dengan profil risiko moderat untuk investasi jangka panjang."}
+{"intent":"cari_saham_berisiko_sedang","message":"Saham mana yang cocok untuk investor dengan toleransi risiko moderat?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saya mencari saham di IHSG yang memiliki keseimbangan risiko sedang."}
+{"intent":"cari_saham_berisiko_sedang","message":"Apakah ada saham di sektor consumer goods yang memiliki risiko sedang?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saham apa yang bisa memberikan return moderat dengan risiko sedang?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saya ingin rekomendasi saham dengan volatilitas sedang di pasar Indonesia."}
+{"intent":"cari_saham_berisiko_sedang","message":"Apakah ada saham sektor tambang yang cocok untuk investor dengan profil risiko moderat?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saya mencari saham yang menawarkan keseimbangan risiko sedang dan stabilitas return."}
+{"intent":"cari_saham_berisiko_sedang","message":"Saham sektor kesehatan apa yang memiliki profil risiko moderat?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Apakah ada saham di sektor energi yang cocok untuk investor moderat?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saya ingin tahu saham dengan tingkat risiko sedang untuk investasi spekulatif jangka pendek."}
+{"intent":"cari_saham_berisiko_sedang","message":"Saham apa yang memberikan return stabil dengan risiko sedang di pasar Indonesia?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saya mencari saham dengan volatilitas sedang untuk portofolio investasi."}
+{"intent":"cari_saham_berisiko_sedang","message":"Apakah ada saham sektor properti yang menawarkan return stabil dengan risiko moderat?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saya ingin rekomendasi saham sektor keuangan dengan risiko sedang."}
+{"intent":"cari_saham_berisiko_sedang","message":"Saham mana yang paling cocok untuk investor moderat di sektor consumer goods?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saya ingin tahu saham yang cocok untuk portofolio risiko moderat."}
+{"intent":"cari_saham_berisiko_sedang","message":"Apakah ada saham yang memiliki tingkat risiko sedang tetapi memberikan dividen besar?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saya mencari saham sektor teknologi dengan risiko moderat untuk investasi jangka panjang."}
+{"intent":"cari_saham_berisiko_sedang","message":"Saham apa yang paling cocok untuk strategi investasi dengan risiko sedang di IHSG?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saham mana yang memiliki peluang pertumbuhan besar di sektor teknologi?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saya mencari saham dengan potensi keuntungan tinggi tahun ini."}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Apakah ada saham di sektor energi yang diprediksi memiliki pertumbuhan signifikan?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saham sektor properti mana yang berpotensi memberikan return besar?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saya ingin tahu saham dengan prospek pertumbuhan jangka panjang."}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Apakah ada saham teknologi dengan peluang keuntungan besar tahun ini?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saham sektor consumer goods mana yang diprediksi memiliki pertumbuhan tinggi?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saya mencari saham dengan potensi terbaik di IHSG tahun ini."}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saham mana yang memiliki peluang pertumbuhan cepat di pasar saham Indonesia?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Apakah ada saham baru yang menawarkan potensi keuntungan tinggi?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saya butuh rekomendasi saham dengan return besar di sektor kesehatan."}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Apakah ada saham dengan potensi terbaik di sektor teknologi?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saham mana yang diprediksi memberikan keuntungan maksimal di pasar tahun ini?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saya mencari saham sektor energi yang memiliki peluang pertumbuhan besar."}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saham teknologi apa yang diprediksi menjadi pemimpin pasar tahun ini?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Apakah ada saham sektor properti dengan peluang keuntungan signifikan?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saya mencari saham yang diproyeksikan tumbuh pesat dalam jangka pendek."}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saham sektor kesehatan mana yang memiliki potensi keuntungan terbaik?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Apakah ada saham yang diprediksi tumbuh lebih dari rata-rata di IHSG?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saya mencari saham dengan return tinggi dalam jangka waktu menengah."}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saham mana yang menjadi pilihan terbaik untuk investasi tahun ini?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Apakah ada saham baru di sektor teknologi yang memiliki peluang besar?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saya ingin tahu saham sektor tambang yang diprediksi memiliki pertumbuhan tinggi."}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saham mana yang dianggap undervalued dengan prospek pertumbuhan tinggi?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Apakah ada saham yang diprediksi tumbuh pesat di sektor consumer goods?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saham sektor teknologi mana yang memiliki prospek return besar?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saya butuh saham dengan peluang pertumbuhan besar dalam satu tahun ke depan."}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Apakah ada saham di sektor properti yang menawarkan return besar?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saya mencari saham dengan potensi keuntungan maksimal di sektor energi."}
+{"intent":"tanya_performa_saham","message":"Bagaimana performa saham BBCA dalam 5 tahun terakhir?"}
+{"intent":"tanya_performa_saham","message":"Apakah saham UNVR memberikan return stabil sepanjang tahun ini?"}
+{"intent":"tanya_performa_saham","message":"Saya ingin tahu bagaimana perkembangan saham ANTM selama setahun terakhir."}
+{"intent":"tanya_performa_saham","message":"Bagaimana kinerja saham TLKM di kuartal terakhir?"}
+{"intent":"tanya_performa_saham","message":"Apakah saham sektor consumer goods seperti ICBP cukup stabil?"}
+{"intent":"tanya_performa_saham","message":"Bagaimana volatilitas saham BBRI dalam setahun terakhir?"}
+{"intent":"tanya_performa_saham","message":"Saya mencari informasi tentang stabilitas return dari saham INDF."}
+{"intent":"tanya_performa_saham","message":"Seberapa baik performa saham sektor properti seperti PWON di tahun ini?"}
+{"intent":"tanya_performa_saham","message":"Apakah saham sektor energi seperti ADRO menunjukkan tren positif tahun ini?"}
+{"intent":"tanya_performa_saham","message":"Saya ingin tahu apakah saham UNVR mengalami pertumbuhan dalam 6 bulan terakhir."}
+{"intent":"tanya_performa_saham","message":"Bagaimana performa saham sektor teknologi seperti MTDL selama setahun terakhir?"}
+{"intent":"tanya_performa_saham","message":"Apakah saham sektor kesehatan seperti KLBF stabil sepanjang kuartal ini?"}
+{"intent":"tanya_performa_saham","message":"Bagaimana kinerja saham sektor tambang seperti MDKA dalam satu tahun terakhir?"}
+{"intent":"tanya_performa_saham","message":"Seberapa konsisten return saham GGRM selama 5 tahun terakhir?"}
+{"intent":"tanya_performa_saham","message":"Saya ingin tahu apakah saham INCO mengalami kenaikan atau penurunan di tahun ini."}
+{"intent":"tanya_performa_saham","message":"Apakah saham sektor properti seperti CTRA memberikan return yang cukup baik?"}
+{"intent":"tanya_performa_saham","message":"Bagaimana performa saham sektor consumer goods seperti MYOR?"}
+{"intent":"tanya_performa_saham","message":"Apakah saham sektor teknologi seperti WIRG mengalami pertumbuhan pesat?"}
+{"intent":"tanya_performa_saham","message":"Saya ingin tahu bagaimana volatilitas saham BMRI selama setahun terakhir."}
+{"intent":"tanya_performa_saham","message":"Bagaimana tren return dari saham BFIN sepanjang tahun ini?"}
+{"intent":"tanya_performa_saham","message":"Apakah saham sektor energi seperti PGAS menunjukkan stabilitas?"}
+{"intent":"tanya_performa_saham","message":"Saya mencari informasi tentang kinerja saham sektor kesehatan seperti HEAL."}
+{"intent":"tanya_performa_saham","message":"Bagaimana perkembangan saham sektor consumer goods seperti ROTI di tahun ini?"}
+{"intent":"tanya_performa_saham","message":"Apakah saham sektor tambang seperti TINS memberikan return yang stabil?"}
+{"intent":"tanya_performa_saham","message":"Bagaimana performa saham sektor teknologi seperti ASII tahun ini?"}
+{"intent":"tanya_performa_saham","message":"Apakah saham sektor keuangan seperti BTPS cukup stabil dalam beberapa bulan terakhir?"}
+{"intent":"tanya_performa_saham","message":"Bagaimana perkembangan return saham sektor properti seperti SMRA sepanjang tahun ini?"}
+{"intent":"tanya_performa_saham","message":"Apakah saham sektor consumer goods seperti HMSP memberikan dividen konsisten?"}
+{"intent":"tanya_performa_saham","message":"Seberapa stabil kinerja saham sektor energi seperti INDY dalam 2 tahun terakhir?"}
+{"intent":"tanya_strategi_investasi","message":"Apa strategi terbaik untuk investasi jangka panjang di pasar saham Indonesia?"}
+{"intent":"tanya_strategi_investasi","message":"Bagaimana cara efektif untuk diversifikasi portofolio saham?"}
+{"intent":"tanya_strategi_investasi","message":"Strategi apa yang cocok untuk investor pemula di sektor properti?"}
+{"intent":"tanya_strategi_investasi","message":"Apakah dollar cost averaging efektif untuk saham teknologi?"}
+{"intent":"tanya_strategi_investasi","message":"Apa metode terbaik untuk mengelola risiko di portofolio saham?"}
+{"intent":"tanya_strategi_investasi","message":"Bagaimana cara meningkatkan keuntungan investasi jangka pendek di IHSG?"}
+{"intent":"tanya_strategi_investasi","message":"Strategi apa yang paling cocok untuk saham sektor energi?"}
+{"intent":"tanya_strategi_investasi","message":"Apakah value investing cocok untuk pasar saham Indonesia?"}
+{"intent":"tanya_strategi_investasi","message":"Bagaimana cara mengelola portofolio saham sektor consumer goods?"}
+{"intent":"tanya_strategi_investasi","message":"Apa strategi investasi yang aman untuk profil risiko konservatif?"}
+{"intent":"tanya_strategi_investasi","message":"Apakah strategi growth investing cocok untuk sektor teknologi?"}
+{"intent":"tanya_strategi_investasi","message":"Bagaimana cara menentukan saham undervalued di IHSG?"}
+{"intent":"tanya_strategi_investasi","message":"Strategi investasi apa yang disarankan untuk menghadapi volatilitas pasar?"}
+{"intent":"tanya_strategi_investasi","message":"Bagaimana cara memaksimalkan keuntungan dengan investasi di saham blue chip?"}
+{"intent":"tanya_strategi_investasi","message":"Apakah ada strategi khusus untuk investasi di sektor kesehatan?"}
+{"intent":"tanya_strategi_investasi","message":"Bagaimana cara memilih saham untuk strategi investasi jangka menengah?"}
+{"intent":"tanya_strategi_investasi","message":"Apa pendekatan terbaik untuk investasi di saham IPO baru?"}
+{"intent":"tanya_strategi_investasi","message":"Strategi apa yang cocok untuk investor moderat di sektor properti?"}
+{"intent":"tanya_strategi_investasi","message":"Apakah day trading bisa dilakukan secara aman di pasar saham Indonesia?"}
+{"intent":"tanya_strategi_investasi","message":"Bagaimana cara mengelola investasi di saham sektor tambang?"}
+{"intent":"tanya_strategi_investasi","message":"Apa tips untuk pemula dalam mengelola portofolio saham kecil?"}
+{"intent":"tanya_strategi_investasi","message":"Bagaimana strategi terbaik untuk investasi di saham sektor keuangan?"}
+{"intent":"tanya_strategi_investasi","message":"Apakah strategi investasi berbasis dividen cocok untuk profil risiko rendah?"}
+{"intent":"tanya_strategi_investasi","message":"Bagaimana cara menentukan alokasi aset di portofolio saham?"}
+{"intent":"tanya_strategi_investasi","message":"Strategi apa yang direkomendasikan untuk investasi saham jangka panjang?"}
+{"intent":"tanya_strategi_investasi","message":"Bagaimana cara menghadapi koreksi pasar dalam investasi saham?"}
+{"intent":"tanya_strategi_investasi","message":"Apakah ada pendekatan khusus untuk investasi di sektor energi?"}
+{"intent":"tanya_strategi_investasi","message":"Bagaimana cara memaksimalkan return dengan diversifikasi portofolio?"}
+{"intent":"tanya_strategi_investasi","message":"Strategi apa yang cocok untuk investasi saham dengan volatilitas tinggi?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saham sektor teknologi mana yang memiliki risiko rendah?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saya mencari saham di sektor properti yang aman untuk investasi jangka panjang."}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Apakah ada saham sektor kesehatan yang memiliki volatilitas rendah?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saya ingin tahu saham sektor energi yang risikonya kecil di IHSG."}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Apakah ada saham properti dengan risiko rendah untuk portofolio konservatif?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saham sektor keuangan apa yang cocok untuk investasi risiko rendah?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saya mencari saham sektor teknologi yang aman dari volatilitas tinggi."}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Apakah ada saham kesehatan dengan risiko kecil tetapi return stabil?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saham properti mana yang memiliki profil risiko paling rendah?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saya ingin tahu saham sektor tambang yang memiliki risiko kecil."}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Apakah ada saham energi yang cocok untuk profil risiko rendah?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saham sektor consumer goods apa yang memiliki volatilitas rendah?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saya mencari saham risiko kecil di sektor teknologi untuk portofolio jangka panjang."}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Apakah ada saham sektor kesehatan yang aman untuk investor konservatif?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saham properti mana yang memberikan stabilitas dengan risiko kecil?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saya mencari saham sektor energi dengan risiko minim untuk investasi stabil."}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Apakah ada saham sektor keuangan yang aman untuk investasi risiko rendah?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saham sektor teknologi apa yang memberikan return dengan risiko kecil?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saya mencari saham sektor consumer goods dengan risiko rendah untuk portofolio saya."}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Apakah ada saham kesehatan yang cocok untuk strategi konservatif?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saham sektor properti apa yang memiliki performa stabil dengan risiko kecil?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saya ingin tahu saham sektor energi dengan risiko kecil tetapi memberikan return stabil."}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Apakah ada saham sektor teknologi yang cocok untuk pemula dengan risiko rendah?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saham sektor kesehatan mana yang paling aman untuk investasi jangka panjang?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saya mencari saham sektor tambang yang aman dengan volatilitas minim."}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Apakah ada saham properti yang memberikan return dengan risiko paling kecil?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saham sektor consumer goods mana yang cocok untuk portofolio konservatif?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Apakah ada saham di sektor kesehatan dengan profil risiko kecil?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saham sektor energi apa yang paling aman untuk investor moderat?"}
+{"intent":"akhiri_percakapan","message":"Terima kasih banyak atas bantuannya, sampai jumpa!"}
+{"intent":"akhiri_percakapan","message":"Saya sangat terbantu, terima kasih!"}
+{"intent":"akhiri_percakapan","message":"Cukup untuk saat ini, terima kasih banyak atas informasinya!"}
+{"intent":"akhiri_percakapan","message":"Sampai jumpa, terima kasih atas bantuan Anda hari ini!"}
+{"intent":"akhiri_percakapan","message":"Terima kasih atas penjelasan Anda, saya akan mempertimbangkan semuanya."}
+{"intent":"akhiri_percakapan","message":"Informasi ini sangat berguna, terima kasih banyak!"}
+{"intent":"akhiri_percakapan","message":"Baik, itu cukup untuk sekarang. Terima kasih!"}
+{"intent":"akhiri_percakapan","message":"Terima kasih atas waktu Anda, sampai lain kali!"}
+{"intent":"akhiri_percakapan","message":"Saya sangat terbantu dengan diskusi ini, terima kasih!"}
+{"intent":"akhiri_percakapan","message":"Informasi ini sangat bermanfaat, terima kasih banyak atas bantuannya!"}
+{"intent":"akhiri_percakapan","message":"Terima kasih banyak atas penjelasannya, sampai jumpa lagi!"}
+{"intent":"akhiri_percakapan","message":"Cukup jelas untuk saya sekarang. Terima kasih atas bantuannya!"}
+{"intent":"akhiri_percakapan","message":"Sampai jumpa, terima kasih atas waktu Anda!"}
+{"intent":"akhiri_percakapan","message":"Saya sangat menghargai bantuan Anda, terima kasih!"}
+{"intent":"akhiri_percakapan","message":"Baik, itu sudah cukup membantu. Terima kasih banyak!"}
+{"intent":"akhiri_percakapan","message":"Terima kasih banyak atas informasi ini, saya sangat menghargainya!"}
+{"intent":"akhiri_percakapan","message":"Saya sangat berterima kasih atas penjelasan yang Anda berikan."}
+{"intent":"akhiri_percakapan","message":"Sampai jumpa lagi, terima kasih atas bantuannya!"}
+{"intent":"akhiri_percakapan","message":"Cukup untuk hari ini, terima kasih atas diskusinya!"}
+{"intent":"akhiri_percakapan","message":"Terima kasih, itu sangat membantu saya!"}
+{"intent":"akhiri_percakapan","message":"Baik, sampai lain waktu. Terima kasih atas waktu dan informasinya!"}
+{"intent":"akhiri_percakapan","message":"Saya sangat menghargai bantuan yang Anda berikan, terima kasih!"}
+{"intent":"akhiri_percakapan","message":"Terima kasih atas semua penjelasannya, saya sangat terbantu!"}
+{"intent":"akhiri_percakapan","message":"Itu sudah cukup jelas untuk saya, sampai jumpa lagi!"}
+{"intent":"akhiri_percakapan","message":"Terima kasih atas kesediaan waktunya, saya sangat terbantu!"}
+{"intent":"akhiri_percakapan","message":"Baik, sampai lain kali. Terima kasih atas bantuannya!"}
+{"intent":"akhiri_percakapan","message":"Saya sangat menghargai waktu yang Anda luangkan, terima kasih!"}
+{"intent":"akhiri_percakapan","message":"Informasi ini sangat membantu, saya sangat berterima kasih!"}
+{"intent":"cari_saham_kategorikal","message":"Apakah ada saham sektor teknologi yang sedang berkembang tahun ini?"}
+{"intent":"cari_saham_kategorikal","message":"Saham properti mana yang memberikan peluang pertumbuhan terbaik?"}
+{"intent":"cari_saham_kategorikal","message":"Saya mencari saham di sektor kesehatan yang prospektif untuk investasi."}
+{"intent":"cari_saham_kategorikal","message":"Apakah ada saham sektor consumer goods dengan kinerja yang baik tahun ini?"}
+{"intent":"cari_saham_kategorikal","message":"Saham sektor energi mana yang direkomendasikan untuk investasi saat ini?"}
+{"intent":"cari_saham_kategorikal","message":"Saya ingin tahu saham sektor tambang yang menunjukkan tren positif."}
+{"intent":"cari_saham_kategorikal","message":"Apakah ada saham di kategori properti yang memiliki pertumbuhan stabil?"}
+{"intent":"cari_saham_kategorikal","message":"Saham teknologi mana yang sedang tren naik dalam pasar saat ini?"}
+{"intent":"cari_saham_kategorikal","message":"Saya mencari saham consumer goods dengan prospek keuntungan tinggi."}
+{"intent":"cari_saham_kategorikal","message":"Apakah ada saham di sektor energi yang sedang populer di kalangan investor?"}
+{"intent":"cari_saham_kategorikal","message":"Saham sektor kesehatan apa yang sedang menarik perhatian pasar?"}
+{"intent":"cari_saham_kategorikal","message":"Saya ingin mengetahui saham properti dengan kinerja paling konsisten."}
+{"intent":"cari_saham_kategorikal","message":"Apakah ada saham teknologi yang menjanjikan di pasar Indonesia?"}
+{"intent":"cari_saham_kategorikal","message":"Saham mana yang memiliki peluang besar di kategori consumer goods?"}
+{"intent":"cari_saham_kategorikal","message":"Saya mencari saham sektor tambang yang memberikan return tinggi."}
+{"intent":"cari_saham_kategorikal","message":"Apakah ada saham di sektor properti yang cocok untuk portofolio diversifikasi?"}
+{"intent":"cari_saham_kategorikal","message":"Saham sektor teknologi mana yang menjadi pilihan investor tahun ini?"}
+{"intent":"cari_saham_kategorikal","message":"Saya mencari saham consumer goods yang menawarkan stabilitas return."}
+{"intent":"cari_saham_kategorikal","message":"Apakah ada saham sektor energi dengan pertumbuhan yang konsisten?"}
+{"intent":"cari_saham_kategorikal","message":"Saham sektor kesehatan mana yang memberikan potensi keuntungan terbaik?"}
+{"intent":"cari_saham_kategorikal","message":"Saya ingin tahu saham properti mana yang memiliki peluang investasi paling menarik."}
+{"intent":"cari_saham_kategorikal","message":"Apakah ada saham teknologi dengan pertumbuhan tinggi di tahun ini?"}
+{"intent":"cari_saham_kategorikal","message":"Saham sektor consumer goods apa yang diprediksi menjadi pemimpin pasar?"}
+{"intent":"cari_saham_kategorikal","message":"Saya mencari saham tambang yang direkomendasikan untuk investasi jangka panjang."}
+{"intent":"cari_saham_kategorikal","message":"Apakah ada saham di sektor energi yang memberikan return signifikan?"}
+{"intent":"cari_saham_kategorikal","message":"Saham sektor kesehatan mana yang cocok untuk portofolio investasi konservatif?"}
+{"intent":"cari_saham_kategorikal","message":"Saya ingin mengetahui saham properti yang diproyeksikan tumbuh pesat."}
+{"intent":"cari_saham_kategorikal","message":"Apakah ada saham teknologi yang direkomendasikan untuk investor baru?"}
+{"intent":"cari_saham_kategorikal","message":"Saham sektor consumer goods mana yang memberikan dividen tinggi?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saham apa yang cocok untuk portofolio konservatif dengan risiko kecil di IHSG?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya mencari saham dengan risiko kecil tetapi dividen yang konsisten."}
+{"intent":"cari_saham_berisiko_rendah","message":"Apakah ada saham yang aman dengan risiko minim untuk investasi stabil?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saham sektor energi apa yang memiliki risiko paling rendah?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Apakah ada saham sektor properti yang cocok untuk investor konservatif?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya ingin tahu saham yang cocok untuk investasi dengan tingkat risiko paling rendah."}
+{"intent":"cari_saham_berisiko_rendah","message":"Saham apa yang memiliki risiko kecil dan memberikan stabilitas return?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya mencari saham di sektor consumer goods yang risiko volatilitasnya kecil."}
+{"intent":"cari_saham_berisiko_rendah","message":"Apakah ada saham sektor tambang yang cocok untuk portofolio risiko rendah?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saham apa yang aman untuk investasi jangka panjang di IHSG?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya ingin rekomendasi saham dengan return stabil dan risiko minim."}
+{"intent":"cari_saham_berisiko_rendah","message":"Apakah ada saham di sektor consumer goods yang memiliki risiko kecil tetapi return menarik?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saham apa yang memberikan peluang stabil dengan tingkat risiko rendah?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya mencari saham dengan risiko kecil di sektor kesehatan untuk portofolio konservatif."}
+{"intent":"cari_saham_berisiko_rendah","message":"Apakah ada saham di IHSG yang memberikan stabilitas return dengan risiko rendah?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saham sektor properti mana yang memiliki risiko volatilitas paling kecil?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya butuh rekomendasi saham dengan profil risiko rendah untuk investasi tahun ini."}
+{"intent":"cari_saham_berisiko_rendah","message":"Apakah ada saham dengan tingkat risiko rendah yang cocok untuk pemula?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saham apa yang memberikan peluang stabil dalam jangka panjang dengan risiko kecil?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya mencari saham dengan volatilitas rendah untuk investasi jangka panjang."}
+{"intent":"cari_saham_berisiko_rendah","message":"Saham sektor teknologi apa yang memiliki risiko kecil untuk investor konservatif?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Apakah ada saham sektor kesehatan yang stabil untuk portofolio risiko rendah?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya ingin tahu saham sektor energi yang menawarkan return menarik dengan risiko kecil."}
+{"intent":"cari_saham_berisiko_rendah","message":"Saham apa yang paling cocok untuk profil risiko kecil di IHSG?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Apakah ada saham sektor consumer goods yang memberikan dividen stabil?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya mencari saham sektor properti yang memiliki risiko volatilitas paling kecil."}
+{"intent":"cari_saham_berisiko_rendah","message":"Saham sektor tambang mana yang aman untuk investasi konservatif?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Apakah ada saham sektor teknologi dengan risiko kecil tetapi return stabil?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saham sektor kesehatan apa yang memiliki performa stabil dengan risiko rendah?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya mencari saham dengan risiko kecil untuk investasi jangka panjang di sektor energi."}
+{"intent":"cari_saham_berisiko_rendah","message":"Apakah ada saham sektor properti yang cocok untuk investor pemula dengan profil risiko rendah?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saham sektor consumer goods apa yang memberikan return stabil untuk portofolio konservatif?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya ingin rekomendasi saham risiko kecil di sektor kesehatan untuk jangka panjang."}
+{"intent":"cari_saham_berisiko_rendah","message":"Apakah ada saham sektor tambang yang memiliki tingkat risiko paling rendah?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saham sektor teknologi mana yang cocok untuk profil risiko rendah?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya ingin tahu saham sektor energi yang memiliki performa stabil dengan risiko kecil."}
+{"intent":"cari_saham_berisiko_rendah","message":"Apakah ada saham sektor consumer goods dengan peluang return stabil dan risiko kecil?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Saya mencari saham dengan risiko kecil di sektor properti untuk diversifikasi portofolio."}
+{"intent":"cari_saham_berisiko_rendah","message":"Saham sektor tambang apa yang memberikan stabilitas dengan risiko kecil?"}
+{"intent":"cari_saham_berisiko_rendah","message":"Apakah ada saham sektor kesehatan yang cocok untuk strategi risiko minim?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saham mana yang cocok untuk profil investor moderat dengan risiko sedang?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saya ingin tahu saham dengan keseimbangan risiko sedang dan return menarik."}
+{"intent":"cari_saham_berisiko_sedang","message":"Apakah ada saham di sektor teknologi dengan risiko moderat?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saham sektor properti apa yang menawarkan return stabil dengan risiko sedang?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saya mencari saham dengan volatilitas moderat untuk portofolio jangka panjang."}
+{"intent":"cari_saham_berisiko_sedang","message":"Apakah ada saham di sektor kesehatan yang cocok untuk profil risiko sedang?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saham mana yang memberikan return stabil untuk investor moderat di sektor consumer goods?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saya mencari saham sektor energi dengan profil risiko sedang dan peluang stabil."}
+{"intent":"cari_saham_berisiko_sedang","message":"Apakah ada saham yang cocok untuk investasi di sektor tambang dengan risiko moderat?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saham mana yang cocok untuk diversifikasi portofolio dengan risiko sedang?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saya ingin rekomendasi saham di sektor teknologi yang memiliki risiko moderat."}
+{"intent":"cari_saham_berisiko_sedang","message":"Apakah ada saham sektor properti yang cocok untuk strategi investasi dengan risiko sedang?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saham apa yang menawarkan return stabil dengan profil risiko sedang?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saya mencari saham sektor consumer goods yang cocok untuk investor risiko sedang."}
+{"intent":"cari_saham_berisiko_sedang","message":"Apakah ada saham sektor energi yang aman untuk investor dengan toleransi risiko moderat?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saya ingin tahu saham yang menawarkan stabilitas return di sektor tambang dengan risiko moderat."}
+{"intent":"cari_saham_berisiko_sedang","message":"Saham mana yang paling cocok untuk profil risiko sedang di sektor kesehatan?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Apakah ada saham teknologi yang cocok untuk strategi investasi jangka menengah?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saya mencari saham sektor properti dengan risiko sedang tetapi memberikan dividen stabil."}
+{"intent":"cari_saham_berisiko_sedang","message":"Saham sektor consumer goods mana yang menawarkan peluang return dengan risiko moderat?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Apakah ada saham di sektor energi yang cocok untuk investor moderat?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saya ingin rekomendasi saham risiko sedang di sektor kesehatan."}
+{"intent":"cari_saham_berisiko_sedang","message":"Saham sektor tambang apa yang cocok untuk investor profil moderat?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Apakah ada saham sektor properti yang memberikan return stabil dengan risiko moderat?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saya ingin tahu saham sektor teknologi dengan risiko moderat untuk portofolio diversifikasi."}
+{"intent":"cari_saham_berisiko_sedang","message":"Saham sektor consumer goods apa yang memberikan peluang pertumbuhan dengan risiko sedang?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Apakah ada saham di sektor energi yang cocok untuk profil risiko moderat?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saya mencari saham sektor kesehatan dengan peluang return stabil untuk risiko sedang."}
+{"intent":"cari_saham_berisiko_sedang","message":"Saham sektor tambang mana yang paling cocok untuk strategi investasi moderat?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Apakah ada saham sektor teknologi dengan profil risiko sedang tetapi peluang tinggi?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saya ingin tahu saham sektor properti yang cocok untuk profil risiko moderat."}
+{"intent":"cari_saham_berisiko_sedang","message":"Saham sektor consumer goods mana yang menawarkan stabilitas return dengan risiko moderat?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Apakah ada saham di sektor energi yang cocok untuk investasi moderat?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saya mencari saham sektor kesehatan yang memberikan return menarik untuk risiko sedang."}
+{"intent":"cari_saham_berisiko_sedang","message":"Saham sektor properti mana yang aman untuk investor dengan toleransi risiko moderat?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Apakah ada saham sektor teknologi yang menawarkan peluang pertumbuhan dengan risiko sedang?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saya ingin rekomendasi saham sektor consumer goods untuk strategi risiko moderat."}
+{"intent":"cari_saham_berisiko_sedang","message":"Saham sektor tambang apa yang menawarkan return menarik dengan risiko moderat?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Apakah ada saham sektor properti yang cocok untuk profil risiko sedang?"}
+{"intent":"cari_saham_berisiko_sedang","message":"Saya mencari saham sektor energi dengan risiko moderat tetapi stabilitas return tinggi."}
+{"intent":"cari_saham_berisiko_sedang","message":"Saham sektor kesehatan mana yang menawarkan peluang menarik dengan risiko sedang?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saya mencari saham sektor teknologi yang memiliki peluang pertumbuhan besar."}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Apakah ada saham properti yang diperkirakan akan tumbuh pesat tahun ini?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saham sektor consumer goods mana yang memiliki prospek pertumbuhan tinggi?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saya ingin tahu saham sektor tambang yang memberikan return besar."}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Apakah ada saham sektor energi yang memiliki potensi keuntungan tinggi?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saham sektor kesehatan mana yang menjadi peluang terbaik untuk investasi?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saya mencari saham teknologi yang bisa memberikan keuntungan maksimal."}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Apakah ada saham di sektor properti dengan pertumbuhan signifikan?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saham mana yang memiliki potensi besar untuk portofolio jangka pendek?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saya ingin rekomendasi saham dengan prospek terbaik di sektor tambang."}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Apakah ada saham sektor energi yang direkomendasikan untuk return tinggi?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saham sektor kesehatan apa yang memberikan peluang pertumbuhan besar tahun ini?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saya mencari saham sektor teknologi yang memiliki performa unggul."}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Apakah ada saham properti yang diproyeksikan memiliki return besar tahun ini?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saham consumer goods mana yang memiliki potensi keuntungan tertinggi?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saya ingin tahu saham tambang yang memberikan return besar di pasar saat ini."}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Apakah ada saham energi yang diperkirakan akan tumbuh signifikan?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saham sektor kesehatan mana yang memiliki potensi terbaik di pasar Indonesia?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saya mencari saham teknologi dengan peluang besar untuk jangka panjang."}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Apakah ada saham properti yang menunjukkan pertumbuhan konsisten?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saham consumer goods apa yang sedang naik daun di kalangan investor?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saya ingin tahu saham tambang mana yang memiliki prospek pertumbuhan terbaik."}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Apakah ada saham energi yang menawarkan return signifikan?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saham sektor kesehatan mana yang cocok untuk portofolio pertumbuhan?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saya mencari saham teknologi yang memberikan keuntungan besar dalam waktu dekat."}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Apakah ada saham properti yang memiliki peluang besar untuk investasi tahun ini?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saham consumer goods mana yang diprediksi memiliki return tinggi?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saya ingin tahu saham tambang yang cocok untuk portofolio spekulatif."}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Apakah ada saham energi dengan peluang keuntungan maksimal?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saham sektor kesehatan mana yang memiliki potensi terbaik untuk jangka panjang?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saya mencari saham teknologi yang diperkirakan memiliki pertumbuhan besar di masa depan."}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Apakah ada saham properti dengan peluang terbaik untuk investasi jangka pendek?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saham consumer goods mana yang memiliki performa unggul di pasar tahun ini?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saya ingin tahu saham tambang yang memiliki peluang terbaik untuk return tinggi."}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Apakah ada saham sektor energi dengan prospek pertumbuhan signifikan?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saham sektor kesehatan mana yang memberikan peluang maksimal untuk investasi?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saya mencari saham sektor teknologi yang menawarkan peluang pertumbuhan besar."}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Apakah ada saham properti yang memberikan return besar tahun ini?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saham consumer goods apa yang menjadi favorit di pasar saham saat ini?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saya ingin tahu saham tambang yang diprediksi memiliki peluang besar."}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Apakah ada saham energi yang cocok untuk strategi pertumbuhan jangka menengah?"}
+{"intent":"cari_saham_berpotensi_tinggi","message":"Saham sektor kesehatan mana yang menunjukkan pertumbuhan luar biasa?"}
+{"intent":"tanya_performa_saham","message":"Bagaimana tren saham BRPT dalam dua tahun terakhir?"}
+{"intent":"tanya_performa_saham","message":"Apakah saham GGRM menunjukkan kinerja positif di kuartal terakhir?"}
+{"intent":"tanya_performa_saham","message":"Saya ingin tahu return saham EXCL dalam lima tahun terakhir."}
+{"intent":"tanya_performa_saham","message":"Bagaimana stabilitas saham TPIA selama setahun terakhir?"}
+{"intent":"tanya_performa_saham","message":"Apakah saham ICBP konsisten memberikan return yang baik?"}
+{"intent":"tanya_performa_saham","message":"Seberapa besar perubahan harga saham ADRO selama tahun ini?"}
+{"intent":"tanya_performa_saham","message":"Bagaimana volatilitas saham HMSP di pasar saham Indonesia?"}
+{"intent":"tanya_performa_saham","message":"Saya mencari informasi tentang stabilitas saham BFIN di sektor keuangan."}
+{"intent":"tanya_performa_saham","message":"Apakah saham UNTR menunjukkan pertumbuhan di pasar tahun ini?"}
+{"intent":"tanya_performa_saham","message":"Bagaimana performa saham SMGR di sektor properti?"}
+{"intent":"tanya_performa_saham","message":"Apakah saham sektor kesehatan seperti KLBF memiliki pertumbuhan stabil?"}
+{"intent":"tanya_performa_saham","message":"Saya ingin tahu bagaimana return saham INDY di kuartal terakhir."}
+{"intent":"tanya_performa_saham","message":"Bagaimana tren return saham ITMG selama lima tahun terakhir?"}
+{"intent":"tanya_performa_saham","message":"Apakah saham TBIG cukup stabil untuk investasi jangka panjang?"}
+{"intent":"tanya_performa_saham","message":"Bagaimana kinerja saham ERAA di sektor teknologi?"}
+{"intent":"tanya_performa_saham","message":"Seberapa besar return dari saham WIKA dalam setahun terakhir?"}
+{"intent":"tanya_performa_saham","message":"Saya mencari analisis tren saham PTBA di sektor tambang."}
+{"intent":"tanya_performa_saham","message":"Apakah saham sektor consumer goods seperti MYOR memberikan dividen yang stabil?"}
+{"intent":"tanya_performa_saham","message":"Bagaimana perkembangan harga saham MEDC selama setahun terakhir?"}
+{"intent":"tanya_performa_saham","message":"Apakah saham PGAS memiliki tren yang positif dalam tiga tahun terakhir?"}
+{"intent":"tanya_performa_saham","message":"Saya ingin tahu tentang stabilitas return saham MDKA."}
+{"intent":"tanya_performa_saham","message":"Bagaimana performa saham DOID dalam portofolio sektor tambang?"}
+{"intent":"tanya_performa_saham","message":"Apakah saham ANTM tetap stabil di tengah volatilitas pasar tahun ini?"}
+{"intent":"tanya_performa_saham","message":"Saya mencari informasi tentang kinerja saham AGII selama kuartal ini."}
+{"intent":"tanya_performa_saham","message":"Bagaimana tren pertumbuhan saham ELSA di sektor energi?"}
+{"intent":"tanya_performa_saham","message":"Apakah return saham CTRA cukup menarik untuk investasi jangka panjang?"}
+{"intent":"tanya_performa_saham","message":"Bagaimana perkembangan saham BBTN di sektor keuangan tahun ini?"}
+{"intent":"tanya_performa_saham","message":"Saya ingin tahu stabilitas saham PTPP dalam beberapa kuartal terakhir."}
+{"intent":"tanya_performa_saham","message":"Apakah saham WSKT mengalami pertumbuhan di sektor infrastruktur?"}
+{"intent":"tanya_performa_saham","message":"Bagaimana performa saham ACES di sektor retail?"}
+{"intent":"tanya_performa_saham","message":"Seberapa baik return saham RALS selama lima tahun terakhir?"}
+{"intent":"tanya_performa_saham","message":"Saya mencari tren stabilitas harga saham SIMP di sektor agrikultur."}
+{"intent":"tanya_performa_saham","message":"Apakah saham INCO menunjukkan kinerja yang positif di kuartal terakhir?"}
+{"intent":"tanya_performa_saham","message":"Bagaimana perkembangan harga saham SRIL selama setahun terakhir?"}
+{"intent":"tanya_performa_saham","message":"Saya ingin tahu analisis tren saham SCMA di sektor media."}
+{"intent":"tanya_performa_saham","message":"Apakah saham MAIN cukup stabil untuk portofolio sektor agribisnis?"}
+{"intent":"tanya_performa_saham","message":"Bagaimana kinerja saham TOWR dalam tiga tahun terakhir?"}
+{"intent":"tanya_performa_saham","message":"Apakah saham UNVR tetap konsisten memberikan dividen yang baik?"}
+{"intent":"tanya_performa_saham","message":"Bagaimana volatilitas saham AKRA di sektor energi tahun ini?"}
+{"intent":"tanya_performa_saham","message":"Saya ingin tahu return saham EXCL selama kuartal terakhir."}
+{"intent":"tanya_performa_saham","message":"Bagaimana perkembangan saham WIKA di sektor infrastruktur?"}
+{"intent":"tanya_performa_saham","message":"Apakah saham DOID memiliki pertumbuhan yang baik di sektor tambang?"}
+{"intent":"tanya_strategi_investasi","message":"Bagaimana cara memilih saham untuk portofolio jangka panjang?"}
+{"intent":"tanya_strategi_investasi","message":"Apa strategi yang efektif untuk mengoptimalkan return di sektor teknologi?"}
+{"intent":"tanya_strategi_investasi","message":"Apakah strategi investasi dividen cocok untuk investor konservatif?"}
+{"intent":"tanya_strategi_investasi","message":"Bagaimana cara memanfaatkan volatilitas pasar untuk keuntungan investasi?"}
+{"intent":"tanya_strategi_investasi","message":"Strategi apa yang cocok untuk investasi jangka pendek di sektor properti?"}
+{"intent":"tanya_strategi_investasi","message":"Apa metode terbaik untuk analisis fundamental di pasar saham Indonesia?"}
+{"intent":"tanya_strategi_investasi","message":"Bagaimana cara menentukan saham undervalued untuk investasi jangka panjang?"}
+{"intent":"tanya_strategi_investasi","message":"Strategi apa yang paling efektif untuk portofolio dengan risiko rendah?"}
+{"intent":"tanya_strategi_investasi","message":"Apakah day trading cocok untuk pasar saham Indonesia?"}
+{"intent":"tanya_strategi_investasi","message":"Bagaimana cara menghadapi koreksi pasar dengan portofolio saham kecil?"}
+{"intent":"tanya_strategi_investasi","message":"Strategi apa yang disarankan untuk saham sektor energi?"}
+{"intent":"tanya_strategi_investasi","message":"Bagaimana cara mengelola portofolio saham sektor consumer goods?"}
+{"intent":"tanya_strategi_investasi","message":"Apa pendekatan terbaik untuk investasi saham blue chip?"}
+{"intent":"tanya_strategi_investasi","message":"Apakah strategi growth investing efektif di sektor teknologi?"}
+{"intent":"tanya_strategi_investasi","message":"Bagaimana cara memilih saham sektor tambang untuk diversifikasi portofolio?"}
+{"intent":"tanya_strategi_investasi","message":"Strategi apa yang cocok untuk investasi di saham IPO baru?"}
+{"intent":"tanya_strategi_investasi","message":"Apakah dollar cost averaging lebih efektif di sektor properti?"}
+{"intent":"tanya_strategi_investasi","message":"Bagaimana cara mengurangi risiko di portofolio saham volatil?"}
+{"intent":"tanya_strategi_investasi","message":"Strategi apa yang direkomendasikan untuk investasi jangka menengah?"}
+{"intent":"tanya_strategi_investasi","message":"Bagaimana cara memaksimalkan return di saham consumer goods?"}
+{"intent":"tanya_strategi_investasi","message":"Apakah diversifikasi sektor energi dapat meningkatkan stabilitas portofolio?"}
+{"intent":"tanya_strategi_investasi","message":"Apa cara terbaik untuk mengelola portofolio saham teknologi?"}
+{"intent":"tanya_strategi_investasi","message":"Strategi apa yang cocok untuk profil risiko moderat di sektor kesehatan?"}
+{"intent":"tanya_strategi_investasi","message":"Bagaimana cara menentukan alokasi aset untuk portofolio investasi?"}
+{"intent":"tanya_strategi_investasi","message":"Apakah strategi berbasis momentum efektif untuk saham tambang?"}
+{"intent":"tanya_strategi_investasi","message":"Apa tips investasi saham untuk pemula di IHSG?"}
+{"intent":"tanya_strategi_investasi","message":"Bagaimana cara memilih saham sektor energi untuk jangka pendek?"}
+{"intent":"tanya_strategi_investasi","message":"Strategi apa yang disarankan untuk saham dengan volatilitas tinggi?"}
+{"intent":"tanya_strategi_investasi","message":"Bagaimana cara mengelola risiko portofolio saham sektor consumer goods?"}
+{"intent":"tanya_strategi_investasi","message":"Apakah pendekatan nilai efektif untuk investasi di sektor properti?"}
+{"intent":"tanya_strategi_investasi","message":"Strategi apa yang direkomendasikan untuk portofolio saham kecil?"}
+{"intent":"tanya_strategi_investasi","message":"Bagaimana cara memanfaatkan tren pasar di sektor teknologi?"}
+{"intent":"tanya_strategi_investasi","message":"Apa strategi terbaik untuk investasi saham jangka panjang?"}
+{"intent":"tanya_strategi_investasi","message":"Apakah dollar cost averaging cocok untuk sektor kesehatan?"}
+{"intent":"tanya_strategi_investasi","message":"Bagaimana cara memaksimalkan keuntungan dengan portofolio saham blue chip?"}
+{"intent":"tanya_strategi_investasi","message":"Apakah investasi berbasis dividen lebih aman untuk pasar saham Indonesia?"}
+{"intent":"tanya_strategi_investasi","message":"Strategi apa yang disarankan untuk investasi konservatif di sektor properti?"}
+{"intent":"tanya_strategi_investasi","message":"Bagaimana cara menghadapi volatilitas pasar dengan portofolio saham kecil?"}
+{"intent":"tanya_strategi_investasi","message":"Apakah strategi berbasis momentum cocok untuk saham consumer goods?"}
+{"intent":"tanya_strategi_investasi","message":"Bagaimana cara memilih saham sektor energi untuk diversifikasi portofolio?"}
+{"intent":"tanya_strategi_investasi","message":"Strategi apa yang paling efektif untuk investasi spekulatif?"}
+{"intent":"tanya_strategi_investasi","message":"Bagaimana cara menentukan saham undervalued di sektor teknologi?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Apakah ada saham sektor properti dengan volatilitas rendah?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saham sektor teknologi mana yang cocok untuk portofolio risiko rendah?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saya mencari saham sektor kesehatan dengan risiko kecil dan return stabil."}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Apakah ada saham di sektor energi dengan profil risiko yang rendah?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saham sektor properti apa yang memberikan stabilitas dengan risiko kecil?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saya ingin tahu saham sektor consumer goods yang cocok untuk investasi konservatif."}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Apakah ada saham di sektor tambang dengan peluang return tetapi risikonya kecil?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saham sektor energi mana yang memiliki profil risiko rendah di pasar saham Indonesia?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saya mencari saham sektor kesehatan yang aman dari volatilitas tinggi."}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Apakah ada saham properti yang menawarkan risiko kecil dan return stabil?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saham sektor teknologi apa yang cocok untuk investasi jangka panjang dengan risiko rendah?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saya mencari saham consumer goods dengan peluang return stabil dan risiko minim."}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Apakah ada saham sektor tambang yang cocok untuk profil risiko konservatif?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saham sektor energi mana yang menawarkan stabilitas untuk investor pemula?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saya mencari saham sektor kesehatan yang memberikan dividen dengan risiko kecil."}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Apakah ada saham properti yang cocok untuk investor dengan profil risiko rendah?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saham sektor teknologi mana yang direkomendasikan untuk portofolio konservatif?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saya ingin tahu saham sektor consumer goods yang memberikan stabilitas dengan risiko kecil."}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Apakah ada saham sektor tambang yang aman untuk strategi risiko rendah?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saham sektor energi apa yang memiliki potensi stabil tetapi risikonya minim?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saya mencari saham sektor kesehatan yang cocok untuk diversifikasi risiko rendah."}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Apakah ada saham di sektor properti yang menawarkan dividen dengan risiko kecil?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saham sektor teknologi apa yang memiliki stabilitas terbaik untuk investor konservatif?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saya mencari saham sektor consumer goods yang menawarkan return stabil di pasar Indonesia."}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Apakah ada saham sektor tambang dengan volatilitas rendah dan peluang return menarik?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saham sektor energi mana yang memberikan peluang return dengan risiko terkecil?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saya ingin rekomendasi saham sektor kesehatan untuk strategi risiko kecil."}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Apakah ada saham di sektor properti yang menawarkan stabilitas dengan risiko kecil?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saham sektor teknologi mana yang memiliki risiko rendah dan peluang return stabil?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saya mencari saham sektor consumer goods dengan dividen tinggi dan risiko minim."}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Apakah ada saham sektor tambang yang cocok untuk investor risiko rendah?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saham sektor energi apa yang aman untuk diversifikasi portofolio konservatif?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saya mencari saham sektor kesehatan dengan stabilitas terbaik untuk risiko minim."}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Apakah ada saham properti yang menawarkan stabilitas return untuk investor risiko rendah?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saham sektor teknologi mana yang memiliki profil stabil dengan volatilitas rendah?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saya mencari saham sektor consumer goods yang menawarkan risiko kecil untuk jangka panjang."}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Apakah ada saham di sektor tambang dengan potensi return stabil tetapi risikonya kecil?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saham sektor energi apa yang cocok untuk portofolio risiko minim?"}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Saya ingin tahu saham sektor kesehatan yang memberikan return menarik dengan risiko kecil."}
+{"intent":"cari_saham_risiko_rendah_di_sektor","message":"Apakah ada saham di sektor properti yang cocok untuk investor konservatif dengan risiko kecil?"}
+{"intent":"akhiri_percakapan","message":"Terima kasih banyak atas bantuannya hari ini, sampai jumpa!"}
+{"intent":"akhiri_percakapan","message":"Diskusi ini sangat membantu, terima kasih banyak!"}
+{"intent":"akhiri_percakapan","message":"Saya sudah mendapat cukup informasi, terima kasih!"}
+{"intent":"akhiri_percakapan","message":"Sampai jumpa, terima kasih atas waktu dan penjelasannya!"}
+{"intent":"akhiri_percakapan","message":"Baik, cukup untuk saat ini. Terima kasih atas bantuannya!"}
+{"intent":"akhiri_percakapan","message":"Terima kasih untuk semua informasi yang telah Anda berikan, sampai jumpa!"}
+{"intent":"akhiri_percakapan","message":"Saya sangat menghargai penjelasan Anda, terima kasih!"}
+{"intent":"akhiri_percakapan","message":"Baik, itu sudah sangat membantu. Terima kasih banyak!"}
+{"intent":"akhiri_percakapan","message":"Terima kasih banyak, saya akan memikirkan semuanya. Sampai lain waktu!"}
+{"intent":"akhiri_percakapan","message":"Informasi ini sangat bermanfaat, terima kasih atas waktu Anda!"}
+{"intent":"akhiri_percakapan","message":"Saya sangat senang dengan diskusi ini, terima kasih atas bantuannya!"}
+{"intent":"akhiri_percakapan","message":"Sampai jumpa, terima kasih atas semua informasi yang berguna ini!"}
+{"intent":"akhiri_percakapan","message":"Itu sudah cukup jelas untuk saya, terima kasih banyak!"}
+{"intent":"akhiri_percakapan","message":"Terima kasih atas bantuannya, saya sangat terbantu!"}
+{"intent":"akhiri_percakapan","message":"Baik, saya akan menyimpan informasi ini. Terima kasih atas penjelasannya!"}
+{"intent":"akhiri_percakapan","message":"Cukup untuk hari ini, terima kasih atas wawasan yang Anda berikan!"}
+{"intent":"akhiri_percakapan","message":"Saya sangat menghargai informasi yang diberikan, terima kasih banyak!"}
+{"intent":"akhiri_percakapan","message":"Sampai lain waktu, terima kasih atas bantuan dan diskusinya!"}
+{"intent":"akhiri_percakapan","message":"Informasi ini sangat berguna, saya sangat berterima kasih atas bantuan Anda!"}
+{"intent":"akhiri_percakapan","message":"Baik, terima kasih atas klarifikasinya, itu sangat membantu!"}
+{"intent":"akhiri_percakapan","message":"Terima kasih atas waktu Anda hari ini, sampai jumpa lagi!"}
+{"intent":"akhiri_percakapan","message":"Diskusi ini sangat berarti bagi saya, terima kasih atas bantuannya!"}
+{"intent":"akhiri_percakapan","message":"Saya akan memanfaatkan informasi ini dengan baik, terima kasih banyak!"}
+{"intent":"akhiri_percakapan","message":"Sampai jumpa lagi, saya sangat menghargai waktu Anda hari ini!"}
+{"intent":"akhiri_percakapan","message":"Terima kasih untuk semua hal yang Anda jelaskan, itu sangat membantu!"}
+{"intent":"akhiri_percakapan","message":"Saya sangat menghargai semua informasi yang telah Anda berikan. Terima kasih!"}
+{"intent":"akhiri_percakapan","message":"Sampai lain kali, terima kasih atas semua bantuan Anda hari ini!"}
+{"intent":"akhiri_percakapan","message":"Terima kasih atas semua penjelasan yang sangat detail ini, saya sangat menghargainya!"}
+{"intent":"akhiri_percakapan","message":"Saya akan mempertimbangkan semua yang Anda katakan, terima kasih banyak!"}
+{"intent":"akhiri_percakapan","message":"Diskusi ini membuka wawasan baru bagi saya, terima kasih atas penjelasannya!"}
+{"intent":"akhiri_percakapan","message":"Terima kasih atas penjelasan yang sangat informatif, saya sangat terbantu!"}
+{"intent":"akhiri_percakapan","message":"Baik, saya rasa itu cukup untuk hari ini, terima kasih atas bantuan Anda!"}
+{"intent":"akhiri_percakapan","message":"Sampai lain kali, terima kasih atas informasi yang sangat lengkap ini!"}
+{"intent":"akhiri_percakapan","message":"Saya sangat berterima kasih atas klarifikasi yang Anda berikan!"}
+{"intent":"akhiri_percakapan","message":"Baik, sampai jumpa lagi. Terima kasih atas waktu dan informasinya!"}
+{"intent":"akhiri_percakapan","message":"Cukup untuk saat ini, saya benar-benar menghargai semua bantuan Anda!"}
+{"intent":"akhiri_percakapan","message":"Saya merasa sangat terbantu dengan diskusi ini, terima kasih banyak!"}
+{"intent":"akhiri_percakapan","message":"Terima kasih untuk semua detail dan wawasan yang telah Anda berikan!"}
+{"intent":"akhiri_percakapan","message":"Sampai jumpa lagi, saya sangat menghargai waktu dan perhatian Anda!"}
+{"intent":"akhiri_percakapan","message":"Diskusi ini sangat bermanfaat bagi saya, terima kasih atas bantuannya!"}
+{"intent":"akhiri_percakapan","message":"Informasi ini akan sangat membantu saya ke depannya, terima kasih banyak!"}
+{"intent":"cari_saham_kategorikal","message":"Apakah ada saham sektor teknologi yang memiliki peluang besar tahun ini?"}
+{"intent":"cari_saham_kategorikal","message":"Saya mencari saham properti yang cocok untuk portofolio diversifikasi."}
+{"intent":"cari_saham_kategorikal","message":"Saham sektor kesehatan mana yang memberikan stabilitas return terbaik?"}
+{"intent":"cari_saham_kategorikal","message":"Apakah ada saham sektor tambang dengan peluang return tinggi di pasar?"}
+{"intent":"cari_saham_kategorikal","message":"Saham sektor energi apa yang diperkirakan tumbuh pesat tahun ini?"}
+{"intent":"cari_saham_kategorikal","message":"Saya ingin tahu saham sektor consumer goods yang direkomendasikan untuk pemula."}
+{"intent":"cari_saham_kategorikal","message":"Apakah ada saham sektor properti yang menawarkan return konsisten?"}
+{"intent":"cari_saham_kategorikal","message":"Saham sektor teknologi mana yang menunjukkan tren pertumbuhan signifikan?"}
+{"intent":"cari_saham_kategorikal","message":"Saya mencari saham sektor kesehatan yang diproyeksikan memiliki return tinggi."}
+{"intent":"cari_saham_kategorikal","message":"Apakah ada saham sektor tambang dengan volatilitas rendah tetapi return menarik?"}
+{"intent":"cari_saham_kategorikal","message":"Saham sektor energi apa yang cocok untuk portofolio spekulatif?"}
+{"intent":"cari_saham_kategorikal","message":"Saya ingin tahu saham sektor consumer goods yang memberikan dividen tinggi."}
+{"intent":"cari_saham_kategorikal","message":"Apakah ada saham sektor properti yang cocok untuk investasi jangka panjang?"}
+{"intent":"cari_saham_kategorikal","message":"Saham sektor teknologi mana yang memiliki potensi besar di pasar saham Indonesia?"}
+{"intent":"cari_saham_kategorikal","message":"Saya mencari saham sektor kesehatan yang menawarkan peluang return menarik."}
+{"intent":"cari_saham_kategorikal","message":"Apakah ada saham sektor tambang yang memberikan stabilitas untuk investor pemula?"}
+{"intent":"cari_saham_kategorikal","message":"Saham sektor energi mana yang diprediksi memberikan return tinggi tahun ini?"}
+{"intent":"cari_saham_kategorikal","message":"Saya ingin rekomendasi saham sektor consumer goods dengan volatilitas rendah."}
+{"intent":"cari_saham_kategorikal","message":"Apakah ada saham sektor properti yang memiliki performa unggul tahun ini?"}
+{"intent":"cari_saham_kategorikal","message":"Saham sektor teknologi apa yang sedang populer di kalangan investor?"}
+{"intent":"cari_saham_kategorikal","message":"Saya mencari saham sektor kesehatan yang diproyeksikan tumbuh pesat."}
+{"intent":"cari_saham_kategorikal","message":"Apakah ada saham sektor tambang dengan peluang terbaik untuk return tinggi?"}
+{"intent":"cari_saham_kategorikal","message":"Saham sektor energi mana yang direkomendasikan untuk portofolio konservatif?"}
+{"intent":"cari_saham_kategorikal","message":"Saya ingin tahu saham sektor consumer goods dengan potensi return besar."}
+{"intent":"cari_saham_kategorikal","message":"Apakah ada saham sektor properti yang memberikan stabilitas return di pasar saham Indonesia?"}
+{"intent":"cari_saham_kategorikal","message":"Saham sektor teknologi mana yang memiliki peluang terbaik untuk investasi jangka pendek?"}
+{"intent":"cari_saham_kategorikal","message":"Saya mencari saham sektor kesehatan dengan potensi pertumbuhan jangka panjang."}
+{"intent":"cari_saham_kategorikal","message":"Apakah ada saham sektor tambang yang diproyeksikan memiliki return stabil?"}
+{"intent":"cari_saham_kategorikal","message":"Saham sektor energi apa yang paling cocok untuk investor moderat?"}
+{"intent":"cari_saham_kategorikal","message":"Saya mencari saham sektor consumer goods yang memiliki potensi terbaik tahun ini."}
+{"intent":"cari_saham_kategorikal","message":"Apakah ada saham sektor properti dengan stabilitas terbaik untuk investasi konservatif?"}
+{"intent":"cari_saham_kategorikal","message":"Saham sektor teknologi mana yang direkomendasikan untuk portofolio spekulatif?"}
+{"intent":"cari_saham_kategorikal","message":"Saya ingin tahu saham sektor kesehatan dengan peluang return besar."}
+{"intent":"cari_saham_kategorikal","message":"Apakah ada saham sektor tambang yang memiliki prospek terbaik untuk tahun ini?"}
+{"intent":"cari_saham_kategorikal","message":"Saham sektor energi mana yang diprediksi akan tumbuh pesat di pasar saham Indonesia?"}
+{"intent":"cari_saham_kategorikal","message":"Saya mencari saham sektor consumer goods dengan dividen konsisten dan volatilitas rendah."}
+{"intent":"cari_saham_kategorikal","message":"Apakah ada saham sektor properti yang memberikan potensi keuntungan tertinggi?"}
+{"intent":"cari_saham_kategorikal","message":"Saham sektor teknologi mana yang cocok untuk strategi investasi pertumbuhan?"}
+{"intent":"cari_saham_kategorikal","message":"Saya mencari saham sektor kesehatan yang paling aman untuk investasi jangka panjang."}
+{"intent":"cari_saham_kategorikal","message":"Apakah ada saham sektor tambang dengan stabilitas terbaik untuk investor pemula?"}
+{"intent":"cari_saham_kategorikal","message":"Saham sektor energi mana yang direkomendasikan untuk portofolio dengan risiko minim?"}
+{"intent":"cari_saham_kategorikal","message":"Saya ingin rekomendasi saham sektor consumer goods dengan return stabil untuk tahun ini."}
