@@ -42,6 +42,7 @@
             <div class="drop-zone" id="dropZone">Drop file di sini atau klik untuk unggah</div>
             <input type="file" id="fileInput" class="form-control mt-3" accept=".json,.csv" hidden>
             <button class="btn btn-primary mt-3" id="uploadBtn" disabled><i class="fa fa-upload"></i> Upload</button>
+            <button class="btn btn-secondary mt-3" onclick="window.location.href='index.html'"><i class="fa fa-arrow-left"></i> Kembali</button>
             <div class="progress mt-3" style="display: none;">
                 <div class="progress-bar" id="uploadProgress"></div>
             </div>
@@ -62,6 +63,7 @@
             messagingSenderId: "1048714287798",
             appId: "1:1048714287798:web:b183831c52549a0404e417"
         };
+
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
 
@@ -93,7 +95,7 @@
             selectedFile = e.target.files[0];
             validateFile();
         });
-        
+
         function validateFile() {
             if (selectedFile && (selectedFile.name.endsWith(".json") || selectedFile.name.endsWith(".csv"))) {
                 dropZone.textContent = `File terpilih: ${selectedFile.name}`;
@@ -104,10 +106,10 @@
                 uploadBtn.disabled = true;
             }
         }
-        
+
         uploadBtn.addEventListener("click", () => {
             if (!selectedFile) return;
-            
+
             logMessage("Memulai upload file...");
             progressBar.style.width = "0%";
             progressBar.parentElement.style.display = "block";
@@ -115,10 +117,18 @@
             const reader = new FileReader();
             reader.onload = async (e) => {
                 try {
-                    const data = JSON.parse(e.target.result);
+                    let data;
+                    if (selectedFile.name.endsWith(".json")) {
+                        data = fixJsonFormat(e.target.result);
+                    } else if (selectedFile.name.endsWith(".csv")) {
+                        data = parseCSV(e.target.result);
+                    } else {
+                        throw new Error("Format tidak didukung");
+                    }
+
                     const dbRef = ref(db, 'uploads');
                     logMessage("Mengunggah data ke Firebase...");
-                    
+
                     push(dbRef, data).then(() => {
                         progressBar.style.width = "100%";
                         logMessage("Upload selesai!");
@@ -128,12 +138,43 @@
                         alert("Gagal mengunggah ke Firebase.");
                     });
                 } catch (error) {
-                    logMessage("Format JSON tidak valid.");
-                    alert("Format JSON tidak valid.");
+                    logMessage("Format file tidak valid.");
+                    alert("Format file tidak valid.");
                 }
             };
             reader.readAsText(selectedFile);
         });
+
+        function fixJsonFormat(jsonText) {
+            try {
+                if (jsonText.trim().startsWith("{")) {
+                    return [JSON.parse(jsonText)];
+                }
+                return JSON.parse(jsonText);
+            } catch {
+                const fixedJson = "[" + jsonText.replace(/}\s*{/g, "},{") + "]";
+                return JSON.parse(fixedJson);
+            }
+        }
+
+        function parseCSV(csvText) {
+            const lines = csvText.split("\n");
+            const headers = lines[0].split(",");
+            const result = [];
+
+            for (let i = 1; i < lines.length; i++) {
+                let obj = {};
+                let values = lines[i].split(",");
+
+                if (values.length === headers.length) {
+                    headers.forEach((header, index) => {
+                        obj[header.trim()] = values[index].trim();
+                    });
+                    result.push(obj);
+                }
+            }
+            return result;
+        }
     </script>
 </body>
 </html>

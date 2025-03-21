@@ -33,7 +33,7 @@
                 <button class="btn btn-success" onclick="downloadData()"><i class="fa fa-download"></i> Unduh JSON</button>
                 <a href="add_intent.html" class="btn btn-info"><i class="fa fa-plus"></i> Tambah Intent</a>
                 <a href="jsonToCSV.html" class="btn btn-secondary"><i class="fa fa-file-csv"></i> JSON to CSV</a>
-                <a href="batch-input.html" class="btn btn-secondary"><i class="fa fa-list"></i> Batch Input</a>
+                <a id="batch-input-btn" href="batch-input.html" class="btn btn-dark"><i class="fa fa-list"></i> Batch Input</a>
                 <a href="data_dialog.html" class="btn btn-warning"><i class="fa fa-database"></i> Data Dialog</a>
             </div>
         </div>
@@ -83,6 +83,7 @@
 
         const userInfo = document.getElementById("user-info");
         const authBtn = document.getElementById("auth-btn");
+        const batchInputBtn = document.getElementById("batch-input-btn");
 
         // Periksa status login
         onAuthStateChanged(auth, (user) => {
@@ -99,6 +100,7 @@
                         signOut(auth).then(() => {
                             userInfo.textContent = "";
                             authBtn.textContent = "Login";
+                            batchInputBtn.style.display = "none";
                             authBtn.classList.remove("btn-danger");
                             authBtn.classList.add("btn-primary");
                             authBtn.onclick = () => location.href = "login.html";
@@ -108,6 +110,7 @@
             } else {
                 userInfo.textContent = "";
                 authBtn.textContent = "Login";
+                batchInputBtn.style.display = "none";
                 authBtn.classList.remove("btn-danger");
                 authBtn.classList.add("btn-primary");
                 authBtn.onclick = () => location.href = "login.html";
