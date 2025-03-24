@@ -115,12 +115,33 @@
             padding: 5px 10px;
             cursor: pointer;
         }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .header button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .header button:hover {
+            color: #ffdd57;
+        }
     </style>
     <!-- Boxicons CSS -->
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
+        <div class="header">
+            <button onclick="window.location.href='notes.html'"><i class='bx bx-arrow-back'></i></button>
+        </div>
         <h1>Tambah Catatan Baru</h1>
         <div class="note-type">
             <button id="textTypeBtn" class="active">Catatan Biasa</button>
@@ -241,7 +262,7 @@
                     let noteData = {
                         title: title,
                         desc: desc,
-                        lastUpdate: serverTimestamp(),
+                        lastUpdate: new Date().toISOString(),
                         userId: userId
                     };
 

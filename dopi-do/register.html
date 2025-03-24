@@ -302,15 +302,28 @@
         // Fungsi Register
         // Fungsi untuk registrasi
         function registerUser() {
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
             const name = document.getElementById('name').value;
+            e.preventDefault(); // Mencegah form submit default
 
             // Validasi input
             if (!email || !password || !name) {
                 Swal.fire({
                     title: 'Error!',
                     text: 'Email, password, dan nama harus diisi!',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+                return;
+            }
+
+            
+            // Cek apakah ada spasi di dalam email atau password
+            if (email.includes(' ') || password.includes(' ')) {
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Email dan Password tidak boleh mengandung spasi.',
                     icon: 'error',
                     confirmButtonText: 'OK'
                 });
@@ -326,6 +339,8 @@
                 });
                 return;
             }
+
+            
 
             // Registrasi pengguna
             createUserWithEmailAndPassword(auth, email, password)
