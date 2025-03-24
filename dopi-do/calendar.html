@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link href='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.15/main.min.css' rel='stylesheet' />
+    <link href='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.15/main.min.css' rel='stylesheet' />
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-align: center;
+            padding-bottom: 60px;
+        }
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin-top: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            color: black;
+            margin-bottom: 80px; /* Beri jarak untuk navbar */
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        #calendar {
+            max-width: 100%;
+        }
+        .fc-header-toolbar {
+            flex-wrap: wrap; /* Agar toolbar tidak overflow di mobile */
+        }
+        .fc-toolbar-title {
+            font-size: 1.2em; /* Ukuran judul yang lebih kecil */
+        }
+        .fc-button {
+            padding: 5px 8px; /* Ukuran tombol yang lebih kecil */
+            font-size: 12px;
+        }
+        /* Warna latar belakang kalender */
+        .fc {
+            background-color: rgba(255, 255, 255, 0.9); /* Latar belakang semi-transparan */
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        /* Warna header kalender */
+        .fc-header-toolbar {
+            background-color: #667eea;
+            color: white;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        /* Warna tombol navigasi */
+        .fc-button {
+            background-color: #764ba2;
+            border: none;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .fc-button:hover {
+            background-color: #667eea;
+        }
+
+        /* Warna event */
+        .fc-event {
+            background-color: #667eea; /* Warna event */
+            border: none;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .fc-event:hover {
+            background-color: #764ba2; /* Warna saat hover */
+        }
+
+        /* Warna teks di kalender */
+        .fc-daygrid-day-number {
+            color: #333; /* Warna teks tanggal */
+        }
+
+        .fc-col-header-cell {
+            background-color: #667eea; /* Warna header hari */
+            color: white;
+            padding: 10px;
+        }
+
+        /* Warna hari Minggu */
+        .fc-day-sun {
+            color: #ff6b6b; /* Warna teks hari Minggu */
+        }
+
+        /* Warna hari libur */
+        .fc-day-other {
+            background-color: rgba(255, 255, 255, 0.8); /* Warna latar hari libur */
+        }
+
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background: #fff;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            animation: slideIn 0.3s ease;
+            overflow: hidden;
+        }
+
+        .modal-header {
+            padding: 20px;
+            background: #6a11cb;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        /* Close icon di pojok kanan atas modal */
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 28px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            z-index: 1001; /* Pastikan icon di atas konten modal */
+            color: #333; /* Warna default */
+            background: rgba(255, 255, 255, 0.8); /* Latar belakang semi-transparan */
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+        }
+
+        .close-modal:hover {
+            color: #ff4d4d; /* Warna saat hover */
+            background: rgba(255, 255, 255, 1); /* Latar belakang lebih solid saat hover */
+        }
+
+        .modal-body {
+            padding: 20px;
+        }
+
+        .info-section {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-section i {
+            font-size: 20px;
+            color: #6a11cb;
+        }
+
+        .info-section p {
+            margin: 0;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .description-content {
+            margin-top: 10px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        .description-content p {
+            margin: 0;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            padding: 20px;
+            background: #f5f5f5;
+            justify-content: flex-end;
+        }
+
+        .action-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .action-button i {
+            font-size: 18px;
+        }
+
+        .action-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .action-button:active {
+            transform: translateY(0);
+        }
+
+        .action-button.delete {
+            background: #ff4d4d;
+            color: #fff;
+        }
+
+        .action-button.delete:hover {
+            background: #e60000;
+        }
+
+        /* Bottom Navigation Bar */
+        .bottom-nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .bottom-nav .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        .bottom-nav .nav-item:hover {
+            color: #ffdd57;
+        }
+        .bottom-nav .nav-item i {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        .nav-item.active {
+            color: #f0c800;
+        }
+        .nav-item.active i {
+            color: #f0c800;
+        }
+
+        .status-badge {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        #toggleCompleteBtn {
+            background: #ffdd57;
+            color: #2575fc;
+        }
+
+        #toggleCompleteBtn:hover {
+            background: #f0c800;
+        }
+
+        .calender {
+            display: none;
+        }
+
+        /* Tampilkan loading indicator secara default */
+        #loadingIndicator {
+            display: block;
+        }
+
+        .container {
+            display: none;
+        }
+
+        /* Style untuk loading indicator */
+        .loading-indicator {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .loading-indicator .loader {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #fff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-indicator p {
+            font-size: 16px;
+            color: #fff;
+        }
+
+        /* Responsif untuk mobile */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            .fc-header-toolbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .fc-toolbar-title {
+                font-size: 1em;
+            }
+            .fc-button {
+                padding: 4px 6px;
+                font-size: 10px;
+            }
+
+            .modal-content {
+                width: 95%;
+            }
+            .modal-content {
+                width: 95%;
+            }
+
+            .modal-header h2 {
+                font-size: 15px;
+            }
+
+            .info-section p {
+                font-size: 14px;
+            }
+
+            .description-content p {
+                font-size: 13px;
+            }
+            
+            .action-button {
+                padding: 8px 16px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Indicator -->
+    <div id="loadingIndicator" class="loading-indicator">
+        <div class="loader"></div>
+        <p>Memuat data...</p>
+    </div>
+    <div id="container" class="container">
+        <h1>Kalender To-Do</h1>
+        <div id="calendar" class="calendar"></div>
+    </div>
+
+    <!-- Modal -->
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <div class="status-badge" id="modalStatusBadge"></div>
+            </div>
+            <div class="modal-body">
+                <div class="info-section">
+                    <i class='bx bx-calendar'></i>
+                    <p><strong>Deadline:</strong> <span id="modalDeadline"></span></p>
+                </div>
+                <div class="info-section">
+                    <i class='bx bx-notepad'></i>
+                    <p><strong>Deskripsi:</strong></p>
+                </div>
+                <div class="description-content">
+                    <p id="modalDescription"></p>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button id="toggleCompleteBtn" class="action-button">
+                    <i class='bx bx-check'></i>
+                    <span>Tandai Selesai/Belum Selesai</span>
+                </button>
+                <button id="deleteTaskBtn" class="action-button delete">
+                    <i class='bx bx-trash'></i>
+                    <span>Hapus Tugas</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="bottom-nav">
+        <a href="dashboard.html" class="nav-item">
+            <i class='bx bx-home'></i>
+            <span>Home</span>
+        </a>
+        <a href="addtask.html" class="nav-item">
+            <i class='bx bx-plus-circle'></i>
+            <span>Add Task</span>
+        </a>
+        <a href="notes.html" class="nav-item">
+            <i class='bx bx-note'></i>
+            <span>Notes</span>
+        </a>
+        <a href="calendar.html" class="nav-item active">
+            <i class='bx bx-calendar'></i>
+            <span>Calendar</span>
+        </a>
+        <a href="settings.html" class="nav-item">
+            <i class='bx bx-cog'></i>
+            <span>Settings</span>
+        </a>
+    </div>
+
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Skrip FullCalendar -->
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.15/index.global.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.15/index.global.min.js'></script>
+    <script>
+        // Fungsi untuk menampilkan modal dengan detail tugas
+        function showTaskDetail(id, title, description, deadline, completed) {
+            const modal = document.getElementById('taskModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDescription = document.getElementById('modalDescription');
+            const modalDeadline = document.getElementById('modalDeadline');
+            const modalStatusBadge = document.getElementById('modalStatusBadge');
+            const toggleCompleteBtn = document.getElementById('toggleCompleteBtn');
+            const deleteTaskBtn = document.getElementById('deleteTaskBtn');
+
+            // console.log(id);
+            // Isi modal dengan data tugas
+            modalTitle.textContent = title;
+            modalDescription.textContent = description;
+            modalDeadline.textContent = formatDate(deadline);
+            modalStatusBadge.textContent = completed ? 'Selesai' : 'Belum Selesai';
+            modalStatusBadge.style.backgroundColor = completed ? '#4CAF50' : '#ffdd57';
+
+            // Update teks tombol toggle
+            toggleCompleteBtn.innerHTML = completed
+                ? `<i class='bx bx-undo'></i><span>Tandai Belum Selesai</span>`
+                : `<i class='bx bx-check'></i><span>Tandai Selesai</span>`;
+
+            // Tambahkan event listener untuk tombol toggle
+            toggleCompleteBtn.onclick = () => {
+                toggleComplete(id, completed, event);
+                modal.style.display = 'none'; // Tutup modal setelah toggle
+            };
+
+            // Tambahkan event listener untuk tombol hapus
+            deleteTaskBtn.onclick = () => {
+                deleteTask(id);
+                modal.style.display = 'none'; // Tutup modal setelah hapus
+            };
+
+            // Tampilkan modal
+            modal.style.display = 'flex';
+        }
+
+        // Fungsi untuk menutup modal
+        document.querySelector('.close-modal').onclick = () => {
+            document.getElementById('taskModal').style.display = 'none';
+        };
+
+        // Tutup modal jika mengklik di luar modal
+        window.onclick = (event) => {
+            const modal = document.getElementById('taskModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
+
+        // Fungsi untuk menutup modal
+        document.querySelector('.close-modal').onclick = () => {
+            document.getElementById('taskModal').style.display = 'none';
+        };
+
+        // Tutup modal jika mengklik di luar modal
+        window.onclick = (event) => {
+            const modal = document.getElementById('taskModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
+
+        // Fungsi untuk memformat tanggal ke "hari, dd-mm-yyyy"
+        function formatDate(dateString) {
+            if (dateString == '00000000') {
+                return `Tanpa Deadline`;
+            }
+            const days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+            const date = new Date(dateString); // Konversi string ke objek Date
+
+            // Ambil hari, tanggal, bulan, dan tahun
+            const dayName = days[date.getDay()]; // Nama hari
+            const day = String(date.getDate()).padStart(2, '0'); // Tanggal (dd)
+            const month = String(date.getMonth() + 1).padStart(2, '0'); // Bulan (mm)
+            const year = date.getFullYear(); // Tahun (yyyy)
+
+            // Gabungkan dalam format "hari, dd-mm-yyyy"
+            return `${dayName}, ${day}-${month}-${year}`;
+        }
+
+        
+    </script>
+
+    <!-- Skrip Firebase dan logika aplikasi -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+        import { getFirestore, collection, query, where, onSnapshot, doc, updateDoc, deleteDoc, getDocs } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBVN_VDTx19_KKXOR39mtfGFuGC-HhVB8s",
+            authDomain: "dopi-do.firebaseapp.com",
+            projectId: "dopi-do",
+            storageBucket: "dopi-do.appspot.com",
+            messagingSenderId: "1067650398130",
+            appId: "1:1067650398130:web:927d428356a218c95a56ab"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        let calendar; // Simpan referensi kalender di scope global
+
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                window.location.href = 'login.html';
+            } else {
+                fetchTodos(user.uid);
+            }
+        });
+
+        // Ekspor fungsi ke scope global
+        window.toggleComplete = async function(id, completed, event) {
+            if (!id) {
+                console.error("ID tugas tidak valid");
+                return;
+            }
+
+            try {
+                event.stopPropagation(); // Hentikan propagasi event
+                const todoRef = doc(db, 'todos', id);
+                await updateDoc(todoRef, { completed: !completed });
+                console.log("Status tugas diperbarui");
+
+                // Refresh halaman setelah berhasil memperbarui status
+                window.location.reload();
+            } catch (error) {
+                console.error("Error memperbarui status tugas:", error);
+            }
+        };
+
+        window.deleteTask = async function(id, event) {
+            if (event) {
+                event.stopPropagation(); // Hentikan propagasi event hanya jika event ada
+            }
+
+            Swal.fire({
+                title: 'Hapus Tugas?',
+                text: "Anda tidak dapat mengembalikan tugas yang telah dihapus!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#ffdd57',
+                cancelButtonColor: '#2575fc',
+                confirmButtonText: 'Ya, hapus!',
+                cancelButtonText: 'Batal'
+            }).then(async (result) => {
+                if (result.isConfirmed) {
+                    try {
+                        await deleteDoc(doc(db, 'todos', id));
+                        Swal.fire('Dihapus!', 'Tugas telah dihapus.', 'success');
+                        // Beri jeda 2 detik sebelum memuat ulang halaman
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 2000); // 2000 milidetik = 2 detik
+                    } catch (error) {
+                        console.error("Error menghapus tugas:", error);
+                        Swal.fire('Error!', 'Gagal menghapus tugas.', 'error');
+                    }
+                }
+            });
+        };
+        async function fetchTodos(userUID) {
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const calenderDiv = document.getElementById('calendar');
+            const containerDiv = document.getElementById('container');
+            const q = query(collection(db, "todos"), where("userId", "==", userUID));
+            const querySnapshot = await getDocs(q);
+            let events = [];
+
+            
+            // Tampilkan loading indicator
+            loadingIndicator.style.display = 'block';
+            
+            querySnapshot.forEach((doc) => {
+                const todo = doc.data();
+                events.push({
+                    title: todo.title,
+                    start: todo.deadline,
+                    extendedProps: {
+                        id: doc.id,
+                        description: todo.description || 'Tidak ada deskripsi',
+                        deadline: todo.deadline, // Tambahkan deadline ke extendedProps
+                        completed: todo.completed, // Tambahkan status completed
+                    }
+                });
+                
+                containerDiv.style.display = 'block';
+            });
+            
+            let calendarEl = document.getElementById('calendar');
+            calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,dayGridWeek,dayGridDay'
+                },
+                locale: 'id',
+                events: events,
+                eventClick: function(info) {
+                    showTaskDetail(
+                        info.event.extendedProps.id, // ID event
+                        info.event.title, // Judul event
+                        info.event.extendedProps.description, // Deskripsi dari extendedProps
+                        info.event.extendedProps.deadline, // Deadline dari extendedProps
+                        info.event.extendedProps.completed // Status completed dari extendedProps
+                    );
+                }
+            });
+            calendar.render();
+            calenderDiv.style.display = 'block';
+             // Sembunyikan loading indicator setelah data selesai dimuat
+             loadingIndicator.style.display = 'none';
+            
+        }
+    </script>
+</body>
+</html>

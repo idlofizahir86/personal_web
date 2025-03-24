@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes - Dopi-Do</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-align: center;
+            padding-bottom: 60px;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin-top: 20px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .notes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .note-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: left;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Memastikan tanggal selalu di bagian bawah */
+        }
+
+        .note-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .note-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .note-desc {
+            font-size: 14px;
+            opacity: 0.8;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* Batasi deskripsi ke 3 baris */
+            line-clamp: 3; /* Batasi deskripsi ke 3 baris */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex-grow: 1; /* Memastikan deskripsi mengambil ruang yang tersedia */
+        }
+
+        .note-date {
+            font-size: 12px;
+            margin-top: 10px;
+            opacity: 0.6;
+            text-align: left; /* Rata kanan untuk tanggal */
+        }
+        .add-note {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background: #ff7eb3;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        /* Bottom Navigation Bar */
+        .bottom-nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px;
+            background: rgba(171, 10, 10, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .bottom-nav .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        .bottom-nav .nav-item:hover {
+            color: #ffdd57;
+        }
+        .bottom-nav .nav-item i {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        .nav-item.active {
+            color: #f0c800;
+        }
+        .nav-item.active i {
+            color: #f0c800;
+        }
+
+        #loadingIndicator {
+            display: none; /* Sembunyikan loading indicator secara default */
+            position: fixed; /* Tetap di posisi yang sama bahkan saat di-scroll */
+            top: 50%; /* Posisikan di tengah vertikal */
+            left: 50%; /* Posisikan di tengah horizontal */
+            transform: translate(-50%, -50%); /* Geser ke tengah secara presisi */
+            text-align: center;
+            z-index: 1000; /* Pastikan loading indicator di atas elemen lain */
+        }
+
+        .container {
+            display: none; /* Sembunyikan form secara default */
+        }
+
+        .loading-indicator .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <!-- Boxicons CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    
+    <div id="loadingIndicator" class="loading-indicator">
+        <div class="loader"></div>
+        <p>Memuat data...</p>
+    </div>
+
+    <div id="container" class="container">
+        <h1>Notes</h1>
+        <div class="notes-grid" id="notes-list">
+            <!-- Catatan akan dimuat di sini -->
+        </div>
+    </div>
+    
+    <!-- Tombol Tambah Catatan -->
+    <div class="add-note" onclick="window.location.href='addnotes.html'">+</div>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="bottom-nav">
+        <a href="dashboard.html" class="nav-item">
+            <i class='bx bx-home'></i>
+            <span>Home</span>
+        </a>
+        <a href="addtask.html" class="nav-item">
+            <i class='bx bx-plus-circle'></i>
+            <span>Add Task</span>
+        </a>
+        <a href="notes.html" class="nav-item active">
+            <i class='bx bx-note'></i>
+            <span>Notes</span>
+        </a>
+        <a href="calendar.html" class="nav-item">
+            <i class='bx bx-calendar'></i>
+            <span>Calendar</span>
+        </a>
+        <a href="settings.html" class="nav-item">
+            <i class='bx bx-cog'></i>
+            <span>Settings</span>
+        </a>
+    </div>
+
+    <script>
+        function formatDate(date) {
+            if (!(date instanceof Date)) {
+                date = new Date(date); // Ubah ke objek Date jika belum
+            }
+
+            const day = String(date.getDate()).padStart(2, '0'); // dd
+            const month = String(date.getMonth() + 1).padStart(2, '0'); // mm (bulan dimulai dari 0)
+            const year = date.getFullYear(); // yyyy
+            const hours = String(date.getHours()).padStart(2, '0'); // hh
+            const minutes = String(date.getMinutes()).padStart(2, '0'); // mm
+
+            return `${day}/${month}/${year} ${hours}:${minutes}`;
+        }
+    </script>
+    
+    <!-- Firebase SDK (Modular) -->
+    <script type="module">
+        // Import fungsi yang diperlukan dari Firebase SDK
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+        import { getFirestore, collection, query, where, onSnapshot } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore.js";
+
+        // Konfigurasi Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyBVN_VDTx19_KKXOR39mtfGFuGC-HhVB8s",
+            authDomain: "dopi-do.firebaseapp.com",
+            projectId: "dopi-do",
+            storageBucket: "dopi-do.firebasestorage.app",
+            messagingSenderId: "1067650398130",
+            appId: "1:1067650398130:web:927d428356a218c95a56ab"
+        };
+
+        // Inisialisasi Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // Cek status login
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                // Jika tidak ada user yang login, redirect ke halaman login
+                window.location.href = 'login.html';
+            } else {
+                // Jika user login, tampilkan catatan
+                loadNotes(user.uid);
+            }
+        });
+
+        // Fungsi untuk memuat catatan dari Firestore
+        function loadNotes(userId) {
+            const q = query(collection(db, 'notes'), where('userId', '==', userId));
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const container = document.getElementById('container');
+
+             // Tampilkan loading indicator
+             loadingIndicator.style.display = 'block';
+
+            onSnapshot(q, (snapshot) => {
+                const notes = [];
+                snapshot.forEach((doc) => {
+                    notes.push({ id: doc.id, ...doc.data() });
+                });
+
+                // Sembunyikan loading indicator setelah data selesai dimuat
+                loadingIndicator.style.display = 'none';
+                renderNotesList(notes);
+                
+                container.style.display = 'block';
+            });
+        }
+
+        // Fungsi untuk merender daftar catatan
+        function renderNotesList(notes) {
+            const notesList = document.getElementById("notes-list");
+            if (notes.length === 0) {
+                notesList.innerHTML = `<p>Tidak ada catatan.</p>`;
+            } else {
+                notesList.innerHTML = notes.map(note => `
+                    <div class="note-item" onclick="window.location.href='editnote.html?id=${note.id}'">
+                        <div class="note-title">${note.title || 'Tanpa Judul'}</div>
+                        <div class="note-desc">${note.desc || 'Tidak ada deskripsi'}</div>
+                        <div class="note-date">Terakhir diperbarui: ${note.lastUpdate ? formatDate(note.lastUpdate) : 'Tidak diketahui'}</div>
+                    </div>
+                `).join('');
+            }
+        }
+    </script>
+</body>
+</html>

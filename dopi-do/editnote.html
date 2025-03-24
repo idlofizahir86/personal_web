@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Catatan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+        }
+        .container {
+            width: 90%;
+            max-width: 500px;
+            margin-top: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .header button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .header button:hover {
+            color: #ffdd57;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #ff7eb3;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .btn {
+            background: #ff7eb3;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background: #ff5c9e;
+        }
+        .list-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+        .list-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .list-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: #ff7eb3;
+        }
+        .list-item input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+        .list-item input[type="text"]:focus {
+            border-color: #ff7eb3;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .list-item button {
+            background: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .list-item button:hover {
+            background: #cc0000;
+        }
+        .read-only .form-group input,
+        .read-only .form-group textarea,
+        .read-only .list-item input[type="text"] {
+            background: transparent;
+            border: none;
+            pointer-events: none;
+        }
+        .read-only .list-item button {
+            display: none;
+        }
+
+        #loadingIndicator {
+            display: none; /* Sembunyikan loading indicator secara default */
+            position: fixed; /* Tetap di posisi yang sama bahkan saat di-scroll */
+            top: 50%; /* Posisikan di tengah vertikal */
+            left: 50%; /* Posisikan di tengah horizontal */
+            transform: translate(-50%, -50%); /* Geser ke tengah secara presisi */
+            text-align: center;
+            z-index: 1000; /* Pastikan loading indicator di atas elemen lain */
+        }
+
+        #noteForm {
+            display: none; /* Sembunyikan form secara default */
+        }
+
+        .loading-indicator .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <!-- Boxicons CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <button onclick="window.location.href='notes.html'"><i class='bx bx-arrow-back'></i></button>
+            <button id="toggleEditBtn"><i class='bx bx-edit'></i></button>
+        </div>
+        <!-- Loading Indicator -->
+        <h1>Detail Catatan</h1>
+        <div id="loadingIndicator" class="loading-indicator">
+            <div class="loader"></div>
+            <p>Memuat data...</p>
+        </div>
+        <form id="noteForm" class="read-only">
+            <!-- Section Judul -->
+            <div class="card">
+                <div class="form-group">
+                    <label for="title">Judul</label>
+                    <input type="text" id="title" placeholder="Masukkan judul catatan" required>
+                </div>
+            </div>
+    
+            <!-- Section Deskripsi -->
+            <div class="card">
+                <div class="form-group">
+                    <label for="desc">Deskripsi</label>
+                    <textarea id="desc" placeholder="Masukkan deskripsi catatan" required></textarea>
+                </div>
+            </div>
+    
+            <!-- Section Isi Catatan atau Checklist -->
+            <div id="contentSection">
+                <!-- Section untuk catatan biasa -->
+                <div class="card" id="textContent">
+                    <div class="form-group">
+                        <label for="content">Isi Catatan</label>
+                        <textarea id="content" placeholder="Masukkan isi catatan"></textarea>
+                    </div>
+                </div>
+    
+                <!-- Section untuk checklist -->
+                <div class="card" id="listContent" style="display: none;">
+                    <div class="form-group">
+                        <label>Daftar Item</label>
+                        <div id="listItems">
+                            <!-- Item checklist akan ditambahkan di sini -->
+                        </div>
+                        <button type="button" id="addItemBtn" class="btn" style="display: none;">Tambah Item</button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Tombol Simpan Perubahan -->
+            <button type="submit" class="btn" style="display: none;">Simpan Perubahan</button>
+        </form>
+    </div>
+
+    <!-- Firebase SDK (Modular) -->
+    <script type="module">
+        // Import fungsi yang diperlukan dari Firebase SDK
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+        import { getFirestore, doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore.js";
+
+        // Konfigurasi Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyBVN_VDTx19_KKXOR39mtfGFuGC-HhVB8s",
+            authDomain: "dopi-do.firebaseapp.com",
+            projectId: "dopi-do",
+            storageBucket: "dopi-do.firebasestorage.app",
+            messagingSenderId: "1067650398130",
+            appId: "1:1067650398130:web:927d428356a218c95a56ab"
+        };
+
+        // Inisialisasi Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // Ambil ID catatan dari URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const noteId = urlParams.get('id');
+
+        // Cek status login
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                // Jika tidak ada user yang login, redirect ke halaman login
+                window.location.href = 'login.html';
+            } else if (noteId) {
+                // Jika user login dan ID catatan valid, muat data catatan
+                loadNote(noteId, user.uid);
+            }
+        });
+
+        // Fungsi untuk memuat data catatan
+        async function loadNote(noteId, userId) {
+            const noteRef = doc(db, 'notes', noteId);
+            
+            // Tampilkan loading indicator dan sembunyikan form
+            document.getElementById('loadingIndicator').style.display = 'block';
+            document.getElementById('noteForm').style.display = 'none';
+
+            try {
+                const noteSnap = await getDoc(noteRef);
+
+                if (noteSnap.exists() && noteSnap.data().userId === userId) {
+                    const note = noteSnap.data();
+                    document.getElementById('title').value = note.title || '';
+                    document.getElementById('desc').value = note.desc || '';
+
+                    if (note.type === "text") {
+                        // Tampilkan form untuk catatan biasa
+                        document.getElementById('textContent').style.display = 'block';
+                        document.getElementById('listContent').style.display = 'none';
+                        document.getElementById('content').value = note.content || '';
+                    } else if (note.type === "list") {
+                        // Tampilkan form untuk checklist
+                        document.getElementById('textContent').style.display = 'none';
+                        document.getElementById('listContent').style.display = 'block';
+                        const listItems = document.getElementById('listItems');
+                        listItems.innerHTML = ''; // Kosongkan list items sebelum menambahkan yang baru
+
+                        note.items.forEach((item, index) => {
+                            const itemDiv = document.createElement('div');
+                            itemDiv.className = 'list-item';
+                            itemDiv.innerHTML = `
+                                <input type="checkbox" ${item.checked ? 'checked' : ''} data-index="${index}">
+                                <input type="text" value="${item.text}" readonly>
+                            `;
+                            listItems.appendChild(itemDiv);
+
+                            // Tambahkan event listener untuk itemDiv
+                            itemDiv.addEventListener('click', (event) => {
+                                const checkbox = itemDiv.querySelector('input[type="checkbox"]');
+                                if (event.target !== checkbox) {
+                                    checkbox.checked = !checkbox.checked;
+                                    updateChecklist(noteId, index, checkbox.checked);
+                                }
+                            });
+
+                            // Tambahkan event listener untuk checkbox
+                            const checkbox = itemDiv.querySelector('input[type="checkbox"]');
+                            checkbox.addEventListener('change', () => {
+                                updateChecklist(noteId, index, checkbox.checked);
+                            });
+                        });
+                    }
+
+                    // Setup form untuk toggle edit
+                    setupForm(noteId, note.type);
+
+                    // Sembunyikan loading indicator dan tampilkan form setelah data selesai dimuat
+                    document.getElementById('loadingIndicator').style.display = 'none';
+                    document.getElementById('noteForm').style.display = 'block';
+                } else {
+                    alert('Catatan tidak ditemukan atau Anda tidak memiliki akses.');
+                    window.location.href = 'notes.html';
+                }
+            } catch (error) {
+                console.error('Error loading note:', error);
+                alert('Terjadi kesalahan saat memuat catatan.');
+                document.getElementById('loadingIndicator').style.display = 'none';
+            }
+        }
+
+
+        // Fungsi untuk mengupdate checklist di Firestore
+        async function updateChecklist(noteId, index, checked) {
+            const noteRef = doc(db, 'notes', noteId);
+            const noteSnap = await getDoc(noteRef);
+
+            if (noteSnap.exists()) {
+                const note = noteSnap.data();
+                note.items[index].checked = checked;
+
+                // Update catatan di Firestore
+                await updateDoc(noteRef, { items: note.items });
+            }
+        }
+
+        // Fungsi untuk menyiapkan form
+        function setupForm(noteId, noteType) {
+            const toggleEditBtn = document.getElementById('toggleEditBtn');
+            const noteForm = document.getElementById('noteForm');
+            const addItemBtn = document.getElementById('addItemBtn');
+            const listItems = document.getElementById('listItems');
+            let isEditMode = false;
+
+            // Toggle mode edit
+            toggleEditBtn.addEventListener('click', () => {
+                isEditMode = !isEditMode;
+                noteForm.classList.toggle('read-only', !isEditMode);
+                document.querySelector('#noteForm button[type="submit"]').style.display = isEditMode ? 'block' : 'none';
+
+                if (noteType === "list") {
+                    // Ubah tampilan checklist saat mode edit aktif
+                    const items = listItems.querySelectorAll('.list-item');
+                    items.forEach(item => {
+                        const checkbox = item.querySelector('input[type="checkbox"]');
+                        const textInput = item.querySelector('input[type="text"]');
+                        checkbox.disabled = !isEditMode;
+                        textInput.readOnly = !isEditMode;
+                        if (isEditMode) {
+                            item.innerHTML = `
+                                <input type="checkbox" ${checkbox.checked ? 'checked' : ''} data-index="${checkbox.dataset.index}">
+                                <input type="text" value="${textInput.value}" required>
+                                <button type="button" onclick="this.parentElement.remove()"><i class='bx bx-trash'></i></button>
+                            `;
+                        } else {
+                            item.innerHTML = `
+                                <input type="checkbox" ${checkbox.checked ? 'checked' : ''} data-index="${checkbox.dataset.index}">
+                                <input type="text" value="${textInput.value}" readonly>
+                            `;
+                        }
+                    });
+
+                    // Tampilkan tombol tambah item saat mode edit aktif
+                    addItemBtn.style.display = isEditMode ? 'block' : 'none';
+                }
+            });
+
+            // Tambahkan item checklist
+            if (noteType === "list") {
+                addItemBtn.addEventListener('click', () => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'list-item';
+                    itemDiv.innerHTML = `
+                        <input type="checkbox">
+                        <input type="text" placeholder="Masukkan item" required>
+                        <button type="button" onclick="this.parentElement.remove()"><i class='bx bx-trash'></i></button>
+                    `;
+                    listItems.appendChild(itemDiv);
+                });
+            }
+
+            // Submit form
+            noteForm.addEventListener('submit', async (e) => {
+                e.preventDefault(); // Mencegah form submit default
+
+                const title = document.getElementById('title').value.trim();
+                const desc = document.getElementById('desc').value.trim();
+
+                if (!title || !desc) {
+                    alert('Judul dan deskripsi harus diisi!');
+                    return;
+                }
+
+                try {
+                    let noteData = {
+                        title: title,
+                        desc: desc,
+                        lastUpdate: new Date().toISOString()
+                    };
+
+                    if (noteType === "text") {
+                        // Catatan biasa
+                        noteData.content = document.getElementById('content').value.trim();
+                    } else {
+                        // Checklist
+                        noteData.items = [];
+                        const items = listItems.querySelectorAll('.list-item');
+                        items.forEach(item => {
+                            const checkbox = item.querySelector('input[type="checkbox"]');
+                            const textInput = item.querySelector('input[type="text"]');
+                            noteData.items.push({
+                                text: textInput.value.trim(),
+                                checked: checkbox.checked
+                            });
+                        });
+                    }
+
+                    // Update catatan di Firestore
+                    const noteRef = doc(db, 'notes', noteId);
+                    await updateDoc(noteRef, noteData);
+
+                    // Redirect kembali ke editnote.html dengan ID yang sama
+                    window.location.href = `editnote.html?id=${noteId}`;
+                } catch (error) {
+                    console.error('Error mengupdate catatan: ', error);
+                    alert('Gagal mengupdate catatan.');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

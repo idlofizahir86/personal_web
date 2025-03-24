@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dopi-Do: To-Do List App</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            animation: slideIn 2s ease-in-out;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .feature {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 10px;
+            width: 45%;
+            text-align: center;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .feature i {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: #ffdd57;
+        }
+
+        .feature h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin: 0;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            animation: fadeIn 4s ease-in-out;
+        }
+
+        .btn {
+            background: white;
+            color: #2575fc;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #f0f0f0;
+            transform: translateY(-3px);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            .feature {
+                width: 100%;
+            }
+
+            .btn {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dopi-Do</h1>
+        <p>Bikin hidup lebih teratur dan produktif dengan Dopi-Do! Catat tugas, atur jadwal, dan raih goals-mu dengan mudah.</p>
+
+        <!-- Fitur-fitur -->
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-tasks"></i>
+                <h3>Kelola Tugas</h3>
+                <p>Catat dan atur tugas harianmu dengan mudah.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-bell"></i>
+                <h3>Pengingat</h3>
+                <p>Atur pengingat agar tidak ada tugas yang terlewat.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-calendar-alt"></i>
+                <h3>Jadwal</h3>
+                <p>Rencanakan jadwalmu dengan fitur kalender.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-chart-line"></i>
+                <h3>Progress</h3>
+                <p>Pantau perkembangan tugasmu dengan grafik.</p>
+            </div>
+        </div>
+
+        <!-- Tombol Login dan Register -->
+        <div class="buttons">
+            <button class="btn" onclick="window.location.href='login.html'">Login</button>
+            <button class="btn" onclick="window.location.href='register.html'">Register</button>
+        </div>
+    </div>
+    <script type="module">
+        // Import fungsi yang diperlukan dari Firebase SDK
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+            import { getAuth, onAuthStateChanged, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+
+            // Konfigurasi Firebase
+            const firebaseConfig = {
+                apiKey: "AIzaSyBVN_VDTx19_KKXOR39mtfGFuGC-HhVB8s",
+                authDomain: "dopi-do.firebaseapp.com",
+                projectId: "dopi-do",
+                storageBucket: "dopi-do.firebasestorage.app",
+                messagingSenderId: "1067650398130",
+                appId: "1:1067650398130:web:927d428356a218c95a56ab"
+            };
+
+            // Inisialisasi Firebase
+            const app = initializeApp(firebaseConfig);
+            const auth = getAuth(app);
+
+            onAuthStateChanged(auth, async (user) => {
+                if (user) {
+                    window.location.href = "dashboard.html";
+                } 
+            });
+    </script>
+</body>
+</html>

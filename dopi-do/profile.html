@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dopi Do - Profil Pengguna</title>
+    <!-- Boxicons CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-align: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+        }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .back-button i {
+            font-size: 24px;
+        }
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        h2 {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+        p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .stats {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+        .stats p {
+            margin: 5px 0;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .stats p i {
+            font-size: 18px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            background: #ff7eb3;
+            color: white;
+            transition: 0.3s;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        @media (max-width: 600px) {
+            .back-button {
+                font-size: 20px;
+            }
+            .back-button i {
+                font-size: 20px;
+            }
+        }
+
+
+        /* Sembunyikan loading indicator secara default */
+        #loadingIndicator {
+            display: block;
+        }
+
+        /* Tampilkan container dan elemen di dalamnya setelah loading selesai */
+        .container {
+            display: none; /* Sembunyikan container secara default */
+        }
+
+        .container.visible {
+            display: block; /* Tampilkan container setelah loading selesai */
+        }
+
+        /* Style untuk loading indicator */
+        .loading-indicator {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .loading-indicator .loader {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #fff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-indicator p {
+            font-size: 16px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Indicator -->
+    <div id="loadingIndicator" class="loading-indicator">
+       <div class="loader"></div>
+       <p>Memuat data...</p>
+   </div>
+    <div class="container">
+
+
+        <!-- Tombol Kembali -->
+        <button class="back-button" onclick="window.location.href='dashboard.html'">
+            <i class='bx bx-arrow-back'></i>
+        </button>
+
+        <!-- Gambar Profil -->
+        <img src="assets/profile.png" alt="Foto Profil" class="profile-img">
+
+        <!-- Nama dan Email -->
+        <h2 id="userName">Nama Pengguna</h2>
+        <p id="userEmail">user@email.com</p>
+
+        <!-- Statistik Tugas dan Notes -->
+        <div class="stats">
+            <p><i class='bx bx-check-circle'></i> Tugas Selesai: <span id="completedTasks">0</span></p>
+            <p><i class='bx bx-circle'></i> Tugas Belum Selesai: <span id="incompleteTasks">0</span></p>
+            <p><i class='bx bx-note'></i> Notes: <span id="notesCount">0</span></p>
+        </div>
+
+        <!-- Tombol Logout -->
+        <button id="logout">Logout</button>
+    </div>
+
+    
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js";
+        import { getFirestore, collection, query, where, getDocs, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
+    
+        // Konfigurasi Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyBVN_VDTx19_KKXOR39mtfGFuGC-HhVB8s",
+            authDomain: "dopi-do.firebaseapp.com",
+            projectId: "dopi-do",
+            storageBucket: "dopi-do.firebasestorage.app",
+            messagingSenderId: "1067650398130",
+            appId: "1:1067650398130:web:927d428356a218c95a56ab"
+        };
+    
+        // Inisialisasi Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+    
+        // Cek status login
+        onAuthStateChanged(auth, async (user) => {
+            if (!user) {
+                Swal.fire({
+                    title: 'Anda Belum Login',
+                    text: 'Silakan Login agar dapat melanjutkan.',
+                    icon: 'warning',
+                    confirmButtonText: 'OK'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Jika tidak ada user yang login, redirect ke halaman login
+                        window.location.href = "login.html";
+                    }
+                });
+            } else {
+                try {
+                    // Ambil data pengguna dari koleksi 'users'
+                    const userDocRef = doc(db, "users", user.uid); // Referensi ke dokumen user
+                    const userDocSnap = await getDoc(userDocRef);
+    
+                    // Tampilkan nama pengguna
+                    if (userDocSnap.exists()) {
+                        const userData = userDocSnap.data();
+                        document.getElementById("userName").textContent = userData.name || "Nama Pengguna";
+                    } else {
+                        document.getElementById("userName").textContent = "Nama Pengguna"; // Default jika tidak ditemukan
+                    }
+    
+                    // Tampilkan email pengguna
+                    document.getElementById("userEmail").textContent = user.email;
+    
+                    // Ambil data tugas dari Firestore
+                    const q = query(collection(db, "todos"), where("userId", "==", user.uid));
+                    const querySnapshot = await getDocs(q);
+                    let completedTasks = 0;
+                    let incompleteTasks = 0;
+    
+                    querySnapshot.forEach((doc) => {
+                        if (doc.data().completed) {
+                            completedTasks++;
+                        } else {
+                            incompleteTasks++;
+                        }
+                    });
+
+                    const qNotes = query(collection(db, "notes"), where("userId", "==", user.uid));
+                    const querySnapshotNotes = await getDocs(qNotes);
+                    let notes = 0;
+
+                    querySnapshotNotes.forEach((doc) => {
+                        if (doc.data()) {
+                            notes++;
+                        }
+                    });
+    
+                    // Tampilkan data tugas
+                    document.getElementById("completedTasks").textContent = completedTasks;
+                    document.getElementById("incompleteTasks").textContent = incompleteTasks;
+    
+                    // Catatan: Untuk notes, sementara di-set ke 0
+                    document.getElementById("notesCount").textContent = notes;
+    
+                    // Sembunyikan loading indicator
+                    document.getElementById("loadingIndicator").style.display = "none";
+    
+                    // Tampilkan container dengan menambahkan class 'visible'
+                    document.querySelector(".container").classList.add("visible");
+                } catch (error) {
+                    console.error("Error mengambil data:", error);
+                    Swal.fire('Error!', 'Gagal memuat data: ' + error.message, 'error');
+                }
+            }
+        });
+    
+        // Logout Function
+        document.getElementById("logout").addEventListener("click", () => {
+            // Tampilkan dialog konfirmasi
+            Swal.fire({
+                title: 'Logout',
+                text: "Apakah anda yakin akan Keluar dari Dopi-Do?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#ffdd57',
+                cancelButtonColor: '#2575fc',
+                confirmButtonText: 'Ya, Yakin!',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Jika pengguna memilih "Ya, Yakin!", lakukan logout
+                    signOut(auth).then(() => {
+                        Swal.fire({
+                            title: 'Berhasil!',
+                            text: 'Anda berhasil keluar. Sampai Berjumpa lagi',
+                            icon: 'success',
+                            confirmButtonText: 'OK'
+                        }).then(() => {
+                            // Redirect ke halaman index.html setelah logout
+                            window.location.href = "index.html";
+                        });
+                    }).catch((error) => {
+                        // Jika terjadi error saat logout
+                        Swal.fire({
+                            title: 'Error!',
+                            text: 'Gagal logout: ' + error.message,
+                            icon: 'error',
+                            confirmButtonText: 'OK'
+                        });
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

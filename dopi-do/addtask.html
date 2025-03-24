@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dopi-Do - Add Task</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .input-box {
+            margin-bottom: 1.5rem;
+        }
+
+        .input-box label {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .input-box input,
+        .input-box textarea,
+        .input-box input[type="date"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            outline: none;
+            transition: background 0.3s ease;
+        }
+
+        .input-box input:focus,
+        .input-box textarea:focus,
+        .input-box input[type="date"]:focus {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .input-box textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: #ffdd57;
+            color: #2575fc;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #f0c800;
+        }
+
+        .icon-close{
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 45px;
+                height: 45px;
+                background: #000;
+                font-size: 2em;
+                color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-bottom-left-radius: 20px;
+                cursor: pointer;
+                z-index: 1;
+            }
+
+            /* Style untuk placeholder */
+        input[type="text"]::placeholder {
+            color: #a0a0a0; /* Warna abu-abu terang */
+            opacity: 1; /* Pastikan placeholder terlihat jelas */
+        }
+        textarea::placeholder {
+            color: #a0a0a0; /* Warna abu-abu terang */
+            opacity: 1; /* Pastikan placeholder terlihat jelas */
+        }
+    </style>
+    <!-- Boxicons CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+<body>
+    <div class="container">
+        <a href="dashboard.html"><span class="icon-close"><i class='bx bx-x'></i></span></a>
+        
+        <h1>Tambah Tugas Baru</h1>
+        <form id="addTaskForm">
+            <!-- Judul -->
+            <div class="input-box">
+                <label for="title">Judul Tugas</label>
+                <input type="text" id="title" placeholder="Masukkan judul tugas" required>
+            </div>
+
+            <!-- Deskripsi -->
+            <div class="input-box">
+                <label for="description">Deskripsi Tugas</label>
+                <textarea id="description" placeholder="Masukkan deskripsi tugas" required></textarea>
+            </div>
+
+            <!-- Deadline -->
+            <div class="input-box">
+                <label for="deadline">Deadline</label>
+                <input type="date" id="deadline">
+            </div>
+
+            <!-- Tombol Submit -->
+            <button type="submit" class="btn">Tambah Tugas</button>
+        </form>
+    </div>
+
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Firebase SDK (Modular) -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore.js";
+
+        // Konfigurasi Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyBVN_VDTx19_KKXOR39mtfGFuGC-HhVB8s",
+            authDomain: "dopi-do.firebaseapp.com",
+            projectId: "dopi-do",
+            storageBucket: "dopi-do.firebasestorage.app",
+            messagingSenderId: "1067650398130",
+            appId: "1:1067650398130:web:927d428356a218c95a56ab"
+        };
+
+        // Inisialisasi Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // Cek status login
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                window.location.href = 'login.html';
+            }
+        });
+
+        // Fungsi untuk menambahkan tugas
+        document.getElementById('addTaskForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const title = document.getElementById('title').value;
+            const description = document.getElementById('description').value;
+            let deadline = document.getElementById('deadline').value;
+            const user = auth.currentUser;
+
+            if (!title || !description ) {
+                Swal.fire('Error!', 'Semua field harus diisi!', 'error');
+                return;
+            }
+
+            // Jika deadline kosong, set ke '00000000'
+            if (!deadline) {
+                deadline = '00000000';
+            }
+
+            if (user) {
+                try {
+                    await addDoc(collection(db, 'todos'), {
+                        userId: user.uid,
+                        title: title,
+                        description: description,
+                        deadline: deadline, // Gunakan nilai yang sudah diolah
+                        completed: false,
+                        createdAt: new Date()
+                    });
+                    Swal.fire('Berhasil!', 'Tugas berhasil ditambahkan.', 'success')
+                        .then(() => {
+                            window.location.href = 'dashboard.html';
+                        });
+                } catch (error) {
+                    Swal.fire('Error!', 'Gagal menambahkan tugas: ' + error.message, 'error');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

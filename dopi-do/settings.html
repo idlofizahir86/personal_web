@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengaturan Akun</title>
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            width: 100%;
+            max-width: 450px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 28px;
+            font-weight: 600;
+            color: #444;
+        }
+        .input-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            background: #f9f9f9;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        input:focus {
+            border-color: #6a11cb;
+            box-shadow: 0 0 8px rgba(106, 17, 203, 0.3);
+            outline: none;
+        }
+        .edit-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #6a11cb;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+        .edit-icon:hover {
+            color: #2575fc;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            transform: translateY(-2px);
+        }
+        .btn-save {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+        }
+        .btn-save:hover {
+            background: linear-gradient(135deg, #2575fc, #6a11cb);
+        }
+        .btn-reset {
+            background: linear-gradient(135deg, #ff6f61, #ff9a44);
+            color: white;
+            margin-top: 10px;
+        }
+        .btn-reset:hover {
+            background: linear-gradient(135deg, #ff9a44, #ff6f61);
+        }
+        .btn-logout {
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            color: white;
+            margin-top: 10px;
+        }
+        .btn-logout:hover {
+            background: linear-gradient(135deg, #ff4b2b, #ff416c);
+        }
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .modal-content h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #444;
+        }
+        .modal-content input {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .modal-content button {
+            margin-top: 10px;
+        }
+        /* Bottom Navigation Bar */
+        .bottom-nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px;
+            background: rgba(171, 10, 10, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .bottom-nav .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        .bottom-nav .nav-item:hover {
+            color: #ffdd57;
+        }
+        .bottom-nav .nav-item i {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        .nav-item.active {
+            color: #f0c800;
+        }
+        .nav-item.active i {
+            color: #f0c800;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Pengaturan Akun</h1>
+
+        <div class="input-group">
+            <label>Nama</label>
+            <input type="text" id="userName" placeholder="Masukkan nama Anda" readonly>
+            <i class='bx bx-edit edit-icon' onclick="openEditNameModal()"></i>
+        </div>
+
+        <div class="input-group">
+            <label>Email</label>
+            <input type="email" id="userEmail" placeholder="Masukkan email Anda" readonly>
+            <i class='bx bx-edit edit-icon' onclick="openEditEmailModal()"></i>
+        </div>
+
+        <button class="btn-reset" onclick="resetPassword()">Ganti Password</button>
+        <button class="btn-check-verification" onclick="checkEmailVerification()">Periksa Verifikasi Email</button>
+    </div>
+
+    <!-- Modal Edit Nama -->
+    <div id="editNameModal" class="modal">
+        <div class="modal-content">
+            <h2>Edit Nama</h2>
+            <input type="text" id="editNameInput" placeholder="Masukkan nama baru">
+            <button class="btn-save" onclick="saveName()">Simpan</button>
+            <button class="btn-reset" onclick="closeModal('editNameModal')">Batal</button>
+        </div>
+    </div>
+
+    <!-- Modal Edit Email -->
+    <div id="editEmailModal" class="modal">
+        <div class="modal-content">
+            <h2>Edit Email</h2>
+            <input type="email" id="editEmailInput" placeholder="Masukkan email baru">
+            <button class="btn-save" onclick="saveEmail()">Simpan</button>
+            <button class="btn-reset" onclick="closeModal('editEmailModal')">Batal</button>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="bottom-nav">
+        <a href="dashboard.html" class="nav-item">
+            <i class='bx bx-home'></i>
+            <span>Home</span>
+        </a>
+        <a href="addtask.html" class="nav-item">
+            <i class='bx bx-plus-circle'></i>
+            <span>Add Task</span>
+        </a>
+        <a href="notes.html" class="nav-item">
+            <i class='bx bx-note'></i>
+            <span>Notes</span>
+        </a>
+        <a href="calendar.html" class="nav-item">
+            <i class='bx bx-calendar'></i>
+            <span>Calendar</span>
+        </a>
+        <a href="settings.html" class="nav-item active">
+            <i class='bx bx-cog'></i>
+            <span>Settings</span>
+        </a>
+    </div>
+
+    <!-- Firebase -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged, updateProfile, updateEmail, sendPasswordResetEmail, signOut, sendEmailVerification, reauthenticateWithCredential, EmailAuthProvider } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+        import { getFirestore, doc, updateDoc, getDoc } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBVN_VDTx19_KKXOR39mtfGFuGC-HhVB8s",
+            authDomain: "dopi-do.firebaseapp.com",
+            projectId: "dopi-do",
+            storageBucket: "dopi-do.firebasestorage.app",
+            messagingSenderId: "1067650398130",
+            appId: "1:1067650398130:web:927d428356a218c95a56ab"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        const userName = document.getElementById('userName');
+        const userEmail = document.getElementById('userEmail');
+        const editNameInput = document.getElementById('editNameInput');
+        const editEmailInput = document.getElementById('editEmailInput');
+
+        // Cek apakah user login
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                userName.value = user.displayName || "";
+                userEmail.value = user.email;
+                
+                // Ambil data dari Firestore
+                const userDoc = await getDoc(doc(db, "users", user.uid));
+                if (userDoc.exists()) {
+                    userName.value = userDoc.data().name || user.displayName || "";
+                }
+            } else {
+                window.location.href = 'login.html';
+            }
+        });
+
+        // Fungsi untuk membuka modal edit nama
+        window.openEditNameModal = function() {
+            editNameInput.value = userName.value;
+            document.getElementById('editNameModal').style.display = 'flex';
+        };
+
+        // Fungsi untuk menyimpan nama
+        window.saveName = async function() {
+            const newName = editNameInput.value.trim();
+            if (!newName) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Nama tidak boleh kosong!',
+                });
+                return;
+            }
+
+            const user = auth.currentUser;
+            try {
+                await updateProfile(user, { displayName: newName });
+                await updateDoc(doc(db, "users", user.uid), { name: newName });
+                userName.value = newName;
+                closeModal('editNameModal');
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Berhasil!',
+                    text: 'Nama berhasil diperbarui!',
+                });
+            } catch (error) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Error: ' + error.message,
+                });
+            }
+        };
+
+        // Fungsi untuk membuka modal edit email
+        window.openEditEmailModal = function() {
+            editEmailInput.value = userEmail.value;
+            document.getElementById('editEmailModal').style.display = 'flex';
+        };
+
+        // Fungsi untuk menyimpan email baru
+        window.saveEmail = async function () {
+            const newEmail = editEmailInput.value.trim();
+            if (!newEmail) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Email tidak boleh kosong!',
+                });
+                return;
+            }
+
+            const user = auth.currentUser;
+            if (!user) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Anda harus login terlebih dahulu!',
+                });
+                return;
+            }
+
+            try {
+                // Minta user memasukkan password untuk re-authentication
+                const { value: password } = await Swal.fire({
+                    title: 'Masukkan Password Anda',
+                    input: 'password',
+                    inputPlaceholder: 'Password Anda',
+                    inputAttributes: {
+                        autocapitalize: 'off',
+                        autocorrect: 'off',
+                    },
+                    showCancelButton: true,
+                });
+
+                if (!password) {
+                    return;
+                }
+
+                // Re-autentikasi user
+                const credential = EmailAuthProvider.credential(user.email, password);
+                await reauthenticateWithCredential(user, credential);
+
+                // Simpan email baru ke Firestore (sementara) dan kirim verifikasi email
+                await updateDoc(doc(db, "users", user.uid), { pendingEmail: newEmail });
+
+                await sendEmailVerification(user);
+
+                Swal.fire({
+                    icon: 'info',
+                    title: 'Verifikasi Email!',
+                    text: 'Silakan cek email Anda untuk memverifikasi email baru sebelum diperbarui!',
+                });
+
+                closeModal('editEmailModal');
+            } catch (error) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Error: ' + error.message,
+                });
+            }
+        };
+
+
+        // Fungsi untuk memeriksa verifikasi email
+        window.checkEmailVerification = async function() {
+            const user = auth.currentUser;
+            if (!user) return;
+
+            try {
+                // Muat ulang status pengguna
+                await user.reload();
+
+                // Ambil email baru yang belum diverifikasi dari Firestore
+                const userDoc = await getDoc(doc(db, "users", user.uid));
+                const pendingEmail = userDoc.data().pendingEmail;
+
+                if (!pendingEmail) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Tidak ada email baru yang menunggu verifikasi.',
+                    });
+                    return;
+                }
+
+                // Periksa apakah email baru sudah diverifikasi
+                if (user.emailVerified) {
+                    // Ubah email di Firebase Authentication
+                    await updateEmail(user, pendingEmail);
+
+                    // Perbarui email di Firestore
+                    await updateDoc(doc(db, "users", user.uid), {
+                        email: pendingEmail,
+                        pendingEmail: null, // Hapus pendingEmail
+                    });
+
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Berhasil!',
+                        text: 'Email berhasil diperbarui!',
+                    });
+
+                    // Perbarui nilai email di UI
+                    userEmail.value = pendingEmail;
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Email belum diverifikasi. Silakan verifikasi email terlebih dahulu.',
+                    });
+                }
+            } catch (error) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Error: ' + error.message,
+                });
+            }
+        };
+
+        // Fungsi untuk menutup modal
+        window.closeModal = function(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        };
+
+        // Fungsi untuk reset password
+        window.resetPassword = function() {
+            const user = auth.currentUser;
+            if (!user) return;
+
+            sendPasswordResetEmail(auth, user.email)
+                .then(() => {
+                    Swal.fire({
+                        icon: 'info',
+                        title: 'Email Reset Password',
+                        text: 'Email reset password telah dikirim!',
+                    });
+                })
+                .catch((error) => {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Error: ' + error.message,
+                    });
+                });
+        };
+    </script>
+</body>
+</html>

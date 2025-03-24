@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Catatan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            width: 90%;
+            max-width: 500px;
+            margin-top: 20px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 16px;
+            outline: none;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .btn {
+            background: #ff7eb3;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background: #ff5c9e;
+        }
+        .note-type {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .note-type button {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .note-type button.active {
+            background: #ff7eb3;
+            border-color: #ff7eb3;
+        }
+        .list-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .list-item input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 16px;
+            outline: none;
+        }
+        .list-item button {
+            background: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+    <!-- Boxicons CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Tambah Catatan Baru</h1>
+        <div class="note-type">
+            <button id="textTypeBtn" class="active">Catatan Biasa</button>
+            <button id="listTypeBtn">Catatan Checklist</button>
+        </div>
+        <form id="noteForm">
+            <div class="form-group">
+                <label for="title">Judul</label>
+                <input type="text" id="title" placeholder="Masukkan judul catatan" required>
+            </div>
+            <div class="form-group">
+                <label for="desc">Deskripsi</label>
+                <textarea id="desc" placeholder="Masukkan deskripsi catatan" required></textarea>
+            </div>
+            <div id="contentSection">
+                <!-- Section untuk catatan biasa -->
+                <div class="form-group" id="textContent">
+                    <label for="content">Isi Catatan</label>
+                    <textarea id="content" placeholder="Masukkan isi catatan"></textarea>
+                </div>
+                <!-- Section untuk checklist -->
+                <div id="listContent" style="display: none;">
+                    <div class="form-group">
+                        <label>Daftar Item</label>
+                        <div id="listItems">
+                            <!-- Item checklist akan ditambahkan di sini -->
+                        </div>
+                        <button type="button" id="addItemBtn" class="btn">Tambah Item</button>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn">Simpan Catatan</button>
+        </form>
+    </div>
+
+    <!-- Firebase SDK (Modular) -->
+    <script type="module">
+        // Import fungsi yang diperlukan dari Firebase SDK
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore.js";
+
+        // Konfigurasi Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyBVN_VDTx19_KKXOR39mtfGFuGC-HhVB8s",
+            authDomain: "dopi-do.firebaseapp.com",
+            projectId: "dopi-do",
+            storageBucket: "dopi-do.firebasestorage.app",
+            messagingSenderId: "1067650398130",
+            appId: "1:1067650398130:web:927d428356a218c95a56ab"
+        };
+
+        // Inisialisasi Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // Cek status login
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                // Jika tidak ada user yang login, redirect ke halaman login
+                window.location.href = 'login.html';
+            } else {
+                // Jika user login, siapkan form untuk menambahkan catatan
+                setupForm(user.uid);
+            }
+        });
+
+        // Fungsi untuk menyiapkan form
+        function setupForm(userId) {
+            const textTypeBtn = document.getElementById('textTypeBtn');
+            const listTypeBtn = document.getElementById('listTypeBtn');
+            const textContent = document.getElementById('textContent');
+            const listContent = document.getElementById('listContent');
+            const addItemBtn = document.getElementById('addItemBtn');
+            const listItems = document.getElementById('listItems');
+            const noteForm = document.getElementById('noteForm');
+
+            // Toggle antara catatan biasa dan checklist
+            textTypeBtn.addEventListener('click', () => {
+                textTypeBtn.classList.add('active');
+                listTypeBtn.classList.remove('active');
+                textContent.style.display = 'block';
+                listContent.style.display = 'none';
+            });
+
+            listTypeBtn.addEventListener('click', () => {
+                listTypeBtn.classList.add('active');
+                textTypeBtn.classList.remove('active');
+                textContent.style.display = 'none';
+                listContent.style.display = 'block';
+            });
+
+            // Tambahkan item checklist
+            addItemBtn.addEventListener('click', () => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'list-item';
+                itemDiv.innerHTML = `
+                    <input type="text" placeholder="Masukkan item" required>
+                    <button type="button" onclick="this.parentElement.remove()"><i class='bx bx-trash'></i></button>
+                `;
+                listItems.appendChild(itemDiv);
+            });
+
+            // Submit form
+            noteForm.addEventListener('submit', async (e) => {
+                e.preventDefault(); // Mencegah form submit default
+
+                const title = document.getElementById('title').value.trim();
+                const desc = document.getElementById('desc').value.trim();
+
+                if (!title || !desc) {
+                    alert('Judul dan deskripsi harus diisi!');
+                    return;
+                }
+
+                try {
+                    let noteData = {
+                        title: title,
+                        desc: desc,
+                        lastUpdate: serverTimestamp(),
+                        userId: userId
+                    };
+
+                    if (textTypeBtn.classList.contains('active')) {
+                        // Catatan biasa
+                        noteData.type = "text";
+                        noteData.content = document.getElementById('content').value.trim();
+                    } else {
+                        // Checklist
+                        noteData.type = "list";
+                        noteData.items = [];
+                        const items = listItems.querySelectorAll('input[type="text"]');
+                        items.forEach(item => {
+                            noteData.items.push({
+                                text: item.value.trim(),
+                                checked: false
+                            });
+                        });
+                    }
+
+                    // Tambahkan catatan ke Firestore
+                    await addDoc(collection(db, 'notes'), noteData);
+
+                    // Redirect ke halaman notes setelah berhasil menyimpan
+                    window.location.href = 'notes.html';
+                } catch (error) {
+                    console.error('Error menambahkan catatan: ', error);
+                    alert('Gagal menambahkan catatan.');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
