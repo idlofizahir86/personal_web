@@ -17,7 +17,7 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* Perbaikan layout untuk kartu portofolio */
+        /* Perbaikan layout untuk kartu portfolio */
         .single_portfolio {
             background: #fff;
             border-radius: 10px;
@@ -99,7 +99,7 @@
 
         .portfolio-filter ul li.active,
         .portfolio-filter ul li:hover {
-            background: #ff7eb3;
+            background: #01275c;
             color: #fff;
         }
 
@@ -125,6 +125,83 @@
         .add-porto:hover {
             background: #e06b9d;
         }
+
+		.single_portfolio {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.single_portfolio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio_thumb img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid #eee;
+}
+
+.portfolio-description {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-description h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #1a202c;
+}
+
+.portfolio-description p {
+  font-size: 0.95rem;
+  color: #4a5568;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.portfolio-description ul {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.portfolio-description ul li {
+  margin-bottom: 5px;
+  color: #2d3748;
+  font-size: 0.95rem;
+}
+
+.gallery-list {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.gallery-list a img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  transition: transform 0.2s ease;
+}
+
+.gallery-list a img:hover {
+  transform: scale(1.05);
+  border-color: #a0aec0;
+}
+
 
         /* Responsivitas */
         @media (max-width: 768px) {
@@ -168,11 +245,6 @@
                             <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                             <li class="nav-item active"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
                             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                            <li class="nav-item">
-                                <a id="profile-item" href="profile.html" class="genric-btn success circle">
-                                    <i class="fa fa-user"></i> Profile
-                                </a>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -224,17 +296,17 @@
                     <div class="col-lg-4 col-md-6 mobile">
                         <div class="single_portfolio">
                             <div class="portfolio_thumb">
-                                <img class="img-fluid" src="img/portofolio/ngepet_id/ngepet_ss (1).jpg" alt="Ngepet.id">
-                                <div class="portfolio-hover">
+                                <img class="img-fluid" src="/img/portfolio/ngepet_id/banner_home.png" alt="Ngepet.id">
+                                <!-- <div class="portfolio-hover">
                                     <div class="title">
                                         <h4>Ngepet.id</h4>
                                     </div>
-                                    <a class="img-gal" href="img/portofolio/ngepet_id/ngepet_ss (1).jpg">
+                                    <a class="img-gal" href="/img/portfolio/ngepet_id/banner_home.png">
                                         <div class="text">
                                             <p>View Gallery</p>
                                         </div>
                                     </a>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="portfolio-description">
                                 <h3>Ngepet.id – Pet Needs & Online Consultation App</h3>
@@ -249,10 +321,10 @@
                                     <li>Android App Development</li>
                                 </ul>
                                 <div class="gallery-list">
-                                    <a href="img/portofolio/ngepet_id/ngepet_ss (1).jpg" class="img-gal"><img src="img/portofolio/ngepet_id/ngepet_ss (1).jpg" alt=""></a>
-                                    <a href="img/portofolio/ngepet_id/ngepet_ss (2).jpg" class="img-gal"><img src="img/portofolio/ngepet_id/ngepet_ss (2).jpg" alt=""></a>
-                                    <a href="img/portofolio/ngepet_id/ngepet_ss (3).jpg" class="img-gal"><img src="img/portofolio/ngepet_id/ngepet_ss (3).jpg" alt=""></a>
-                                    <a href="img/portofolio/ngepet_id/ngepet_ss (4).jpg" class="img-gal"><img src="img/portofolio/ngepet_id/ngepet_ss (4).jpg" alt=""></a>
+                                    <a href="img/portfolio/ngepet_id/ngpet_ss_(1).jpeg" class="img-gal"><img src="img/portfolio/ngepet_id/ngpet_ss_(1).jpeg" alt=""></a>
+                                    <a href="img/portfolio/ngepet_id/ngpet_ss_(2).jpeg" class="img-gal"><img src="img/portfolio/ngepet_id/ngpet_ss_(2).jpeg" alt=""></a>
+                                    <a href="img/portfolio/ngepet_id/ngpet_ss_(3).jpeg" class="img-gal"><img src="img/portfolio/ngepet_id/ngpet_ss_(3).jpeg" alt=""></a>
+                                    <a href="img/portfolio/ngepet_id/ngpet_ss_(4).jpeg" class="img-gal"><img src="img/portfolio/ngepet_id/ngpet_ss_(4).jpeg" alt=""></a>
                                 </div>
                             </div>
                         </div>
@@ -261,17 +333,17 @@
                     <div class="col-lg-4 col-md-6 mobile">
                         <div class="single_portfolio">
                             <div class="portfolio_thumb">
-                                <img class="img-fluid" src="img/portofolio/lumina_sense/LuminasSense_banner.jpg" alt="LuminaSense">
-                                <div class="portfolio-hover">
+                                <img class="img-fluid" src="img/portfolio/lumina_sense/LuminasSense_banner.png" alt="LuminaSense">
+                                <!-- <div class="portfolio-hover">
                                     <div class="title">
                                         <h4>LuminaSense</h4>
                                     </div>
-                                    <a class="img-gal" href="img/portofolio/lumina_sense/LuminasSense_banner.jpg">
+                                    <a class="img-gal" href="img/portfolio/lumina_sense/LuminasSense_banner.png">
                                         <div class="text">
                                             <p>View Gallery</p>
                                         </div>
                                     </a>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="portfolio-description">
                                 <h3>LuminaSense – Smart Room Monitoring App</h3>
@@ -286,10 +358,10 @@
                                     <li>Android App Development</li>
                                 </ul>
                                 <div class="gallery-list">
-                                    <a href="img/portofolio/lumina_sense/LuminasSense_banner.jpg" class="img-gal"><img src="img/portofolio/lumina_sense/LuminasSense_banner.jpg" alt=""></a>
-                                    <a href="img/portofolio/lumina_sense/BannnerUI-1.jpg" class="img-gal"><img src="img/portofolio/lumina_sense/BannnerUI-1.jpg" alt=""></a>
-                                    <a href="img/portofolio/lumina_sense/BannnerUI-2.jpg" class="img-gal"><img src="img/portofolio/lumina_sense/BannnerUI-2.jpg" alt=""></a>
-                                    <a href="img/portofolio/lumina_sense/BannnerUI-3.jpg" class="img-gal"><img src="img/portofolio/lumina_sense/BannnerUI-3.jpg" alt=""></a>
+                                    <a href="img/portfolio/lumina_sense/LuminasSense_banner.png" class="img-gal"><img src="img/portfolio/lumina_sense/LuminasSense_banner.png" alt=""></a>
+                                    <a href="img/portfolio/lumina_sense/BannnerUI-1.png" class="img-gal"><img src="img/portfolio/lumina_sense/BannnerUI-1.png" alt=""></a>
+                                    <a href="img/portfolio/lumina_sense/BannnerUI-2.png" class="img-gal"><img src="img/portfolio/lumina_sense/BannnerUI-2.png" alt=""></a>
+                                    <a href="img/portfolio/lumina_sense/BannnerUI-3.png" class="img-gal"><img src="img/portfolio/lumina_sense/BannnerUI-3.png" alt=""></a>
                                 </div>
                             </div>
                         </div>
