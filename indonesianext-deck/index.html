@@ -1,0 +1,425 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script>```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduVerse Pitch Deck</title>
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- AOS CSS CDN -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Swiper CSS CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <!-- FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #f8f9fa;
+    }
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: overlay;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    .slide-content {
+      background: linear-gradient(145deg, #ffffff, #e9ecef);
+      border-radius: 1rem;
+      padding: 2rem;
+      max-width: 900px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      position: relative;
+      border-top: 5px solid #007bff;
+    }
+    .btn-primary {
+      background: linear-gradient(to right, #007bff, #fd7e14);
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 0.5rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    .feature-card {
+      background: #fff;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid #dee2e6;
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+    .icon {
+      color: #fd7e14;
+      margin-right: 0.5rem;
+    }
+    .section-title {
+      font-size: 2.25rem;
+      font-weight: 700;
+      background: linear-gradient(to right, #007bff, #fd7e14);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .flow-step {
+      background: #f8f9fa;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      text-align: center;
+    }
+    @media (max-width: 576px) {
+      .slide-content {
+        padding: 1.5rem;
+        margin: 1rem;
+      }
+      .section-title {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Swiper Slider -->
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <!-- Slide 1: Judul -->
+      <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1516321310762-37fdeda1f35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
+        <div class="slide-content" data-aos="zoom-in">
+          <h1 class="section-title mb-4">EduVerse</h1>
+          <p class="fs-4 text-gray-700 mb-3"><i class="fas fa-graduation-cap icon"></i> Platform Edukasi & Karir Berbasis AI</p>
+          <p class="fs-5 text-gray-600 mb-4">Mentor Belajar dan Karir untuk Generasi Muda Indonesia</p>
+          <a href="#contact" class="btn btn-primary">Jelajahi Sekarang</a>
+        </div>
+      </div>
+
+      <!-- Slide 2: Latar Belakang -->
+      <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
+        <div class="slide-content" data-aos="fade-right" data-aos-delay="100">
+          <h2 class="section-title mb-4">Mengapa EduVerse?</h2>
+          <ul class="fs-5 text-gray-700 list-unstyled">
+            <li class="mb-3"><i class="fas fa-exclamation-circle icon"></i> Platform edukasi & karir terpisah</li>
+            <li class="mb-3"><i class="fas fa-user-times icon"></i> Pembelajaran kurang personal</li>
+            <li class="mb-3"><i class="fas fa-network-wired icon"></i> Minim networking untuk pelajar</li>
+          </ul>
+          <p class="fs-5 text-gray-600 mt-4 fw-bold"><i class="fas fa-lightbulb icon"></i> EduVerse: Solusi terintegrasi!</p>
+        </div>
+      </div>
+
+      <!-- Slide 3: Visi & Misi -->
+      <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1509062522246-3755977907d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
+        <div class="slide-content" data-aos="fade-left" data-aos-delay="100">
+          <h2 class="section-title mb-4">Visi & Misi</h2>
+          <p class="fs-5 text-gray-700"><i class="fas fa-eye icon"></i> <strong>Visi:</strong> Platform terdepan untuk pembelajaran & karir</p>
+          <p class="fs-5 text-gray-700 mt-3"><i class="fas fa-bullseye icon"></i> <strong>Misi:</strong></p>
+          <ul class="fs-5 text-gray-700 list-unstyled ms-4">
+            <li class="mb-2"><i class="fas fa-brain icon"></i> Personalisasi belajar dengan AI</li>
+            <li class="mb-2"><i class="fas fa-briefcase icon"></i> Fasilitasi karir & mentoring</li>
+            <li class="mb-2"><i class="fas fa-users icon"></i> Ekosistem kolaborasi</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Slide 4: Masalah -->
+      <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1516321310762-37fdeda1f35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
+        <div class="slide-content" data-aos="zoom-in-up" data-aos-delay="100">
+          <h2 class="section-title mb-4">Masalah yang Dihadapi</h2>
+          <ul class="fs-5 text-gray-700 list-unstyled">
+            <li class="mb-3"><i class="fas fa-book-open icon"></i> Pembelajaran tidak personal</li>
+            <li class="mb-3"><i class="fas fa-search icon"></i> Sulit temukan lowongan relevan</li>
+            <li class="mb-3"><i class="fas fa-hands-helping icon"></i> Minim bimbingan terjangkau</li>
+            <li class="mb-3"><i class="fas fa-globe icon"></i> Kurangnya platform networking</li>
+          </ul>
+          <p class="fs-5 text-gray-600 mt-4 fw-bold"><i class="fas fa-check-circle icon"></i> EduVerse hadir sebagai solusi!</p>
+        </div>
+      </div>
+
+      <!-- Slide 5: Solusi -->
+      <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1516321310762-37fdeda1f35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
+        <div class="slide-content" data-aos="fade-up" data-aos-delay="100">
+          <h2 class="section-title mb-4">Solusi EduVerse</h2>
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <div class="feature-card" data-aos="flip-up" data-aos-delay="200">
+                <i class="fas fa-robot fs-2 text-orange-500 mb-3"></i>
+                <h3 class="fs-5 fw-bold text-primary">AI Learning</h3>
+                <p class="text-gray-600">Materi belajar personal</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="feature-card" data-aos="flip-up" data-aos-delay="300">
+                <i class="fas fa-file-alt fs-2 text-orange-500 mb-3"></i>
+                <h3 class="fs-5 fw-bold text-primary">CV Analyzer</h3>
+                <p class="text-gray-600">Roadmap skill (premium)</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="feature-card" data-aos="flip-up" data-aos-delay="400">
+                <i class="fas fa-briefcase fs-2 text-orange-500 mb-3"></i>
+                <h3 class="fs-5 fw-bold text-primary">Job Board</h3>
+                <p class="text-gray-600">Lowongan & freelance</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="feature-card" data-aos="flip-up" data-aos-delay="500">
+                <i class="fas fa-user-graduate fs-2 text-orange-500 mb-3"></i>
+                <h3 class="fs-5 fw-bold text-primary">Mentoring</h3>
+                <p class="text-gray-600">Sesi dengan mentor</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="feature-card" data-aos="flip-up" data-aos-delay="600">
+                <i class="fas fa-video fs-2 text-orange-500 mb-3"></i>
+                <h3 class="fs-5 fw-bold text-primary">Webinar</h3>
+                <p class="text-gray-600">Pelatihan digital</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="feature-card" data-aos="flip-up" data-aos-delay="700">
+                <i class="fas fa-users-cog fs-2 text-orange-500 mb-3"></i>
+                <h3 class="fs-5 fw-bold text-primary">Community</h3>
+                <p class="text-gray-600">Diskusi & kolaborasi</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 6: Teknologi AI -->
+      <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1516321310762-37fdeda1f35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
+        <div class="slide-content" data-aos="fade-right" data-aos-delay="100">
+          <h2 class="section-title mb-4">Teknologi AI</h2>
+          <ul class="fs-5 text-gray-700 list-unstyled">
+            <li class="mb-3"><i class="fas fa-language icon"></i> <strong>NLP:</strong> Analisis CV, chatbot</li>
+            <li class="mb-3"><i class="fas fa-brain icon"></i> <strong>ML:</strong> Rekomendasi personal</li>
+            <li class="mb-3"><i class="fas fa-comment-dots icon"></i> <strong>Sentiment:</strong> Feedback pengguna</li>
+            <li class="mb-3"><i class="fas fa-camera icon"></i> <strong>Vision:</strong> Analisis video (opsional)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Slide 7: Target Pasar -->
+      <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
+        <div class="slide-content" data-aos="zoom-in-up" data-aos-delay="100">
+          <h2 class="section-title mb-4">Target Pasar</h2>
+          <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+              <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-user-graduate fs-2 text-orange-500 mb-3"></i>
+                <h3 class="fs-5 fw-bold text-primary">Pelajar & Mahasiswa</h3>
+                <p class="text-gray-600">Belajar & kembangkan skill</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-briefcase fs-2 text-orange-500 mb-3"></i>
+                <h3 class="fs-5 fw-bold text-primary">Fresh Graduate</h3>
+                <p class="text-gray-600">Cari pekerjaan/magang</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                <i class="fas fa-building fs-2 text-orange-500 mb-3"></i>
+                <h3 class="fs-5 fw-bold text-primary">Perusahaan & UMKM</h3>
+                <p class="text-gray-600">Pasang lowongan</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                <i class="fas fa-chalkboard-teacher fs-2 text-orange-500 mb-3"></i>
+                <h3 class="fs-5 fw-bold text-primary">Mentor & Trainer</h3>
+                <p class="text-gray-600">Tawarkan pelatihan</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 8: Monetisasi -->
+      <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1509062522246-3755977907d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
+        <div class="slide-content" data-aos="fade-up" data-aos-delay="100">
+          <h2 class="section-title mb-4">Monetisasi</h2>
+          <ul class="fs-5 text-gray-700 list-unstyled">
+            <li class="mb-3"><i class="fas fa-dollar-sign icon"></i> <strong>Subscription:</strong> Fitur AI premium</li>
+            <li class="mb-3"><i class="fas fa-user-check icon"></i> <strong>Mentoring:</strong> Sesi berbayar</li>
+            <li class="mb-3"><i class="fas fa-ad icon"></i> <strong>Job Posting:</strong> Biaya iklan</li>
+            <li class="mb-3"><i class="fas fa-hand-holding-usd icon"></i> <strong>Marketplace:</strong> Komisi freelance</li>
+            <li class="mb-3"><i class="fas fa-handshake icon"></i> <strong>Sponsorship:</strong> Webinar & pelatihan</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Slide 9: Alur Proses Bisnis -->
+      <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1516321310762-37fdeda1f35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
+        <div class="slide-content" data-aos="fade-left" data-aos-delay="100">
+          <h2 class="section-title mb-4">Alur Proses Bisnis</h2>
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <div class="flow-step" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-user-plus fs-2 text-orange-500 mb-3"></i>
+                <h3 class="fs-6 fw-bold">Akuisisi Pengguna</h3>
+                <p class="text-gray-600">Pemasaran ke pelajar, mahasiswa, dan perusahaan melalui iklan digital dan kemitraan.</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="flow-step" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-dollar-sign fs-2 text-orange-500 mb-3"></i>
+                <h3 class="fs-6 fw-bold">Pendapatan</h3>
+                <p class="text-gray-600">Subscription, job posting, komisi marketplace, dan sponsorship webinar.</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="flow-step" data-aos="fade-up" data-aos-delay="400">
+                <i class="fas fa-users fs-2 text-orange-500 mb-3"></i>
+                <h3 class="fs-6 fw-bold">Retensi</h3>
+                <p class="text-gray-600">Personalisasi AI, komunitas aktif, dan peluang karir untuk menjaga pengguna.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 10: Workflow Aplikasi -->
+      <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
+        <div class="slide-content" data-aos="zoom-in-up" data-aos-delay="100">
+          <h2 class="section-title mb-4">Workflow Aplikasi</h2>
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <div class="flow-step" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-user-plus fs-2 text-orange-500 mb-3"></i>
+                <h3 class="fs-6 fw-bold">Registrasi</h3>
+                <p class="text-gray-600">Pengguna mendaftar, unggah CV, dan atur preferensi.</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="flow-step" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-robot fs-2 text-orange-500 mb-3"></i>
+                <h3 class="fs-6 fw-bold">Analisis AI</h3>
+                <p class="text-gray-600">AI menganalisis CV dan gaya belajar untuk rekomendasi.</p>
+              </div>
+            </div>
+            <div class="col">
+              <div class="flow-step" data-aos="fade-up" data-aos-delay="400">
+                <i class="fas fa-briefcase fs-2 text-orange-500 mb-3"></i>
+                <h3 class="fs-6 fw-bold">Akses Layanan</h3>
+                <p class="text-gray-600">Belajar, melamar pekerjaan, dan kolaborasi di komunitas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 11: Mengapa EduVerse -->
+      <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1516321310762-37fdeda1f35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
+        <div class="slide-content" data-aos="zoom-in-up" data-aos-delay="100">
+          <h2 class="section-title mb-4">Mengapa EduVerse?</h2>
+          <ul class="fs-5 text-gray-700 list-unstyled">
+            <li class="mb-3"><i class="fas fa-link icon"></i> Integrasi edukasi & karir</li>
+            <li class="mb-3"><i class="fas fa-brain icon"></i> Personalisasi dengan AI</li>
+            <li class="mb-3"><i class="fas fa-dollar-sign icon"></i> Model bisnis beragam</li>
+            <li class="mb-3"><i class="fas fa-check-circle icon"></i> Solusi nyata</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Slide 12: Penutup -->
+      <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1509062522246-3755977907d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
+        <div class="slide-content" data-aos="zoom-in" data-aos-delay="100">
+          <h2 class="section-title mb-4">EduVerse: Masa Depan Edukasi</h2>
+          <p class="fs-5 text-gray-700 mb-3"><i class="fas fa-graduation-cap icon"></i> Memberdayakan generasi muda Indonesia</p>
+          <p class="fs-5 text-gray-700 mb-4"><i class="fas fa-rocket icon"></i> Pembelajaran personal & peluang karir</p>
+          <a href="mailto:contact@eduverse.id" class="btn btn-primary"><i class="fas fa-envelope icon"></i> Hubungi Kami</a>
+        </div>
+      </div>
+    </div>
+    <!-- Swiper Navigation -->
+    <div class="swiper-button-next bg-white p-2 rounded-circle shadow-lg"></div>
+    <div class="swiper-button-prev bg-white p-2 rounded-circle shadow-lg"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- Bootstrap JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- Swiper JS CDN -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- AOS JS CDN -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-in-out'
+    });
+
+    // Initialize Swiper
+    const swiper = new Swiper('.swiper-container', {
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      autoplay: {
+        delay: 7000,
+        disableOnInteraction: false,
+      },
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      }
+    });
+  </script>
+</body>
+</html>
+```
