@@ -2,52 +2,109 @@
 <html lang="en">
 
 <head>
-	<!-- Required meta tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="icon" href="img/favicon.png" type="image/png">
-	<title>Portfolio</title>
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="vendors/linericon/style.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/magnific-popup.css">
-	<link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
-	<!-- main css -->
-	<link rel="stylesheet" href="css/style.css">
-	<style>
-		/* Tampilkan loading indicator secara default */
-        #loadingIndicator {
-            display: block;
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <title>Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="vendors/linericon/style.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Perbaikan layout untuk kartu portofolio */
+        .single_portfolio {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
         }
 
-        /* Style untuk loading indicator */
-        .loading-indicator {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            z-index: 1000;
+        .single_portfolio:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
-        .loading-indicator .loader {
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            border-top: 4px solid #fff;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 10px;
+        .portfolio_thumb img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 2px solid #ff7eb3;
         }
-		
-		.loading-indicator p {
-            font-size: 16px;
+
+        .portfolio-description {
+            padding: 20px;
+        }
+
+        .portfolio-description h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .portfolio-description p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-description ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 15px;
+        }
+
+        .portfolio-description ul li {
+            background: #f8f9fa;
+            padding: 5px 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .gallery-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .gallery-list a img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-list a img:hover {
+            opacity: 0.8;
+        }
+
+        /* Filter button styling */
+        .portfolio-filter ul li {
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .portfolio-filter ul li.active,
+        .portfolio-filter ul li:hover {
+            background: #ff7eb3;
             color: #fff;
         }
 
-		.add-porto {
+        /* Add portfolio button */
+        .add-porto {
             position: fixed;
             bottom: 80px;
             right: 20px;
@@ -62,76 +119,67 @@
             font-size: 24px;
             cursor: pointer;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease;
         }
-	</style>
+
+        .add-porto:hover {
+            background: #e06b9d;
+        }
+
+        /* Responsivitas */
+        @media (max-width: 768px) {
+            .portfolio_thumb img {
+                height: 200px;
+            }
+
+            .portfolio-description h3 {
+                font-size: 1.2rem;
+            }
+
+            .portfolio-description p {
+                font-size: 0.9rem;
+            }
+
+            .gallery-list a img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-	
-
-	<!--================ Start Header Area =================-->
-	<header class="header_area">
-		<div class="main_menu">
-			<nav class="navbar navbar-expand-lg navbar-light">
-				<div class="container">
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-						<ul class="nav navbar-nav menu_nav justify-content-end">
-							<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-							<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-							<li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-							<li class="nav-item active"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-							<!-- <li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Pages</a>
-								<ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="portfolio-details.html">Portfolio Details</a></li>
-								</ul>
-							</li>
-							<li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">Blog</a>
-								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-									<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
-								</ul>
-							</li> -->
-							<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-							<li  class="nav-item">	
-								<a id="profile-item" href="profile.html" class="genric-btn success circle">
-									<i class="fa fa-user"></i> Profile
-								</a></a>
-							</li>
-							<script type="module" src="js/firebase-header.js"></script>
-							<style>
-								#profile-item {
-									display: none;
-								}
-								.navbar-nav .nav-item {
-									display: flex;
-									align-items: center; /* Menjaga sejajar dengan navbar */
-								}
-
-								.profile-btn:hover {
-									background-color: #218838;
-								}
-							</style>				
-						</ul>
-					</div>
-				</div>
-			</nav>
-		</div>
-	</header>
-	<!--================ End Header Area =================-->
+    <!--================ Start Header Area =================-->
+    <header class="header_area">
+        <div class="main_menu">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                    <a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav menu_nav justify-content-end">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            <li class="nav-item">
+                                <a id="profile-item" href="profile.html" class="genric-btn success circle">
+                                    <i class="fa fa-user"></i> Profile
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!--================ End Header Area =================-->
 
     <!--================ Start Banner Area =================-->
     <section class="banner_area">
@@ -149,93 +197,142 @@
     </section>
     <!--================ End Banner Area =================-->
 
-	<!--================Start Portfolio Area =================-->
-	<section class="portfolio_area section_gap_top" id="portfolio">
-		
-
-		
-		
+    <!--================ Start Portfolio Area =================-->
+    <section class="portfolio_area section_gap_top" id="portfolio">
         <div class="container">
-			
-			
             <div class="row">
                 <div class="col-lg-12">
                     <div class="main_title text-left">
-                        <h2>quality work <br>
-                            Recently done project </h2>
+                        <h2>Quality Work <br>
+                            Recently Done Project</h2>
                     </div>
                 </div>
             </div>
             <div class="filters portfolio-filter">
                 <ul>
-                    <li class="active" data-filter="*">all</li>
-                    <li data-filter=".mobile">mobile app</li>
-                    <li data-filter=".desktop">desktop app</li>
-                    <li data-filter=".laravel">laravel</li>
+                    <li class="active" data-filter="*">All</li>
+                    <li data-filter=".mobile">Mobile App</li>
+                    <li data-filter=".desktop">Desktop App</li>
+                    <li data-filter=".laravel">Laravel</li>
                     <li data-filter=".website">Native Website</li>
-                    <li data-filter=".wordpress">wordpress</li>
+                    <li data-filter=".wordpress">Wordpress</li>
                 </ul>
             </div>
-    
-			<!-- Loading Indicator -->
-			<div id="loadingIndicator" class="loading-indicator">
-				<div class="loader"></div>
-				<p>Memuat data...</p>
-			</div>
-			<div class="add-porto" onclick="window.location.href='addporto.html'">+</div>
-            <div class="filters-content" id="filters-content">
-				<div class="row portfolio-grid justify-content-center" id="portfolioList">
-					<!-- Data portfolio akan dimuat di sini -->
-				</div>
-			</div>
-			<style>
-				.filters-content {
-					min-height: calc(100vh - 50px); /* Pastikan setidaknya setinggi viewport */
-					overflow: auto; /* Agar bisa scroll jika terlalu panjang */
-				}
-			</style>
+            <div class="filters-content">
+                <div class="row portfolio-grid justify-content-center" id="portfolioList">
+                    <!-- Ngepet.id Portfolio -->
+                    <div class="col-lg-4 col-md-6 mobile">
+                        <div class="single_portfolio">
+                            <div class="portfolio_thumb">
+                                <img class="img-fluid" src="img/portofolio/ngepet_id/ngepet_ss (1).jpg" alt="Ngepet.id">
+                                <div class="portfolio-hover">
+                                    <div class="title">
+                                        <h4>Ngepet.id</h4>
+                                    </div>
+                                    <a class="img-gal" href="img/portofolio/ngepet_id/ngepet_ss (1).jpg">
+                                        <div class="text">
+                                            <p>View Gallery</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portfolio-description">
+                                <h3>Ngepet.id – Pet Needs & Online Consultation App</h3>
+                                <p><strong>My Role:</strong> Full-Stack Developer (Flutter, Firebase, Backend Integration)</p>
+                                <p><strong>Project Description:</strong> A mobile app designed to support pet owners in buying pet needs and accessing online consultations. Built as a final college project with features like product catalogs, consultation chat, and transaction handling. Integrated backend using Firebase for auth and data management.</p>
+                                <p><strong>Skills and Deliverables:</strong></p>
+                                <ul>
+                                    <li>Flutter</li>
+                                    <li>Firebase</li>
+                                    <li>UI/UX Prototyping</li>
+                                    <li>REST API</li>
+                                    <li>Android App Development</li>
+                                </ul>
+                                <div class="gallery-list">
+                                    <a href="img/portofolio/ngepet_id/ngepet_ss (1).jpg" class="img-gal"><img src="img/portofolio/ngepet_id/ngepet_ss (1).jpg" alt=""></a>
+                                    <a href="img/portofolio/ngepet_id/ngepet_ss (2).jpg" class="img-gal"><img src="img/portofolio/ngepet_id/ngepet_ss (2).jpg" alt=""></a>
+                                    <a href="img/portofolio/ngepet_id/ngepet_ss (3).jpg" class="img-gal"><img src="img/portofolio/ngepet_id/ngepet_ss (3).jpg" alt=""></a>
+                                    <a href="img/portofolio/ngepet_id/ngepet_ss (4).jpg" class="img-gal"><img src="img/portofolio/ngepet_id/ngepet_ss (4).jpg" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- LuminaSense Portfolio -->
+                    <div class="col-lg-4 col-md-6 mobile">
+                        <div class="single_portfolio">
+                            <div class="portfolio_thumb">
+                                <img class="img-fluid" src="img/portofolio/lumina_sense/LuminasSense_banner.jpg" alt="LuminaSense">
+                                <div class="portfolio-hover">
+                                    <div class="title">
+                                        <h4>LuminaSense</h4>
+                                    </div>
+                                    <a class="img-gal" href="img/portofolio/lumina_sense/LuminasSense_banner.jpg">
+                                        <div class="text">
+                                            <p>View Gallery</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="portfolio-description">
+                                <h3>LuminaSense – Smart Room Monitoring App</h3>
+                                <p><strong>My Role:</strong> Mobile Developer (Kotlin, AI Integration, UI/UX)</p>
+                                <p><strong>Project Description:</strong> Developed as part of Bangkit Capstone 2024, this app uses Flutter to monitor room conditions (temperature, light, etc.) and AI to analyze room usage patterns. Supports IoT integration and real-time updates for a smart living environment.</p>
+                                <p><strong>Skills and Deliverables:</strong></p>
+                                <ul>
+                                    <li>Kotlin</li>
+                                    <li>AI App Development</li>
+                                    <li>Firebase</li>
+                                    <li>UX & UI Design</li>
+                                    <li>Android App Development</li>
+                                </ul>
+                                <div class="gallery-list">
+                                    <a href="img/portofolio/lumina_sense/LuminasSense_banner.jpg" class="img-gal"><img src="img/portofolio/lumina_sense/LuminasSense_banner.jpg" alt=""></a>
+                                    <a href="img/portofolio/lumina_sense/BannnerUI-1.jpg" class="img-gal"><img src="img/portofolio/lumina_sense/BannnerUI-1.jpg" alt=""></a>
+                                    <a href="img/portofolio/lumina_sense/BannnerUI-2.jpg" class="img-gal"><img src="img/portofolio/lumina_sense/BannnerUI-2.jpg" alt=""></a>
+                                    <a href="img/portofolio/lumina_sense/BannnerUI-3.jpg" class="img-gal"><img src="img/portofolio/lumina_sense/BannnerUI-3.jpg" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="add-porto" onclick="window.location.href='addporto.html'">+</div>
         </div>
     </section>
-	<style>
-		
+    <!--================ End Portfolio Area =================-->
 
-	</style>
-    <!--================End Portfolio Area =================-->
+    <!--================ Footer Area =================-->
+    <footer class="footer_area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="footer_top flex-column">
+                        <div class="footer_logo">
+                            <a href="#">
+                                <img src="img/logo.png" alt="">
+                            </a>
+                            <h4>Follow Me</h4>
+                        </div>
+                        <div class="footer_social">
+                            <a href="https://www.facebook.com/IdlofiZahir86" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/zahir86_/" target="_blank"><i class="fa fa-instagram"></i></a>
+                            <a href="https://www.youtube.com/@zahir86_" target="_blank"><i class="fa fa-youtube"></i></a>
+                            <a href="https://github.com/idlofizahir86" target="_blank"><i class="fa fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/idlofi-zahir-rajaba/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row footer_bottom justify-content-center">
+                <p class="col-lg-8 col-sm-12 footer-text">
+                    Copyright ©<script>document.write(new Date().getFullYear());</script> All rights reserved<br>This website is developed by <strong><a href="#">Idlofi Zahir</a></strong>, built using a template crafted with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!--================ End Footer Area =================-->
 
-	<!--================Footer Area =================-->
-	<footer class="footer_area">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-12">
-					<div class="footer_top flex-column">
-						<div class="footer_logo">
-							<a href="#">
-								<img src="img/logo.png" alt="">
-							</a>
-							<h4>Follow Me</h4>
-						</div>
-						<div class="footer_social">
-							<a href="https://www.facebook.com/IdlofiZahir86" target="_blank"><i class="fa fa-facebook"></i></a>
-							<!-- <a href="#"><i class="fa fa-twitter"></i></a> -->
-							<a href="https://www.instagram.com/zahir86_/" target="_blank"><i class="fa fa-instagram"></i></a>
-							<a href="https://www.youtube.com/@zahir86_" target="_blank"><i class="fa fa-youtube"></i></a>
-							<a href="https://github.com/idlofizahir86" target="_blank"><i class="fa fa-github"></i></a>
-							<a href="https://www.linkedin.com/in/idlofi-zahir-rajaba/" target="_blank"><i class="fa fa-linkedin"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row footer_bottom justify-content-center">
-				<p class="col-lg-8 col-sm-12 footer-text">
-					Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved<br>This website is developed by <strong><a href="#">Idlofi Zahir</a></strong>, built using a template crafted with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>.
-				</p>
-			</div>
-		</div>
-	</footer>
-    <!--================End Footer Area =================-->
-    
     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -247,40 +344,37 @@
     <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
     <script src="js/jquery.ajaxchimp.min.js"></script>
     <script src="js/mail-script.js"></script>
-    <!--gmaps Js-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
     <script src="js/gmaps.min.js"></script>
     <script src="js/theme.js"></script>
-	<script type="module" src="js/firebase-portofolio.js"></script>
-	<script>
-		function initIsotope() {
-        console.log('Inisialisasi Isotope...');
-        const $portfolioList = $('#portfolioList').isotope({
-            itemSelector: '.col-lg-4', // Sesuaikan dengan kelas item portfolio
-            layoutMode: 'fitRows'
+    <script>
+        $(document).ready(function() {
+            // Inisialisasi Isotope
+            const $portfolioList = $('#portfolioList').isotope({
+                itemSelector: '.col-lg-4',
+                layoutMode: 'fitRows'
+            });
+
+            // Filter items on button click
+            $('.portfolio-filter ul li').on('click', function() {
+                $('.portfolio-filter ul li').removeClass('active');
+                $(this).addClass('active');
+                var filterValue = $(this).attr('data-filter');
+                $portfolioList.isotope({ filter: filterValue });
+            });
+
+            // Inisialisasi Magnific Popup untuk galeri
+            $('.gallery-list').each(function() {
+                $(this).magnificPopup({
+                    delegate: 'a.img-gal',
+                    type: 'image',
+                    gallery: {
+                        enabled: true
+                    }
+                });
+            });
         });
-
-        console.log('Isotope berhasil diinisialisasi');
-
-        // Menangani klik pada filter
-        $('.portfolio-filter ul li').on('click', function() {
-            console.log('Filter dipilih:', $(this).attr('data-filter'));
-
-            // Menghapus kelas aktif dari semua item filter
-            $('.portfolio-filter ul li').removeClass('active');
-            // Menambahkan kelas aktif pada item filter yang dipilih
-            $(this).addClass('active');
-
-            // Menangkap nilai filter yang dipilih
-            var filterValue = $(this).attr('data-filter');
-
-            console.log('Menyaring portfolio dengan filter:', filterValue);
-            
-            // Menyaring elemen portfolio berdasarkan filter yang dipilih
-            $portfolioList.isotope({ filter: filterValue });
-        });
-    }
-	</script>
+    </script>
 </body>
 
 </html>
