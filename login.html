@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dopi-Do - Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+        }
+
+        .container {
+            position: relative;
+            width: 750px;
+            height: 450px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+        }
+
+        .container .form-box {
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .form-box.Login {
+            left: 0;
+            padding: 0 40px;
+        }
+
+        .form-box.Login .animation {
+            transform: translateX(0%);
+            transition: 0.7s;
+            opacity: 1;
+            transition-delay: calc(0.1s * var(--S));
+        }
+
+        .container.active .form-box.Login .animation {
+            transform: translateX(-120%);
+            opacity: 0;
+            transition-delay: calc(0.1s * var(--D));
+        }
+
+        .form-box h2 {
+            font-size: 32px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .form-box .input-box {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            margin-top: 25px;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            color: #fff;
+            font-weight: 600;
+            border-bottom: 2px solid #fff;
+            padding-right: 23px;
+            transition: 0.5s;
+        }
+
+        .input-box input:focus,
+        .input-box input:valid {
+            border-bottom: 2px solid #ffdd57;
+        }
+
+        .input-box label {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            font-size: 16px;
+            color: #fff;
+            transition: 0.5s;
+        }
+
+        .input-box input:focus ~ label,
+        .input-box input:valid ~ label {
+            top: -5px;
+            color: #ffdd57;
+        }
+
+        .input-box i {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            font-size: 18px;
+            transform: translateY(-50%);
+            color: #fff;
+        }
+
+        .input-box input:focus ~ i,
+        .input-box input:valid ~ i {
+            color: #ffdd57;
+        }
+
+        .btn {
+            position: relative;
+            width: 100%;
+            height: 45px;
+            background: #ffdd57;
+            border-radius: 40px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            overflow: hidden;
+            z-index: 1;
+            color: #2575fc;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #f0c800;
+        }
+
+        .regi-link {
+            font-size: 14px;
+            text-align: center;
+            margin: 20px 0 10px;
+        }
+
+        .regi-link a {
+            text-decoration: none;
+            color: #ffdd57;
+            font-weight: 600;
+        }
+
+        .regi-link a:hover {
+            text-decoration: underline;
+        }
+
+        .info-content {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .info-content.Login {
+            right: 0;
+            text-align: right;
+            padding: 0 40px 60px 150px;
+        }
+
+        .info-content.Login .animation {
+            transform: translateX(0);
+            transition: 0.7s ease;
+            transition-delay: calc(0.1s * var(--S));
+            opacity: 1;
+            filter: blur(0px);
+        }
+
+        .container.active .info-content.Login .animation {
+            transform: translateX(120%);
+            opacity: 0;
+            filter: blur(10px);
+            transition-delay: calc(0.1s * var(--D));
+        }
+
+        .info-content h2 {
+            text-transform: uppercase;
+            font-size: 36px;
+            line-height: 1.3;
+            color: #fff;
+        }
+
+        .info-content p {
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .container .curved-shape {
+            position: absolute;
+            right: 0;
+            top: -5px;
+            height: 600px;
+            width: 850px;
+            background: linear-gradient(45deg, rgba(255, 221, 87, 0.2), rgba(37, 117, 252, 0.2));
+            transform: rotate(10deg) skewY(40deg);
+            transform-origin: bottom right;
+            transition: 1.5s ease;
+            transition-delay: 1.6s;
+        }
+
+        .container.active .curved-shape {
+            transform: rotate(0deg) skewY(0deg);
+            transition-delay: 0.5s;
+        }
+
+        .container .curved-shape2 {
+            position: absolute;
+            left: 250px;
+            top: 100%;
+            height: 700px;
+            width: 850px;
+            background: rgba(255, 255, 255, 0.1);
+            border-top: 3px solid #ffdd57;
+            transform: rotate(0deg) skewY(0deg);
+            transform-origin: bottom left;
+            transition: 1.5s ease;
+            transition-delay: 0.5s;
+        }
+
+        .container.active .curved-shape2 {
+            transform: rotate(-11deg) skewY(-41deg);
+            transition-delay: 1.2s;
+        }
+
+        /* Tambahkan CSS untuk tombol kembali */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            color: #ffdd57;
+        }
+
+        /* Media query untuk mobile */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%; /* Lebar 90% untuk mobile */
+                max-width: 100%; /* Lebar maksimum 100% */
+                min-height: auto; /* Tinggi menyesuaikan konten */
+                padding: 15px; /* Kurangi padding untuk mobile */
+            }
+
+            /* Gaya untuk form-box.Login pada mobile */
+            .form-box.Login {
+                position: relative; /* Ubah ke relative untuk mobile */
+                width: 100%; /* Lebar penuh untuk mobile */
+                padding: 10px; /* Kurangi padding untuk mobile */
+                left: auto; /* Reset posisi left */
+            }
+
+            .form-box h2 {
+                font-size: 24px; /* Perkecil ukuran judul */
+                margin-bottom: 20px; /* Tambahkan margin bawah */
+            }
+
+            .input-box {
+                margin-top: 15px; /* Kurangi margin atas input */
+            }
+
+            .input-box input {
+                font-size: 14px; /* Perkecil ukuran font input */
+            }
+
+            .btn {
+                height: 40px; /* Perkecil tinggi tombol */
+                font-size: 14px; /* Perkecil ukuran font tombol */
+            }
+
+            .regi-link {
+                font-size: 12px; /* Perkecil ukuran font link registrasi */
+            }
+
+            .info-content.Login {
+                display: none; /* Sembunyikan info-content di mobile */
+            }
+
+            .curved-shape, .curved-shape2 {
+                display: none; /* Sembunyikan bentuk melengkung di mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        <div class="curved-shape"></div>
+        <div class="curved-shape2"></div>
+        <div class="form-box Login">
+            <h2 class="animation" style="--D:0; --S:21">Login</h2>
+                <div class="input-box animation" style="--D:1; --S:22">
+                    <input id="email" type="text" required>
+                    <label for="">Email</label>
+                    <i class="fas fa-envelope"></i>
+                </div>
+
+                <div class="input-box animation" style="--D:2; --S:23">
+                    <input id="password" type="password" required>
+                    <label for="">Password</label>
+                    <i class="fas fa-lock"></i>
+                </div>
+
+                <div class="input-box animation" style="--D:3; --S:24">
+                    <button class="btn" id="loginBtn" type="submit">Login</button>
+                </div>
+
+                <div class="regi-link animation" style="--D:4; --S:25">
+                    <p>Don't have an account? <br> <a href="register.html" class="">Register</a></p>
+                </div>
+        </div>
+
+        <div class="info-content Login">
+            <h2 class="animation" style="--D:0; --S:20">WELCOME BACK!</h2>
+            <p class="animation" style="--D:1; --S:21">We're thrilled to see you again! Let's get back to organizing your tasks and achieving your goals with Dopi-Do.</p>
+        </div>
+    </div>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Firebase SDK (Modular) -->
+    <script type="module">
+        // Import fungsi yang diperlukan dari Firebase SDK
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+
+        // Konfigurasi Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyAz7u_Fy6AR3sH_ZLK5CTddiv529yN9yLg",
+            authDomain: "personal-web-dopi.firebaseapp.com",
+            projectId: "personal-web-dopi",
+            storageBucket: "personal-web-dopi.firebasestorage.app",
+            messagingSenderId: "717791869067",
+            appId: "1:717791869067:web:25a3356fac3ab1c52b7c8e"
+        };
+
+        // Inisialisasi Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                window.location.href = "profile.html";
+            } 
+        });
+
+        // Fungsi untuk login
+        function loginUser(e) {
+            e.preventDefault(); // Mencegah form submit default
+
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            // Validasi input
+            if (!email || !password) {
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Email dan Password harus diisi.',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+                return;
+            }
+
+            // Cek apakah ada spasi di dalam email atau password
+            if (email.includes(' ') || password.includes(' ')) {
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Email dan Password tidak boleh mengandung spasi.',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+                return;
+            }
+
+
+            // Lanjutkan dengan proses login Firebase
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    Swal.fire({
+                        title: 'Login Berhasil!',
+                        text: 'Anda akan diarahkan ke halaman Dashboard.',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = 'dashboard.html';
+                        }
+                    });
+                })
+                .catch((error) => {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Gagal Melakukan Login: ' + error.message,
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                });
+        }
+
+        // Event listener untuk tombol login
+        document.getElementById('loginBtn').addEventListener('click', loginUser);
+
+        // Event listener untuk tombol Enter pada input field
+        document.getElementById('email').addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                loginUser(event);
+            }
+        });
+
+        document.getElementById('password').addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                loginUser(event);
+            }
+        });
+    </script>
+</body>
+</html>

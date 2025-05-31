@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dopi-Do - Register</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        button {
+            background: white;
+            color: #2575fc;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #f0f0f0;
+        }
+
+        .message {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .message a {
+            color: #ffdd57;
+            text-decoration: none;
+        }
+
+        .message a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    
+    <body>
+
+    
+        <div class="container">
+            <a href="index.html"><span class="icon-close"><ion-icon name="close-outline"></ion-icon></span></a>
+        
+        <h2>Registration to Dopi-Do</h2>
+        
+        <div class="input-box">
+            <span class="icon"><i class='bx bx-user'></i></span>
+            <input id="name" name="name" type="text" required>
+            <label>Nama Lengkap</label>
+        </div>
+        
+        <div class="input-box">
+            <span class="icon"><i class='bx bx-envelope'></i></span>
+            <input  id="email" name="email" type="email" required>
+            <label>Email</label>
+        </div>
+        <div class="input-box">
+            <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+            <input  id="password" name="password" type="password" required>
+            <label>Password</label>
+        </div>
+       <button type="submit" id="registerBtn" class="btn">Register</button></a>
+        <div class="login-register">
+          <p>Already have an account?<a href="login.html" class="register-link"><button class="btn">Login</button>
+            
+           </a>
+          </p>
+         </div>
+        </div>
+        
+        
+        </body>
+
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            body{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                min-height: 100vh;
+            }
+
+            .wrapper{
+                position: relative;
+                width: 400px;
+                height: 530px;
+                background-color: transparent;
+                border: 2px solid rgba(255, 255, 255, .5);
+                backdrop-filter: blur(20px);
+                border-radius: 20px;
+                box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+                margin: auto;
+                margin-top: 150px;
+                padding: 40px;
+                overflow: hidden;
+            }
+            .wrapper h2{
+                font-size: 2em;
+                color: #000;
+                text-align: center;
+
+            }
+            .input-box{
+                position: relative;
+                width: 100%;
+                height: 50px;
+                border-bottom: 2px solid #000;
+                margin: 30px 0;
+
+            }
+            .input-box label {
+                position: absolute;
+                top: 50%;
+                left: 5px;
+                transform: translateY(-50%);
+                color: #000;
+                font-weight: 500;
+                pointer-events: none;
+                transition: .5s;
+            }
+            .input-box input:focus~label,
+            .input-box input:valid~label{
+                top: -5px;
+            }
+            .input-box input{
+                width: 100%;
+                height: 100%;
+                background: transparent;
+                border: none;
+                outline: none;
+                font-size: 1em;
+                color: #000;
+                font-weight: 600;
+                padding: 0 35px 0 5px;
+            }
+            .input-box .icon{
+                position: absolute;
+                right: 8px;
+                font-size: 1.2rem;
+                color: #000;
+                line-height: 57px;
+            }
+
+            .remember-forgot {
+                font-size: .9em;
+                color: #000;
+                font-weight: 500;
+                margin: -15px 0 15px;
+                display: flex;
+                justify-content: space-between;
+            }
+            .remember-forgot label input {
+                accent-color: #000;
+                margin-right: 3px;
+
+            }
+            .remember-forgot a {
+                color: #000;
+                text-decoration: none;
+            }
+
+            .remember-forgot a:hover{
+                text-decoration: underline;
+            }
+
+            .btn{
+                width: 100%;
+                height: 45px;
+                background: #000;
+                border: none;
+                outline: none;
+                border-radius: 6px;
+                cursor: pointer;
+                font-size: 1em;
+                color: #fff;
+                font-weight: 500;
+            }
+
+            .login-register{
+                font-size: .9em;
+                color: #000;
+                text-align: center;
+                font-weight: 500;
+                margin: 25px 0 10px;
+
+            }
+
+            .login-register p a{
+                color: #000;
+                text-decoration: none;
+                font-weight: 600;
+            }
+
+            .login-register p a:hover{
+                text-decoration: underline;
+            }
+            .icon-close{
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 45px;
+                height: 45px;
+                background: #000;
+                font-size: 2em;
+                color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-bottom-left-radius: 20px;
+                cursor: pointer;
+                z-index: 1;
+            }
+        </style>
+        <!-- SweetAlert2 CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+        <!-- SweetAlert2 JS -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!-- Firebase SDK (Modular) -->
+        <script type="module">
+        // Import fungsi yang diperlukan dari Firebase SDK
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+        import { getFirestore, doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore.js";
+
+        // Konfigurasi Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyAz7u_Fy6AR3sH_ZLK5CTddiv529yN9yLg",
+            authDomain: "personal-web-dopi.firebaseapp.com",
+            projectId: "personal-web-dopi",
+            storageBucket: "personal-web-dopi.firebasestorage.app",
+            messagingSenderId: "717791869067",
+            appId: "1:717791869067:web:25a3356fac3ab1c52b7c8e"
+        };
+
+        // Inisialisasi Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        let isRegistering = false; // Flag untuk menandai sedang registrasi
+
+            onAuthStateChanged(auth, async (user) => {
+                if (user && !isRegistering) { 
+                    window.location.href = "profile.html"; // Hanya redirect jika TIDAK sedang register
+                }
+        });
+
+        // Fungsi untuk registrasi
+        function registerUser() {
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const name = document.getElementById('name').value;
+            // e.preventDefault(); // Mencegah form submit default
+
+            // Validasi input
+            if (!email || !password || !name) {
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Email, password, dan nama harus diisi!',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+                return;
+            }
+
+            
+            // Cek apakah ada spasi di dalam email atau password
+            if (email.includes(' ') || password.includes(' ')) {
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Email dan Password tidak boleh mengandung spasi.',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+                return;
+            }
+
+            if (password.length < 6) {
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Password harus memiliki setidaknya 6 karakter!',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+                return;
+            }
+
+            isRegistering = true;
+            
+            // Registrasi pengguna
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    console.log("User berhasil dibuat:", user.uid);
+
+                    return setDoc(doc(db, 'users', user.uid), {
+                        name: name,
+                        email: email,
+                        role: "user",
+                        createdAt: serverTimestamp()
+                    });
+                })
+                .then(() => {
+                    console.log("Data berhasil disimpan di Firestore!");
+                    
+                    // Logout user dulu supaya tidak langsung ke profile
+                    auth.signOut().then(() => {
+                        Swal.fire({
+                            title: 'Registrasi Berhasil!',
+                            text: 'Silakan login untuk melanjutkan.',
+                            icon: 'success',
+                            confirmButtonText: 'OK'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = 'login.html'; // Redirect ke halaman login
+                            }
+                        });
+                    });
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Gagal registrasi atau menyimpan data: ' + error.message,
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                });
+
+                
+        }
+
+        // Event listener untuk tombol registrasi
+        document.getElementById('registerBtn').addEventListener('click', registerUser);
+
+        // Event listener untuk tombol Enter pada input field
+        document.getElementById('email').addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                registerUser();
+            }
+        });
+
+        document.getElementById('password').addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                registerUser();
+            }
+        });
+
+        document.getElementById('name').addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                registerUser();
+            }
+        });
+    </script>
+</body>
+</html>

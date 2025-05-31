@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Portofolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAz7u_Fy6AR3sH_ZLK5CTddiv529yN9yLg",
+            authDomain: "personal-web-dopi.firebaseapp.com",
+            projectId: "personal-web-dopi",
+            storageBucket: "personal-web-dopi.firebasestorage.app",
+            messagingSenderId: "717791869067",
+            appId: "1:717791869067:web:25a3356fac3ab1c52b7c8e"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+
+        document.addEventListener("DOMContentLoaded", function () {
+            onAuthStateChanged(auth, (user) => {
+                if (!user) {
+                    alert("Anda harus login untuk menambahkan portofolio!");
+                    window.location.href = "/login";
+                }
+            });
+
+            document.getElementById("addPortfolioForm").addEventListener("submit", async function (e) {
+                e.preventDefault();
+                const title = document.getElementById("title").value;
+                const caption = document.getElementById("caption").value;
+                const description = document.getElementById("description").value;
+                const imageUrl = document.getElementById("imageUrl").value;
+                const url = document.getElementById("url").value;
+                const type = document.getElementById("type").value;
+                const completed = document.getElementById("completed").value;
+                const keyword = document.getElementById("keyword").value.split(",").map(k => k.trim());
+                
+                try {
+                    await addDoc(collection(db, "portofolios"), {
+                        title,
+                        caption,
+                        description,
+                        imageUrl,
+                        url,
+                        type,
+                        keyword,
+                        completed,
+                    });
+                    alert("Portofolio berhasil ditambahkan!");
+                    document.getElementById("addPortfolioForm").reset();
+                } catch (error) {
+                    console.error("Error: ", error);
+                    alert("Gagal menambahkan portofolio.");
+                }
+            });
+        });
+    </script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white shadow-md rounded-lg p-6 w-full max-w-lg">
+        <h2 class="text-xl font-bold mb-4 text-center">Tambah Portofolio</h2>
+        <form id="addPortfolioForm" class="space-y-4">
+            <input type="text" id="title" placeholder="Judul" class="w-full p-2 border rounded" required>
+            <textarea id="caption" placeholder="Caption" class="w-full p-2 border rounded" required></textarea>
+            <textarea id="description" placeholder="Deskripsi" class="w-full p-2 border rounded" required></textarea>
+            <input type="text" id="imageUrl" placeholder="URL Gambar" class="w-full p-2 border rounded" required>
+            <input type="text" id="url" placeholder="URL Situs" class="w-full p-2 border rounded" required>
+            <input type="text" id="type" placeholder="Tipe" class="w-full p-2 border rounded" required>
+            <input type="text" id="keyword" placeholder="Keyword (pisahkan dengan koma)" class="w-full p-2 border rounded" required>
+            <input type="date" id="completed" placeholder="Tanggal Selesai" class="w-full p-2 border rounded" required>
+            <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Tambahkan</button>
+        </form>
+    </div>
+</body>
+</html>

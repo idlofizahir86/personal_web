@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dopi Do - Profil Pengguna</title>
+    <!-- Boxicons CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 28px;
+            font-weight: 600;
+            color: #444;
+        }
+        .input-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            background: #f9f9f9;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        input:focus {
+            border-color: #6a11cb;
+            box-shadow: 0 0 8px rgba(106, 17, 203, 0.3);
+            outline: none;
+        }
+        .edit-icon {
+            position: absolute;
+            right: 10px;
+            top: 70%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #6a11cb;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+        .edit-icon:hover {
+            color: #2575fc;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            transform: translateY(-2px);
+        }
+        .btn-save {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+        }
+        .btn-save:hover {
+            background: linear-gradient(135deg, #2575fc, #6a11cb);
+        }
+        .btn-reset {
+            background: linear-gradient(135deg, #ff6f61, #ff9a44);
+            color: white;
+            margin-top: 10px;
+        }
+        .btn-reset:hover {
+            background: linear-gradient(135deg, #ff9a44, #ff6f61);
+        }
+        .btn-logout {
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            color: white;
+            margin-top: 10px;
+        }
+        .btn-logout:hover {
+            background: linear-gradient(135deg, #ff4b2b, #ff416c);
+        }
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .modal-content h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #444;
+        }
+        .modal-content input {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .modal-content button {
+            margin-top: 10px;
+        }
+        /* Bottom Navigation Bar */
+        .bottom-nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px;
+            background: rgba(171, 10, 10, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .bottom-nav .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        .bottom-nav .nav-item:hover {
+            color: #ffdd57;
+        }
+        .bottom-nav .nav-item i {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        .nav-item.active {
+            color: #f0c800;
+        }
+        .nav-item.active i {
+            color: #f0c800;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #5b8dea, #e0e0e0);
+            color: black;
+            text-align: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+        }
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .back-button i {
+            font-size: 24px;
+        }
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        h2 {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+        p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .stats {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+        .stats p {
+            margin: 5px 0;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .stats p i {
+            font-size: 18px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            background: #ff7eb3;
+            color: white;
+            transition: 0.3s;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        @media (max-width: 600px) {
+            .back-button {
+                font-size: 20px;
+            }
+            .back-button i {
+                font-size: 20px;
+            }
+        }
+
+
+        /* Sembunyikan loading indicator secara default */
+        #loadingIndicator {
+            display: block;
+        }
+
+        /* Tampilkan container dan elemen di dalamnya setelah loading selesai */
+        .container {
+            display: none; /* Sembunyikan container secara default */
+        }
+
+        .container.visible {
+            display: block; /* Tampilkan container setelah loading selesai */
+        }
+
+        /* Style untuk loading indicator */
+        .loading-indicator {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .loading-indicator .loader {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #fff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-indicator p {
+            font-size: 16px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Indicator -->
+    <div id="loadingIndicator" class="loading-indicator">
+       <div class="loader"></div>
+       <p>Memuat data...</p>
+   </div>
+  
+    <div class="container">
+        
+        <!-- Tombol Kembali -->
+        <button class="back-button" onclick="window.location.href='index.html'">
+            <i class='bx bx-arrow-back'></i>
+        </button>
+
+        <!-- Gambar Profil -->
+        <img src="img/profile.png" alt="Foto Profil" class="profile-img">
+
+        <!-- Nama dan Email -->
+        <h2 id="name">Nama Pengguna</h2>
+        <p id="email">user@email.com</p>
+
+
+
+        <div class="input-group">
+            <label style="text-align: left;">Nama</label>
+            <input type="text" id="userName" placeholder="Masukkan nama Anda" readonly>
+            <i class='bx bx-edit edit-icon' onclick="openEditNameModal()"></i>
+        </div>
+
+        <div class="input-group">
+            <label style="text-align: left;">Email</label>
+            <input type="email" id="userEmail" placeholder="Masukkan email Anda" readonly>
+            <!-- <i class='bx bx-edit edit-icon' onclick="openEditEmailModal()"></i> -->
+        </div>
+
+        <button class="btn-reset" onclick="resetPassword()">Ganti Password</button>
+        <button class="btn-check-verification" onclick="checkEmailVerification()">Periksa Verifikasi Email</button>
+
+        
+        <button id="logout">Logout</button>
+    </div>
+
+    <!-- Modal Edit Nama -->
+    <div id="editNameModal" class="modal">
+        <div class="modal-content">
+            <h2>Edit Nama</h2>
+            <input type="text" id="editNameInput" placeholder="Masukkan nama baru">
+            <button class="btn-save" onclick="saveName()">Simpan</button>
+            <button class="btn-reset" onclick="closeModal('editNameModal')">Batal</button>
+        </div>
+    </div>
+
+    <!-- Modal Edit Email -->
+    <div id="editEmailModal" class="modal">
+        <div class="modal-content">
+            <h2>Edit Email</h2>
+            <input type="email" id="editEmailInput" placeholder="Masukkan email baru">
+            <button class="btn-save" onclick="saveEmail()">Simpan</button>
+            <button class="btn-reset" onclick="closeModal('editEmailModal')">Batal</button>
+        </div>
+    </div>
+    
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged, updateProfile, updateEmail, sendPasswordResetEmail, signOut, sendEmailVerification, reauthenticateWithCredential, EmailAuthProvider } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-auth.js";
+        import { getFirestore, collection, query, where, getDocs, doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore.js";
+
+
+        // Konfigurasi Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyAz7u_Fy6AR3sH_ZLK5CTddiv529yN9yLg",
+            authDomain: "personal-web-dopi.firebaseapp.com",
+            projectId: "personal-web-dopi",
+            storageBucket: "personal-web-dopi.firebasestorage.app",
+            messagingSenderId: "717791869067",
+            appId: "1:717791869067:web:25a3356fac3ab1c52b7c8e"
+        };
+    
+        // Inisialisasi Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        const userName = document.getElementById('userName');
+        const userEmail = document.getElementById('userEmail');
+        const editNameInput = document.getElementById('editNameInput');
+        const editEmailInput = document.getElementById('editEmailInput');
+    
+        // Cek status login
+        onAuthStateChanged(auth, async (user) => {
+            
+            if (!user) {
+                Swal.fire({
+                    title: 'Anda Belum Login',
+                    text: 'Silakan Login agar dapat melanjutkan.',
+                    icon: 'warning',
+                    confirmButtonText: 'OK'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Jika tidak ada user yang login, redirect ke halaman login
+                        window.location.href = "login.html";
+                    }
+                });
+            } else {
+                try {
+                    // Ambil data pengguna dari koleksi 'users'
+                    const userDocRef = doc(db, "users", user.uid); // Referensi ke dokumen user
+                    const userDocSnap = await getDoc(userDocRef);
+    
+                    // Tampilkan nama pengguna
+                    if (userDocSnap.exists()) {
+                        const userData = userDocSnap.data();
+                        document.getElementById("name").textContent = userData.name || "Nama Pengguna";
+                        userName.value = userData.name || "";
+                        userEmail.value = userData.email || "";
+                    } else {
+                        document.getElementById("name").textContent = "Nama Pengguna"; // Default jika tidak ditemukan
+                    }
+    
+                    // Tampilkan email pengguna
+                    document.getElementById("email").textContent = user.email;
+    
+                    // Sembunyikan loading indicator
+                    document.getElementById("loadingIndicator").style.display = "none";
+    
+                    // Tampilkan container dengan menambahkan class 'visible'
+                    document.querySelector(".container").classList.add("visible");
+                } catch (error) {
+                    console.error("Error mengambil data:", error);
+                    Swal.fire('Error!', 'Gagal memuat data: ' + error.message, 'error');
+                }
+            }
+        });
+
+        // Fungsi untuk membuka modal edit nama
+        window.openEditNameModal = function() {
+            editNameInput.value = userName.value;
+            document.getElementById('editNameModal').style.display = 'flex';
+        };
+
+        // Fungsi untuk menyimpan nama
+        window.saveName = async function() {
+            const newName = editNameInput.value.trim();
+            if (!newName) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Nama tidak boleh kosong!',
+                });
+                return;
+            }
+
+            const user = auth.currentUser;
+            try {
+                await updateProfile(user, { displayName: newName });
+                await updateDoc(doc(db, "users", user.uid), { name: newName });
+                userName.value = newName;
+                closeModal('editNameModal');
+                
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Berhasil!',
+                    text: 'Nama berhasil diperbarui!',
+                }).then(() => {
+                    location.reload(); // Refresh halaman setelah Swal ditutup
+                });
+            } catch (error) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Error: ' + error.message,
+                });
+            }
+        };
+
+        // Fungsi untuk membuka modal edit email
+        window.openEditEmailModal = function() {
+            editEmailInput.value = userEmail.value;
+            document.getElementById('editEmailModal').style.display = 'flex';
+        };
+
+        // Fungsi untuk menyimpan email baru
+        window.saveEmail = async function () {
+            const newEmail = editEmailInput.value.trim();
+            if (!newEmail) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Email tidak boleh kosong!',
+                });
+                return;
+            }
+
+            const user = auth.currentUser;
+            if (!user) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Anda harus login terlebih dahulu!',
+                });
+                return;
+            }
+
+            try {
+                // Minta user memasukkan password untuk re-authentication
+                const { value: password } = await Swal.fire({
+                    title: 'Masukkan Password Anda',
+                    input: 'password',
+                    inputPlaceholder: 'Password Anda',
+                    inputAttributes: {
+                        autocapitalize: 'off',
+                        autocorrect: 'off',
+                    },
+                    showCancelButton: true,
+                });
+
+                if (!password) {
+                    return;
+                }
+
+                // Re-autentikasi user
+                const credential = EmailAuthProvider.credential(user.email, password);
+                await reauthenticateWithCredential(user, credential);
+
+                // Simpan email baru ke Firestore (sementara) dan kirim verifikasi email
+                await updateDoc(doc(db, "users", user.uid), { pendingEmail: newEmail });
+
+                await sendEmailVerification(user);
+
+                Swal.fire({
+                    icon: 'info',
+                    title: 'Verifikasi Email!',
+                    text: 'Silakan cek email Anda untuk memverifikasi email baru sebelum diperbarui!',
+                });
+
+                closeModal('editEmailModal');
+            } catch (error) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Error: ' + error.message,
+                });
+            }
+        };
+
+
+        // Fungsi untuk memeriksa verifikasi email
+        window.checkEmailVerification = async function() {
+            const user = auth.currentUser;
+            if (!user) return;
+
+            try {
+                // Muat ulang status pengguna
+                await user.reload();
+
+                // Ambil email baru yang belum diverifikasi dari Firestore
+                const userDoc = await getDoc(doc(db, "users", user.uid));
+                const pendingEmail = userDoc.data().pendingEmail;
+
+                if (!pendingEmail) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Tidak ada email baru yang menunggu verifikasi.',
+                    });
+                    return;
+                }
+
+                // Periksa apakah email baru sudah diverifikasi
+                if (user.emailVerified) {
+                    // Ubah email di Firebase Authentication
+                    await updateEmail(user, pendingEmail);
+
+                    // Perbarui email di Firestore
+                    await updateDoc(doc(db, "users", user.uid), {
+                        email: pendingEmail,
+                        pendingEmail: null, // Hapus pendingEmail
+                    });
+
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Berhasil!',
+                        text: 'Email berhasil diperbarui!',
+                    });
+
+                    // Perbarui nilai email di UI
+                    userEmail.value = pendingEmail;
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Email belum diverifikasi. Silakan verifikasi email terlebih dahulu.',
+                    });
+                }
+            } catch (error) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Error: ' + error.message,
+                });
+            }
+        };
+
+        // Fungsi untuk menutup modal
+        window.closeModal = function(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        };
+
+        // Fungsi untuk reset password
+        window.resetPassword = function() {
+            const user = auth.currentUser;
+            if (!user) return;
+
+            sendPasswordResetEmail(auth, user.email)
+                .then(() => {
+                    Swal.fire({
+                        icon: 'info',
+                        title: 'Email Reset Password',
+                        text: 'Email reset password telah dikirim!',
+                    });
+                })
+                .catch((error) => {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Error: ' + error.message,
+                    });
+                });
+        };
+    
+        // Logout Function
+        document.getElementById("logout").addEventListener("click", () => {
+            // Tampilkan dialog konfirmasi
+            Swal.fire({
+                title: 'Logout',
+                text: "Apakah anda yakin akan Keluar dari Dopi-Do?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#ffdd57',
+                cancelButtonColor: '#2575fc',
+                confirmButtonText: 'Ya, Yakin!',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Jika pengguna memilih "Ya, Yakin!", lakukan logout
+                    signOut(auth).then(() => {
+                        Swal.fire({
+                            title: 'Berhasil!',
+                            text: 'Anda berhasil keluar. Sampai Berjumpa lagi',
+                            icon: 'success',
+                            confirmButtonText: 'OK'
+                        }).then(() => {
+                            // Redirect ke halaman index.html setelah logout
+                            window.location.href = "index.html";
+                        });
+                    }).catch((error) => {
+                        // Jika terjadi error saat logout
+                        Swal.fire({
+                            title: 'Error!',
+                            text: 'Gagal logout: ' + error.message,
+                            icon: 'error',
+                            confirmButtonText: 'OK'
+                        });
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
