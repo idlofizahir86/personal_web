@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMKN 1 Kuala Pembuang — Aplikasi Akademik</title>
+    <meta name="description" content="Unduh Aplikasi Akademik SMKN 1 Kuala Pembuang untuk Windows. Kelola jadwal, beban mengajar, dan administrasi sekolah dengan mudah.">
+
+    <!-- Favicon / Logo Sekolah -->
+    <link rel="icon" type="image/png" href="assets/logo_smk.png">
+    <link rel="apple-touch-icon" href="assets/logo_smk.png">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --text-main: #1e293b;
+            --text-muted: #5b6b83;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --radius: 16px;
+            --shadow: 0 20px 40px -12px rgba(15, 23, 42, 0.35);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0f172a;
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ====== School Background (fixed, full page) ====== */
+        .school-bg {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            background: url('assets/background_sekolah.svg') no-repeat center center / cover;
+            transform: scale(1.02);
+        }
+        .school-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(15, 23, 42, 0.82) 0%, rgba(15, 23, 42, 0.55) 30%, rgba(15, 23, 42, 0.35) 60%, rgba(15, 23, 42, 0.78) 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ====== Header / Navbar ====== */
+        header {
+            position: relative;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.45);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 76px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.12rem;
+        }
+
+        .logo-img {
+            height: 44px;
+            width: auto;
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+        }
+
+        .btn-nav {
+            background: rgba(255, 255, 255, 0.12);
+            color: var(--white);
+            padding: 9px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-nav:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* ====== Hero Section ====== */
+        .hero {
+            position: relative;
+            padding: 80px 0 100px;
+            color: var(--white);
+            /* Vertically center hero content and fill at least one viewport height,
+               adapting to tall/short and wide/narrow screens */
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero > .container { width: 100%; }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            align-items: center;
+            gap: 48px;
+        }
+
+        .hero-copy {
+            max-width: 560px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(37, 99, 235, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #bfdbfe;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 26px;
+            backdrop-filter: blur(6px);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 22px;
+            letter-spacing: -0.02em;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.35);
+        }
+
+        .hero h1 .highlight {
+            color: #60a5fa;
+        }
+
+        .hero p.lead {
+            font-size: 1.15rem;
+            color: #dbe4f5;
+            margin-bottom: 36px;
+            max-width: 520px;
+        }
+
+        .cta-group {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--accent);
+            color: white;
+            padding: 17px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+            box-shadow: 0 10px 30px -8px rgba(37, 99, 235, 0.7);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px -8px rgba(37, 99, 235, 0.8);
+            background: var(--accent-hover);
+        }
+
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            color: var(--white);
+            padding: 16px 26px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            backdrop-filter: blur(6px);
+            transition: 0.3s;
+        }
+
+        .btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .version-info {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .version-info span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .dot-sep { opacity: 0.4; }
+
+        /* ====== Mascot / Welcoming Character ====== */
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .mascot-wrap {
+            position: relative;
+            width: 100%;
+            /* Scale character with viewport width & height so it never overflows
+               on any screen ratio */
+            max-width: min(500px, 46vw, 78vh);
+        }
+
+        .mascot-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.45));
+            animation: float 4.5s ease-in-out infinite;
+        }
+
+        /* Welcome speech bubble */
+        .welcome-bubble {
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--white);
+            color: var(--primary);
+            padding: 16px 26px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: var(--shadow);
+            white-space: nowrap;
+            animation: bob 4.5s ease-in-out infinite;
+            z-index: 3;
+        }
+
+        .welcome-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 14px 12px 0 12px;
+            border-style: solid;
+            border-color: var(--white) transparent transparent transparent;
+        }
+
+        .welcome-bubble .wave {
+            display: inline-block;
+            animation: wave 1.8s ease-in-out infinite;
+            transform-origin: 70% 70%;
+        }
+
+        /* Floating accent dots */
+        .accent-dot {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(2px);
+            opacity: 0.55;
+        }
+        .dot-1 { width: 60px; height: 60px; background: #60a5fa; top: 6%; left: 4%; animation: float 6s ease-in-out infinite; }
+        .dot-2 { width: 30px; height: 30px; background: #fbbf24; top: 16%; right: 8%; animation: float 5s ease-in-out infinite reverse; }
+        .dot-3 { width: 44px; height: 44px; background: #34d399; bottom: 14%; left: 2%; animation: float 5.5s ease-in-out infinite; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-18px); }
+        }
+        @keyframes bob {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+        @keyframes wave {
+            0%, 60%, 100% { transform: rotate(0deg); }
+            10%, 30% { transform: rotate(16deg); }
+            20% { transform: rotate(-6deg); }
+        }
+
+        /* ====== Features ====== */
+        .features {
+            position: relative;
+            padding: 70px 0 90px;
+        }
+
+        .section-head {
+            text-align: center;
+            color: var(--white);
+            margin-bottom: 48px;
+        }
+
+        .section-head h2 {
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .section-head p {
+            color: #cbd5e1;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+        }
+
+        .feature-card {
+            padding: 34px 30px;
+            border-radius: var(--radius);
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+            box-shadow: 0 10px 30px -12px rgba(0,0,0,0.25);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px -14px rgba(0,0,0,0.35);
+        }
+
+        .icon-box {
+            width: 56px;
+            height: 56px;
+            background: #dbeafe;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            margin-bottom: 22px;
+            font-size: 1.6rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.96rem;
+        }
+
+        /* ====== Footer ====== */
+        footer {
+            position: relative;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            color: white;
+            padding: 50px 0 30px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 28px;
+        }
+
+        .footer-logo img {
+            height: 56px;
+            /* filter: brightness(0) invert(1); */
+            opacity: 0.9;
+        }
+
+        .copyright {
+            font-size: 0.92rem;
+            opacity: 0.75;
+            margin-top: 34px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+        }
+
+        .dev-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 6px;
+        }
+
+        .dev-link:hover { text-decoration: underline; }
+
+        /* ====== Responsive ====== */
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+            .hero-copy { margin: 0 auto; }
+            .hero p.lead { margin-left: auto; margin-right: auto; }
+            .cta-group, .version-info { justify-content: center; }
+            .mascot-wrap { max-width: 340px; margin: 0 auto; }
+            .welcome-bubble { font-size: 0.95rem; padding: 13px 20px; white-space: normal; width: max-content; max-width: 90vw; }
+        }
+
+        @media (max-width: 480px) {
+            .btn-primary, .btn-ghost { width: 100%; justify-content: center; }
+            .hero { padding: 40px 0 60px; }
+        }
+
+        /* ====== Adapt to various screen RATIOS ====== */
+        /* Short height, landscape / desktop (wide & low) */
+        @media (max-height: 640px) and (min-width: 768px) {
+            .hero { padding: 40px 0 56px; }
+            .mascot-wrap { max-width: min(340px, 38vh); }
+            .welcome-bubble { font-size: 0.95rem; padding: 12px 18px; top: -20px; }
+            .hero h1 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); margin-bottom: 14px; }
+            .hero p.lead { margin-bottom: 22px; }
+        }
+
+        /* Tall & narrow (portrait phones / tablets) */
+        @media (max-width: 600px) and (min-aspect-ratio: 1/1) {
+            .hero { padding: 36px 0 48px; }
+            .mascot-wrap { max-width: min(300px, 40vh); }
+            .welcome-bubble { font-size: 0.9rem; }
+        }
+
+        /* Very wide desktop screens — keep character and text balanced */
+        @media (min-width: 1440px) {
+            .hero-grid { gap: 72px; }
+            .mascot-wrap { max-width: 520px; }
+        }
+
+        /* ====== OS Warning Overlay ====== */
+        .os-warning {
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            background: rgba(15, 23, 42, 0.88);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .os-warning[hidden] { display: none; }
+
+        .os-warning-card {
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+            background: var(--white);
+            color: var(--text-main);
+            padding: 40px 32px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            animation: rise 0.5s ease-out;
+        }
+
+        @keyframes rise {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .os-warning-icon {
+            width: 66px;
+            height: 66px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            background: #dbeafe;
+            border-radius: 16px;
+        }
+
+        .os-warning-card h2 {
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-size: 1.4rem;
+        }
+
+        .os-warning-card p {
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            font-size: 0.98rem;
+        }
+
+        .os-warning-card p strong { color: var(--primary); }
+
+        .os-warning-note {
+            margin-top: 8px;
+            padding-top: 16px;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.88rem !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- School background (fixed full page) -->
+    <div class="school-bg" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <header>
+        <div class="container nav-content">
+            <a href="#" class="brand">
+                <img class="logo-img" src="assets/logo_smk.png" alt="Logo SMKN 1 Kuala Pembuang">
+                <span>SMKN 1 Kuala Pembuang</span>
+            </a>
+            <a href="https://github.com/dopidev/smkn1kp_app/releases" class="btn-nav">Log Versioning</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-grid">
+
+            <div class="hero-copy">
+                <div class="hero-badge">
+                    <span>🪟</span> Tersedia untuk Windows
+                </div>
+
+                <h1>Kelola Administrasi Sekolah<br><span class="highlight">Lebih Mudah &amp; Cepat</span></h1>
+
+                <p class="lead">Aplikasi desktop khusus untuk SMKN 1 Kuala Pembuang. Kelola tahun ajaran, struktur kurikulum, beban mengajar guru, hingga pembuatan jadwal pelajaran otomatis.</p>
+
+                <div class="cta-group">
+                    <a href="https://github.com/dopidev/smkn1kp_app/releases/download/v1.0.1/SMKN-1-Kuala-Pembuang-Setup-1.0.1.exe" class="btn-primary">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        Download Aplikasi Windows
+                    </a>
+                    <a href="#fitur" class="btn-ghost">Lihat Fitur</a>
+                </div>
+
+                <div class="version-info">
+                    <span>Versi terbaru v1.0.1</span>
+                    <span class="dot-sep">•</span>
+                    <span>Gratis</span>
+                    <span class="dot-sep">•</span>
+                    <span>Offline Ready</span>
+                </div>
+            </div>
+
+            <!-- Welcoming character -->
+            <div class="hero-visual">
+                <div class="accent-dot dot-1" aria-hidden="true"></div>
+                <div class="accent-dot dot-2" aria-hidden="true"></div>
+                <div class="accent-dot dot-3" aria-hidden="true"></div>
+
+                <div class="mascot-wrap">
+                    <div class="welcome-bubble">
+                        <span class="wave">👋</span> Selamat Datang di SMKN 1 Kuala Pembuang!
+                    </div>
+                    <img class="mascot-img" src="assets/karakter_sekolah.svg" alt="Karakter menyambut siswa SMKN 1 Kuala Pembuang">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Features Highlight -->
+    <section class="features" id="fitur">
+        <div class="container">
+            <div class="section-head">
+                <h2>Fitur Unggulan</h2>
+                <p>Semua yang Anda butuhkan untuk mengelola administrasi akademik sekolah dalam satu aplikasi.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="feature-card">
+                    <div class="icon-box">📅</div>
+                    <h3>Jadwal Otomatis</h3>
+                    <p>Algoritma penjadwalan cerdas yang menghindari bentrok jam mengajar guru dan ruang kelas secara otomatis.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box">👨‍🏫</div>
+                    <h3>Manajemen Beban Kerja</h3>
+                    <p>Pantau distribusi jam mengajar guru agar sesuai dengan ketentuan jam wajib dan sertifikasi.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box">⚡</div>
+                    <h3>Cepat &amp; Offline</h3>
+                    <p>Aplikasi desktop native yang berjalan cepat tanpa koneksi internet. Data tersimpan aman di lokal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="assets/logo_smk.png" alt="Logo Sekolah White">
+                <img src="assets/dopidev_logo_noBg.png" alt="Logo Dopidev White">
+            </div>
+
+            <p class="copyright">
+                &copy; 2026 SMKN 1 Kuala Pembuang. Hak cipta dilindungi.<br>
+                Dibuat & dikembang dengan 💪🏻 oleh <a href="https://github.com/dopidev" target="_blank" class="dev-link">Dopidev</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- OS Warning Overlay (shown when not on Windows) -->
+    <div id="os-warning" class="os-warning" role="alertdialog" aria-modal="true" aria-labelledby="os-warning-title" hidden>
+        <div class="os-warning-card">
+            <div class="os-warning-icon">🪟</div>
+            <h2 id="os-warning-title">Hanya Tersedia untuk Windows</h2>
+            <p>Aplikasi SMKN 1 Kuala Pembuang saat ini baru tersedia untuk perangkat dengan sistem operasi <strong>Windows</strong>.</p>
+            <p class="os-warning-detail">Anda mengakses halaman ini dari perangkat dengan sistem operasi <strong id="os-name">lainnya</strong>.</p>
+            <p class="os-warning-note">Silakan buka halaman ini dari komputer atau laptop Windows untuk mengunduh dan menjalankan aplikasinya.</p>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            function detectOS() {
+                // Modern API (Chromium)
+                if (navigator.userAgentData && navigator.userAgentData.platform) {
+                    return navigator.userAgentData.platform;
+                }
+                var ua = navigator.userAgent || '';
+                var platform = navigator.platform || '';
+                if (/Windows/i.test(platform) || /Windows/i.test(ua)) return 'Windows';
+                if (/Macintosh|MacIntel|Mac/i.test(platform)) return 'macOS';
+                if (/iPhone|iPad|iPod/i.test(ua)) return 'iOS';
+                if (/Android/i.test(ua)) return 'Android';
+                if (/Linux/i.test(platform)) return 'Linux';
+                return platform || 'perangkat ini';
+            }
+
+            var os = detectOS();
+            var isWindows = /windows/i.test(os);
+
+            if (!isWindows) {
+                var overlay = document.getElementById('os-warning');
+                var osName = document.getElementById('os-name');
+                if (osName) osName.textContent = os;
+                if (overlay) overlay.hidden = false;
+            }
+        })();
+    </script>
+
+</body>
+</html>
