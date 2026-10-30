@@ -1,0 +1,4052 @@
+[
+  {
+    "id": "V001",
+    "category": "verbal",
+    "type": "Sinonim",
+    "difficulty": "Mudah",
+    "prompt": "Kata **AKURAT** memiliki makna paling dekat dengan ....",
+    "options": [
+      "Tepat",
+      "Lambat",
+      "Rumit",
+      "Berubah",
+      "Meluas"
+    ],
+    "answer": 0,
+    "explanation": "Kata akurat berarti tepat atau cermat sesuai fakta.",
+    "source": {
+      "label": "CregAsia · referensi tipe verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V002",
+    "category": "verbal",
+    "type": "Sinonim",
+    "difficulty": "Mudah",
+    "prompt": "Kata **ABSAH** memiliki makna paling dekat dengan ....",
+    "options": [
+      "Kabur",
+      "Palsu",
+      "Sementara",
+      "Sah",
+      "Batal"
+    ],
+    "answer": 3,
+    "explanation": "Absah berarti sah atau dapat diterima menurut ketentuan.",
+    "source": {
+      "label": "CregAsia · referensi tipe verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V003",
+    "category": "verbal",
+    "type": "Sinonim",
+    "difficulty": "Mudah",
+    "prompt": "Kata **IMPLISIT** memiliki makna paling dekat dengan ....",
+    "options": [
+      "Terbuka",
+      "Tersirat",
+      "Terang",
+      "Tegas",
+      "Terucap"
+    ],
+    "answer": 1,
+    "explanation": "Implisit berarti terkandung secara tidak langsung atau tersirat.",
+    "source": {
+      "label": "CregAsia · referensi tipe verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V004",
+    "category": "verbal",
+    "type": "Sinonim",
+    "difficulty": "Mudah",
+    "prompt": "Kata **MITIGASI** memiliki makna paling dekat dengan ....",
+    "options": [
+      "Penghapusan bukti",
+      "Perluasan dampak",
+      "Penundaan keputusan",
+      "Peningkatan biaya",
+      "Pengurangan risiko"
+    ],
+    "answer": 4,
+    "explanation": "Mitigasi adalah tindakan mengurangi risiko atau dampak buruk.",
+    "source": {
+      "label": "CregAsia · referensi tipe verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V005",
+    "category": "verbal",
+    "type": "Sinonim",
+    "difficulty": "Mudah",
+    "prompt": "Kata **ESENSIAL** memiliki makna paling dekat dengan ....",
+    "options": [
+      "Sementara",
+      "Tambahan",
+      "Mendasar",
+      "Rumit",
+      "Berlebihan"
+    ],
+    "answer": 2,
+    "explanation": "Esensial berarti sangat penting dan mendasar.",
+    "source": {
+      "label": "CregAsia · referensi tipe verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V006",
+    "category": "verbal",
+    "type": "Sinonim",
+    "difficulty": "Mudah",
+    "prompt": "Kata **EKSTENSIF** memiliki makna paling dekat dengan ....",
+    "options": [
+      "Luas",
+      "Sempit",
+      "Terbatas",
+      "Ringkas",
+      "Dangkal"
+    ],
+    "answer": 0,
+    "explanation": "Ekstensif menunjukkan cakupan yang luas.",
+    "source": {
+      "label": "CregAsia · referensi tipe verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V007",
+    "category": "verbal",
+    "type": "Sinonim",
+    "difficulty": "Mudah",
+    "prompt": "Kata **RIGID** memiliki makna paling dekat dengan ....",
+    "options": [
+      "Luwes",
+      "Lentur",
+      "Dinamis",
+      "Kaku",
+      "Bebas"
+    ],
+    "answer": 3,
+    "explanation": "Rigid berarti kaku dan sulit berubah.",
+    "source": {
+      "label": "CregAsia · referensi tipe verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V008",
+    "category": "verbal",
+    "type": "Sinonim",
+    "difficulty": "Mudah",
+    "prompt": "Kata **KREDIBEL** memiliki makna paling dekat dengan ....",
+    "options": [
+      "Diragukan",
+      "Terpercaya",
+      "Rahasia",
+      "Sementara",
+      "Tidak lengkap"
+    ],
+    "answer": 1,
+    "explanation": "Kredibel berarti dapat dipercaya.",
+    "source": {
+      "label": "CregAsia · referensi tipe verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V009",
+    "category": "verbal",
+    "type": "Sinonim",
+    "difficulty": "Mudah",
+    "prompt": "Kata **AUTENTIK** memiliki makna paling dekat dengan ....",
+    "options": [
+      "Umum",
+      "Tiruan",
+      "Palsu",
+      "Samar",
+      "Asli"
+    ],
+    "answer": 4,
+    "explanation": "Autentik berarti asli dan dapat dibuktikan keasliannya.",
+    "source": {
+      "label": "CregAsia · referensi tipe verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V010",
+    "category": "verbal",
+    "type": "Sinonim",
+    "difficulty": "Mudah",
+    "prompt": "Kata **KONVERGEN** memiliki makna paling dekat dengan ....",
+    "options": [
+      "Berpisah",
+      "Menyebar",
+      "Memusat",
+      "Menyimpang",
+      "Melebar"
+    ],
+    "answer": 2,
+    "explanation": "Konvergen berarti bergerak menuju satu titik atau memusat.",
+    "source": {
+      "label": "CregAsia · referensi tipe verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V011",
+    "category": "verbal",
+    "type": "Sinonim",
+    "difficulty": "Mudah",
+    "prompt": "Kata **KOMPREHENSIF** memiliki makna paling dekat dengan ....",
+    "options": [
+      "Menyeluruh",
+      "Parsial",
+      "Terbatas",
+      "Terpisah",
+      "Dangkal"
+    ],
+    "answer": 0,
+    "explanation": "Komprehensif berarti mencakup berbagai aspek secara menyeluruh.",
+    "source": {
+      "label": "CregAsia · referensi tipe verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V012",
+    "category": "verbal",
+    "type": "Sinonim",
+    "difficulty": "Mudah",
+    "prompt": "Kata **RELEVAN** memiliki makna paling dekat dengan ....",
+    "options": [
+      "Acak",
+      "Bertentangan",
+      "Terpisah",
+      "Berkaitan",
+      "Berlebihan"
+    ],
+    "answer": 3,
+    "explanation": "Relevan berarti memiliki hubungan atau keterkaitan dengan hal yang dibahas.",
+    "source": {
+      "label": "CregAsia · referensi tipe verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V013",
+    "category": "verbal",
+    "type": "Antonim",
+    "difficulty": "Mudah",
+    "prompt": "Antonim paling tepat dari kata **TEMPORER** adalah ....",
+    "options": [
+      "Permanen",
+      "Singkat",
+      "Sementara",
+      "Sesaat",
+      "Terbatas"
+    ],
+    "answer": 0,
+    "explanation": "Temporer berarti sementara; lawannya permanen.",
+    "source": {
+      "label": "CregAsia · referensi tipe verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V014",
+    "category": "verbal",
+    "type": "Antonim",
+    "difficulty": "Mudah",
+    "prompt": "Antonim paling tepat dari kata **OPTIMISTIS** adalah ....",
+    "options": [
+      "Berharap",
+      "Percaya diri",
+      "Pesimistis",
+      "Yakin",
+      "Antusias"
+    ],
+    "answer": 2,
+    "explanation": "Optimistis berlawanan dengan pesimistis.",
+    "source": {
+      "label": "CregAsia · referensi tipe verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V015",
+    "category": "verbal",
+    "type": "Antonim",
+    "difficulty": "Mudah",
+    "prompt": "Antonim paling tepat dari kata **OBJEKTIF** adalah ....",
+    "options": [
+      "Imparsial",
+      "Netral",
+      "Faktual",
+      "Terukur",
+      "Subjektif"
+    ],
+    "answer": 4,
+    "explanation": "Objektif didasarkan pada fakta, sedangkan subjektif dipengaruhi sudut pandang pribadi.",
+    "source": {
+      "label": "CregAsia · referensi tipe verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V016",
+    "category": "verbal",
+    "type": "Antonim",
+    "difficulty": "Mudah",
+    "prompt": "Antonim paling tepat dari kata **PARSIAL** adalah ....",
+    "options": [
+      "Sebagian",
+      "Menyeluruh",
+      "Terbatas",
+      "Terpilah",
+      "Sepotong"
+    ],
+    "answer": 1,
+    "explanation": "Parsial berarti sebagian; antonimnya menyeluruh.",
+    "source": {
+      "label": "CregAsia · referensi tipe verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V017",
+    "category": "verbal",
+    "type": "Antonim",
+    "difficulty": "Mudah",
+    "prompt": "Antonim paling tepat dari kata **EKSPLISIT** adalah ....",
+    "options": [
+      "Langsung",
+      "Terang",
+      "Tegas",
+      "Implisit",
+      "Gamblang"
+    ],
+    "answer": 3,
+    "explanation": "Eksplisit dinyatakan secara jelas; implisit tersirat.",
+    "source": {
+      "label": "CregAsia · referensi tipe verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V018",
+    "category": "verbal",
+    "type": "Antonim",
+    "difficulty": "Mudah",
+    "prompt": "Antonim paling tepat dari kata **TRANSPARAN** adalah ....",
+    "options": [
+      "Tertutup",
+      "Terbuka",
+      "Jernih",
+      "Terang",
+      "Terlihat"
+    ],
+    "answer": 0,
+    "explanation": "Dalam konteks informasi, transparan berlawanan dengan tertutup.",
+    "source": {
+      "label": "CregAsia · referensi tipe verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V019",
+    "category": "verbal",
+    "type": "Antonim",
+    "difficulty": "Mudah",
+    "prompt": "Antonim paling tepat dari kata **DINAMIS** adalah ....",
+    "options": [
+      "Lincah",
+      "Aktif",
+      "Statis",
+      "Bergerak",
+      "Progresif"
+    ],
+    "answer": 2,
+    "explanation": "Dinamis berarti terus bergerak atau berubah; lawannya statis.",
+    "source": {
+      "label": "CregAsia · referensi tipe verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V020",
+    "category": "verbal",
+    "type": "Antonim",
+    "difficulty": "Mudah",
+    "prompt": "Antonim paling tepat dari kata **ADAPTIF** adalah ....",
+    "options": [
+      "Mudah menyesuaikan",
+      "Luwes",
+      "Fleksibel",
+      "Responsif",
+      "Kaku"
+    ],
+    "answer": 4,
+    "explanation": "Adaptif berarti mudah menyesuaikan diri, berlawanan dengan kaku.",
+    "source": {
+      "label": "CregAsia · referensi tipe verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V021",
+    "category": "verbal",
+    "type": "Antonim",
+    "difficulty": "Mudah",
+    "prompt": "Antonim paling tepat dari kata **EKSPANSIF** adalah ....",
+    "options": [
+      "Meluas",
+      "Kontraktif",
+      "Melebar",
+      "Berkembang",
+      "Meningkat"
+    ],
+    "answer": 1,
+    "explanation": "Ekspansif berarti meluas, sedangkan kontraktif berarti menyusut.",
+    "source": {
+      "label": "CregAsia · referensi tipe verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V022",
+    "category": "verbal",
+    "type": "Antonim",
+    "difficulty": "Mudah",
+    "prompt": "Antonim paling tepat dari kata **PROGRESIF** adalah ....",
+    "options": [
+      "Bertahap",
+      "Maju",
+      "Berkembang",
+      "Regresif",
+      "Inovatif"
+    ],
+    "answer": 3,
+    "explanation": "Progresif bergerak ke arah kemajuan; regresif bergerak mundur.",
+    "source": {
+      "label": "CregAsia · referensi tipe verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V023",
+    "category": "verbal",
+    "type": "Analogi",
+    "difficulty": "Sedang",
+    "prompt": "Kompas : Arah = Termometer : ....",
+    "options": [
+      "Waktu",
+      "Kecepatan",
+      "Jarak",
+      "Berat",
+      "Suhu"
+    ],
+    "answer": 4,
+    "explanation": "Kompas digunakan untuk mengetahui arah; termometer digunakan untuk mengetahui suhu.",
+    "source": {
+      "label": "CregAsia · referensi tipe analogi verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V024",
+    "category": "verbal",
+    "type": "Analogi",
+    "difficulty": "Sedang",
+    "prompt": "Editor : Naskah = Kurator : ....",
+    "options": [
+      "Koleksi",
+      "Panggung",
+      "Penonton",
+      "Tiket",
+      "Gedung"
+    ],
+    "answer": 0,
+    "explanation": "Editor menyeleksi atau menyunting naskah; kurator mengelola dan menyeleksi koleksi.",
+    "source": {
+      "label": "CregAsia · referensi tipe analogi verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V025",
+    "category": "verbal",
+    "type": "Analogi",
+    "difficulty": "Sedang",
+    "prompt": "Benih : Tanaman = Telur : ....",
+    "options": [
+      "Sarang",
+      "Anak ayam",
+      "Bulu",
+      "Kandang",
+      "Pakan"
+    ],
+    "answer": 1,
+    "explanation": "Benih dapat tumbuh menjadi tanaman; telur dapat menetas menjadi anak ayam.",
+    "source": {
+      "label": "CregAsia · referensi tipe analogi verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V026",
+    "category": "verbal",
+    "type": "Analogi",
+    "difficulty": "Sedang",
+    "prompt": "Peta : Wilayah = Denah : ....",
+    "options": [
+      "Perjalanan",
+      "Kompas",
+      "Bangunan",
+      "Kendaraan",
+      "Cuaca"
+    ],
+    "answer": 2,
+    "explanation": "Peta menggambarkan wilayah; denah menggambarkan tata letak bangunan atau ruang.",
+    "source": {
+      "label": "CregAsia · referensi tipe analogi verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V027",
+    "category": "verbal",
+    "type": "Analogi",
+    "difficulty": "Sedang",
+    "prompt": "Arsiparis : Dokumen = Pustakawan : ....",
+    "options": [
+      "Pembaca",
+      "Rak",
+      "Gedung",
+      "Buku",
+      "Kartu"
+    ],
+    "answer": 3,
+    "explanation": "Arsiparis mengelola dokumen; pustakawan mengelola koleksi buku.",
+    "source": {
+      "label": "CregAsia · referensi tipe analogi verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V028",
+    "category": "verbal",
+    "type": "Analogi",
+    "difficulty": "Sedang",
+    "prompt": "Fotosintesis : Tumbuhan = Respirasi : ....",
+    "options": [
+      "Air",
+      "Cahaya",
+      "Daun",
+      "Tanah",
+      "Makhluk hidup"
+    ],
+    "answer": 4,
+    "explanation": "Fotosintesis merupakan proses pada tumbuhan; respirasi berlangsung pada makhluk hidup.",
+    "source": {
+      "label": "CregAsia · referensi tipe analogi verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V029",
+    "category": "verbal",
+    "type": "Analogi",
+    "difficulty": "Sedang",
+    "prompt": "Kunci : Pintu = Kata sandi : ....",
+    "options": [
+      "Akun",
+      "Keyboard",
+      "Jaringan",
+      "Layar",
+      "Pesan"
+    ],
+    "answer": 0,
+    "explanation": "Kunci memberi akses ke pintu; kata sandi memberi akses ke akun.",
+    "source": {
+      "label": "CregAsia · referensi tipe analogi verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V030",
+    "category": "verbal",
+    "type": "Analogi",
+    "difficulty": "Sedang",
+    "prompt": "Hakim : Pengadilan = Wasit : ....",
+    "options": [
+      "Penonton",
+      "Pertandingan",
+      "Pemain",
+      "Stadion",
+      "Piala"
+    ],
+    "answer": 1,
+    "explanation": "Hakim menjalankan fungsi pengadil di pengadilan; wasit mengatur jalannya pertandingan.",
+    "source": {
+      "label": "CregAsia · referensi tipe analogi verbal TPA",
+      "url": "https://www.cregasia.com/soal/83/contoh-soal-tpa-bappenas-2025-9"
+    },
+    "original": true
+  },
+  {
+    "id": "V031",
+    "category": "verbal",
+    "type": "Pemahaman bacaan",
+    "difficulty": "Sedang",
+    "prompt": "Sebuah perpustakaan kampus memperpanjang jam layanan pada masa ujian. Namun, jumlah pengunjung tidak meningkat secara merata karena sebagian mahasiswa memilih mengakses katalog dan buku digital dari rumah.\n\nApa gagasan utama paragraf tersebut?",
+    "options": [
+      "Semua mahasiswa menolak datang ke perpustakaan",
+      "Perpanjangan layanan fisik tidak otomatis meningkatkan seluruh kunjungan",
+      "Buku digital tidak diminati mahasiswa",
+      "Perpustakaan akan ditutup saat ujian",
+      "Jumlah buku cetak selalu bertambah"
+    ],
+    "answer": 1,
+    "explanation": "Paragraf membandingkan jam layanan fisik dengan kebiasaan akses digital; peningkatan layanan fisik tidak otomatis menaikkan semua kunjungan.",
+    "source": {
+      "label": "Jobstreet Indonesia · referensi tipe soal TPA",
+      "url": "https://id.jobstreet.com/id/career-advice/article/contoh-soal-tpa-pembahasan-tips-mengerjakan"
+    },
+    "original": true
+  },
+  {
+    "id": "V032",
+    "category": "verbal",
+    "type": "Pemahaman bacaan",
+    "difficulty": "Sedang",
+    "prompt": "Program penghematan air di sebuah gedung dimulai dengan audit kebocoran. Setelah perbaikan pipa dan pemasangan meter per lantai, konsumsi air turun. Pengelola kemudian memakai data meter untuk mengevaluasi area yang masih boros.\n\nLangkah yang paling awal dilakukan dalam program tersebut adalah ....",
+    "options": [
+      "Mengganti seluruh jaringan air",
+      "Memasang meter di setiap lantai",
+      "Mengevaluasi area boros",
+      "Mengurangi jumlah penghuni",
+      "Melakukan audit kebocoran"
+    ],
+    "answer": 4,
+    "explanation": "Teks menyebut audit kebocoran sebagai langkah awal sebelum perbaikan pipa dan pemasangan meter.",
+    "source": {
+      "label": "Jobstreet Indonesia · referensi tipe soal TPA",
+      "url": "https://id.jobstreet.com/id/career-advice/article/contoh-soal-tpa-pembahasan-tips-mengerjakan"
+    },
+    "original": true
+  },
+  {
+    "id": "V033",
+    "category": "verbal",
+    "type": "Pemahaman bacaan",
+    "difficulty": "Sedang",
+    "prompt": "Tim proyek menetapkan target mingguan yang terukur. Setiap anggota melaporkan hambatan pada rapat singkat, sehingga pembagian pekerjaan dapat disesuaikan sebelum tenggat akhir.\n\nMengapa rapat singkat dilakukan secara berkala?",
+    "options": [
+      "Untuk menghapus tenggat proyek",
+      "Agar semua anggota mengerjakan tugas yang sama",
+      "Agar hambatan diketahui lebih awal dan pekerjaan dapat disesuaikan",
+      "Agar laporan akhir tidak diperlukan",
+      "Untuk menambah jumlah rapat formal"
+    ],
+    "answer": 2,
+    "explanation": "Rapat digunakan untuk mengidentifikasi hambatan dan menyesuaikan pembagian tugas sebelum tenggat.",
+    "source": {
+      "label": "Jobstreet Indonesia · referensi tipe soal TPA",
+      "url": "https://id.jobstreet.com/id/career-advice/article/contoh-soal-tpa-pembahasan-tips-mengerjakan"
+    },
+    "original": true
+  },
+  {
+    "id": "V034",
+    "category": "verbal",
+    "type": "Pemahaman bacaan",
+    "difficulty": "Sedang",
+    "prompt": "Digitalisasi arsip mempercepat pencarian dokumen, tetapi proses tersebut memerlukan standar penamaan berkas dan pengaturan hak akses. Tanpa keduanya, dokumen digital justru sulit ditemukan dan berisiko diakses pihak yang tidak berwenang.\n\nKesimpulan yang paling tepat adalah ....",
+    "options": [
+      "Digitalisasi perlu disertai tata kelola dokumen",
+      "Arsip digital selalu lebih aman daripada arsip fisik",
+      "Standar penamaan tidak diperlukan",
+      "Semua pegawai sebaiknya memiliki akses penuh",
+      "Pencarian dokumen tidak dipengaruhi struktur arsip"
+    ],
+    "answer": 0,
+    "explanation": "Teks menekankan manfaat digitalisasi sekaligus kebutuhan standar penamaan dan hak akses.",
+    "source": {
+      "label": "Jobstreet Indonesia · referensi tipe soal TPA",
+      "url": "https://id.jobstreet.com/id/career-advice/article/contoh-soal-tpa-pembahasan-tips-mengerjakan"
+    },
+    "original": true
+  },
+  {
+    "id": "V035",
+    "category": "verbal",
+    "type": "Pemahaman bacaan",
+    "difficulty": "Sedang",
+    "prompt": "Hasil survei menunjukkan pengguna lebih menyukai layanan yang mudah dipahami. Fitur yang paling canggih tidak selalu dipilih apabila alur penggunaannya membingungkan.\n\nInferensi yang paling kuat adalah ....",
+    "options": [
+      "Harga layanan merupakan satu-satunya faktor",
+      "Pengguna selalu menolak teknologi baru",
+      "Fitur canggih tidak memiliki manfaat",
+      "Kemudahan penggunaan turut memengaruhi penerimaan layanan",
+      "Survei tidak dapat digunakan untuk evaluasi"
+    ],
+    "answer": 3,
+    "explanation": "Preferensi terhadap kemudahan menunjukkan bahwa usability ikut memengaruhi penerimaan.",
+    "source": {
+      "label": "Jobstreet Indonesia · referensi tipe soal TPA",
+      "url": "https://id.jobstreet.com/id/career-advice/article/contoh-soal-tpa-pembahasan-tips-mengerjakan"
+    },
+    "original": true
+  },
+  {
+    "id": "V036",
+    "category": "verbal",
+    "type": "Pemahaman bacaan",
+    "difficulty": "Sedang",
+    "prompt": "Kebun kota menyediakan ruang hijau sekaligus tempat belajar warga. Pengelola mengadakan pelatihan kompos dan membagi jadwal penyiraman agar tanaman terawat tanpa membebani satu kelompok saja.\n\nTujuan pembagian jadwal penyiraman adalah ....",
+    "options": [
+      "Membatasi jumlah tanaman",
+      "Membagi tanggung jawab perawatan secara merata",
+      "Mengganti pelatihan kompos",
+      "Mengurangi partisipasi warga",
+      "Memindahkan kebun ke lokasi lain"
+    ],
+    "answer": 1,
+    "explanation": "Pembagian jadwal mencegah beban perawatan bertumpu pada satu kelompok.",
+    "source": {
+      "label": "Jobstreet Indonesia · referensi tipe soal TPA",
+      "url": "https://id.jobstreet.com/id/career-advice/article/contoh-soal-tpa-pembahasan-tips-mengerjakan"
+    },
+    "original": true
+  },
+  {
+    "id": "V037",
+    "category": "verbal",
+    "type": "Pemahaman bacaan",
+    "difficulty": "Sedang",
+    "prompt": "Sebuah toko mencatat penjualan harian dan stok barang. Ketika data stok diperbarui hanya pada akhir pekan, beberapa produk yang sebenarnya habis masih tercatat tersedia pada sistem.\n\nPenyebab utama ketidaksesuaian data adalah ....",
+    "options": [
+      "Semua produk memiliki stok sama",
+      "Penjualan toko terlalu tinggi",
+      "Sistem tidak memiliki nama produk",
+      "Pelanggan tidak memeriksa katalog",
+      "Pembaruan stok tidak dilakukan secara berkala"
+    ],
+    "answer": 4,
+    "explanation": "Data hanya diperbarui akhir pekan, sehingga tidak mencerminkan kondisi stok terkini.",
+    "source": {
+      "label": "Jobstreet Indonesia · referensi tipe soal TPA",
+      "url": "https://id.jobstreet.com/id/career-advice/article/contoh-soal-tpa-pembahasan-tips-mengerjakan"
+    },
+    "original": true
+  },
+  {
+    "id": "V038",
+    "category": "verbal",
+    "type": "Pemahaman bacaan",
+    "difficulty": "Sedang",
+    "prompt": "Penelitian awal menemukan hubungan antara durasi tidur dan konsentrasi. Peneliti mengingatkan bahwa hubungan tersebut belum membuktikan bahwa durasi tidur menjadi satu-satunya penyebab perubahan konsentrasi.\n\nPernyataan yang sesuai dengan paragraf adalah ....",
+    "options": [
+      "Penelitian awal sudah membuktikan sebab tunggal",
+      "Durasi tidur tidak berkaitan dengan konsentrasi",
+      "Hubungan dua variabel belum cukup untuk memastikan sebab-akibat",
+      "Konsentrasi hanya dipengaruhi makanan",
+      "Semua responden memiliki pola tidur sama"
+    ],
+    "answer": 2,
+    "explanation": "Peneliti secara eksplisit membedakan hubungan statistik dan hubungan sebab-akibat.",
+    "source": {
+      "label": "Jobstreet Indonesia · referensi tipe soal TPA",
+      "url": "https://id.jobstreet.com/id/career-advice/article/contoh-soal-tpa-pembahasan-tips-mengerjakan"
+    },
+    "original": true
+  },
+  {
+    "id": "V039",
+    "category": "verbal",
+    "type": "Pemahaman bacaan",
+    "difficulty": "Sedang",
+    "prompt": "Transportasi umum yang terintegrasi dapat mengurangi kebutuhan berpindah kendaraan secara tidak terencana. Integrasi jadwal, pembayaran, dan informasi rute membantu penumpang merencanakan perjalanan.\n\nAspek yang disebut mendukung integrasi layanan adalah ....",
+    "options": [
+      "Jadwal, pembayaran, dan informasi rute",
+      "Jumlah kendaraan pribadi",
+      "Luas tempat parkir",
+      "Harga bahan bakar",
+      "Jumlah gedung perkantoran"
+    ],
+    "answer": 0,
+    "explanation": "Tiga aspek tersebut disebut langsung sebagai bagian dari integrasi layanan.",
+    "source": {
+      "label": "Jobstreet Indonesia · referensi tipe soal TPA",
+      "url": "https://id.jobstreet.com/id/career-advice/article/contoh-soal-tpa-pembahasan-tips-mengerjakan"
+    },
+    "original": true
+  },
+  {
+    "id": "V040",
+    "category": "verbal",
+    "type": "Pemahaman bacaan",
+    "difficulty": "Sedang",
+    "prompt": "Sebuah kelas menerapkan diskusi kelompok sebelum tugas individu. Guru menemukan bahwa siswa yang aktif bertukar alasan cenderung mampu menjelaskan kembali konsep dengan kata-kata sendiri.\n\nManfaat diskusi yang paling didukung oleh paragraf adalah ....",
+    "options": [
+      "Mengurangi materi yang dipelajari",
+      "Menghilangkan kebutuhan tugas individu",
+      "Menjamin semua siswa mendapat nilai sama",
+      "Membantu siswa mengolah dan menjelaskan konsep",
+      "Menggantikan seluruh penjelasan guru"
+    ],
+    "answer": 3,
+    "explanation": "Diskusi memberi kesempatan mengolah alasan sehingga siswa dapat menjelaskan konsep kembali.",
+    "source": {
+      "label": "Jobstreet Indonesia · referensi tipe soal TPA",
+      "url": "https://id.jobstreet.com/id/career-advice/article/contoh-soal-tpa-pembahasan-tips-mengerjakan"
+    },
+    "original": true
+  },
+  {
+    "id": "V041",
+    "category": "verbal",
+    "type": "Penalaran deduktif",
+    "difficulty": "Sulit",
+    "prompt": "Semua analis data memahami statistik dasar. Nara adalah analis data. Kesimpulan yang pasti benar adalah ....",
+    "options": [
+      "Tidak ada analis data yang lain",
+      "Semua yang memahami statistik adalah analis data",
+      "Nara adalah dosen statistik",
+      "Nara memahami seluruh metode statistik",
+      "Nara memahami statistik dasar"
+    ],
+    "answer": 4,
+    "explanation": "Jika seluruh analis data memiliki kemampuan tersebut dan Nara termasuk analis data, maka Nara juga memahaminya.",
+    "source": {
+      "label": "Jobstreet Indonesia · referensi tipe soal TPA",
+      "url": "https://id.jobstreet.com/id/career-advice/article/contoh-soal-tpa-pembahasan-tips-mengerjakan"
+    },
+    "original": true
+  },
+  {
+    "id": "V042",
+    "category": "verbal",
+    "type": "Penalaran deduktif",
+    "difficulty": "Sulit",
+    "prompt": "Tidak satu pun kendaraan dalam kelompok X menggunakan bensin. Kendaraan A termasuk kelompok X. Kesimpulan yang tepat adalah ....",
+    "options": [
+      "Kendaraan A tidak menggunakan bensin",
+      "Semua kendaraan yang tidak memakai bensin adalah kelompok X",
+      "Kendaraan A pasti menggunakan listrik dari matahari",
+      "Kendaraan A bukan kendaraan",
+      "Seluruh kendaraan memakai bensin"
+    ],
+    "answer": 0,
+    "explanation": "Kendaraan A mewarisi sifat kelompok X: tidak menggunakan bensin.",
+    "source": {
+      "label": "Jobstreet Indonesia · referensi tipe soal TPA",
+      "url": "https://id.jobstreet.com/id/career-advice/article/contoh-soal-tpa-pembahasan-tips-mengerjakan"
+    },
+    "original": true
+  },
+  {
+    "id": "V043",
+    "category": "verbal",
+    "type": "Penalaran deduktif",
+    "difficulty": "Sulit",
+    "prompt": "Sebagian peserta seminar adalah peneliti. Semua peneliti membaca jurnal ilmiah. Kesimpulan yang pasti adalah ....",
+    "options": [
+      "Semua peserta seminar adalah peneliti",
+      "Sebagian peserta seminar membaca jurnal ilmiah",
+      "Semua pembaca jurnal mengikuti seminar",
+      "Tidak ada peserta seminar yang membaca jurnal",
+      "Sebagian peneliti bukan peserta seminar"
+    ],
+    "answer": 1,
+    "explanation": "Karena sebagian peserta merupakan peneliti dan semua peneliti membaca jurnal, sebagian peserta membaca jurnal.",
+    "source": {
+      "label": "Jobstreet Indonesia · referensi tipe soal TPA",
+      "url": "https://id.jobstreet.com/id/career-advice/article/contoh-soal-tpa-pembahasan-tips-mengerjakan"
+    },
+    "original": true
+  },
+  {
+    "id": "V044",
+    "category": "verbal",
+    "type": "Penalaran deduktif",
+    "difficulty": "Sulit",
+    "prompt": "Jika server utama gagal, sistem berpindah ke server cadangan. Server utama gagal. Maka ....",
+    "options": [
+      "Sistem tidak dapat digunakan selamanya",
+      "Server cadangan pasti gagal",
+      "Sistem berpindah ke server cadangan",
+      "Server utama kembali aktif",
+      "Tidak ada perpindahan sistem"
+    ],
+    "answer": 2,
+    "explanation": "Ini merupakan penerapan langsung aturan kondisi dan fakta pemicunya.",
+    "source": {
+      "label": "Jobstreet Indonesia · referensi tipe soal TPA",
+      "url": "https://id.jobstreet.com/id/career-advice/article/contoh-soal-tpa-pembahasan-tips-mengerjakan"
+    },
+    "original": true
+  },
+  {
+    "id": "V045",
+    "category": "verbal",
+    "type": "Penalaran deduktif",
+    "difficulty": "Sulit",
+    "prompt": "Semua dokumen rahasia diberi label khusus. Berkas R tidak memiliki label khusus. Kesimpulan logis adalah ....",
+    "options": [
+      "Label khusus tidak penting",
+      "Semua berkas tanpa label adalah rahasia",
+      "Berkas R pasti dokumen publik",
+      "Berkas R bukan dokumen rahasia",
+      "Berkas R telah dihapus"
+    ],
+    "answer": 3,
+    "explanation": "Jika dokumen rahasia pasti berlabel khusus, berkas tanpa label tidak termasuk dokumen rahasia.",
+    "source": {
+      "label": "Jobstreet Indonesia · referensi tipe soal TPA",
+      "url": "https://id.jobstreet.com/id/career-advice/article/contoh-soal-tpa-pembahasan-tips-mengerjakan"
+    },
+    "original": true
+  },
+  {
+    "id": "V046",
+    "category": "verbal",
+    "type": "Penalaran deduktif",
+    "difficulty": "Sulit",
+    "prompt": "Jika rapat daring dimulai tepat waktu, moderator sudah hadir. Moderator belum hadir. Kesimpulan yang valid adalah ....",
+    "options": [
+      "Peserta tidak memiliki agenda",
+      "Rapat daring pasti dibatalkan",
+      "Moderator tidak akan hadir",
+      "Rapat telah selesai",
+      "Rapat daring belum dimulai tepat waktu"
+    ],
+    "answer": 4,
+    "explanation": "Kontraposisi dari jika rapat tepat waktu maka moderator hadir: bila moderator belum hadir, rapat tidak dimulai tepat waktu.",
+    "source": {
+      "label": "Jobstreet Indonesia · referensi tipe soal TPA",
+      "url": "https://id.jobstreet.com/id/career-advice/article/contoh-soal-tpa-pembahasan-tips-mengerjakan"
+    },
+    "original": true
+  },
+  {
+    "id": "V047",
+    "category": "verbal",
+    "type": "Penalaran deduktif",
+    "difficulty": "Sulit",
+    "prompt": "Semua anggota klub membaca minimal satu buku per bulan. Riko tidak membaca buku bulan ini. Maka ....",
+    "options": [
+      "Riko bukan anggota klub",
+      "Semua anggota klub membaca banyak buku",
+      "Riko tidak menyukai buku",
+      "Riko akan keluar dari klub",
+      "Tidak ada anggota klub yang membaca"
+    ],
+    "answer": 0,
+    "explanation": "Pernyataan universal membuat orang yang tidak memenuhi sifat tersebut bukan anggota klub.",
+    "source": {
+      "label": "Jobstreet Indonesia · referensi tipe soal TPA",
+      "url": "https://id.jobstreet.com/id/career-advice/article/contoh-soal-tpa-pembahasan-tips-mengerjakan"
+    },
+    "original": true
+  },
+  {
+    "id": "V048",
+    "category": "verbal",
+    "type": "Penalaran deduktif",
+    "difficulty": "Sulit",
+    "prompt": "Laporan yang lolos pemeriksaan memiliki tanda verifikasi. Laporan P memiliki tanda verifikasi. Apa yang dapat disimpulkan?",
+    "options": [
+      "Laporan P pasti lolos pemeriksaan",
+      "Belum dapat dipastikan bahwa laporan P lolos pemeriksaan",
+      "Semua laporan bertanda verifikasi salah",
+      "Laporan P belum diperiksa",
+      "Tidak ada laporan yang lolos"
+    ],
+    "answer": 1,
+    "explanation": "Implikasi satu arah tidak boleh dibalik; tanda verifikasi saja belum cukup tanpa aturan kebalikannya.",
+    "source": {
+      "label": "Jobstreet Indonesia · referensi tipe soal TPA",
+      "url": "https://id.jobstreet.com/id/career-advice/article/contoh-soal-tpa-pembahasan-tips-mengerjakan"
+    },
+    "original": true
+  },
+  {
+    "id": "V049",
+    "category": "verbal",
+    "type": "Penalaran deduktif",
+    "difficulty": "Sulit",
+    "prompt": "Semua peserta kelas A mengumpulkan tugas. Sebagian peserta kelas A mengikuti lomba. Kesimpulan yang pasti adalah ....",
+    "options": [
+      "Semua peserta kelas A mengikuti lomba",
+      "Semua peserta lomba berasal dari kelas A",
+      "Sebagian peserta yang mengikuti lomba mengumpulkan tugas",
+      "Tidak ada peserta lomba yang mengumpulkan tugas",
+      "Sebagian pengumpul tugas bukan peserta kelas A"
+    ],
+    "answer": 2,
+    "explanation": "Sebagian peserta kelas A mengikuti lomba; seluruh kelas A mengumpulkan tugas, sehingga sebagian peserta lomba itu mengumpulkan tugas.",
+    "source": {
+      "label": "Jobstreet Indonesia · referensi tipe soal TPA",
+      "url": "https://id.jobstreet.com/id/career-advice/article/contoh-soal-tpa-pembahasan-tips-mengerjakan"
+    },
+    "original": true
+  },
+  {
+    "id": "V050",
+    "category": "verbal",
+    "type": "Penalaran deduktif",
+    "difficulty": "Sulit",
+    "prompt": "Jika nilai proyek mencapai 80, proyek memperoleh predikat unggul. Proyek Q tidak memperoleh predikat unggul. Kesimpulan yang tepat adalah ....",
+    "options": [
+      "Semua proyek bernilai 80 unggul",
+      "Nilai proyek Q pasti nol",
+      "Proyek Q tidak dinilai",
+      "Nilai proyek Q tidak mencapai 80",
+      "Predikat unggul tidak berkaitan dengan nilai"
+    ],
+    "answer": 3,
+    "explanation": "Kontraposisi: jika nilai ≥80 menghasilkan predikat unggul, maka tanpa predikat unggul berarti syarat nilai tersebut tidak terpenuhi.",
+    "source": {
+      "label": "Jobstreet Indonesia · referensi tipe soal TPA",
+      "url": "https://id.jobstreet.com/id/career-advice/article/contoh-soal-tpa-pembahasan-tips-mengerjakan"
+    },
+    "original": true
+  },
+  {
+    "id": "Q001",
+    "category": "quant",
+    "type": "Deret angka",
+    "difficulty": "Sedang",
+    "prompt": "Tentukan angka berikutnya pada deret: **4, 7, 10, 13, 16, ...**",
+    "options": [
+      "21",
+      "18",
+      "20",
+      "19",
+      "22"
+    ],
+    "answer": 3,
+    "explanation": "Setiap suku bertambah 3.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q002",
+    "category": "quant",
+    "type": "Deret angka",
+    "difficulty": "Sedang",
+    "prompt": "Tentukan angka berikutnya pada deret: **3, 6, 12, 24, 48, ...**",
+    "options": [
+      "96",
+      "72",
+      "84",
+      "90",
+      "108"
+    ],
+    "answer": 0,
+    "explanation": "Setiap suku dikalikan 2.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q003",
+    "category": "quant",
+    "type": "Deret angka",
+    "difficulty": "Sedang",
+    "prompt": "Tentukan angka berikutnya pada deret: **2, 6, 12, 20, 30, ...**",
+    "options": [
+      "40",
+      "36",
+      "42",
+      "44",
+      "48"
+    ],
+    "answer": 2,
+    "explanation": "Selisihnya +4, +6, +8, +10; berikutnya +12.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q004",
+    "category": "quant",
+    "type": "Deret angka",
+    "difficulty": "Sedang",
+    "prompt": "Tentukan angka berikutnya pada deret: **81, 27, 9, 3, ...**",
+    "options": [
+      "9",
+      "0",
+      "2",
+      "6",
+      "1"
+    ],
+    "answer": 4,
+    "explanation": "Setiap suku dibagi 3.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q005",
+    "category": "quant",
+    "type": "Deret angka",
+    "difficulty": "Sedang",
+    "prompt": "Tentukan angka berikutnya pada deret: **1, 4, 9, 16, 25, ...**",
+    "options": [
+      "30",
+      "36",
+      "35",
+      "40",
+      "49"
+    ],
+    "answer": 1,
+    "explanation": "Deret kuadrat: 1², 2², 3², 4², 5²; berikutnya 6².",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q006",
+    "category": "quant",
+    "type": "Deret angka",
+    "difficulty": "Sedang",
+    "prompt": "Tentukan angka berikutnya pada deret: **5, 8, 14, 23, 35, ...**",
+    "options": [
+      "51",
+      "47",
+      "48",
+      "50",
+      "53"
+    ],
+    "answer": 3,
+    "explanation": "Selisihnya +3, +6, +9, +12; berikutnya +15.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q007",
+    "category": "quant",
+    "type": "Deret angka",
+    "difficulty": "Sedang",
+    "prompt": "Tentukan angka berikutnya pada deret: **64, 32, 16, 8, ...**",
+    "options": [
+      "4",
+      "2",
+      "6",
+      "12",
+      "16"
+    ],
+    "answer": 0,
+    "explanation": "Setiap suku dibagi 2.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q008",
+    "category": "quant",
+    "type": "Deret angka",
+    "difficulty": "Sedang",
+    "prompt": "Tentukan angka berikutnya pada deret: **7, 10, 16, 25, 37, ...**",
+    "options": [
+      "49",
+      "48",
+      "52",
+      "50",
+      "54"
+    ],
+    "answer": 2,
+    "explanation": "Selisihnya +3, +6, +9, +12; berikutnya +15.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q009",
+    "category": "quant",
+    "type": "Deret angka",
+    "difficulty": "Sedang",
+    "prompt": "Tentukan angka berikutnya pada deret: **2, 5, 11, 23, 47, ...**",
+    "options": [
+      "96",
+      "89",
+      "91",
+      "93",
+      "95"
+    ],
+    "answer": 4,
+    "explanation": "Setiap suku dikalikan 2 lalu ditambah 1.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q010",
+    "category": "quant",
+    "type": "Deret angka",
+    "difficulty": "Sedang",
+    "prompt": "Tentukan angka berikutnya pada deret: **100, 96, 88, 76, 60, ...**",
+    "options": [
+      "38",
+      "40",
+      "42",
+      "44",
+      "48"
+    ],
+    "answer": 1,
+    "explanation": "Selisihnya -4, -8, -12, -16; berikutnya -20.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q011",
+    "category": "quant",
+    "type": "Deret angka",
+    "difficulty": "Sedang",
+    "prompt": "Tentukan angka berikutnya pada deret: **1, 2, 6, 24, 120, ...**",
+    "options": [
+      "600",
+      "240",
+      "360",
+      "720",
+      "840"
+    ],
+    "answer": 3,
+    "explanation": "Setiap suku dikalikan 2, 3, 4, 5; berikutnya dikalikan 6.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q012",
+    "category": "quant",
+    "type": "Deret angka",
+    "difficulty": "Sedang",
+    "prompt": "Tentukan angka berikutnya pada deret: **13, 17, 23, 31, 41, ...**",
+    "options": [
+      "53",
+      "49",
+      "51",
+      "55",
+      "57"
+    ],
+    "answer": 0,
+    "explanation": "Selisihnya +4, +6, +8, +10; berikutnya +12.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q013",
+    "category": "quant",
+    "type": "Deret angka",
+    "difficulty": "Sedang",
+    "prompt": "Tentukan angka berikutnya pada deret: **2, 3, 5, 8, 13, ...**",
+    "options": [
+      "19",
+      "18",
+      "21",
+      "20",
+      "22"
+    ],
+    "answer": 2,
+    "explanation": "Setiap suku merupakan jumlah dua suku sebelumnya.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q014",
+    "category": "quant",
+    "type": "Deret angka",
+    "difficulty": "Sedang",
+    "prompt": "Tentukan angka berikutnya pada deret: **90, 81, 73, 66, 60, ...**",
+    "options": [
+      "58",
+      "52",
+      "54",
+      "56",
+      "55"
+    ],
+    "answer": 4,
+    "explanation": "Selisihnya -9, -8, -7, -6; berikutnya -5.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q015",
+    "category": "quant",
+    "type": "Deret angka",
+    "difficulty": "Sedang",
+    "prompt": "Tentukan angka berikutnya pada deret: **3, 9, 8, 24, 23, 69, ...**",
+    "options": [
+      "66",
+      "68",
+      "70",
+      "72",
+      "75"
+    ],
+    "answer": 1,
+    "explanation": "Pola bergantian ×3 lalu -1; setelah 69 dikurangi 1 menjadi 68.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q016",
+    "category": "quant",
+    "type": "Komparasi kuantitatif",
+    "difficulty": "Sedang",
+    "prompt": "P = 18% × 250; Q = 20% × 220\n\nPilih hubungan yang tepat.",
+    "options": [
+      "P < Q",
+      "P > Q",
+      "P = Q",
+      "P = 2Q",
+      "Hubungan tidak dapat ditentukan"
+    ],
+    "answer": 1,
+    "explanation": "P = 45 dan Q = 44, sehingga P lebih besar.",
+    "source": {
+      "label": "Bappenas · petunjuk teknis TPA",
+      "url": "https://rekrutmen.bappenas.go.id/file/news/lampiran-iii-petunjuk-teknis-instalasi-dan-tata-tertib-skbt-tpa.pdf"
+    },
+    "original": true
+  },
+  {
+    "id": "Q017",
+    "category": "quant",
+    "type": "Komparasi kuantitatif",
+    "difficulty": "Sedang",
+    "prompt": "P = 3/4 × 120; Q = 2/3 × 135\n\nPilih hubungan yang tepat.",
+    "options": [
+      "P < Q",
+      "P > Q",
+      "P = Q",
+      "P = 2Q",
+      "Hubungan tidak dapat ditentukan"
+    ],
+    "answer": 2,
+    "explanation": "P = 90 dan Q = 90; keduanya sama.",
+    "source": {
+      "label": "Bappenas · petunjuk teknis TPA",
+      "url": "https://rekrutmen.bappenas.go.id/file/news/lampiran-iii-petunjuk-teknis-instalasi-dan-tata-tertib-skbt-tpa.pdf"
+    },
+    "original": true
+  },
+  {
+    "id": "Q018",
+    "category": "quant",
+    "type": "Komparasi kuantitatif",
+    "difficulty": "Sedang",
+    "prompt": "P = 5² + 4²; Q = 7²\n\nPilih hubungan yang tepat.",
+    "options": [
+      "P = 2Q",
+      "P > Q",
+      "P = Q",
+      "P < Q",
+      "Hubungan tidak dapat ditentukan"
+    ],
+    "answer": 3,
+    "explanation": "P = 25 + 16 = 41 dan Q = 49; P lebih kecil.",
+    "source": {
+      "label": "Bappenas · petunjuk teknis TPA",
+      "url": "https://rekrutmen.bappenas.go.id/file/news/lampiran-iii-petunjuk-teknis-instalasi-dan-tata-tertib-skbt-tpa.pdf"
+    },
+    "original": true
+  },
+  {
+    "id": "Q019",
+    "category": "quant",
+    "type": "Komparasi kuantitatif",
+    "difficulty": "Sedang",
+    "prompt": "P = 0,6 × 150; Q = 85\n\nPilih hubungan yang tepat.",
+    "options": [
+      "Hubungan tidak dapat ditentukan",
+      "P < Q",
+      "P = Q",
+      "P = 2Q",
+      "P > Q"
+    ],
+    "answer": 4,
+    "explanation": "P = 90, sedangkan Q = 85; P lebih besar.",
+    "source": {
+      "label": "Bappenas · petunjuk teknis TPA",
+      "url": "https://rekrutmen.bappenas.go.id/file/news/lampiran-iii-petunjuk-teknis-instalasi-dan-tata-tertib-skbt-tpa.pdf"
+    },
+    "original": true
+  },
+  {
+    "id": "Q020",
+    "category": "quant",
+    "type": "Komparasi kuantitatif",
+    "difficulty": "Sedang",
+    "prompt": "P = 2⁵; Q = 4³\n\nPilih hubungan yang tepat.",
+    "options": [
+      "P < Q",
+      "P > Q",
+      "P = Q",
+      "P = 2Q",
+      "Hubungan tidak dapat ditentukan"
+    ],
+    "answer": 0,
+    "explanation": "P = 32 dan Q = 64; P lebih kecil.",
+    "source": {
+      "label": "Bappenas · petunjuk teknis TPA",
+      "url": "https://rekrutmen.bappenas.go.id/file/news/lampiran-iii-petunjuk-teknis-instalasi-dan-tata-tertib-skbt-tpa.pdf"
+    },
+    "original": true
+  },
+  {
+    "id": "Q021",
+    "category": "quant",
+    "type": "Komparasi kuantitatif",
+    "difficulty": "Sedang",
+    "prompt": "P = 35% × 200; Q = 25% × 280\n\nPilih hubungan yang tepat.",
+    "options": [
+      "P > Q",
+      "P = Q",
+      "P < Q",
+      "P = 2Q",
+      "Hubungan tidak dapat ditentukan"
+    ],
+    "answer": 1,
+    "explanation": "P = 70 dan Q = 70; nilainya sama.",
+    "source": {
+      "label": "Bappenas · petunjuk teknis TPA",
+      "url": "https://rekrutmen.bappenas.go.id/file/news/lampiran-iii-petunjuk-teknis-instalasi-dan-tata-tertib-skbt-tpa.pdf"
+    },
+    "original": true
+  },
+  {
+    "id": "Q022",
+    "category": "quant",
+    "type": "Komparasi kuantitatif",
+    "difficulty": "Sedang",
+    "prompt": "P = 144 ÷ 12; Q = √121\n\nPilih hubungan yang tepat.",
+    "options": [
+      "P = Q",
+      "P < Q",
+      "P > Q",
+      "P = 2Q",
+      "Hubungan tidak dapat ditentukan"
+    ],
+    "answer": 2,
+    "explanation": "P = 12 dan Q = 11; P lebih besar.",
+    "source": {
+      "label": "Bappenas · petunjuk teknis TPA",
+      "url": "https://rekrutmen.bappenas.go.id/file/news/lampiran-iii-petunjuk-teknis-instalasi-dan-tata-tertib-skbt-tpa.pdf"
+    },
+    "original": true
+  },
+  {
+    "id": "Q023",
+    "category": "quant",
+    "type": "Komparasi kuantitatif",
+    "difficulty": "Sedang",
+    "prompt": "P = 7 × 8 - 9; Q = 6²\n\nPilih hubungan yang tepat.",
+    "options": [
+      "P = 2Q",
+      "P < Q",
+      "P = Q",
+      "P > Q",
+      "Hubungan tidak dapat ditentukan"
+    ],
+    "answer": 3,
+    "explanation": "P = 47 dan Q = 36; P lebih besar.",
+    "source": {
+      "label": "Bappenas · petunjuk teknis TPA",
+      "url": "https://rekrutmen.bappenas.go.id/file/news/lampiran-iii-petunjuk-teknis-instalasi-dan-tata-tertib-skbt-tpa.pdf"
+    },
+    "original": true
+  },
+  {
+    "id": "Q024",
+    "category": "quant",
+    "type": "Komparasi kuantitatif",
+    "difficulty": "Sedang",
+    "prompt": "P = 2/5 × 350; Q = 3/7 × 420\n\nPilih hubungan yang tepat.",
+    "options": [
+      "Hubungan tidak dapat ditentukan",
+      "P > Q",
+      "P = Q",
+      "P = 2Q",
+      "P < Q"
+    ],
+    "answer": 4,
+    "explanation": "P = 140 dan Q = 180; P lebih kecil.",
+    "source": {
+      "label": "Bappenas · petunjuk teknis TPA",
+      "url": "https://rekrutmen.bappenas.go.id/file/news/lampiran-iii-petunjuk-teknis-instalasi-dan-tata-tertib-skbt-tpa.pdf"
+    },
+    "original": true
+  },
+  {
+    "id": "Q025",
+    "category": "quant",
+    "type": "Komparasi kuantitatif",
+    "difficulty": "Sedang",
+    "prompt": "P = rata-rata 6, 10, 14; Q = median 5, 8, 12\n\nPilih hubungan yang tepat.",
+    "options": [
+      "P > Q",
+      "P < Q",
+      "P = Q",
+      "P = 2Q",
+      "Hubungan tidak dapat ditentukan"
+    ],
+    "answer": 0,
+    "explanation": "Rata-rata P = 10; median Q = 8; P lebih besar.",
+    "source": {
+      "label": "Bappenas · petunjuk teknis TPA",
+      "url": "https://rekrutmen.bappenas.go.id/file/news/lampiran-iii-petunjuk-teknis-instalasi-dan-tata-tertib-skbt-tpa.pdf"
+    },
+    "original": true
+  },
+  {
+    "id": "Q026",
+    "category": "quant",
+    "type": "Aritmetika",
+    "difficulty": "Mudah",
+    "prompt": "Berapakah 35% dari 240?",
+    "options": [
+      "78",
+      "72",
+      "84",
+      "86",
+      "96"
+    ],
+    "answer": 2,
+    "explanation": "35% × 240 = 0,35 × 240 = 84.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q027",
+    "category": "quant",
+    "type": "Aritmetika",
+    "difficulty": "Mudah",
+    "prompt": "Hasil dari 3/5 + 1/4 adalah ....",
+    "options": [
+      "17/20",
+      "4/9",
+      "7/9",
+      "13/20",
+      "19/20"
+    ],
+    "answer": 0,
+    "explanation": "Samakan penyebut menjadi 20: 12/20 + 5/20 = 17/20.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q028",
+    "category": "quant",
+    "type": "Aritmetika",
+    "difficulty": "Mudah",
+    "prompt": "Jika 4x - 7 = 29, nilai x adalah ....",
+    "options": [
+      "10",
+      "7",
+      "8",
+      "9",
+      "12"
+    ],
+    "answer": 3,
+    "explanation": "4x = 36 sehingga x = 9.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q029",
+    "category": "quant",
+    "type": "Aritmetika",
+    "difficulty": "Mudah",
+    "prompt": "Sebuah barang Rp320.000 didiskon 15%. Harga setelah diskon adalah ....",
+    "options": [
+      "Rp260.000",
+      "Rp272.000",
+      "Rp268.000",
+      "Rp280.000",
+      "Rp288.000"
+    ],
+    "answer": 1,
+    "explanation": "Diskon = 15% × 320.000 = 48.000; harga akhir Rp272.000.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q030",
+    "category": "quant",
+    "type": "Aritmetika",
+    "difficulty": "Mudah",
+    "prompt": "Perbandingan A : B = 3 : 5. Jika jumlah keduanya 64, nilai B adalah ....",
+    "options": [
+      "48",
+      "24",
+      "32",
+      "36",
+      "40"
+    ],
+    "answer": 4,
+    "explanation": "Total bagian 8; satu bagian 64/8 = 8; B = 5 × 8 = 40.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q031",
+    "category": "quant",
+    "type": "Aritmetika",
+    "difficulty": "Mudah",
+    "prompt": "Rata-rata dari 12, 15, 17, 20, dan 21 adalah ....",
+    "options": [
+      "18",
+      "16",
+      "17",
+      "19",
+      "20"
+    ],
+    "answer": 2,
+    "explanation": "Jumlah data 85; 85 dibagi 5 = 17.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q032",
+    "category": "quant",
+    "type": "Aritmetika",
+    "difficulty": "Mudah",
+    "prompt": "Sebuah pekerjaan selesai oleh 6 orang dalam 12 hari. Dengan produktivitas sama, 8 orang memerlukan .... hari.",
+    "options": [
+      "9",
+      "6",
+      "8",
+      "10",
+      "16"
+    ],
+    "answer": 0,
+    "explanation": "Beban kerja 6 × 12 = 72 orang-hari; 72/8 = 9 hari.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q033",
+    "category": "quant",
+    "type": "Aritmetika",
+    "difficulty": "Mudah",
+    "prompt": "Bentuk sederhana dari 84 : 126 adalah ....",
+    "options": [
+      "5 : 7",
+      "3 : 4",
+      "4 : 5",
+      "2 : 3",
+      "7 : 9"
+    ],
+    "answer": 3,
+    "explanation": "Kedua bilangan dibagi FPB 42, menghasilkan 2 : 3.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q034",
+    "category": "quant",
+    "type": "Aritmetika",
+    "difficulty": "Mudah",
+    "prompt": "Berapakah hasil 2,4 × 0,5 + 1,8?",
+    "options": [
+      "2.4",
+      "3.0",
+      "2.8",
+      "3.2",
+      "3.6"
+    ],
+    "answer": 1,
+    "explanation": "2,4 × 0,5 = 1,2; lalu 1,2 + 1,8 = 3,0.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q035",
+    "category": "quant",
+    "type": "Aritmetika",
+    "difficulty": "Mudah",
+    "prompt": "Sebuah nilai meningkat dari 80 menjadi 100. Persentase kenaikannya adalah ....",
+    "options": [
+      "35%",
+      "20%",
+      "22,5%",
+      "30%",
+      "25%"
+    ],
+    "answer": 4,
+    "explanation": "Kenaikan 20 dibanding nilai awal 80; 20/80 × 100% = 25%.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q036",
+    "category": "quant",
+    "type": "Soal cerita",
+    "difficulty": "Sedang",
+    "prompt": "Sebuah kendaraan menempuh 180 km dalam 3 jam dengan kecepatan konstan. Jarak yang ditempuh dalam 5 jam adalah ....",
+    "options": [
+      "270 km",
+      "240 km",
+      "300 km",
+      "320 km",
+      "360 km"
+    ],
+    "answer": 2,
+    "explanation": "Kecepatan = 180/3 = 60 km/jam; dalam 5 jam menempuh 300 km.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q037",
+    "category": "quant",
+    "type": "Soal cerita",
+    "difficulty": "Sedang",
+    "prompt": "Sebuah toko membeli 40 buku dengan harga Rp25.000 per buku. Jika seluruh buku dijual Rp32.000 per buku, keuntungan total adalah ....",
+    "options": [
+      "Rp300.000",
+      "Rp240.000",
+      "Rp260.000",
+      "Rp280.000",
+      "Rp320.000"
+    ],
+    "answer": 3,
+    "explanation": "Keuntungan per buku Rp7.000; total 40 × Rp7.000 = Rp280.000.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q038",
+    "category": "quant",
+    "type": "Soal cerita",
+    "difficulty": "Sedang",
+    "prompt": "Tangki berisi 240 liter air. Sebanyak 3/8 bagian digunakan. Sisa air adalah ....",
+    "options": [
+      "180 liter",
+      "90 liter",
+      "120 liter",
+      "135 liter",
+      "150 liter"
+    ],
+    "answer": 4,
+    "explanation": "Air terpakai 3/8 × 240 = 90 liter; sisa 150 liter.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q039",
+    "category": "quant",
+    "type": "Soal cerita",
+    "difficulty": "Sedang",
+    "prompt": "Empat mesin menghasilkan 600 unit dalam 5 jam. Dengan laju sama, enam mesin dalam 4 jam menghasilkan ....",
+    "options": [
+      "720 unit",
+      "600 unit",
+      "660 unit",
+      "750 unit",
+      "900 unit"
+    ],
+    "answer": 0,
+    "explanation": "Laju per mesin per jam = 600/(4×5) = 30 unit; 6×4×30 = 720.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q040",
+    "category": "quant",
+    "type": "Soal cerita",
+    "difficulty": "Sedang",
+    "prompt": "Usia Dika 4 tahun lebih tua dari Rani. Jumlah usia mereka 30 tahun. Usia Dika adalah ....",
+    "options": [
+      "13 tahun",
+      "17 tahun",
+      "15 tahun",
+      "16 tahun",
+      "18 tahun"
+    ],
+    "answer": 1,
+    "explanation": "Misalkan Rani x, Dika x+4; 2x+4=30, x=13, sehingga Dika 17.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q041",
+    "category": "quant",
+    "type": "Soal cerita",
+    "difficulty": "Sedang",
+    "prompt": "Sebuah peta berskala 1 : 200.000. Jarak dua kota pada peta 3,5 cm. Jarak sebenarnya adalah ....",
+    "options": [
+      "5 km",
+      "3,5 km",
+      "7 km",
+      "6 km",
+      "70 km"
+    ],
+    "answer": 2,
+    "explanation": "3,5 cm × 200.000 = 700.000 cm = 7 km.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q042",
+    "category": "quant",
+    "type": "Soal cerita",
+    "difficulty": "Sedang",
+    "prompt": "Dari 80 peserta, 30% memilih kelas A. Jumlah peserta yang tidak memilih kelas A adalah ....",
+    "options": [
+      "48 orang",
+      "24 orang",
+      "40 orang",
+      "56 orang",
+      "60 orang"
+    ],
+    "answer": 3,
+    "explanation": "Peserta kelas A = 24; sisanya 80 - 24 = 56.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q043",
+    "category": "quant",
+    "type": "Soal cerita",
+    "difficulty": "Sedang",
+    "prompt": "Sebuah keran mengisi 18 liter dalam 6 menit. Waktu yang diperlukan untuk mengisi 75 liter dengan laju sama adalah ....",
+    "options": [
+      "30 menit",
+      "18 menit",
+      "20 menit",
+      "24 menit",
+      "25 menit"
+    ],
+    "answer": 4,
+    "explanation": "Laju 3 liter/menit; 75/3 = 25 menit.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q044",
+    "category": "quant",
+    "type": "Soal cerita",
+    "difficulty": "Sedang",
+    "prompt": "Modal Rp2.000.000 memperoleh bunga sederhana 6% per tahun. Bunga setelah 9 bulan adalah ....",
+    "options": [
+      "Rp90.000",
+      "Rp60.000",
+      "Rp75.000",
+      "Rp100.000",
+      "Rp120.000"
+    ],
+    "answer": 0,
+    "explanation": "Bunga = 2.000.000 × 6% × 9/12 = Rp90.000.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q045",
+    "category": "quant",
+    "type": "Soal cerita",
+    "difficulty": "Sedang",
+    "prompt": "Sebuah bus berangkat pukul 08.35 dan tiba pukul 11.20. Lama perjalanan adalah ....",
+    "options": [
+      "2 jam 25 menit",
+      "2 jam 45 menit",
+      "2 jam 35 menit",
+      "3 jam 5 menit",
+      "3 jam 15 menit"
+    ],
+    "answer": 1,
+    "explanation": "Dari 08.35 ke 10.35 dua jam, lalu ke 11.20 empat puluh lima menit.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q046",
+    "category": "quant",
+    "type": "Interpretasi data",
+    "difficulty": "Mudah",
+    "prompt": "Penjualan buku selama empat hari: Senin 12, Selasa 15, Rabu 9, Kamis 18 unit. Total penjualan adalah ....",
+    "options": [
+      "48 unit",
+      "54 unit",
+      "50 unit",
+      "52 unit",
+      "56 unit"
+    ],
+    "answer": 1,
+    "explanation": "12 + 15 + 9 + 18 = 54 unit.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q047",
+    "category": "quant",
+    "type": "Interpretasi data",
+    "difficulty": "Mudah",
+    "prompt": "Data peserta: Verbal 32 orang, Kuantitatif 28 orang, Spasial 40 orang. Selisih peserta terbanyak dan tersedikit adalah ....",
+    "options": [
+      "14 orang",
+      "8 orang",
+      "10 orang",
+      "12 orang",
+      "16 orang"
+    ],
+    "answer": 3,
+    "explanation": "Terbanyak 40 dan tersedikit 28; selisihnya 12.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q048",
+    "category": "quant",
+    "type": "Interpretasi data",
+    "difficulty": "Mudah",
+    "prompt": "Produksi tiga bulan: Januari 120, Februari 150, Maret 180 unit. Kenaikan produksi Januari ke Maret adalah ....",
+    "options": [
+      "60 unit",
+      "30 unit",
+      "40 unit",
+      "50 unit",
+      "70 unit"
+    ],
+    "answer": 0,
+    "explanation": "Kenaikan = 180 - 120 = 60 unit.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q049",
+    "category": "quant",
+    "type": "Interpretasi data",
+    "difficulty": "Mudah",
+    "prompt": "Pengeluaran: listrik Rp450 ribu, internet Rp250 ribu, air Rp150 ribu. Total pengeluaran adalah ....",
+    "options": [
+      "Rp800 ribu",
+      "Rp750 ribu",
+      "Rp850 ribu",
+      "Rp900 ribu",
+      "Rp950 ribu"
+    ],
+    "answer": 2,
+    "explanation": "450 + 250 + 150 = 850 ribu rupiah.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "Q050",
+    "category": "quant",
+    "type": "Interpretasi data",
+    "difficulty": "Mudah",
+    "prompt": "Nilai lima peserta adalah 70, 75, 80, 85, dan 90. Median nilai tersebut adalah ....",
+    "options": [
+      "85",
+      "75",
+      "77,5",
+      "82,5",
+      "80"
+    ],
+    "answer": 4,
+    "explanation": "Data telah berurutan; nilai tengah dari lima angka adalah 80.",
+    "source": {
+      "label": "Jago TPA · referensi tipe numerik dan kuantitatif",
+      "url": "https://jagotpa.id/materi-tes-tpa-lengkap-cek-verbal-numerik-logika-dan-spasial/"
+    },
+    "original": true
+  },
+  {
+    "id": "S001",
+    "category": "spatial",
+    "type": "Rotasi arah",
+    "difficulty": "Mudah",
+    "prompt": "Perhatikan urutan orientasi simbol. Setiap langkah memutar simbol 90° searah jarum jam. Simbol berikutnya adalah ....",
+    "options": [
+      "↑",
+      "←",
+      "→",
+      "↓",
+      "↗"
+    ],
+    "answer": 1,
+    "explanation": "Rotasi 90° searah jarum jam mempertahankan bentuk dan hanya mengubah orientasi. Ikuti perubahan arah pada setiap langkah.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "sequence",
+      "items": [
+        "↑",
+        "→",
+        "↓",
+        "?"
+      ]
+    }
+  },
+  {
+    "id": "S002",
+    "category": "spatial",
+    "type": "Rotasi arah",
+    "difficulty": "Mudah",
+    "prompt": "Perhatikan urutan orientasi simbol. Setiap langkah memutar simbol 90° searah jarum jam. Simbol berikutnya adalah ....",
+    "options": [
+      "←",
+      "→",
+      "↓",
+      "↑",
+      "↗"
+    ],
+    "answer": 3,
+    "explanation": "Rotasi 90° searah jarum jam mempertahankan bentuk dan hanya mengubah orientasi. Ikuti perubahan arah pada setiap langkah.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "sequence",
+      "items": [
+        "→",
+        "↓",
+        "←",
+        "?"
+      ]
+    }
+  },
+  {
+    "id": "S003",
+    "category": "spatial",
+    "type": "Rotasi arah",
+    "difficulty": "Mudah",
+    "prompt": "Perhatikan urutan orientasi simbol. Setiap langkah memutar simbol 90° searah jarum jam. Simbol berikutnya adalah ....",
+    "options": [
+      "→",
+      "↑",
+      "↓",
+      "←",
+      "↗"
+    ],
+    "answer": 0,
+    "explanation": "Rotasi 90° searah jarum jam mempertahankan bentuk dan hanya mengubah orientasi. Ikuti perubahan arah pada setiap langkah.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "sequence",
+      "items": [
+        "↓",
+        "←",
+        "↑",
+        "?"
+      ]
+    }
+  },
+  {
+    "id": "S004",
+    "category": "spatial",
+    "type": "Rotasi arah",
+    "difficulty": "Mudah",
+    "prompt": "Perhatikan urutan orientasi simbol. Setiap langkah memutar simbol 90° searah jarum jam. Simbol berikutnya adalah ....",
+    "options": [
+      "→",
+      "↑",
+      "↓",
+      "←",
+      "↗"
+    ],
+    "answer": 2,
+    "explanation": "Rotasi 90° searah jarum jam mempertahankan bentuk dan hanya mengubah orientasi. Ikuti perubahan arah pada setiap langkah.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "sequence",
+      "items": [
+        "←",
+        "↑",
+        "→",
+        "?"
+      ]
+    }
+  },
+  {
+    "id": "S005",
+    "category": "spatial",
+    "type": "Rotasi arah",
+    "difficulty": "Mudah",
+    "prompt": "Perhatikan urutan orientasi simbol. Setiap langkah memutar simbol 90° searah jarum jam. Simbol berikutnya adalah ....",
+    "options": [
+      "←",
+      "↑",
+      "→",
+      "↓",
+      "↖"
+    ],
+    "answer": 4,
+    "explanation": "Rotasi 90° searah jarum jam mempertahankan bentuk dan hanya mengubah orientasi. Ikuti perubahan arah pada setiap langkah.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "sequence",
+      "items": [
+        "↗",
+        "↘",
+        "↙",
+        "?"
+      ]
+    }
+  },
+  {
+    "id": "S006",
+    "category": "spatial",
+    "type": "Rotasi arah",
+    "difficulty": "Mudah",
+    "prompt": "Perhatikan urutan orientasi simbol. Setiap langkah memutar simbol 90° searah jarum jam. Simbol berikutnya adalah ....",
+    "options": [
+      "↑",
+      "↗",
+      "→",
+      "↓",
+      "←"
+    ],
+    "answer": 1,
+    "explanation": "Rotasi 90° searah jarum jam mempertahankan bentuk dan hanya mengubah orientasi. Ikuti perubahan arah pada setiap langkah.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "sequence",
+      "items": [
+        "↘",
+        "↙",
+        "↖",
+        "?"
+      ]
+    }
+  },
+  {
+    "id": "S007",
+    "category": "spatial",
+    "type": "Rotasi arah",
+    "difficulty": "Mudah",
+    "prompt": "Perhatikan urutan orientasi simbol. Setiap langkah memutar simbol 90° searah jarum jam. Simbol berikutnya adalah ....",
+    "options": [
+      "↓",
+      "↑",
+      "→",
+      "↘",
+      "←"
+    ],
+    "answer": 3,
+    "explanation": "Rotasi 90° searah jarum jam mempertahankan bentuk dan hanya mengubah orientasi. Ikuti perubahan arah pada setiap langkah.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "sequence",
+      "items": [
+        "↙",
+        "↖",
+        "↗",
+        "?"
+      ]
+    }
+  },
+  {
+    "id": "S008",
+    "category": "spatial",
+    "type": "Rotasi arah",
+    "difficulty": "Mudah",
+    "prompt": "Perhatikan urutan orientasi simbol. Setiap langkah memutar simbol 90° searah jarum jam. Simbol berikutnya adalah ....",
+    "options": [
+      "↙",
+      "↑",
+      "→",
+      "↓",
+      "←"
+    ],
+    "answer": 0,
+    "explanation": "Rotasi 90° searah jarum jam mempertahankan bentuk dan hanya mengubah orientasi. Ikuti perubahan arah pada setiap langkah.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "sequence",
+      "items": [
+        "↖",
+        "↗",
+        "↘",
+        "?"
+      ]
+    }
+  },
+  {
+    "id": "S009",
+    "category": "spatial",
+    "type": "Rotasi arah",
+    "difficulty": "Mudah",
+    "prompt": "Perhatikan urutan orientasi simbol. Setiap langkah memutar simbol 180° searah jarum jam. Simbol berikutnya adalah ....",
+    "options": [
+      "→",
+      "↑",
+      "↓",
+      "←",
+      "↗"
+    ],
+    "answer": 2,
+    "explanation": "Rotasi 180° searah jarum jam mempertahankan bentuk dan hanya mengubah orientasi. Ikuti perubahan arah pada setiap langkah.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "sequence",
+      "items": [
+        "↑",
+        "↓",
+        "↑",
+        "?"
+      ]
+    }
+  },
+  {
+    "id": "S010",
+    "category": "spatial",
+    "type": "Rotasi arah",
+    "difficulty": "Mudah",
+    "prompt": "Perhatikan urutan orientasi simbol. Setiap langkah memutar simbol 180° searah jarum jam. Simbol berikutnya adalah ....",
+    "options": [
+      "↗",
+      "↑",
+      "→",
+      "↓",
+      "←"
+    ],
+    "answer": 4,
+    "explanation": "Rotasi 180° searah jarum jam mempertahankan bentuk dan hanya mengubah orientasi. Ikuti perubahan arah pada setiap langkah.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "sequence",
+      "items": [
+        "→",
+        "←",
+        "→",
+        "?"
+      ]
+    }
+  },
+  {
+    "id": "S011",
+    "category": "spatial",
+    "type": "Rotasi arah",
+    "difficulty": "Mudah",
+    "prompt": "Perhatikan urutan orientasi simbol. Setiap langkah memutar simbol 180° searah jarum jam. Simbol berikutnya adalah ....",
+    "options": [
+      "→",
+      "↑",
+      "↓",
+      "←",
+      "↗"
+    ],
+    "answer": 1,
+    "explanation": "Rotasi 180° searah jarum jam mempertahankan bentuk dan hanya mengubah orientasi. Ikuti perubahan arah pada setiap langkah.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "sequence",
+      "items": [
+        "↓",
+        "↑",
+        "↓",
+        "?"
+      ]
+    }
+  },
+  {
+    "id": "S012",
+    "category": "spatial",
+    "type": "Rotasi arah",
+    "difficulty": "Mudah",
+    "prompt": "Perhatikan urutan orientasi simbol. Setiap langkah memutar simbol 180° searah jarum jam. Simbol berikutnya adalah ....",
+    "options": [
+      "←",
+      "↑",
+      "↓",
+      "→",
+      "↗"
+    ],
+    "answer": 3,
+    "explanation": "Rotasi 180° searah jarum jam mempertahankan bentuk dan hanya mengubah orientasi. Ikuti perubahan arah pada setiap langkah.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "sequence",
+      "items": [
+        "←",
+        "→",
+        "←",
+        "?"
+      ]
+    }
+  },
+  {
+    "id": "S013",
+    "category": "spatial",
+    "type": "Rotasi arah",
+    "difficulty": "Mudah",
+    "prompt": "Perhatikan urutan orientasi simbol. Setiap langkah memutar simbol 180° searah jarum jam. Simbol berikutnya adalah ....",
+    "options": [
+      "↙",
+      "↑",
+      "→",
+      "↓",
+      "←"
+    ],
+    "answer": 0,
+    "explanation": "Rotasi 180° searah jarum jam mempertahankan bentuk dan hanya mengubah orientasi. Ikuti perubahan arah pada setiap langkah.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "sequence",
+      "items": [
+        "↗",
+        "↙",
+        "↗",
+        "?"
+      ]
+    }
+  },
+  {
+    "id": "S014",
+    "category": "spatial",
+    "type": "Rotasi arah",
+    "difficulty": "Mudah",
+    "prompt": "Perhatikan urutan orientasi simbol. Setiap langkah memutar simbol 180° searah jarum jam. Simbol berikutnya adalah ....",
+    "options": [
+      "→",
+      "↑",
+      "↖",
+      "↓",
+      "←"
+    ],
+    "answer": 2,
+    "explanation": "Rotasi 180° searah jarum jam mempertahankan bentuk dan hanya mengubah orientasi. Ikuti perubahan arah pada setiap langkah.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "sequence",
+      "items": [
+        "↘",
+        "↖",
+        "↘",
+        "?"
+      ]
+    }
+  },
+  {
+    "id": "S015",
+    "category": "spatial",
+    "type": "Rotasi arah",
+    "difficulty": "Mudah",
+    "prompt": "Perhatikan urutan orientasi simbol. Setiap langkah memutar simbol 180° searah jarum jam. Simbol berikutnya adalah ....",
+    "options": [
+      "←",
+      "↑",
+      "→",
+      "↓",
+      "↗"
+    ],
+    "answer": 4,
+    "explanation": "Rotasi 180° searah jarum jam mempertahankan bentuk dan hanya mengubah orientasi. Ikuti perubahan arah pada setiap langkah.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "sequence",
+      "items": [
+        "↙",
+        "↗",
+        "↙",
+        "?"
+      ]
+    }
+  },
+  {
+    "id": "S016",
+    "category": "spatial",
+    "type": "Rotasi arah",
+    "difficulty": "Mudah",
+    "prompt": "Perhatikan urutan orientasi simbol. Setiap langkah memutar simbol 180° searah jarum jam. Simbol berikutnya adalah ....",
+    "options": [
+      "↑",
+      "↘",
+      "→",
+      "↓",
+      "←"
+    ],
+    "answer": 1,
+    "explanation": "Rotasi 180° searah jarum jam mempertahankan bentuk dan hanya mengubah orientasi. Ikuti perubahan arah pada setiap langkah.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "sequence",
+      "items": [
+        "↖",
+        "↘",
+        "↖",
+        "?"
+      ]
+    }
+  },
+  {
+    "id": "S017",
+    "category": "spatial",
+    "type": "Pencerminan",
+    "difficulty": "Sedang",
+    "prompt": "Jika simbol di sebelah kiri dicerminkan terhadap sumbu vertikal, hasil bayangannya adalah ....",
+    "options": [
+      "↙",
+      "↘",
+      "↖",
+      "↑",
+      "↓"
+    ],
+    "answer": 2,
+    "explanation": "Pencerminan terhadap sumbu vertikal membalik kiri dan kanan; pencerminan terhadap sumbu horizontal membalik atas dan bawah.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "mirror",
+      "items": [
+        "↗",
+        "→",
+        "?"
+      ]
+    }
+  },
+  {
+    "id": "S018",
+    "category": "spatial",
+    "type": "Pencerminan",
+    "difficulty": "Sedang",
+    "prompt": "Jika simbol di sebelah kiri dicerminkan terhadap sumbu vertikal, hasil bayangannya adalah ....",
+    "options": [
+      "↙",
+      "↗",
+      "↖",
+      "↑",
+      "↓"
+    ],
+    "answer": 0,
+    "explanation": "Pencerminan terhadap sumbu vertikal membalik kiri dan kanan; pencerminan terhadap sumbu horizontal membalik atas dan bawah.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "mirror",
+      "items": [
+        "↘",
+        "→",
+        "?"
+      ]
+    }
+  },
+  {
+    "id": "S019",
+    "category": "spatial",
+    "type": "Pencerminan",
+    "difficulty": "Sedang",
+    "prompt": "Jika simbol di sebelah kiri dicerminkan terhadap sumbu vertikal, hasil bayangannya adalah ....",
+    "options": [
+      "↑",
+      "↘",
+      "↙",
+      "↗",
+      "↓"
+    ],
+    "answer": 3,
+    "explanation": "Pencerminan terhadap sumbu vertikal membalik kiri dan kanan; pencerminan terhadap sumbu horizontal membalik atas dan bawah.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "mirror",
+      "items": [
+        "↖",
+        "→",
+        "?"
+      ]
+    }
+  },
+  {
+    "id": "S020",
+    "category": "spatial",
+    "type": "Pencerminan",
+    "difficulty": "Sedang",
+    "prompt": "Jika simbol di sebelah kiri dicerminkan terhadap sumbu vertikal, hasil bayangannya adalah ....",
+    "options": [
+      "↗",
+      "↘",
+      "↖",
+      "↑",
+      "↓"
+    ],
+    "answer": 1,
+    "explanation": "Pencerminan terhadap sumbu vertikal membalik kiri dan kanan; pencerminan terhadap sumbu horizontal membalik atas dan bawah.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "mirror",
+      "items": [
+        "↙",
+        "→",
+        "?"
+      ]
+    }
+  },
+  {
+    "id": "S021",
+    "category": "spatial",
+    "type": "Pencerminan",
+    "difficulty": "Sedang",
+    "prompt": "Jika simbol di sebelah kiri dicerminkan terhadap sumbu vertikal, hasil bayangannya adalah ....",
+    "options": [
+      "↙",
+      "↗",
+      "↖",
+      "↘",
+      "▶"
+    ],
+    "answer": 4,
+    "explanation": "Pencerminan terhadap sumbu vertikal membalik kiri dan kanan; pencerminan terhadap sumbu horizontal membalik atas dan bawah.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "mirror",
+      "items": [
+        "◀",
+        "→",
+        "?"
+      ]
+    }
+  },
+  {
+    "id": "S022",
+    "category": "spatial",
+    "type": "Pencerminan",
+    "difficulty": "Sedang",
+    "prompt": "Jika simbol di sebelah kiri dicerminkan terhadap sumbu horizontal, hasil bayangannya adalah ....",
+    "options": [
+      "↙",
+      "↖",
+      "↘",
+      "↑",
+      "↓"
+    ],
+    "answer": 2,
+    "explanation": "Pencerminan terhadap sumbu vertikal membalik kiri dan kanan; pencerminan terhadap sumbu horizontal membalik atas dan bawah.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "mirror",
+      "items": [
+        "↗",
+        "↕",
+        "?"
+      ]
+    }
+  },
+  {
+    "id": "S023",
+    "category": "spatial",
+    "type": "Pencerminan",
+    "difficulty": "Sedang",
+    "prompt": "Jika simbol di sebelah kiri dicerminkan terhadap sumbu horizontal, hasil bayangannya adalah ....",
+    "options": [
+      "↙",
+      "↗",
+      "↘",
+      "↑",
+      "↓"
+    ],
+    "answer": 0,
+    "explanation": "Pencerminan terhadap sumbu vertikal membalik kiri dan kanan; pencerminan terhadap sumbu horizontal membalik atas dan bawah.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "mirror",
+      "items": [
+        "↖",
+        "↕",
+        "?"
+      ]
+    }
+  },
+  {
+    "id": "S024",
+    "category": "spatial",
+    "type": "Pencerminan",
+    "difficulty": "Sedang",
+    "prompt": "Jika simbol di sebelah kiri dicerminkan terhadap sumbu horizontal, hasil bayangannya adalah ....",
+    "options": [
+      "↘",
+      "↗",
+      "↖",
+      "↓",
+      "↙"
+    ],
+    "answer": 3,
+    "explanation": "Pencerminan terhadap sumbu vertikal membalik kiri dan kanan; pencerminan terhadap sumbu horizontal membalik atas dan bawah.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "mirror",
+      "items": [
+        "↑",
+        "↕",
+        "?"
+      ]
+    }
+  },
+  {
+    "id": "S025",
+    "category": "spatial",
+    "type": "Pencerminan",
+    "difficulty": "Sedang",
+    "prompt": "Jika simbol di sebelah kiri dicerminkan terhadap sumbu horizontal, hasil bayangannya adalah ....",
+    "options": [
+      "↖",
+      "↗",
+      "↙",
+      "↑",
+      "↓"
+    ],
+    "answer": 1,
+    "explanation": "Pencerminan terhadap sumbu vertikal membalik kiri dan kanan; pencerminan terhadap sumbu horizontal membalik atas dan bawah.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "mirror",
+      "items": [
+        "↘",
+        "↕",
+        "?"
+      ]
+    }
+  },
+  {
+    "id": "S026",
+    "category": "spatial",
+    "type": "Pencerminan",
+    "difficulty": "Sedang",
+    "prompt": "Jika simbol di sebelah kiri dicerminkan terhadap sumbu horizontal, hasil bayangannya adalah ....",
+    "options": [
+      "↓",
+      "↗",
+      "↘",
+      "↑",
+      "↖"
+    ],
+    "answer": 4,
+    "explanation": "Pencerminan terhadap sumbu vertikal membalik kiri dan kanan; pencerminan terhadap sumbu horizontal membalik atas dan bawah.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "mirror",
+      "items": [
+        "↙",
+        "↕",
+        "?"
+      ]
+    }
+  },
+  {
+    "id": "S027",
+    "category": "spatial",
+    "type": "Pola matriks",
+    "difficulty": "Sedang",
+    "prompt": "Perhatikan pola simbol pada matriks 3 × 3. Simbol yang tepat untuk mengisi tanda tanya adalah ....",
+    "options": [
+      "■",
+      "○",
+      "◆",
+      "★",
+      "◇"
+    ],
+    "answer": 1,
+    "explanation": "Setiap baris bergeser satu posisi ke kiri dibandingkan baris sebelumnya. Baris ketiga menjadi simbol ketiga, pertama, lalu simbol kedua.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "matrix",
+      "rows": [
+        [
+          "●",
+          "○",
+          "▲"
+        ],
+        [
+          "○",
+          "▲",
+          "●"
+        ],
+        [
+          "▲",
+          "●",
+          "?"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "S028",
+    "category": "spatial",
+    "type": "Pola matriks",
+    "difficulty": "Sedang",
+    "prompt": "Perhatikan pola simbol pada matriks 3 × 3. Simbol yang tepat untuk mengisi tanda tanya adalah ....",
+    "options": [
+      "△",
+      "◆",
+      "★",
+      "◇",
+      "▲"
+    ],
+    "answer": 4,
+    "explanation": "Setiap baris bergeser satu posisi ke kiri dibandingkan baris sebelumnya. Baris ketiga menjadi simbol ketiga, pertama, lalu simbol kedua.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "matrix",
+      "rows": [
+        [
+          "○",
+          "▲",
+          "■"
+        ],
+        [
+          "▲",
+          "■",
+          "○"
+        ],
+        [
+          "■",
+          "○",
+          "?"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "S029",
+    "category": "spatial",
+    "type": "Pola matriks",
+    "difficulty": "Sedang",
+    "prompt": "Perhatikan pola simbol pada matriks 3 × 3. Simbol yang tepat untuk mengisi tanda tanya adalah ....",
+    "options": [
+      "◇",
+      "★",
+      "■",
+      "△",
+      "□"
+    ],
+    "answer": 2,
+    "explanation": "Setiap baris bergeser satu posisi ke kiri dibandingkan baris sebelumnya. Baris ketiga menjadi simbol ketiga, pertama, lalu simbol kedua.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "matrix",
+      "rows": [
+        [
+          "▲",
+          "■",
+          "◆"
+        ],
+        [
+          "■",
+          "◆",
+          "▲"
+        ],
+        [
+          "◆",
+          "▲",
+          "?"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "S030",
+    "category": "spatial",
+    "type": "Pola matriks",
+    "difficulty": "Sedang",
+    "prompt": "Perhatikan pola simbol pada matriks 3 × 3. Simbol yang tepat untuk mengisi tanda tanya adalah ....",
+    "options": [
+      "◆",
+      "◇",
+      "△",
+      "□",
+      "✚"
+    ],
+    "answer": 0,
+    "explanation": "Setiap baris bergeser satu posisi ke kiri dibandingkan baris sebelumnya. Baris ketiga menjadi simbol ketiga, pertama, lalu simbol kedua.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "matrix",
+      "rows": [
+        [
+          "■",
+          "◆",
+          "★"
+        ],
+        [
+          "◆",
+          "★",
+          "■"
+        ],
+        [
+          "★",
+          "■",
+          "?"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "S031",
+    "category": "spatial",
+    "type": "Pola matriks",
+    "difficulty": "Sedang",
+    "prompt": "Perhatikan pola simbol pada matriks 3 × 3. Simbol yang tepat untuk mengisi tanda tanya adalah ....",
+    "options": [
+      "✚",
+      "△",
+      "□",
+      "★",
+      "●"
+    ],
+    "answer": 3,
+    "explanation": "Setiap baris bergeser satu posisi ke kiri dibandingkan baris sebelumnya. Baris ketiga menjadi simbol ketiga, pertama, lalu simbol kedua.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "matrix",
+      "rows": [
+        [
+          "◆",
+          "★",
+          "◇"
+        ],
+        [
+          "★",
+          "◇",
+          "◆"
+        ],
+        [
+          "◇",
+          "◆",
+          "?"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "S032",
+    "category": "spatial",
+    "type": "Pola matriks",
+    "difficulty": "Sedang",
+    "prompt": "Perhatikan pola simbol pada matriks 3 × 3. Simbol yang tepat untuk mengisi tanda tanya adalah ....",
+    "options": [
+      "□",
+      "◇",
+      "✚",
+      "●",
+      "○"
+    ],
+    "answer": 1,
+    "explanation": "Setiap baris bergeser satu posisi ke kiri dibandingkan baris sebelumnya. Baris ketiga menjadi simbol ketiga, pertama, lalu simbol kedua.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "matrix",
+      "rows": [
+        [
+          "★",
+          "◇",
+          "△"
+        ],
+        [
+          "◇",
+          "△",
+          "★"
+        ],
+        [
+          "△",
+          "★",
+          "?"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "S033",
+    "category": "spatial",
+    "type": "Pola matriks",
+    "difficulty": "Sedang",
+    "prompt": "Perhatikan pola simbol pada matriks 3 × 3. Simbol yang tepat untuk mengisi tanda tanya adalah ....",
+    "options": [
+      "▲",
+      "✚",
+      "●",
+      "○",
+      "△"
+    ],
+    "answer": 4,
+    "explanation": "Setiap baris bergeser satu posisi ke kiri dibandingkan baris sebelumnya. Baris ketiga menjadi simbol ketiga, pertama, lalu simbol kedua.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "matrix",
+      "rows": [
+        [
+          "◇",
+          "△",
+          "□"
+        ],
+        [
+          "△",
+          "□",
+          "◇"
+        ],
+        [
+          "□",
+          "◇",
+          "?"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "S034",
+    "category": "spatial",
+    "type": "Pola matriks",
+    "difficulty": "Sedang",
+    "prompt": "Perhatikan pola simbol pada matriks 3 × 3. Simbol yang tepat untuk mengisi tanda tanya adalah ....",
+    "options": [
+      "○",
+      "●",
+      "□",
+      "▲",
+      "■"
+    ],
+    "answer": 2,
+    "explanation": "Setiap baris bergeser satu posisi ke kiri dibandingkan baris sebelumnya. Baris ketiga menjadi simbol ketiga, pertama, lalu simbol kedua.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "matrix",
+      "rows": [
+        [
+          "△",
+          "□",
+          "✚"
+        ],
+        [
+          "□",
+          "✚",
+          "△"
+        ],
+        [
+          "✚",
+          "△",
+          "?"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "S035",
+    "category": "spatial",
+    "type": "Pola matriks",
+    "difficulty": "Sedang",
+    "prompt": "Perhatikan pola simbol pada matriks 3 × 3. Simbol yang tepat untuk mengisi tanda tanya adalah ....",
+    "options": [
+      "✚",
+      "○",
+      "▲",
+      "■",
+      "◆"
+    ],
+    "answer": 0,
+    "explanation": "Setiap baris bergeser satu posisi ke kiri dibandingkan baris sebelumnya. Baris ketiga menjadi simbol ketiga, pertama, lalu simbol kedua.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "matrix",
+      "rows": [
+        [
+          "□",
+          "✚",
+          "●"
+        ],
+        [
+          "✚",
+          "●",
+          "□"
+        ],
+        [
+          "●",
+          "□",
+          "?"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "S036",
+    "category": "spatial",
+    "type": "Pola matriks",
+    "difficulty": "Sedang",
+    "prompt": "Perhatikan pola simbol pada matriks 3 × 3. Simbol yang tepat untuk mengisi tanda tanya adalah ....",
+    "options": [
+      "◆",
+      "▲",
+      "■",
+      "●",
+      "★"
+    ],
+    "answer": 3,
+    "explanation": "Setiap baris bergeser satu posisi ke kiri dibandingkan baris sebelumnya. Baris ketiga menjadi simbol ketiga, pertama, lalu simbol kedua.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "matrix",
+      "rows": [
+        [
+          "✚",
+          "●",
+          "○"
+        ],
+        [
+          "●",
+          "○",
+          "✚"
+        ],
+        [
+          "○",
+          "✚",
+          "?"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "S037",
+    "category": "spatial",
+    "type": "Jaring-jaring kubus",
+    "difficulty": "Sulit",
+    "prompt": "Pada jaring-jaring kubus tersebut, sisi yang berhadapan dengan sisi **A** adalah ....",
+    "options": [
+      "E",
+      "B",
+      "D",
+      "C",
+      "F"
+    ],
+    "answer": 3,
+    "explanation": "Saat dilipat, empat sisi yang berjajar membentuk sisi-sisi samping; pasangan berhadapan adalah A–C dan B–D. Sisi E dan F saling berhadapan.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "net",
+      "rows": [
+        "    E",
+        "A   B   C   D",
+        "    F"
+      ]
+    }
+  },
+  {
+    "id": "S038",
+    "category": "spatial",
+    "type": "Jaring-jaring kubus",
+    "difficulty": "Sulit",
+    "prompt": "Pada jaring-jaring kubus tersebut, sisi yang berhadapan dengan sisi **B** adalah ....",
+    "options": [
+      "D",
+      "A",
+      "C",
+      "E",
+      "F"
+    ],
+    "answer": 0,
+    "explanation": "Saat dilipat, empat sisi yang berjajar membentuk sisi-sisi samping; pasangan berhadapan adalah A–C dan B–D. Sisi E dan F saling berhadapan.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "net",
+      "rows": [
+        "    E",
+        "A   B   C   D",
+        "    F"
+      ]
+    }
+  },
+  {
+    "id": "S039",
+    "category": "spatial",
+    "type": "Jaring-jaring kubus",
+    "difficulty": "Sulit",
+    "prompt": "Pada jaring-jaring kubus tersebut, sisi yang berhadapan dengan sisi **C** adalah ....",
+    "options": [
+      "D",
+      "B",
+      "A",
+      "E",
+      "F"
+    ],
+    "answer": 2,
+    "explanation": "Saat dilipat, empat sisi yang berjajar membentuk sisi-sisi samping; pasangan berhadapan adalah A–C dan B–D. Sisi E dan F saling berhadapan.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "net",
+      "rows": [
+        "    E",
+        "A   B   C   D",
+        "    F"
+      ]
+    }
+  },
+  {
+    "id": "S040",
+    "category": "spatial",
+    "type": "Jaring-jaring kubus",
+    "difficulty": "Sulit",
+    "prompt": "Pada jaring-jaring kubus tersebut, sisi yang berhadapan dengan sisi **D** adalah ....",
+    "options": [
+      "F",
+      "A",
+      "C",
+      "E",
+      "B"
+    ],
+    "answer": 4,
+    "explanation": "Saat dilipat, empat sisi yang berjajar membentuk sisi-sisi samping; pasangan berhadapan adalah A–C dan B–D. Sisi E dan F saling berhadapan.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "net",
+      "rows": [
+        "    E",
+        "A   B   C   D",
+        "    F"
+      ]
+    }
+  },
+  {
+    "id": "S041",
+    "category": "spatial",
+    "type": "Jaring-jaring kubus",
+    "difficulty": "Sulit",
+    "prompt": "Pada jaring-jaring kubus tersebut, sisi yang berhadapan dengan sisi **E** adalah ....",
+    "options": [
+      "A",
+      "F",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer": 1,
+    "explanation": "Saat dilipat, empat sisi yang berjajar membentuk sisi-sisi samping; pasangan berhadapan adalah A–C dan B–D. Sisi E dan F saling berhadapan.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "net",
+      "rows": [
+        "    E",
+        "A   B   C   D",
+        "    F"
+      ]
+    }
+  },
+  {
+    "id": "S042",
+    "category": "spatial",
+    "type": "Jaring-jaring kubus",
+    "difficulty": "Sulit",
+    "prompt": "Pada jaring-jaring kubus tersebut, sisi yang berhadapan dengan sisi **F** adalah ....",
+    "options": [
+      "C",
+      "A",
+      "B",
+      "E",
+      "D"
+    ],
+    "answer": 3,
+    "explanation": "Saat dilipat, empat sisi yang berjajar membentuk sisi-sisi samping; pasangan berhadapan adalah A–C dan B–D. Sisi E dan F saling berhadapan.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "net",
+      "rows": [
+        "    E",
+        "A   B   C   D",
+        "    F"
+      ]
+    }
+  },
+  {
+    "id": "S043",
+    "category": "spatial",
+    "type": "Jaring-jaring kubus",
+    "difficulty": "Sulit",
+    "prompt": "Pada jaring-jaring kubus tersebut, sisi yang berhadapan dengan sisi **A** adalah ....",
+    "options": [
+      "C",
+      "B",
+      "D",
+      "E",
+      "F"
+    ],
+    "answer": 0,
+    "explanation": "Saat dilipat, empat sisi yang berjajar membentuk sisi-sisi samping; pasangan berhadapan adalah A–C dan B–D. Sisi E dan F saling berhadapan.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "net",
+      "rows": [
+        "    E",
+        "A   B   C   D",
+        "    F"
+      ]
+    }
+  },
+  {
+    "id": "S044",
+    "category": "spatial",
+    "type": "Jaring-jaring kubus",
+    "difficulty": "Sulit",
+    "prompt": "Pada jaring-jaring kubus tersebut, sisi yang berhadapan dengan sisi **B** adalah ....",
+    "options": [
+      "C",
+      "A",
+      "D",
+      "E",
+      "F"
+    ],
+    "answer": 2,
+    "explanation": "Saat dilipat, empat sisi yang berjajar membentuk sisi-sisi samping; pasangan berhadapan adalah A–C dan B–D. Sisi E dan F saling berhadapan.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "net",
+      "rows": [
+        "    E",
+        "A   B   C   D",
+        "    F"
+      ]
+    }
+  },
+  {
+    "id": "S045",
+    "category": "spatial",
+    "type": "Jaring-jaring kubus",
+    "difficulty": "Sulit",
+    "prompt": "Pada jaring-jaring kubus tersebut, sisi yang berhadapan dengan sisi **C** adalah ....",
+    "options": [
+      "F",
+      "B",
+      "D",
+      "E",
+      "A"
+    ],
+    "answer": 4,
+    "explanation": "Saat dilipat, empat sisi yang berjajar membentuk sisi-sisi samping; pasangan berhadapan adalah A–C dan B–D. Sisi E dan F saling berhadapan.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "net",
+      "rows": [
+        "    E",
+        "A   B   C   D",
+        "    F"
+      ]
+    }
+  },
+  {
+    "id": "S046",
+    "category": "spatial",
+    "type": "Jaring-jaring kubus",
+    "difficulty": "Sulit",
+    "prompt": "Pada jaring-jaring kubus tersebut, sisi yang berhadapan dengan sisi **D** adalah ....",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "E",
+      "F"
+    ],
+    "answer": 1,
+    "explanation": "Saat dilipat, empat sisi yang berjajar membentuk sisi-sisi samping; pasangan berhadapan adalah A–C dan B–D. Sisi E dan F saling berhadapan.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "net",
+      "rows": [
+        "    E",
+        "A   B   C   D",
+        "    F"
+      ]
+    }
+  },
+  {
+    "id": "S047",
+    "category": "spatial",
+    "type": "Jaring-jaring kubus",
+    "difficulty": "Sulit",
+    "prompt": "Pada jaring-jaring kubus tersebut, sisi yang berhadapan dengan sisi **E** adalah ....",
+    "options": [
+      "C",
+      "A",
+      "B",
+      "F",
+      "D"
+    ],
+    "answer": 3,
+    "explanation": "Saat dilipat, empat sisi yang berjajar membentuk sisi-sisi samping; pasangan berhadapan adalah A–C dan B–D. Sisi E dan F saling berhadapan.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "net",
+      "rows": [
+        "    E",
+        "A   B   C   D",
+        "    F"
+      ]
+    }
+  },
+  {
+    "id": "S048",
+    "category": "spatial",
+    "type": "Jaring-jaring kubus",
+    "difficulty": "Sulit",
+    "prompt": "Pada jaring-jaring kubus tersebut, sisi yang berhadapan dengan sisi **F** adalah ....",
+    "options": [
+      "E",
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer": 0,
+    "explanation": "Saat dilipat, empat sisi yang berjajar membentuk sisi-sisi samping; pasangan berhadapan adalah A–C dan B–D. Sisi E dan F saling berhadapan.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "net",
+      "rows": [
+        "    E",
+        "A   B   C   D",
+        "    F"
+      ]
+    }
+  },
+  {
+    "id": "S049",
+    "category": "spatial",
+    "type": "Susunan kubus",
+    "difficulty": "Sedang",
+    "prompt": "Angka pada setiap petak menunjukkan banyak kubus yang ditumpuk pada posisi tersebut. Berapa jumlah seluruh kubus?",
+    "options": [
+      "7",
+      "4",
+      "6",
+      "8",
+      "9"
+    ],
+    "answer": 2,
+    "explanation": "Jumlah seluruh kubus diperoleh dengan menjumlahkan tinggi setiap tumpukan pada semua petak.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "heights",
+      "rows": [
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "id": "S050",
+    "category": "spatial",
+    "type": "Susunan kubus",
+    "difficulty": "Sedang",
+    "prompt": "Angka pada setiap petak menunjukkan banyak kubus yang ditumpuk pada posisi tersebut. Berapa jumlah seluruh kubus?",
+    "options": [
+      "6",
+      "4",
+      "7",
+      "8",
+      "9"
+    ],
+    "answer": 0,
+    "explanation": "Jumlah seluruh kubus diperoleh dengan menjumlahkan tinggi setiap tumpukan pada semua petak.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "heights",
+      "rows": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "id": "S051",
+    "category": "spatial",
+    "type": "Susunan kubus",
+    "difficulty": "Sedang",
+    "prompt": "Angka pada setiap petak menunjukkan banyak kubus yang ditumpuk pada posisi tersebut. Berapa jumlah seluruh kubus?",
+    "options": [
+      "8",
+      "4",
+      "7",
+      "6",
+      "9"
+    ],
+    "answer": 3,
+    "explanation": "Jumlah seluruh kubus diperoleh dengan menjumlahkan tinggi setiap tumpukan pada semua petak.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "heights",
+      "rows": [
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "id": "S052",
+    "category": "spatial",
+    "type": "Susunan kubus",
+    "difficulty": "Sedang",
+    "prompt": "Angka pada setiap petak menunjukkan banyak kubus yang ditumpuk pada posisi tersebut. Berapa jumlah seluruh kubus?",
+    "options": [
+      "6",
+      "8",
+      "9",
+      "10",
+      "11"
+    ],
+    "answer": 1,
+    "explanation": "Jumlah seluruh kubus diperoleh dengan menjumlahkan tinggi setiap tumpukan pada semua petak.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "heights",
+      "rows": [
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "id": "S053",
+    "category": "spatial",
+    "type": "Susunan kubus",
+    "difficulty": "Sedang",
+    "prompt": "Angka pada setiap petak menunjukkan banyak kubus yang ditumpuk pada posisi tersebut. Berapa jumlah seluruh kubus?",
+    "options": [
+      "9",
+      "4",
+      "7",
+      "8",
+      "6"
+    ],
+    "answer": 4,
+    "explanation": "Jumlah seluruh kubus diperoleh dengan menjumlahkan tinggi setiap tumpukan pada semua petak.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "heights",
+      "rows": [
+        [
+          1,
+          0,
+          2
+        ],
+        [
+          2,
+          1,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "id": "S054",
+    "category": "spatial",
+    "type": "Susunan kubus",
+    "difficulty": "Sedang",
+    "prompt": "Angka pada setiap petak menunjukkan banyak kubus yang ditumpuk pada posisi tersebut. Berapa jumlah seluruh kubus?",
+    "options": [
+      "9",
+      "6",
+      "8",
+      "10",
+      "11"
+    ],
+    "answer": 2,
+    "explanation": "Jumlah seluruh kubus diperoleh dengan menjumlahkan tinggi setiap tumpukan pada semua petak.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "heights",
+      "rows": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          0,
+          2,
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "id": "S055",
+    "category": "spatial",
+    "type": "Susunan kubus",
+    "difficulty": "Sedang",
+    "prompt": "Angka pada setiap petak menunjukkan banyak kubus yang ditumpuk pada posisi tersebut. Berapa jumlah seluruh kubus?",
+    "options": [
+      "9",
+      "7",
+      "10",
+      "11",
+      "12"
+    ],
+    "answer": 0,
+    "explanation": "Jumlah seluruh kubus diperoleh dengan menjumlahkan tinggi setiap tumpukan pada semua petak.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "heights",
+      "rows": [
+        [
+          2,
+          1,
+          0
+        ],
+        [
+          1,
+          3,
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "id": "S056",
+    "category": "spatial",
+    "type": "Susunan kubus",
+    "difficulty": "Sedang",
+    "prompt": "Angka pada setiap petak menunjukkan banyak kubus yang ditumpuk pada posisi tersebut. Berapa jumlah seluruh kubus?",
+    "options": [
+      "11",
+      "7",
+      "10",
+      "9",
+      "12"
+    ],
+    "answer": 3,
+    "explanation": "Jumlah seluruh kubus diperoleh dengan menjumlahkan tinggi setiap tumpukan pada semua petak.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "heights",
+      "rows": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ]
+    }
+  },
+  {
+    "id": "S057",
+    "category": "spatial",
+    "type": "Susunan kubus",
+    "difficulty": "Sedang",
+    "prompt": "Angka pada setiap petak menunjukkan banyak kubus yang ditumpuk pada posisi tersebut. Berapa jumlah seluruh kubus?",
+    "options": [
+      "5",
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "answer": 1,
+    "explanation": "Jumlah seluruh kubus diperoleh dengan menjumlahkan tinggi setiap tumpukan pada semua petak.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "heights",
+      "rows": [
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "id": "S058",
+    "category": "spatial",
+    "type": "Susunan kubus",
+    "difficulty": "Sedang",
+    "prompt": "Angka pada setiap petak menunjukkan banyak kubus yang ditumpuk pada posisi tersebut. Berapa jumlah seluruh kubus?",
+    "options": [
+      "12",
+      "7",
+      "10",
+      "11",
+      "9"
+    ],
+    "answer": 4,
+    "explanation": "Jumlah seluruh kubus diperoleh dengan menjumlahkan tinggi setiap tumpukan pada semua petak.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "heights",
+      "rows": [
+        [
+          2,
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ]
+    }
+  },
+  {
+    "id": "S059",
+    "category": "spatial",
+    "type": "Susunan kubus",
+    "difficulty": "Sedang",
+    "prompt": "Angka pada setiap petak menunjukkan banyak kubus yang ditumpuk pada posisi tersebut. Berapa jumlah seluruh kubus?",
+    "options": [
+      "13",
+      "10",
+      "12",
+      "14",
+      "15"
+    ],
+    "answer": 2,
+    "explanation": "Jumlah seluruh kubus diperoleh dengan menjumlahkan tinggi setiap tumpukan pada semua petak.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "heights",
+      "rows": [
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          3,
+          2,
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "id": "S060",
+    "category": "spatial",
+    "type": "Susunan kubus",
+    "difficulty": "Sedang",
+    "prompt": "Angka pada setiap petak menunjukkan banyak kubus yang ditumpuk pada posisi tersebut. Berapa jumlah seluruh kubus?",
+    "options": [
+      "9",
+      "7",
+      "10",
+      "11",
+      "12"
+    ],
+    "answer": 0,
+    "explanation": "Jumlah seluruh kubus diperoleh dengan menjumlahkan tinggi setiap tumpukan pada semua petak.",
+    "source": {
+      "label": "Cognitive Testing · referensi tipe penalaran spasial",
+      "url": "https://cognitivetesting.org/practice-tests/spatial-reasoning"
+    },
+    "original": true,
+    "visual": {
+      "kind": "heights",
+      "rows": [
+        [
+          2,
+          3,
+          1
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ]
+    }
+  }
+]
